@@ -1,1 +1,783 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究者ホームページ</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #3498db;
+        }
+
+        /* メインコンテンツ */
+        main {
+            max-width: 1000px;
+            margin: 5rem auto 2rem;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            min-height: calc(100vh - 10rem);
+        }
+
+        /* Markdownコンテンツのスタイル */
+        .markdown-content h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .markdown-content h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content h3 {
+            color: #7f8c8d;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .markdown-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .markdown-content a:hover {
+            text-decoration: underline;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #7f8c8d;
+        }
+
+        .markdown-content code {
+            background-color: #f1f1f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .markdown-content pre {
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        /* Study ページ用のレイアウト */
+        .study-container {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .study-topics {
+            flex: 0 0 250px;
+            border-right: 1px solid #e0e0e0;
+            padding-right: 2rem;
+        }
+
+        .study-topics h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .study-topics ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .study-topics li {
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .study-topics li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .study-topics li.active {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            font-weight: 500;
+        }
+
+        .study-content {
+            flex: 1;
+        }
+
+        /* 年度ごとのセクション */
+        .year-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .year-section h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* リンクリスト */
+        .link-category {
+            margin-bottom: 2rem;
+        }
+
+        .link-category h3 {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+
+        .link-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .link-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">研究者ホームページ</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('main')" class="active">Main</a></li>
+                <li><a onclick="showPage('research')">Research</a></li>
+                <li><a onclick="showPage('publication')">Publication</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
+                <li><a onclick="showPage('study')">Study</a></li>
+                <li><a onclick="showPage('link')">Link</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content" class="markdown-content"></div>
+    </main>
+
+    <script>
+        // Markdownコンテンツの定義
+        const pageContents = {
+            main: `# 自己紹介
+
+## プロフィール
+
+**氏名**: 山田 太郎（やまだ たろう）  
+**所属**: ○○大学大学院 工学研究科 情報工学専攻  
+**職位**: 准教授  
+**専門分野**: 機械学習、自然言語処理、計算機科学
+
+## 研究概要
+
+私は機械学習と自然言語処理の交差点で研究を行っています。特に、深層学習を用いた言語理解と生成に関する研究に注力しており、実世界の問題解決に向けた応用研究にも取り組んでいます。
+
+### 主な研究テーマ
+
+- **大規模言語モデルの効率化**: パラメータ効率的な学習手法の開発
+- **マルチモーダル学習**: テキストと画像を組み合わせた理解システムの構築
+- **説明可能なAI**: 深層学習モデルの判断根拠を解釈する手法の研究
+
+## 経歴
+
+- 2020年4月 - 現在: ○○大学大学院 准教授
+- 2015年4月 - 2020年3月: △△研究所 主任研究員
+- 2012年4月 - 2015年3月: ××大学 助教
+- 2012年3月: ○○大学大学院 博士課程修了（博士（工学））
+
+## 受賞歴
+
+- 2023年: 情報処理学会 論文賞
+- 2021年: 人工知能学会 研究会優秀賞
+- 2019年: ACL Best Paper Award Nominee
+
+## 連絡先
+
+研究に関するご質問やコラボレーションのご提案は、[Contact](javascript:showPage('contact'))ページからお問い合わせください。`,
+
+            research: `# 研究内容
+
+## 研究トピック1: 大規模言語モデルの効率化
+
+### 概要
+
+大規模言語モデル（LLM）は優れた性能を示す一方で、計算リソースの制約が実用化の障壁となっています。本研究では、モデルの性能を維持しながら計算効率を大幅に改善する手法を開発しています。
+
+### 主な成果
+
+- **パラメータ効率的ファインチューニング（PEFT）**: LoRAやAdapterなどの手法を改良し、少ないパラメータで高い性能を実現
+- **知識蒸留**: 大規模モデルの知識を小規模モデルに効率的に転移する新しいアルゴリズムを提案
+- **量子化技術**: 4ビット量子化でも性能低下を最小限に抑える手法を開発
+
+### 関連論文
+
+- Yamada et al. (2024) "Efficient Fine-tuning of Large Language Models with Adaptive Parameter Selection"
+- Tanaka, Yamada (2023) "Knowledge Distillation for Multilingual Language Models"
+
+---
+
+## 研究トピック2: マルチモーダル学習
+
+### 概要
+
+テキスト、画像、音声などの異なるモダリティを統合的に理解するAIシステムの構築を目指しています。特に、視覚と言語の相互理解に焦点を当てた研究を進めています。
+
+### 研究内容
+
+- **Vision-Language Pre-training**: 大規模な画像-テキストペアデータを用いた事前学習手法
+- **クロスモーダル検索**: テキストから画像、画像からテキストを高精度で検索するシステム
+- **視覚的質問応答（VQA）**: 画像に関する自然言語の質問に答えるモデルの開発
+
+### 応用例
+
+- 医療画像診断支援システム
+- 自動画像キャプション生成
+- ロボットビジョンシステム
+
+---
+
+## 研究トピック3: 説明可能なAI
+
+### 概要
+
+深層学習モデルの「ブラックボックス」問題を解決し、AIの判断根拠を人間が理解できる形で提示する研究を行っています。
+
+### アプローチ
+
+1. **注意機構の可視化**: Transformerモデルの注意重みを解析し、判断に重要な部分を特定
+2. **反実仮想説明**: 「もし〜だったら」という形式で、モデルの判断境界を説明
+3. **概念ベース説明**: 人間が理解しやすい概念レベルでの説明生成
+
+### 社会実装
+
+- 金融機関における与信判断の説明
+- 医療診断AIの判断根拠提示
+- 自動運転車の行動決定理由の説明`,
+
+            publication: `# 発表論文・学会発表
+
+## 2024年
+
+### 論文
+- **Yamada, T.**, Suzuki, K., and Tanaka, H. (2024). "Efficient Fine-tuning of Large Language Models with Adaptive Parameter Selection." *Proceedings of ACL 2024*, pp. 1234-1245.
+- Sato, M., **Yamada, T.** (2024). "Cross-lingual Transfer Learning for Low-resource Languages." *Journal of Natural Language Processing*, Vol. 31, No. 2, pp. 89-102.
+- **Yamada, T.** (2024). "A Survey on Parameter-Efficient Fine-tuning Methods." *人工知能学会論文誌*, Vol. 39, No. 3, pp. 201-215.
+
+### 学会発表
+- 山田太郎, 田中花子. "マルチモーダル事前学習モデルの効率的な学習手法." 情報処理学会全国大会, 2024年3月.
+- 佐藤次郎, 山田太郎. "説明可能なAIのための注意機構解析." 人工知能学会全国大会, 2024年6月.
+
+## 2023年
+
+### 論文
+- Tanaka, H., **Yamada, T.** (2023). "Knowledge Distillation for Multilingual Language Models." *Proceedings of EMNLP 2023*, pp. 567-578.
+- **Yamada, T.**, Ito, S. (2023). "Interpretable Machine Learning for Healthcare Applications." *IEEE Transactions on Medical Imaging*, Vol. 42, No. 8, pp. 2145-2157.
+- 山田太郎 (2023). "深層学習モデルの解釈性向上に関する研究動向." *電子情報通信学会論文誌*, Vol. J106-D, No. 5, pp. 412-425.
+
+### 学会発表
+- Yamada, T. "Explainable AI for Critical Decision Making." International Conference on Machine Learning (ICML) Workshop, July 2023.
+- 山田太郎, 鈴木一郎. "医療画像診断のための説明可能なAI." 日本医用画像工学会大会, 2023年7月.
+
+## 2022年
+
+### 論文
+- **Yamada, T.**, Wang, L., Kim, J. (2022). "Multi-modal Pre-training for Vision-Language Understanding." *Proceedings of CVPR 2022*, pp. 8901-8912.
+- Suzuki, K., **Yamada, T.**, Tanaka, H. (2022). "Efficient Neural Architecture Search for Edge Devices." *Neural Networks*, Vol. 145, pp. 234-247.
+- **山田太郎**, 佐藤花子 (2022). "エッジデバイス向け軽量深層学習モデルの開発." *情報処理学会論文誌*, Vol. 63, No. 4, pp. 1089-1101.
+
+### 学会発表
+- 山田太郎. "Vision-Language モデルの最新動向と応用." 画像認識・理解シンポジウム（MIRU）, 2022年7月.
+- 田中次郎, 山田太郎. "知識蒸留を用いたモデル圧縮技術." 電子情報通信学会総合大会, 2022年3月.
+
+## 2021年以前
+
+### 主要論文
+- **Yamada, T.** et al. (2021). "Attention is Not Always What You Need: Beyond Self-Attention for Language Understanding." *Proceedings of NAACL 2021*, pp. 3456-3467.
+- **Yamada, T.** (2020). "Efficient Training of Deep Neural Networks: A Comprehensive Survey." *ACM Computing Surveys*, Vol. 53, No. 4, Article 89.
+- **Yamada, T.**, Smith, J. (2019). "Cross-lingual Word Embeddings for Low-resource Languages." *Proceedings of ACL 2019*, pp. 2341-2352. **[Best Paper Award Nominee]**`,
+
+            contact: `# 連絡先
+
+## 基本情報
+
+**氏名**: 山田 太郎（Taro Yamada）  
+**所属**: ○○大学大学院 工学研究科 情報工学専攻  
+**職位**: 准教授
+
+## 連絡先詳細
+
+### オフィス
+〒123-4567  
+東京都○○区××1-2-3  
+○○大学 工学部棟 5階 512号室
+
+### メールアドレス
+📧 yamada [at] example-univ.ac.jp  
+*（[at]を@に変換してください）*
+
+### 電話
+☎ 03-1234-5678（研究室直通）  
+📠 03-1234-5679（FAX）
+
+## オフィスアワー
+
+**火曜日・木曜日**: 13:00 - 15:00  
+*上記時間帯は予約なしで訪問可能です。それ以外の時間帯については、事前にメールでご連絡ください。*
+
+## 研究に関するお問い合わせ
+
+### 共同研究について
+産学連携や共同研究のご提案を歓迎しております。以下の分野での協力が可能です：
+- 自然言語処理技術の産業応用
+- 機械学習システムの開発・実装
+- AI技術の社会実装に関するコンサルティング
+
+### 学生の方へ
+- **学部生**: 研究室配属に関する相談は、3年次の10月以降に受け付けています
+- **大学院進学希望者**: 研究計画について事前にメールでご相談ください
+- **研究生・訪問研究員**: 受け入れ可能な場合がありますので、お問い合わせください
+
+## SNS・その他
+
+🔗 [Google Scholar](https://scholar.google.com)  
+🔗 [ResearchGate](https://www.researchgate.net)  
+🔗 [ORCID](https://orcid.org)  
+🔗 [GitHub](https://github.com)
+
+## アクセス
+
+### 最寄り駅
+- JR○○線「××駅」東口より徒歩10分
+- 地下鉄△△線「□□駅」3番出口より徒歩5分
+
+### キャンパスマップ
+工学部棟は正門から入って右手、図書館の隣の建物です。エレベーターで5階までお越しください。`,
+
+            study: `# Study Topics
+
+<div class="study-container">
+    <div class="study-topics">
+        <h3>トピック一覧</h3>
+        <ul id="study-topic-list">
+            <li class="active" onclick="showStudyTopic(0)">機械学習の基礎</li>
+            <li onclick="showStudyTopic(1)">深層学習入門</li>
+            <li onclick="showStudyTopic(2)">自然言語処理</li>
+            <li onclick="showStudyTopic(3)">コンピュータビジョン</li>
+            <li onclick="showStudyTopic(4)">強化学習</li>
+            <li onclick="showStudyTopic(5)">研究の進め方</li>
+        </ul>
+    </div>
+    <div class="study-content" id="study-content">
+        <div id="study-topic-content"></div>
+    </div>
+</div>`,
+
+            link: `# 関連リンク
+
+## 研究室・研究機関
+
+### 国内の関連研究室
+- [○○大学 △△研究室](https://example.com) - 自然言語処理、対話システム
+- [××大学 情報科学研究科](https://example.com) - 機械学習、データマイニング
+- [□□工業大学 AI研究センター](https://example.com) - 深層学習、コンピュータビジョン
+- [△△大学 知能情報学専攻](https://example.com) - 知識表現、推論システム
+
+### 海外の研究機関
+- [Stanford AI Lab](https://ai.stanford.edu) - スタンフォード大学AI研究所
+- [MIT CSAIL](https://www.csail.mit.edu) - MIT コンピュータ科学・人工知能研究所
+- [DeepMind](https://deepmind.com) - 深層学習、強化学習
+- [FAIR (Meta AI)](https://ai.facebook.com) - Facebook AI Research
+
+## 学会・カンファレンス
+
+### 国内学会
+- [人工知能学会 (JSAI)](https://www.ai-gakkai.or.jp)
+- [情報処理学会 (IPSJ)](https://www.ipsj.or.jp)
+- [電子情報通信学会 (IEICE)](https://www.ieice.org)
+- [日本ロボット学会 (RSJ)](https://www.rsj.or.jp)
+
+### 国際会議
+- [ACL - Association for Computational Linguistics](https://www.aclweb.org)
+- [NeurIPS - Neural Information Processing Systems](https://neurips.cc)
+- [ICML - International Conference on Machine Learning](https://icml.cc)
+- [CVPR - Computer Vision and Pattern Recognition](https://cvpr.org)
+- [ICLR - International Conference on Learning Representations](https://iclr.cc)
+
+## 企業・産業界
+
+### AI関連企業
+- [Google Research](https://research.google)
+- [Microsoft Research](https://www.microsoft.com/research)
+- [OpenAI](https://openai.com)
+- [Preferred Networks](https://www.preferred.jp)
+- [理化学研究所 AIPセンター](https://aip.riken.jp)
+
+### 技術リソース
+- [arXiv.org](https://arxiv.org) - プレプリントサーバー
+- [Papers with Code](https://paperswithcode.com) - 論文とコードのデータベース
+- [Hugging Face](https://huggingface.co) - NLPモデルとデータセット
+- [Kaggle](https://www.kaggle.com) - データサイエンスコンペティション
+
+## オープンソースプロジェクト
+
+### 機械学習フレームワーク
+- [TensorFlow](https://www.tensorflow.org)
+- [PyTorch](https://pytorch.org)
+- [JAX](https://github.com/google/jax)
+- [scikit-learn](https://scikit-learn.org)
+
+### NLPライブラリ
+- [Transformers (Hugging Face)](https://github.com/huggingface/transformers)
+- [spaCy](https://spacy.io)
+- [Gensim](https://radimrehurek.com/gensim)
+- [NLTK](https://www.nltk.org)
+
+## その他の有用なリソース
+
+### オンライン講座
+- [Coursera - Machine Learning](https://www.coursera.org/learn/machine-learning)
+- [fast.ai](https://www.fast.ai)
+- [Deep Learning Specialization](https://www.deeplearning.ai)
+
+### 技術ブログ・メディア
+- [Distill.pub](https://distill.pub) - 機械学習の視覚的説明
+- [The Gradient](https://thegradient.pub) - AI研究の解説記事
+- [Towards Data Science](https://towardsdatascience.com) - データサイエンス記事`
+        };
+
+        // Study topicsの内容
+        const studyTopics = [
+            {
+                title: "機械学習の基礎",
+                content: `## 機械学習の基礎
+
+### 概要
+機械学習は、データから自動的にパターンを学習し、予測や分類を行うための技術です。明示的にプログラムされることなく、経験から学習する能力をコンピュータに与えます。
+
+### 主要な概念
+- **教師あり学習**: ラベル付きデータを用いて学習
+- **教師なし学習**: ラベルなしデータからパターンを発見
+- **強化学習**: 環境との相互作用を通じて学習
+
+### 基本的なアルゴリズム
+1. **線形回帰**: 連続値の予測
+2. **ロジスティック回帰**: 二値分類
+3. **決定木**: 解釈しやすい分類・回帰
+4. **SVM**: 高次元データの分類
+5. **k-means**: クラスタリング
+
+### 推奨教材
+- "Pattern Recognition and Machine Learning" by Christopher Bishop
+- "The Elements of Statistical Learning" by Hastie, Tibshirani, and Friedman`
+            },
+            {
+                title: "深層学習入門",
+                content: `## 深層学習入門
+
+### 概要
+深層学習は、多層のニューラルネットワークを用いて複雑なパターンを学習する機械学習の一分野です。画像認識、自然言語処理、音声認識など幅広い分野で革新的な成果を上げています。
+
+### 基本アーキテクチャ
+- **全結合層（FC）**: 最も基本的な層
+- **畳み込みニューラルネットワーク（CNN）**: 画像処理に特化
+- **再帰型ニューラルネットワーク（RNN）**: 系列データ処理
+- **Transformer**: 注意機構を用いた最新アーキテクチャ
+
+### 重要な概念
+1. **逆伝播法**: 勾配計算の効率的なアルゴリズム
+2. **活性化関数**: ReLU、Sigmoid、Tanh
+3. **正則化**: Dropout、L1/L2正則化
+4. **最適化**: SGD、Adam、RMSprop
+
+### 実装フレームワーク
+- PyTorch: 研究向けの柔軟なフレームワーク
+- TensorFlow: 本番環境にも適した総合的なフレームワーク
+- JAX: 関数型プログラミングと自動微分`
+            },
+            {
+                title: "自然言語処理",
+                content: `## 自然言語処理
+
+### 概要
+自然言語処理（NLP）は、人間の言語をコンピュータに理解・生成させる技術です。機械翻訳、感情分析、質問応答システムなど、多様な応用があります。
+
+### 基礎技術
+- **トークン化**: テキストを単語や部分単語に分割
+- **品詞タグ付け**: 各単語の品詞を特定
+- **構文解析**: 文の構造を解析
+- **意味解析**: 文の意味を理解
+
+### 現代的アプローチ
+1. **Word Embeddings**: Word2Vec, GloVe
+2. **事前学習モデル**: BERT, GPT, T5
+3. **Fine-tuning**: タスク特化の調整
+4. **Zero-shot/Few-shot学習**: 少数データでの学習
+
+### 応用タスク
+- 機械翻訳
+- 文書要約
+- 質問応答
+- 感情分析
+- 固有表現認識（NER）`
+            },
+            {
+                title: "コンピュータビジョン",
+                content: `## コンピュータビジョン
+
+### 概要
+コンピュータビジョンは、画像や動画からの情報抽出を行う分野です。物体検出、画像分類、セグメンテーションなど、視覚情報の理解を目指します。
+
+### 基本タスク
+- **画像分類**: 画像全体のカテゴリ判定
+- **物体検出**: 画像内の物体の位置とクラスを特定
+- **セマンティックセグメンテーション**: ピクセル単位の分類
+- **インスタンスセグメンテーション**: 個々の物体を区別
+
+### 主要なモデル
+1. **CNN基盤モデル**: AlexNet, VGG, ResNet
+2. **物体検出**: YOLO, R-CNN系列, SSD
+3. **セグメンテーション**: U-Net, Mask R-CNN
+4. **Vision Transformer**: ViT, DETR
+
+### 最新トレンド
+- Self-supervised learning
+- Vision-Language models (CLIP)
+- 3D vision
+- Neural Radiance Fields (NeRF)`
+            },
+            {
+                title: "強化学習",
+                content: `## 強化学習
+
+### 概要
+強化学習は、エージェントが環境との相互作用を通じて、報酬を最大化する行動を学習する枠組みです。ゲームAI、ロボット制御、推薦システムなどに応用されています。
+
+### 基本要素
+- **エージェント**: 学習・行動する主体
+- **環境**: エージェントが相互作用する世界
+- **状態**: 環境の現在の状況
+- **行動**: エージェントが取れる選択肢
+- **報酬**: 行動の良し悪しを示す信号
+
+### 主要アルゴリズム
+1. **価値ベース手法**: Q-learning, DQN
+2. **方策ベース手法**: REINFORCE, PPO
+3. **Actor-Critic**: A3C, SAC
+4. **モデルベース手法**: World Models, MuZero
+
+### 応用例
+- ゲームAI（囲碁、チェス、ビデオゲーム）
+- ロボット制御
+- 自動運転
+- リソース最適化
+- 推薦システム`
+            },
+            {
+                title: "研究の進め方",
+                content: `## 研究の進め方
+
+### 研究プロセス
+1. **問題設定**: 解決すべき課題の明確化
+2. **文献調査**: 既存研究のサーベイ
+3. **仮説立案**: 新しいアプローチの提案
+4. **実験設計**: 検証方法の計画
+5. **実装・実験**: 提案手法の実装と評価
+6. **論文執筆**: 成果の文書化
+7. **発表**: 学会での共有
+
+### 論文の読み方
+- **Abstract**: 概要を把握
+- **Introduction**: 背景と動機を理解
+- **Related Work**: 既存研究との差分を確認
+- **Method**: 提案手法の詳細を理解
+- **Experiments**: 評価方法と結果を分析
+- **Conclusion**: 貢献と限界を確認
+
+### 実験のベストプラクティス
+- 再現性の確保
+- 適切なベースラインとの比較
+- 統計的有意性の検証
+- アブレーションスタディ
+- ハイパーパラメータの管理
+
+### 研究倫理
+- データの適切な利用
+- 他者の成果の適切な引用
+- 実験結果の誠実な報告
+- プライバシーの保護`
+            }
+        ];
+
+        // 現在のページを管理
+        let currentPage = 'main';
+        let currentStudyTopic = 0;
+
+        // ページを表示する関数
+        function showPage(page) {
+            currentPage = page;
+            
+            // ナビゲーションのアクティブ状態を更新
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent.toLowerCase() === page) {
+                    link.classList.add('active');
+                }
+            });
+
+            // コンテンツを表示
+            const contentDiv = document.getElementById('content');
+            
+            if (page === 'study') {
+                // Studyページの場合は特別な処理
+                contentDiv.innerHTML = marked.parse(pageContents[page]);
+                // 初期トピックを表示
+                showStudyTopic(0);
+            } else {
+                // 通常のMarkdownコンテンツを表示
+                contentDiv.innerHTML = marked.parse(pageContents[page]);
+            }
+        }
+
+        // Studyトピックを表示する関数
+        function showStudyTopic(index) {
+            currentStudyTopic = index;
+            
+            // トピックリストのアクティブ状態を更新
+            document.querySelectorAll('#study-topic-list li').forEach((li, i) => {
+                if (i === index) {
+                    li.classList.add('active');
+                } else {
+                    li.classList.remove('active');
+                }
+            });
+
+            // トピックの内容を表示
+            const contentDiv = document.getElementById('study-topic-content');
+            if (contentDiv && studyTopics[index]) {
+                contentDiv.innerHTML = marked.parse(studyTopics[index].content);
+            }
+        }
+
+        // ページ読み込み時に初期ページを表示
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('main');
+        });
+
+        // GitHub Pages用のルーティング対応
+        // URLのハッシュに基づいてページを表示
+        function handleHashChange() {
+            const hash = window.location.hash.slice(1);
+            if (hash && pageContents[hash]) {
+                showPage(hash);
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange);
+
+        // 初期読み込み時のハッシュチェック
+        if (window.location.hash) {
+            handleHashChange();
+        }
+    </script>
+</body>
+</html>
