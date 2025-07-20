@@ -207,7 +207,6 @@
             color: #555;
             line-height: 1.6;
         }
-
         /* プロフィール写真パネル */
         .profile-container {
             display: flex;
@@ -215,11 +214,9 @@
             align-items: flex-start;
             margin-bottom: 2rem;
         }
-
         .profile-content {
             flex: 1;
         }
-
         .profile-photo-panel {
             flex: 0 0 200px;
             text-align: center;
@@ -228,14 +225,133 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
         .profile-photo-panel img {
             width: 100%;
             border-radius: 8px;
             margin-bottom: 0.5rem;
         }
-
         .profile-photo-panel p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+
+        /* assb */
+        .assb-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        .assb-content {
+            flex: 1;
+        }
+        .assb-photo-panel {
+            flex: 0.5 0.5 100px;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .assb-photo-panel img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .assb-photo-panel p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* elements */
+        .elements-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        .elements-content {
+            flex: 1;
+        }
+        .elements-photo-panel {
+            flex: 0.3 0.3 100px;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .elements-photo-panel img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .elements-photo-panel p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+
+        /* photo */
+        .photo-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        .photo-content {
+            flex: 1;
+        }
+        .photo-panel {
+            flex: 0.3 0.3 100px;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .photo-panel img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .photo-panel p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* array - 図を横に並べるためのスタイル */
+        .array-container {
+            display: flex;
+            justify-content: center;  /* 中央揃え（右寄せを解除） */
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;  /* 画面幅が狭い時は折り返し */
+        }
+
+        .array-photo-panel {
+            flex: 0 0 250px;  /* 固定幅200px（必要に応じて調整） */
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .array-photo-panel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .array-photo-panel p {
             font-size: 0.9rem;
             color: #666;
             margin: 0;
@@ -272,6 +388,8 @@
 ## 研究概要: 蓄電デバイスの高性能化に向けて
 
 ### 次世代蓄電技術
+<div class="assb-container">
+<div class="assb-content">
 
 持続可能な社会の実現に向けて、**高性能蓄電デバイス**の開発は喫緊の課題となっています。再生可能エネルギーの効率的な利用、電気自動車の普及拡大、IoTデバイスの長時間駆動など、私たちの生活のあらゆる場面で革新的な蓄電技術が求められています。
 従来のリチウムイオン電池が抱える**安全性**と**エネルギー密度**の限界を突破する技術として、**全固体電池**が世界的に注目を集めています。
@@ -280,8 +398,21 @@
 - **高速充放電**: 超イオン導電体の固体電解質により、より高速に充放電が可能
 - **高エネルギー密度**: 従来にない高電圧作動電極の選定・電極構造の最適化・新たな固体デバイス創製
 
+</div>
+<div class="assb-photo-panel">
+<img src="./photo/assb.jpg" alt="assb">
+<p　style="text-align: center;">全固体フッ化物電池</p>
+</div>
+</div>
+
 ### 材料革新がもたらすイノベーション
+
+
 蓄電デバイスの性能は、その構成材料（固体電解質・電極）の特性に大きく依存します。リチウム(Li)電池の他にも、フッ化物(F–)電池やヒドリドデバイスの開発にも取り組んでいます。以下の観点から新規材料の開発に取り組んでいます：
+
+<div class="elements-container">
+<div class="elements-content">
+
 1. **高イオン伝導性固体電解質の開発**
    - 固体中を高速でイオンが伝導する固体電解質（Li, F, H)
    - イオン伝導率・化学的/電気化学的安定性に優れた材料の探索 (F)
@@ -289,8 +420,48 @@
 2. **新規電極材料の探索**
    - 新たな反応系の電極材料の探索 (F, H)
 
-### 研究アプローチ: 機能性向上とメカニズム探求
-私たちは、**固体化学**、**電気化学**、**計算科学**を融合したアプローチで、日々研究に取り組んでいます。単なる性能向上だけでなく、なぜその性能が発現するのかという**基礎的なメカニズムの解明**にも重視し、革新的な材料開発を目指しています。
+</div>
+<div class="elements-photo-panel">
+<img src="./photo/elements.jpg" alt="elements">
+<p　style="text-align: center;">キャリアイオン</p>
+</div>
+</div>
+
+### 研究アプローチ: 高効率な材料探索手法
+
+<div class="photo-container">
+<div class="photo-content">
+
+私たちは、**固体化学**、**電気化学**、**計算科学**を融合したアプローチで、日々研究に取り組んでいます。いかに短期間で効率的かつ網羅的に材料探索を展開し新材料を見つけ出すか、その手法論の開拓に取り組んでいます。
+
+- **仮想空間や活用した効率的探索**
+   - 構造データベース中の網羅的な探索
+   - 短期間での有望構造の同定と、効率的な実験的検証
+   - スーパーコンピューターTSUBAMEの活用
+   - イオン伝導率予測モデルの構築と短工程での新規材料の創出
+</div>
+<div class="photo-panel">
+<img src="./photo/mi.jpg" alt="mi">
+<p　style="text-align: center;">仮想空間を活用した探索</p>
+</div>
+</div>
+
+<div class="photo-container">
+<div class="photo-content">
+
+-  **ハイスループット合成技術**
+   - 多元スパッタ法による組成分布薄膜ライブラリの合成
+   - 高速な構造同定・イオン伝導率評価手法の開発
+   - 広範な組成空間から短期間に有望材料を同定する
+
+さらに、単なる性能向上だけでなく、なぜその性能が発現するのかという**基礎的なメカニズムの解明**にも重視し、革新的な材料開発を目指しています。
+
+</div>
+<div class="photo-panel">
+<img src="./photo/combinatorial.jpg" alt="combinatorial">
+<p　style="text-align: center;">コンビナトリアル合成</p>
+</div>
+</div>
 
 ---
 
@@ -310,8 +481,8 @@
 
 </div>
 <div class="profile-photo-panel">
-<img src="profile_photo.jpg" alt="松井直喜">
-<p>松井 直喜 SPring-8にて</p>
+<img src="./photo/profile_photo.jpg" alt="松井直喜">
+<p style="text-align: center;">松井 直喜</p>
 </div>
 </div>
 
@@ -419,11 +590,39 @@
 - 新規Scheelite型フッ化物イオン伝導体の創出
 - F–が可逆的にインターカレーションする負極活物質の開発(Y2C↔Y2CF2)
 
+<div class="array-container">
+<div class="array-content">
+
+</div>
+<div class="array-photo-panel">
+<img src="./photo/F1.jpg" alt="combinatorial">
+<p　style="text-align: center;">機械学習モデルによるF伝導率予測</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/F2.jpg" alt="combinatorial">
+<p　style="text-align: center;">多面体の連結自由度によるF伝導</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/F3.jpg" alt="combinatorial">
+<p　style="text-align: center;">孤立電子対のゆらぎがイオン移動障壁を低減</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/F4.jpg" alt="combinatorial">
+<p　style="text-align: center;">Y2Cへのフッ素インターカレーション</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/F5.jpg" alt="combinatorial">
+<p　style="text-align: center;">Scheelite型F伝導体</p>
+</div>
+</div>
+
 ---
 
 ## 研究トピック2: リチウムイオン伝導体の探索
 
 ### 概要
+<div class="photo-container">
+<div class="photo-content">
 
 全固体リチウムイオン電池の実用化に向けて、高いイオン伝導性と化学的安定性を両立する新規固体電解質の開発が急務です。本研究では、材料インフォマティクスと実験を融合したアプローチで効率的な材料探索を行っています。
 
@@ -438,11 +637,19 @@
 - 配位多面体モチーフを特徴量とした機械学習モデルによる新規Li導電体の発見（JACS掲載）
 - 硫化物系、酸化物系など多様な材料系での探索
 
+</div>
+<div class="photo-panel">
+<img src="./photo/Li1.jpg" alt="assb">
+<p　style="text-align: center;">局所環境を特徴量としたクラスター解析によりLi伝導体を予測</p>
+</div>
+</div>
 ---
 
 ## 研究トピック3: ヒドリドイオン伝導性材料・デバイスの探索
 
 ### 概要
+<div class="photo-container">
+<div class="photo-content">
 
 水素の陰イオンであるヒドリドイオン（H⁻）を電荷担体とする新しいエネルギーデバイスの開発に取り組んでいます。ヒドリドイオン伝導体は、その高速性と特異な反応性を活かした新規電池系の構築が期待されています。
 
@@ -452,11 +659,39 @@
 - **Sr2LiH2Nのヒドリドイオン導電性の報告**（J. Solid State Chem., 2022）
 - **K2NiF4型酸水素化物**: La2LiHO3の常圧合成法の確立（J. Am. Ceram. Soc., 2019）
 
+
+</div>
+<div class="photo-panel">
+<img src="./photo/H1.jpg" alt="assb">
+<p　style="text-align: center;">ヒドリド(H-)イオン伝導体</p>
+</div>
+</div>
+
+<div class="array-container">
+<div class="array-content">
+
+</div>
+<div class="array-photo-panel">
+<img src="./photo/H2.jpg" alt="combinatorial">
+<p　style="text-align: center;">Hポテンシャルの中性子回折による解析</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/H3.jpg" alt="combinatorial">
+<p　style="text-align: center;">ペロブスカイト水素化物の組成最適化</p>
+</div>
+<div class="array-photo-panel">
+<img src="./photo/H4.jpg" alt="combinatorial">
+<p　style="text-align: center;">K2NiF4型窒水素化物のH伝導</p>
+</div>
+</div>
+
 ---
 
 ## 研究トピック4: ハイスループット合成実験系の構築と新材料探索への適用
 
 ### 概要
+<div class="photo-container">
+<div class="photo-content">
 
 材料開発の効率を飛躍的に向上させるため、自動合成・評価システムの構築に取り組んでいます。これにより、従来の10倍以上の速度で新材料のスクリーニングが可能になります。
 
@@ -466,6 +701,13 @@
 2. **放射光XRD測定**: SPring-8 での放射光XRDの自動化・高速構造評価（1時間/180点）
 3. **自動伝導率評価装置**: インピーダンス測定と解析の自動化
 4. **自動秤量・混合・焼成・伝導率評価システム**: DIYによる実験自動化(構築中)
+
+</div>
+<div class="photo-panel">
+<img src="./photo/combinatorial.jpg" alt="assb">
+<p　style="text-align: center;">多元スパッタ</p>
+</div>
+</div>
 
 ### 活用例
 
@@ -479,8 +721,16 @@
 ## 2025年
 
 ### 論文
-- T. Hirose, **N. Matsui** (corresponding author), K. Watanabe, T. Saito, K. Mori, K. Suzuki, M. Hirayama, R. Kanno, "A trade-off between migration and association energies for hydride-ion conductivity in the SrLiH3–CaLiH3–NaLiH2 system," *Dalton Transactions*, in press (2025).
-- T. Nakayama, K. Watanabe, Y. Iwamizu, K. Suzuki, **N. Matsui**, A. Seko, I. Tanaka, R. Kanno, "Simultaneous Exploration of Candidates for Electrode and Electrolyte Materials for All-Solid-State Batteries Using Predicted Rating from a Recommender System," *ACS Appl. Energy Mater.*, in press (2025).
+- **N. Matsui** (corresponding author), K. Mori, T. Saito, K. Noi, S. Fujinami, Y. Park, T. Tojigamori, K. Suzuki, T. Abe, R. Kanno, "Tailoring Polyhedral Linkage in K1–xBaxM2F7+x (M = Yb, Lu) for Enhanced Fluoride-Ion Conductivity", *Chem. Mater.*, 37(13) (2025) 4798-4806. DOI:[10.1021/acs.chemmater.5c00772](https://doi.org/10.1021/acs.chemmater.5c00772)
+- S. Kong, **N. Matsui** (corresponding author), S. Hori, M. Hirayama, K. Mori, T. Saito, R. Kanno, K. Suzuki, "Exploration of Lithium-Ion Conductors Based on Local Coordination Environments Using Crystallographic Site Fingerprints", *J. Am. Chem. Soc.*, 147(28) (2025) 24336-24346. DOI:[10.1021/jacs.5c00856](https://doi.org/10.1021/jacs.5c00856)
+- T. Kim, T. Kim, T. Lee, Y. Park, J. Kim, K. Kang, H. Kim, S. Hong, **N. Matsui**, H. Kim, S. Kim, "Hydride Ion Conductors with Polyanionic Complex Anions", *J. Am. Chem. Soc.*, 147(17) (2025) 14244-14253. DOI:[10.1021/jacs.4c17532](https://doi.org/10.1021/jacs.4c17532)
+- K. Watanabe, H. Kim, K. Hikima, **N. Matsui**, K. Suzuki, H. Muto, A. Matsuda, R. Kanno, M. Hirayama, "Self-Closing of Cracks Generated in Microstructure-Controlled 400 µm-Thick Composite Cathodes for All-Solid-State Batteries: Observed by In Situ Scanning Electron Microscopy with Energy-Dispersive X-Ray Spectroscopy", *Batteries & Supercaps*, 8(6) (2025) e202500119. DOI:[10.1002/batt.202500119]( https://doi.org/10.1002/batt.202500119)
+- T. Hirose, **N. Matsui** (corresponding author), K. Watanabe, T. Saito, K. Mori, K. Suzuki, M. Hirayama, R. Kanno, "A trade-off between migration and association energies for hydride-ion conductivity in the SrLiH3–CaLiH3–NaLiH2 system," *Dalton Transactions*, 45 (2025) 4180-4186. DOI:[10.1039/D4DT03384A](https://doi.org/10.1039/D4DT03384A)
+- T. Nakayama, K. Watanabe, Y. Iwamizu, K. Suzuki, **N. Matsui**, A. Seko, I. Tanaka, R. Kanno, "Simultaneous Exploration of Candidates for Electrode and Electrolyte Materials for All-Solid-State Batteries Using Predicted Rating from a Recommender System," *ACS Appl. Energy Mater.*, 8(4) (2025) 2260–2267. DOI:[10.1021/acsaem.4c02838](https://doi.org/10.1021/acsaem.4c02838)
+- K. WATANABE, H. NAKAYAMA, H. KIM, K. HIKIMA, **N. MATSUI**, K. SUZUKI, S. OBOKATA, H. MUTO, A. MATSUDA, R. KANNO, M. Hirayama,"Sn vs. Ge: Effects of Elastic and Plastic Deformation of LGPS-type Solid Electrolytes on Charge-discharge Properties of Composite Cathodes for All-solid-state Batteries", *Electrochemistry*, 93(6) (2025) 063019. DOI:[10.5796/electrochemistry.25-71020](https://doi.org/10.5796/electrochemistry.25-71020)
+- K. Onuki, **N. Matsui** (corresponding author), K. Suzuki, M. Hirayama, R. Kanno, "Fluoride-ion conductivity of scheelite-type LiYb1-xMxF4±x (M = Mg, Ca, Sr, Hf)", *Solid State Ionics*, 424 (2025) 116851. DOI:[10.1016/j.ssi.2025.116851](https://doi.org/10.1016/j.ssi.2025.116851)
+- Y. Iwamizu, K. Suzuki, M. Kamiya, **N. Matsui**, K. Nomoto, S. Hori, M. Hirayama, R. Kanno, "Chemical Composition-Driven Machine Learning Models for Predicting Ionic Conductivity in Lithium-Containing Oxides", *Electrochemistry*, 93(6) (2025) 063006. DOI:[10.5796/electrochemistry.25-71007](https://doi.org/10.5796/electrochemistry.25-71007)
+- R. Tsukazaki, **N. Matsui**, S. Hori, K. Suzuki, R. Kanno, "Oxygen-Substitution Effects on the Properties of Argyrodite-Type Sulfide Solid Electrolytes (Li5.5PS4.5−xBr1.5Ox, 0 ≦ x ≦ 0.5)", *Electrochemistry*, 93(6) (2025) 0630012. DOI:[10.5796/electrochemistry.25-71033](https://doi.org/10.5796/electrochemistry.25-71033)
 
 ## 2024年
 
@@ -492,13 +742,13 @@
 - D. Kang, K. Ito, K. Shimizu, K. Watanabe, **N. Matsui**, K. Suzuki, R. Kanno, M. Hirayama, "Fabrication and High-temperature Electrochemical Stability of LiFePO4 Cathode/Li3PO4 Electrolyte Interface," *Electrochemistry*, 92(3) (2024) 037008.
 - S. Asano, J. Hata, K. Watanabe, K. Shimizu, **N. Matsui**, N. Yamada, K. Suzuki, R. Kanno, M. Hirayama, "Formation Processes of a Solid Electrolyte Interphase at a Silicon/Sulfide Electrolyte Interface in a Model All-Solid-State Li-Ion Battery," *ACS Appl. Mater. Interfaces*, 16(6) (2024) 7189-7199.
 - S. Asano, J. Hata, K. Watanabe, **N. Matsui**, K. Suzuki, R. Kanno, M. Hirayama, "Interfacial structure changes between amorphous silicon anode/liquid electrolyte using a highly dense and flat model electrode," *J. Solid State Electrochem*, 28 (2024) 4491–4501.
-- T. Tojigamori, **N. Matsui** (共同第一著者), K. Suzuki, M. Hirayama, T. Abe, R. Kanno, "Fluorination/Defluorination Behavior of Y2C in Fluoride-Ion Battery Anodes," *ACS Appl. Energy Mater.*, 7(3) (2024) 1100–1108.
-- **N. Matsui** (corresponding author), M. Murakami, K. Mori, T. Saito, K. Shimizu, K. Suzuki, R. Kanno, "Effect of Pb 6s2 lone pair on the potential flattening of fluoride-ion conduction in perovskite-type fluoride," *J. Mater. Chem. A*, 12 (2024) 3989-3996.
+- T. Tojigamori, **N. Matsui** (共同第一著者), K. Suzuki, M. Hirayama, T. Abe, R. Kanno, "Fluorination/Defluorination Behavior of Y2C in Fluoride-Ion Battery Anodes," *ACS Appl. Energy Mater.*, 7(3) (2024) 1100–1108. DOI:[AAAA](XXXXXx)
+- **N. Matsui** (corresponding author), M. Murakami, K. Mori, T. Saito, K. Shimizu, K. Suzuki, R. Kanno, "Effect of Pb 6s2 lone pair on the potential flattening of fluoride-ion conduction in perovskite-type fluoride," *J. Mater. Chem. A*, 12 (2024) 3989-3996. DOI:[10.1039/D3TA06367D](https://doi.org/10.1039/D3TA06367D)
 
 ## 2023年
 
 ### 論文
-- **N. Matsui**, T. Seki, K. Suzuki, M. Hirayama, R. Kanno, "Accelerated Exploration of Fast Fluoride-Ion Conductors Based on Compositional Descriptors," *ACS Applied Energy Materials*, 6(22) (2023) 11663–11671.
+- **N. Matsui**, T. Seki, K. Suzuki, M. Hirayama, R. Kanno, "Accelerated Exploration of Fast Fluoride-Ion Conductors Based on Compositional Descriptors," *ACS Applied Energy Materials*, 6(22) (2023) 11663–11671. DOI:[10.1021/acsaem.3c02107](https://doi.org/10.1021/acsaem.3c02107)
 - T. Noda, H. Kim, K. Watanabe, K. Suzuki, **N. Matsui**, R. Kanno, M. Hirayama, "Direct tracking of reaction distribution in an all-solid-state battery using operando scanning electron microscopy with energy dispersive X-ray spectroscopy," *Journal of the Ceramic Society of Japan*, 131(10) (2023) 651-658.
 - T. Yabuzaki, M. Sato, H. Kim, K. Watanabe, **N. Matsui**, K. Suzuki, S. Hori, K. Hikima, S. Obokata, H. Muto, A. Matsuda, R. Kanno, M. Hirayama, "Electrochemical and mechanical properties and chemical stability of Li10GeP2S12/Al2O3 composite electrolytes," *Journal of the Ceramic Society of Japan*, 131(10) (2023) 675-684.
 - Y. Sasahara, T. Hirose, M. Yoshimoto, **N. Matsui**, S. Kobayashi, H. Ubukata, T. Fumitaka, K. Suzuki, M. Hirayama, K. Nishio, R. Shimizu, R. Kanno, G. Kobayashi, T. Hitosugi, "High H– Conductivities along the ab-Planes of La2LiHO3 Epitaxial Thin Films," *Crystal Growth & Design*, 23(10) (2023) 7103–7108.
@@ -512,7 +762,7 @@
 
 ### 論文
 - S. Song, S. Hori, Y. Li, K. Suzuki, **N. Matsui**, M. Hirayama, T. Saito, T. Kamiyama, R. Kanno, "Material Search for a Li10GeP2S12-Type Solid Electrolyte in the Li–P–S–X (X = Br, I) System via Clarification of the Composition–Structure–Property Relationships," *Chemistry of Materials*, 34(18), (2022) 8237–8247.
-- T. Hirose, T. Mishina, **N. Matsui**, K. Suzuki, T. Saito, T. Kamiyama, M. Hirayama, R. Kanno, "Fast Hydride-Ion Conduction in Perovskite Hydrides AELiH3," *ACS Appl. Energy Mater.*, 5(3), (2022) 2968-2974.
+- T. Hirose, T. Mishina, **N. Matsui**, K. Suzuki, T. Saito, T. Kamiyama, M. Hirayama, R. Kanno, "Fast Hydride-Ion Conduction in Perovskite Hydrides AELiH3," *ACS Appl. Energy Mater.*, 5(3), (2022) 2968-2974. 
 - T. Tojigamori, H. Nakajima, H. Miki, **N. Matsui**, T. Nakatani, S. Fujinami, K. Noi, H. Tsukasaki, K. Suzuki, M. Hirayama, S. Mori, T. Abe, R. Kanno, "Reversible Charge/Discharge Reaction of a Ternary Metal Fluoride, Pb2CuF6: A Highly Conductive Cathode Material for Fluoride-Ion Batteries," *ACS Appl. Energy Mater*, 5(1), (2022) 1002-1009.
 - G. Jiang, **N. Matsui**, T. Mezaki, Y. Tota, K. Suzuki, M. Hirayama, T. Saito, T. Kamiyama, R. Kanno, "Synthesis, structure, and electrical conductivity of Sr2LiH2N nitride hydride," *Journal of Solid State Chem.*, 310, (2022) 123051.
 - W. Huang, **N. Matsui**, S. Hori, K. Suzuki, M. Hirayama, M. Yonemura, T. Saito, T. Kamiyama, Y. Sasaki, Y. Yoon, S. Kim, R. Kanno, "Anomalously High Ionic Conductivity of Li2SiS3-Type Conductors," *J. Am. Chem. Soc.*, 144(11), (2022) 4989-4994.
@@ -761,7 +1011,7 @@ G1棟 9階 914室
 
 </div>
 <div class="profile-photo-panel">
-<img src="profile_photo.jpg" alt="松井直喜">
+<img src="photo/profile_photo.jpg" alt="松井直喜">
 <p>松井 直喜</p>
 </div>
 </div>
