@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学・電池・自動車メーカー 修士卒vs博士卒 初任給比較表</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .category-section {
+            margin-bottom: 40px;
+        }
+        .category-title {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        tr:hover {
+            background: #f8f9fa;
+            transition: background 0.3s ease;
+        }
+        .company-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .salary {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+        }
+        .diff {
+            text-align: right;
+            font-weight: bold;
+        }
+        .diff-positive {
+            color: #27ae60;
+        }
+        .diff-negative {
+            color: #95a5a6;
+        }
+        .diff-high {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .na {
+            color: #95a5a6;
+            font-style: italic;
+        }
+        .notes {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .notes h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .notes ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .notes li {
+            margin: 5px 0;
+            color: #555;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .summary-box h3 {
+            margin-top: 0;
+        }
+        .new-entry {
+            background-color: #fff3cd;
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>化学・電池・自動車メーカー 修士卒vs博士卒 初任給比較表</h1>
+        <div class="subtitle">2024-2025年度 最新データ（単位：円）※黄色背景は新規追加データ</div>
+
+        <div class="summary-box">
+            <h3>📊 主要ポイント（更新版）</h3>
+            <ul style="margin: 10px 0; padding-left: 25px;">
+                <li>博士卒プレミアムが最も高いのは<strong>昭和電工（23.2%）</strong></li>
+                <li>博士卒初任給TOP3：<strong>①AGC（356,252円）②武田薬品（350,000円）③出光（341,000円）④ENEOSマテリアル（341,000円）</strong></li>
+                <li>自動車関連でも<strong>デンソー、アイシン</strong>などは修士30万円超の高待遇</li>
+                <li>精密機器・計測器メーカーも博士優遇が明確化</li>
+            </ul>
+        </div>
+
+        <!-- 化学・素材メーカー -->
+        <div class="category-section">
+            <div class="category-title">🧪 化学・素材メーカー</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">企業名</th>
+                        <th style="width: 20%">修士卒初任給</th>
+                        <th style="width: 20%">博士卒初任給</th>
+                        <th style="width: 15%">差額</th>
+                        <th style="width: 10%">差率</th>
+                        <th style="width: 10%">年度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="company-name">AGC</td>
+                        <td class="salary">303,552</td>
+                        <td class="salary">356,252</td>
+                        <td class="diff diff-high">+52,700</td>
+                        <td class="diff diff-high">+17.3%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">出光興産</td>
+                        <td class="salary">322,000</td>
+                        <td class="salary">341,000</td>
+                        <td class="diff diff-positive">+19,000</td>
+                        <td class="diff diff-positive">+5.9%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">ENEOSマテリアル</td>
+                        <td class="salary">312,000</td>
+                        <td class="salary">341,000</td>
+                        <td class="diff diff-positive">+29,000</td>
+                        <td class="diff diff-positive">+9.3%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">三菱ガス化学</td>
+                        <td class="salary">304,685</td>
+                        <td class="salary">337,720</td>
+                        <td class="diff diff-positive">+33,035</td>
+                        <td class="diff diff-positive">+10.8%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">三井金属鉱業</td>
+                        <td class="salary">302,500</td>
+                        <td class="salary">337,000</td>
+                        <td class="diff diff-positive">+34,500</td>
+                        <td class="diff diff-positive">+11.4%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">住友金属鉱山</td>
+                        <td class="salary">302,400</td>
+                        <td class="salary">336,600</td>
+                        <td class="diff diff-positive">+34,200</td>
+                        <td class="diff diff-positive">+11.3%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">クラレ</td>
+                        <td class="salary">305,200</td>
+                        <td class="salary">333,400</td>
+                        <td class="diff diff-positive">+28,200</td>
+                        <td class="diff diff-positive">+9.2%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">日本ガイシ</td>
+                        <td class="salary">305,000</td>
+                        <td class="salary">332,200</td>
+                        <td class="diff diff-positive">+27,200</td>
+                        <td class="diff diff-positive">+8.9%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日本触媒</td>
+                        <td class="salary">279,400</td>
+                        <td class="salary">323,000</td>
+                        <td class="diff diff-high">+43,600</td>
+                        <td class="diff diff-high">+15.6%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">昭和電工</td>
+                        <td class="salary">250,000</td>
+                        <td class="salary">308,000</td>
+                        <td class="diff diff-high">+58,000</td>
+                        <td class="diff diff-high">+23.2%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">旭化成</td>
+                        <td class="salary">258,040</td>
+                        <td class="salary">302,440</td>
+                        <td class="diff diff-high">+44,400</td>
+                        <td class="diff diff-high">+17.2%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">住友化学</td>
+                        <td class="salary">257,100</td>
+                        <td class="salary">296,000</td>
+                        <td class="diff diff-positive">+38,900</td>
+                        <td class="diff diff-positive">+15.1%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">信越化学工業</td>
+                        <td class="salary">249,500</td>
+                        <td class="salary">293,500</td>
+                        <td class="diff diff-positive">+44,000</td>
+                        <td class="diff diff-positive">+17.6%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">三菱マテリアル</td>
+                        <td class="salary">280,000</td>
+                        <td class="salary">292,500</td>
+                        <td class="diff diff-positive">+12,500</td>
+                        <td class="diff diff-positive">+4.5%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">富士フィルム</td>
+                        <td class="salary">265,900</td>
+                        <td class="salary">289,900</td>
+                        <td class="diff diff-positive">+24,000</td>
+                        <td class="diff diff-positive">+9.0%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">三菱ケミカル</td>
+                        <td class="salary">243,500</td>
+                        <td class="salary">289,200</td>
+                        <td class="diff diff-positive">+45,700</td>
+                        <td class="diff diff-positive">+18.8%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">帝人</td>
+                        <td class="salary">254,150</td>
+                        <td class="salary">289,950</td>
+                        <td class="diff diff-positive">+35,800</td>
+                        <td class="diff diff-positive">+14.1%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">東レ</td>
+                        <td class="salary">260,220</td>
+                        <td class="salary">285,980</td>
+                        <td class="diff diff-positive">+25,760</td>
+                        <td class="diff diff-positive">+9.9%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日産化学</td>
+                        <td class="salary">248,600</td>
+                        <td class="salary">279,300</td>
+                        <td class="diff diff-positive">+30,700</td>
+                        <td class="diff diff-positive">+12.3%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">積水化学工業</td>
+                        <td class="salary">242,000</td>
+                        <td class="salary">276,750</td>
+                        <td class="diff diff-positive">+34,750</td>
+                        <td class="diff diff-positive">+14.4%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">カネカ</td>
+                        <td class="salary">240,400</td>
+                        <td class="salary">272,000</td>
+                        <td class="diff diff-positive">+31,600</td>
+                        <td class="diff diff-positive">+13.1%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">東ソー</td>
+                        <td class="salary">243,799</td>
+                        <td class="salary">270,304</td>
+                        <td class="diff diff-positive">+26,505</td>
+                        <td class="diff diff-positive">+10.9%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">花王</td>
+                        <td class="salary">241,000</td>
+                        <td class="salary">262,000</td>
+                        <td class="diff diff-positive">+21,000</td>
+                        <td class="diff diff-positive">+8.7%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">三井化学</td>
+                        <td class="salary">302,000</td>
+                        <td class="salary">352,000</td>
+                        <td class="diff diff-high">+50,000</td>
+                        <td class="diff diff-high">+16.6%</td>
+                        <td>2025</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">DIC</td>
+                        <td class="salary">233,620</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 電池・電子材料・精密機器メーカー -->
+        <div class="category-section">
+            <div class="category-title">🔋 電池・電子材料・精密機器メーカー</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">企業名</th>
+                        <th style="width: 20%">修士卒初任給</th>
+                        <th style="width: 20%">博士卒初任給</th>
+                        <th style="width: 15%">差額</th>
+                        <th style="width: 10%">差率</th>
+                        <th style="width: 10%">年度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="company-name">村田製作所</td>
+                        <td class="salary">300,000</td>
+                        <td class="salary">334,500</td>
+                        <td class="diff diff-positive">+34,500</td>
+                        <td class="diff diff-positive">+11.5%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">レーザーテック</td>
+                        <td class="salary">305,000</td>
+                        <td class="salary">330,000</td>
+                        <td class="diff diff-positive">+25,000</td>
+                        <td class="diff diff-positive">+8.2%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">京セラ</td>
+                        <td class="salary">300,000</td>
+                        <td class="salary">323,500</td>
+                        <td class="diff diff-positive">+23,500</td>
+                        <td class="diff diff-positive">+7.8%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">リコー</td>
+                        <td class="salary">276,700</td>
+                        <td class="salary">318,100</td>
+                        <td class="diff diff-positive">+41,400</td>
+                        <td class="diff diff-positive">+15.0%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">HORIBA</td>
+                        <td class="salary">291,000</td>
+                        <td class="salary">308,000</td>
+                        <td class="diff diff-positive">+17,000</td>
+                        <td class="diff diff-positive">+5.8%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">マクセル</td>
+                        <td class="salary">296,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">日立製作所</td>
+                        <td class="salary">294,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">日置電機（HIOKI）</td>
+                        <td class="salary">284,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">パナソニック</td>
+                        <td class="salary">275,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日亜化学工業</td>
+                        <td class="salary">243,500</td>
+                        <td class="salary">270,500</td>
+                        <td class="diff diff-positive">+27,000</td>
+                        <td class="diff diff-positive">+11.1%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">ソニー</td>
+                        <td class="salary">265,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日東電工</td>
+                        <td class="salary">253,000</td>
+                        <td class="salary"><span class="na">個別決定</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">三菱電機</td>
+                        <td class="salary">252,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">TDK</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">LGジャパン</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 自動車・機械メーカー -->
+        <div class="category-section">
+            <div class="category-title">🚗 自動車・機械メーカー</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">企業名</th>
+                        <th style="width: 20%">修士卒初任給</th>
+                        <th style="width: 20%">博士卒初任給</th>
+                        <th style="width: 15%">差額</th>
+                        <th style="width: 10%">差率</th>
+                        <th style="width: 10%">年度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="new-entry">
+                        <td class="company-name">ダイキン工業</td>
+                        <td class="salary">310,000</td>
+                        <td class="salary">330,000</td>
+                        <td class="diff diff-positive">+20,000</td>
+                        <td class="diff diff-positive">+6.5%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">アイシン</td>
+                        <td class="salary">301,000</td>
+                        <td class="salary">326,800</td>
+                        <td class="diff diff-positive">+25,800</td>
+                        <td class="diff diff-positive">+8.6%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">トヨタ中央研究所</td>
+                        <td class="salary">300,000</td>
+                        <td class="salary">320,000</td>
+                        <td class="diff diff-positive">+20,000</td>
+                        <td class="diff diff-positive">+6.7%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">コマツ</td>
+                        <td class="salary">307,300</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">デンソー</td>
+                        <td class="salary">300,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日野自動車</td>
+                        <td class="salary">247,500</td>
+                        <td class="salary">290,000</td>
+                        <td class="diff diff-positive">+42,500</td>
+                        <td class="diff diff-positive">+17.2%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">トヨタ自動車</td>
+                        <td class="salary">276,000</td>
+                        <td class="salary"><span class="na">別枠採用</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">本田技研工業</td>
+                        <td class="salary">270,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">マツダ</td>
+                        <td class="salary">250,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">SUBARU</td>
+                        <td class="salary">248,500</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">日産自動車</td>
+                        <td class="salary">248,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">スズキ</td>
+                        <td class="salary">245,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">三菱自動車工業</td>
+                        <td class="salary">245,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">いすゞ自動車</td>
+                        <td class="salary">245,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">ダイハツ工業</td>
+                        <td class="salary">243,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 印刷・その他メーカー -->
+        <div class="category-section">
+            <div class="category-title">📰 印刷・その他メーカー</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">企業名</th>
+                        <th style="width: 20%">修士卒初任給</th>
+                        <th style="width: 20%">博士卒初任給</th>
+                        <th style="width: 15%">差額</th>
+                        <th style="width: 10%">差率</th>
+                        <th style="width: 10%">年度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="new-entry">
+                        <td class="company-name">大日本印刷（DNP）</td>
+                        <td class="salary">292,000</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr class="new-entry">
+                        <td class="company-name">凸版印刷（TOPPAN）</td>
+                        <td class="salary">289,500</td>
+                        <td class="salary"><span class="na">非公開</span></td>
+                        <td class="diff">-</td>
+                        <td class="diff">-</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 製薬メーカー（参考） -->
+        <div class="category-section">
+            <div class="category-title">💊 製薬メーカー（参考）</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%">企業名</th>
+                        <th style="width: 20%">修士卒初任給</th>
+                        <th style="width: 20%">博士卒初任給</th>
+                        <th style="width: 15%">差額</th>
+                        <th style="width: 10%">差率</th>
+                        <th style="width: 10%">年度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="company-name">武田薬品工業</td>
+                        <td class="salary">325,000</td>
+                        <td class="salary">350,000</td>
+                        <td class="diff diff-positive">+25,000</td>
+                        <td class="diff diff-positive">+7.7%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">エーザイ</td>
+                        <td class="salary">270,000</td>
+                        <td class="salary">300,000</td>
+                        <td class="diff diff-positive">+30,000</td>
+                        <td class="diff diff-positive">+11.1%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">中外製薬</td>
+                        <td class="salary">265,000</td>
+                        <td class="salary">295,000</td>
+                        <td class="diff diff-positive">+30,000</td>
+                        <td class="diff diff-positive">+11.3%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">アステラス製薬</td>
+                        <td class="salary">254,000</td>
+                        <td class="salary">288,000</td>
+                        <td class="diff diff-positive">+34,000</td>
+                        <td class="diff diff-positive">+13.4%</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td class="company-name">第一三共</td>
+                        <td class="salary">254,000</td>
+                        <td class="salary">288,000</td>
+                        <td class="diff diff-positive">+34,000</td>
+                        <td class="diff diff-positive">+13.4%</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="notes">
+            <h3>📝 注記事項</h3>
+            <ul>
+                <li><strong>データ出典：</strong>各社の採用サイト、有価証券報告書、就職情報サイトより収集（2024-2025年度）</li>
+                <li><strong>博士卒優遇TOP5：</strong>
+                    <ul>
+                        <li>1位：昭和電工（23.2%増）</li>
+                        <li>2位：三菱ケミカル（18.8%増）</li>
+                        <li>3位：信越化学工業（17.6%増）</li>
+                        <li>4位：AGC（17.3%増）</li>
+                        <li>5位：旭化成・日野自動車（17.2%増）</li>
+                    </ul>
+                </li>
+                <li><strong>修士卒初任給TOP5：</strong>
+                    <ul>
+                        <li>1位：武田薬品工業（325,000円）</li>
+                        <li>2位：出光興産（322,000円）</li>
+                        <li>3位：ENEOSマテリアル（312,000円）</li>
+                        <li>4位：ダイキン工業（310,000円）</li>
+                        <li>5位：コマツ（307,300円）</li>
+                    </ul>
+                </li>
+                <li><strong>業界傾向：</strong>
+                    <ul>
+                        <li>エネルギー・素材系（出光、ENEOS等）は修士・博士とも高水準</li>
+                        <li>自動車部品メーカー（デンソー、アイシン）は修士30万円超</li>
+                        <li>精密機器メーカーも博士優遇を明確化</li>
+                        <li>大手自動車メーカーは依然として博士情報非公開が多い</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
