@@ -5,17 +5,10 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 import CrystalGallery from '@/components/CrystalGallery'
-import CIFUploader from '@/components/CIFUploader'
 import { crystalStructures, CrystalData } from '@/lib/crystalData'
 
 export default function CrystalGalleryPage() {
-  const [crystals, setCrystals] = useState<CrystalData[]>(crystalStructures)
-  const [showUploader, setShowUploader] = useState(false)
-
-  const handleCIFLoad = (newCrystal: CrystalData) => {
-    setCrystals(prev => [newCrystal, ...prev])
-    setShowUploader(false)
-  }
+  const [crystals] = useState<CrystalData[]>(crystalStructures)
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -34,27 +27,11 @@ export default function CrystalGalleryPage() {
                 CRYSTAL STRUCTURE GALLERY
               </span>
             </h1>
-            <p className="text-xl text-gray-300 font-light mb-8">
+            <p className="text-xl text-gray-300 font-light">
               様々な電池材料の結晶構造のインタラクティブな3D可視化
-            </p>
-            <p className="text-sm text-gray-400">
-              CIFファイルはP1構造としてアップロードしてください
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex justify-center mb-8"
-          >
-            <button
-              onClick={() => setShowUploader(!showUploader)}
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-            >
-              {showUploader ? 'アップローダーを隠す' : 'CIFファイルをアップロード'}
-            </button>
-          </motion.div>
         </div>
       </section>
 
@@ -66,12 +43,6 @@ export default function CrystalGalleryPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            {showUploader && (
-              <div className="mb-12">
-                <CIFUploader onCIFLoad={handleCIFLoad} />
-              </div>
-            )}
-            
             <CrystalGallery crystals={crystals} />
           </motion.div>
 
@@ -101,10 +72,6 @@ export default function CrystalGalleryPage() {
                     <span className="text-cyan-400 mr-2">▸</span>
                     スクロール：ズームイン・アウト
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-400 mr-2">▸</span>
-                    CIFファイルをアップロードして独自の構造を追加
-                  </li>
                 </ul>
               </div>
               <div>
@@ -117,10 +84,6 @@ export default function CrystalGalleryPage() {
                   <li className="flex items-start">
                     <span className="text-purple-400 mr-2">▸</span>
                     WebGLベースのGPUアクセラレーション
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">▸</span>
-                    CIFパーサーによる結晶構造データの自動解析
                   </li>
                   <li className="flex items-start">
                     <span className="text-purple-400 mr-2">▸</span>

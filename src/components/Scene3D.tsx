@@ -3,7 +3,7 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useRef, useState } from 'react'
-import { Mesh, Vector3 } from 'three'
+import { Mesh } from 'three'
 
 function Polyhedron({ position, color }: { position: [number, number, number], color: string }) {
   const meshRef = useRef<Mesh>(null!)

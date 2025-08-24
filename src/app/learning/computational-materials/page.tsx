@@ -138,7 +138,7 @@ export default function ComputationalMaterials() {
 
   // Convert markdown to React elements with proper syntax highlighting
   const renderMarkdown = (content: string) => {
-    const elements: JSX.Element[] = []
+    const elements: React.ReactElement[] = []
     const lines = content.split('\n')
     let currentBlock: string[] = []
     let inCodeBlock = false

@@ -12,7 +12,7 @@ interface AtomProps {
   element: string
 }
 
-function Atom({ position, color, radius, element }: AtomProps) {
+function Atom({ position, color, radius }: AtomProps) {
   const meshRef = useRef<THREE.Mesh>(null)
   
   return (
@@ -100,7 +100,7 @@ function RotatingGroup({ children }: { children: React.ReactNode }) {
   return <group ref={groupRef}>{children}</group>
 }
 
-export default function CrystalStructure({ atoms, bonds, name }: CrystalStructureProps) {
+export default function CrystalStructure({ atoms, bonds }: CrystalStructureProps) {
   return (
     <Canvas>
       <PerspectiveCamera makeDefault position={[7.7, 7.7, 7.7]} fov={50} />

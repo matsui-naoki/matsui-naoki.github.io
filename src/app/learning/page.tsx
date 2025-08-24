@@ -350,15 +350,15 @@ export default function Learning() {
               <h3 className="text-2xl font-bold text-cyan-400 mb-4">📖 推奨教科書</h3>
               <div className="space-y-3">
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">"Solid State Ionics" by P.G. Bruce</h4>
+                  <h4 className="font-bold text-white mb-1">&quot;Solid State Ionics&quot; by P.G. Bruce</h4>
                   <p className="text-gray-300 text-sm">固体イオニクスの基礎理論を包括的に扱った標準的教科書</p>
                 </div>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">"Introduction to Solid State Physics" by C. Kittel</h4>
+                  <h4 className="font-bold text-white mb-1">&quot;Introduction to Solid State Physics&quot; by C. Kittel</h4>
                   <p className="text-gray-300 text-sm">固体物理学の基礎から応用まで、材料研究の基盤となる知識</p>
                 </div>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">"Materials Modelling using Density Functional Theory" by F. Giustino</h4>
+                  <h4 className="font-bold text-white mb-1">&quot;Materials Modelling using Density Functional Theory&quot; by F. Giustino</h4>
                   <p className="text-gray-300 text-sm">第一原理計算の理論と実践を詳しく解説</p>
                 </div>
               </div>

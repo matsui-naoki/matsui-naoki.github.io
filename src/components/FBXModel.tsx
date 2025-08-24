@@ -78,7 +78,7 @@ function FBXMesh({ url }: { url: string }) {
   return <primitive ref={meshRef} object={model} />
 }
 
-export default function FBXModel({ url, name }: FBXModelProps) {
+export default function FBXModel({ url }: FBXModelProps) {
   return (
     <Canvas>
       <PerspectiveCamera makeDefault position={[7.7, 7.7, 7.7]} fov={50} />
