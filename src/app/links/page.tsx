@@ -63,24 +63,6 @@ export default function Links() {
                     desc: '材料系・応用化学系',
                     color: 'from-purple-500 to-pink-500'
                   },
-                  {
-                    name: 'NIMS',
-                    url: 'https://www.nims.go.jp/',
-                    desc: '物質・材料研究機構',
-                    color: 'from-green-400 to-cyan-500'
-                  },
-                  {
-                    name: 'JST',
-                    url: 'https://www.jst.go.jp/',
-                    desc: '科学技術振興機構',
-                    color: 'from-yellow-400 to-orange-500'
-                  },
-                  {
-                    name: 'JSPS',
-                    url: 'https://www.jsps.go.jp/',
-                    desc: '日本学術振興会',
-                    color: 'from-red-400 to-pink-500'
-                  }
                 ].map((link, index) => (
                   <motion.a
                     key={index}
@@ -104,7 +86,7 @@ export default function Links() {
               </div>
             </motion.div>
 
-            {/* Academic Journals */}
+            {/* Research Laboratories */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -112,51 +94,51 @@ export default function Links() {
             >
               <h2 className="text-3xl font-black mb-8">
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                  📚 学術雑誌
+                  研究室・研究グループ
                 </span>
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   {
-                    name: 'Nature Materials',
-                    url: 'https://www.nature.com/nmat/',
-                    desc: '材料科学の最高峰ジャーナル',
-                    impact: 'IF: 47.7'
+                    name: '東京科学大学 全固体電池研究センター',
+                    url: 'http://www.assb.iir.titech.ac.jp',
+                    desc: '全固体電池研究の拠点',
+                    color: 'from-cyan-400 to-blue-500'
                   },
                   {
-                    name: 'Advanced Energy Materials',
-                    url: 'https://onlinelibrary.wiley.com/journal/16146840',
-                    desc: 'エネルギー材料の専門誌',
-                    impact: 'IF: 27.8'
+                    name: '東京科学大学 菅野鈴木研',
+                    url: 'http://www.kannosuzuki.assb.iir.titech.ac.jp',
+                    desc: '固体電解質の開発',
+                    color: 'from-blue-500 to-purple-500'
                   },
                   {
-                    name: 'Solid State Ionics',
-                    url: 'https://www.journals.elsevier.com/solid-state-ionics',
-                    desc: '固体イオニクスの専門誌',
-                    impact: 'IF: 3.2'
+                    name: '東京科学大学 平山研',
+                    url: 'http://www.hirayama-cap.mac.titech.ac.jp/',
+                    desc: '界面解析・電池材料',
+                    color: 'from-purple-500 to-pink-500'
                   },
                   {
-                    name: 'Journal of Materials Chemistry A',
-                    url: 'https://pubs.rsc.org/en/journals/journalissues/ta',
-                    desc: '材料化学・エネルギー応用',
-                    impact: 'IF: 12.7'
+                    name: '東京科学大学 荒井研',
+                    url: 'http://www.arai-cap.mac.titech.ac.jp/pages/top/index.html',
+                    desc: '電池材料開発',
+                    color: 'from-green-400 to-cyan-500'
                   },
                   {
-                    name: 'Chemistry of Materials',
-                    url: 'https://pubs.acs.org/journal/cmatex',
-                    desc: '材料合成・特性評価',
-                    impact: 'IF: 8.6'
+                    name: '理化学研究所 小林固体化学研',
+                    url: 'https://www.riken.jp/research/labs/chief/solid_st_chem/index.html',
+                    desc: '固体化学・電池材料',
+                    color: 'from-yellow-400 to-orange-500'
                   },
                   {
-                    name: 'Electrochimica Acta',
-                    url: 'https://www.journals.elsevier.com/electrochimica-acta',
-                    desc: '電気化学の国際誌',
-                    impact: 'IF: 6.6'
+                    name: '九州大学 山崎研',
+                    url: 'https://q-pit.kyushu-u.ac.jp/yamazaki/index.html',
+                    desc: 'プロトン伝導体・エネルギー材料',
+                    color: 'from-red-400 to-pink-500'
                   }
-                ].map((journal, index) => (
+                ].map((lab, index) => (
                   <motion.a
                     key={index}
-                    href={journal.url}
+                    href={lab.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
@@ -164,18 +146,13 @@ export default function Links() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105"
                   >
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-sm font-bold">
-                        📖
-                      </div>
-                      <span className="px-2 py-1 text-xs font-mono bg-blue-400/10 text-blue-400 rounded border border-blue-400/20">
-                        {journal.impact}
-                      </span>
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r ${lab.color} flex items-center justify-center text-white text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                      LAB
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                      {journal.name}
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      {lab.name}
                     </h3>
-                    <p className="text-gray-300 text-sm">{journal.desc}</p>
+                    <p className="text-gray-300 text-sm">{lab.desc}</p>
                   </motion.a>
                 ))}
               </div>
@@ -189,7 +166,7 @@ export default function Links() {
             >
               <h2 className="text-3xl font-black mb-8">
                 <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  💻 計算ツール・データベース
+                  計算ツール・データベース
                 </span>
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -204,18 +181,6 @@ export default function Links() {
                     name: 'VASP',
                     url: 'https://www.vasp.at/',
                     desc: '第一原理計算ソフトウェア',
-                    type: 'SOFTWARE'
-                  },
-                  {
-                    name: 'Quantum ESPRESSO',
-                    url: 'https://www.quantum-espresso.org/',
-                    desc: 'オープンソースDFTコード',
-                    type: 'SOFTWARE'
-                  },
-                  {
-                    name: 'LAMMPS',
-                    url: 'https://lammps.sandia.gov/',
-                    desc: '分子動力学シミュレーション',
                     type: 'SOFTWARE'
                   },
                   {
@@ -243,7 +208,7 @@ export default function Links() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm font-bold">
-                        🔧
+                        TOOL
                       </div>
                       <span className={`px-2 py-1 text-xs font-mono rounded border ${ 
                         tool.type === 'DATABASE' ? 'bg-green-400/10 text-green-400 border-green-400/20' :
@@ -271,7 +236,7 @@ export default function Links() {
             >
               <h2 className="text-3xl font-black mb-8">
                 <span className="bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent">
-                  🤝 学会・コミュニティ
+                  学会・コミュニティ
                 </span>
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -295,22 +260,46 @@ export default function Links() {
                     region: 'US'
                   },
                   {
-                    name: 'International Society for Solid State Ionics',
-                    url: 'https://www.issi-ssi.org/',
-                    desc: '固体イオニクス国際学会',
-                    region: 'INT'
-                  },
-                  {
                     name: 'ECS',
                     url: 'https://www.electrochem.org/',
                     desc: 'Electrochemical Society',
                     region: 'INT'
                   },
                   {
-                    name: 'TMS',
-                    url: 'https://www.tms.org/',
-                    desc: 'The Minerals, Metals & Materials Society',
-                    region: 'US'
+                    name: '固体イオニクス学会',
+                    url: 'https://www.ssi-j.org/',
+                    desc: '固体イオニクスの研究・応用',
+                    region: 'JP'
+                  },
+                  {
+                    name: '応用物理学会',
+                    url: 'https://www.jsap.or.jp/',
+                    desc: '応用物理・材料科学',
+                    region: 'JP'
+                  },
+                  {
+                    name: '電池技術委員会',
+                    url: 'https://www.electrochem.jp/committee/battery/',
+                    desc: '電池技術の研究開発',
+                    region: 'JP'
+                  },
+                  {
+                    name: 'ケモインフォマティクス部会',
+                    url: 'https://www.sccj-ci.org/',
+                    desc: '化学情報学・MI',
+                    region: 'JP'
+                  },
+                  {
+                    name: '日本セラミックス協会',
+                    url: 'http://www.ceramic.or.jp/welcomej.html',
+                    desc: 'セラミックス材料・技術',
+                    region: 'JP'
+                  },
+                  {
+                    name: '粉体粉末冶金協会',
+                    url: 'http://www.jspm.or.jp/',
+                    desc: '粉体・粉末冶金技術',
+                    region: 'JP'
                   }
                 ].map((society, index) => (
                   <motion.a
@@ -325,7 +314,7 @@ export default function Links() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
-                        👥
+                        SOC
                       </div>
                       <span className={`px-2 py-1 text-xs font-mono rounded border ${ 
                         society.region === 'JP' ? 'bg-red-400/10 text-red-400 border-red-400/20' :

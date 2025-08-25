@@ -1,14 +1,48 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
-import CrystalGallery from '@/components/CrystalGallery'
-import { crystalStructures, CrystalData } from '@/lib/crystalData'
 
 export default function CrystalGalleryPage() {
-  const [crystals] = useState<CrystalData[]>(crystalStructures)
+  const categories = [
+    {
+      id: 'lithium',
+      title: 'リチウムイオン伝導体',
+      subtitle: 'Lithium Ion Conductors',
+      description: 'リチウムイオン電池の電解質および正極・負極材料',
+      count: 14,
+      gradient: 'from-blue-500 to-cyan-400',
+      icon: ''
+    },
+    {
+      id: 'fluoride',
+      title: 'フッ化物イオン伝導体',
+      subtitle: 'Fluoride Ion Conductors',
+      description: 'フッ化物イオンを伝導する新規電池材料',
+      count: 8,
+      gradient: 'from-green-500 to-emerald-400',
+      icon: ''
+    },
+    {
+      id: 'hydride',
+      title: 'ヒドリドイオン伝導体',
+      subtitle: 'Hydride Ion Conductors',
+      description: 'ヒドリドイオンを伝導する革新的材料',
+      count: 4,
+      gradient: 'from-purple-500 to-pink-400',
+      icon: ''
+    },
+    {
+      id: 'others',
+      title: 'その他',
+      subtitle: 'Others',
+      description: 'その他のイオン伝導体および関連材料',
+      count: 8,
+      gradient: 'from-orange-500 to-red-400',
+      icon: ''
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -31,20 +65,42 @@ export default function CrystalGalleryPage() {
               様々な電池材料の結晶構造のインタラクティブな3D可視化
             </p>
           </motion.div>
-
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Category Cards */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <CrystalGallery crystals={crystals} />
-          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Link href={`/crystal-gallery/${category.id}`}>
+                  <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800 hover:border-gray-600 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl cursor-pointer h-full">
+                    <div className="flex flex-col h-full">
+                      <div className="text-4xl mb-4">{category.icon}</div>
+                      <h3 className={`text-xl font-bold mb-2 bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>
+                        {category.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-3">{category.subtitle}</p>
+                      <p className="text-gray-300 text-sm mb-4 flex-grow">{category.description}</p>
+                      <div className="flex justify-between items-center mt-auto">
+                        <span className="text-xs text-gray-500">{category.count} 構造</span>
+                        <div className="text-gray-400 group-hover:text-white transition-colors">
+                          →
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
 
           {/* Information Section */}
           <motion.div

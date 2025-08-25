@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import SimpleNavigation from '@/components/SimpleNavigation'
 
 export default function ProspectiveStudentsPage() {
@@ -115,8 +116,41 @@ export default function ProspectiveStudentsPage() {
                   <li>国内学会での口頭発表にチャレンジ</li>
                   <li>査読付き論文の執筆・投稿、国際学会での発表</li>
                 </ul>
+                
+                <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-cyan-400/20">
+                  <p className="text-cyan-400 font-semibold mb-3">学会参加の様子 (M1)</p>
+                  <div className="flex gap-4 justify-center">
+                    <div className="w-40">
+                      <Image
+                        src="/student_conference1.jpg"
+                        alt="学会参加の様子1"
+                        width={160}
+                        height={120}
+                        className="w-full rounded-lg"
+                      />
+                    </div>
+                    <div className="w-40">
+                      <Image
+                        src="/student_conference2.jpg"
+                        alt="学会参加の様子2"
+                        width={160}
+                        height={120}
+                        className="w-full rounded-lg"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-orange-400/20">
-                  <p className="text-gray-400 text-sm italic">📷 seminar ゼミの様子 (2025/7)</p>
+                  <div className="mb-2">
+                    <Image
+                      src="/seminar.jpg"
+                      alt="ゼミの様子"
+                      width={600}
+                      height={400}
+                      className="w-full rounded-lg"
+                    />
+                  </div>
+                  <p className="text-gray-400 text-sm italic text-center">ゼミの様子 (2025/7)</p>
                 </div>
               </div>
 

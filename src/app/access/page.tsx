@@ -54,7 +54,7 @@ export default function Access() {
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 rounded-full bg-cyan-400 flex items-center justify-center text-black text-sm font-bold">
-                      📍
+                      LOC
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">住所</h3>
@@ -69,7 +69,7 @@ export default function Access() {
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-black text-sm font-bold">
-                      📧
+                      @
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">Email</h3>
@@ -81,7 +81,7 @@ export default function Access() {
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center text-black text-sm font-bold">
-                      📞
+                      TEL
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">電話番号</h3>
@@ -93,7 +93,7 @@ export default function Access() {
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 rounded-full bg-pink-400 flex items-center justify-center text-black text-sm font-bold">
-                      🏢
+                      BLDG
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">所属</h3>
@@ -183,8 +183,8 @@ export default function Access() {
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-2xl">
-                  🚃
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
+                  TRAIN
                 </div>
                 <h3 className="text-2xl font-black">
                   <span className="bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent">
@@ -228,8 +228,8 @@ export default function Access() {
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-2xl">
-                  🚗
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-white text-sm font-bold">
+                  CAR
                 </div>
                 <h3 className="text-2xl font-black">
                   <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -291,12 +291,12 @@ export default function Access() {
               transition={{ duration: 0.6 }}
               className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800"
             >
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-3xl mb-4">
-                🔐
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-white text-sm font-bold mb-4">
+                ENTRY
               </div>
               <h3 className="text-xl font-bold text-yellow-400 mb-3">入構手続き</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                キャンパス入構時は正門守衛所での手続きが必要です。身分証明書をご持参ください。研究室訪問の場合は事前にご連絡をお願いします。
+                キャンパス入構時は手続きが不要です。お車でお越しの場合、守衛所での手続きが必要です。研究室訪問の場合は事前にご連絡をお願いします。
               </p>
             </motion.div>
 
@@ -306,8 +306,8 @@ export default function Access() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800"
             >
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-3xl mb-4">
-                ⏰
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white text-sm font-bold mb-4">
+                TIME
               </div>
               <h3 className="text-xl font-bold text-blue-400 mb-3">受付時間</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -323,8 +323,8 @@ export default function Access() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800"
             >
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-3xl mb-4">
-                📝
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-white text-sm font-bold mb-4">
+                APPT
               </div>
               <h3 className="text-xl font-bold text-green-400 mb-3">アポイントメント</h3>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -353,10 +353,10 @@ export default function Access() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '🍽️', title: '食堂・カフェ', desc: 'MOTOTECHレストラン（モーニング営業あり）' },
-              { icon: '📚', title: '図書館', desc: '学術図書館、自習スペース' },
-              { icon: '🏋️', title: 'トレーニングルーム', desc: '学内者限定', link: 'https://www.titech.ac.jp/student-support/students/facilities/sports' },
-              { icon: '🔥', title: 'バーベキュー場', desc: '学内者限定', link: 'https://www.szc.titech.ac.jp/somu/kakishiyou.html' }
+              { icon: 'FOOD', title: '食堂・カフェ', desc: 'MOTOTECHレストラン（モーニング営業あり）' },
+              { icon: 'LIB', title: '図書館', desc: '学術図書館、自習スペース' },
+              { icon: 'GYM', title: 'トレーニングルーム', desc: '学内者限定', link: 'https://www.titech.ac.jp/student-support/students/facilities/sports' },
+              { icon: 'BBQ', title: 'バーベキュー場', desc: '学内者限定', link: 'https://www.szc.titech.ac.jp/somu/kakishiyou.html' }
             ].map((facility, index) => (
               <motion.div
                 key={index}
@@ -365,7 +365,7 @@ export default function Access() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 text-center hover:border-gray-700 transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{facility.icon}</div>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-gray-600 to-gray-800 flex items-center justify-center text-white text-xs font-bold mb-4">{facility.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2">{facility.title}</h3>
                 <p className="text-gray-300 text-sm mb-2">{facility.desc}</p>
                 {facility.link && (
@@ -409,8 +409,8 @@ export default function Access() {
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-2xl">
-                  🏨
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white text-sm font-bold">
+                  HOTEL
                 </div>
                 <h3 className="text-2xl font-black">
                   <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
@@ -456,8 +456,8 @@ export default function Access() {
               className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-2xl">
-                  🍜
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
+                  FOOD
                 </div>
                 <h3 className="text-2xl font-black">
                   <span className="bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent">

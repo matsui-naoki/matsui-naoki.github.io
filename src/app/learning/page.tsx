@@ -43,8 +43,8 @@ export default function Learning() {
                 className="block bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-cyan-400/30 transition-all duration-300 hover:transform hover:scale-105"
               >
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-3xl mb-4">
-                  ⚛️
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  SSI
                 </div>
                 <span className="px-3 py-1 text-xs font-mono bg-cyan-400/10 text-cyan-400 rounded-full border border-cyan-400/20">
                   FUNDAMENTALS
@@ -93,8 +93,8 @@ export default function Learning() {
                 className="block bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-blue-400/30 transition-all duration-300 hover:transform hover:scale-105"
               >
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-3xl mb-4">
-                  🖥️
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  CM
                 </div>
                 <span className="px-3 py-1 text-xs font-mono bg-blue-400/10 text-blue-400 rounded-full border border-blue-400/20">
                   COMPUTATIONAL
@@ -141,8 +141,8 @@ export default function Learning() {
             >
               <Link href="/learning/materials-informatics">
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-3xl mb-4">
-                  🤖
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  MI
                 </div>
                 <span className="px-3 py-1 text-xs font-mono bg-purple-400/10 text-purple-400 rounded-full border border-purple-400/20">
                   MACHINE LEARNING
@@ -189,8 +189,8 @@ export default function Learning() {
             >
               <Link href="/learning/experimental">
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-3xl mb-4">
-                  🔬
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-green-400 to-cyan-500 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  EXP
                 </div>
                 <span className="px-3 py-1 text-xs font-mono bg-green-400/10 text-green-400 rounded-full border border-green-400/20">
                   EXPERIMENTAL
@@ -228,67 +228,17 @@ export default function Learning() {
               </Link>
             </motion.div>
 
-            {/* Miscellaneous */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <Link
-                href="/learning/miscellaneous"
-                className="block bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105"
-              >
-              <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-3xl mb-4">
-                  📝
-                </div>
-                <span className="px-3 py-1 text-xs font-mono bg-yellow-400/10 text-yellow-400 rounded-full border border-yellow-400/20">
-                  MISCELLANEOUS
-                </span>
-              </div>
-              
-              <h3 className="text-2xl font-black mb-4">
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                  雑記
-                </span>
-              </h3>
-              
-              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                博士課程のキャリアパスや給与比較など、研究生活に関する様々な情報を提供します。
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">博士課程のキャリアパス</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span className="text-sm">給与比較表</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <span className="text-sm">研究生活のヒント</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                  <span className="text-sm">その他の情報</span>
-                </div>
-              </div>
-              </Link>
-            </motion.div>
-
             {/* Research Skills */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-indigo-400/30 transition-all duration-300 hover:transform hover:scale-105"
             >
               <Link href="/learning/research-skills">
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-indigo-400 to-purple-600 flex items-center justify-center text-3xl mb-4">
-                  📚
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-indigo-400 to-purple-600 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  RS
                 </div>
                 <span className="px-3 py-1 text-xs font-mono bg-indigo-400/10 text-indigo-400 rounded-full border border-indigo-400/20">
                   RESEARCH SKILLS
@@ -325,6 +275,56 @@ export default function Learning() {
               </div>
               </Link>
             </motion.div>
+
+            {/* Miscellaneous */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <Link
+                href="/learning/miscellaneous"
+                className="block bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105"
+              >
+              <div className="mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-white text-xl font-bold mb-4">
+                  MS
+                </div>
+                <span className="px-3 py-1 text-xs font-mono bg-yellow-400/10 text-yellow-400 rounded-full border border-yellow-400/20">
+                  MISCELLANEOUS
+                </span>
+              </div>
+              
+              <h3 className="text-2xl font-black mb-4">
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                  雑記
+                </span>
+              </h3>
+              
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                博士課程のキャリアパスや給与比較など、研究生活に関する様々な情報を提供します。
+              </p>
+              
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                  <span className="text-sm">博士課程のキャリアパス</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                  <span className="text-sm">給与比較表</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                  <span className="text-sm">研究生活のヒント</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                  <span className="text-sm">その他の情報</span>
+                </div>
+              </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -347,40 +347,99 @@ export default function Learning() {
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">📖 推奨教科書</h3>
+              <h3 className="text-2xl font-bold text-cyan-400 mb-4">推奨教科書</h3>
               <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-blue-300 mb-2">◼ 固体イオニクス</h4>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">&quot;Solid State Ionics&quot; by P.G. Bruce</h4>
-                  <p className="text-gray-300 text-sm">固体イオニクスの基礎理論を包括的に扱った標準的教科書</p>
+                  <h4 className="font-bold text-white mb-1">A. R. West著、遠藤、武田、井川、池田、 伊藤、菅野 訳</h4>
+                  <p className="text-gray-300 text-sm">「ウエスト 固体化学入門」（講談社）</p>
                 </div>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">&quot;Introduction to Solid State Physics&quot; by C. Kittel</h4>
-                  <p className="text-gray-300 text-sm">固体物理学の基礎から応用まで、材料研究の基盤となる知識</p>
+                  <h4 className="font-bold text-white mb-1">工藤 撤一、笛木 和雄</h4>
+                  <p className="text-gray-300 text-sm">固体アイオニクス、講談社（1986）</p>
                 </div>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">&quot;Materials Modelling using Density Functional Theory&quot; by F. Giustino</h4>
-                  <p className="text-gray-300 text-sm">第一原理計算の理論と実践を詳しく解説</p>
+                  <h4 className="font-bold text-white mb-1">戒能俊邦, 菅野了次</h4>
+                  <p className="text-gray-300 text-sm">材料科学一基礎と応用一, 東京化学同人 (2008)</p>
+                </div>
+                <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                  <h4 className="font-bold text-white mb-1">Paul Hagenmuller編</h4>
+                  <p className="text-gray-300 text-sm">Inorganic Solid Fluorides -Chemistry and Physics-, Academic Press, Inc (1985)</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">🔗 有用なリンク</h3>
+              <h3 className="text-2xl font-bold text-purple-400 mb-4">推奨文献</h3>
               <div className="space-y-3">
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">Materials Project</h4>
-                  <p className="text-gray-300 text-sm">計算材料科学データベース・材料探索プラットフォーム</p>
+                  <h4 className="font-bold text-white mb-1">O.Yamamoto</h4>
+                  <p className="text-gray-300 text-sm">Solid state ionics: a Japan perspective, Science and Technology of Advanced Materials, 18(1) 504 (2017).</p>
                 </div>
                 <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">VASP Tutorial</h4>
-                  <p className="text-gray-300 text-sm">第一原理計算コードVASPの使用方法とチュートリアル</p>
-                </div>
-                <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-                  <h4 className="font-bold text-white mb-1">scikit-learn Documentation</h4>
-                  <p className="text-gray-300 text-sm">機械学習ライブラリの公式ドキュメントとサンプルコード</p>
+                  <h4 className="font-bold text-white mb-1">菅野了次</h4>
+                  <p className="text-gray-300 text-sm">イオン導電体創出から固体電池構築へ, 応用物理, 90(1), 6-23 (2021). doi.org/10.11470/oubutsu.90.16</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <h3 className="text-2xl font-bold text-blue-400 mb-4">有用なリンク</h3>
+              <div className="grid md:grid-cols-2 gap-3">
+                <a href="https://phaseonline.ceramics.org/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">相平衡状態図</h4>
+                  <p className="text-gray-300 text-sm">セラミックス材料の相平衡状態図データベース</p>
+                </a>
+                <a href="http://www.sasakiken.net" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">X線関係のパラメータ 佐々木テーブル</h4>
+                  <p className="text-gray-300 text-sm">X線構造解析に必要な原子散乱因子データ</p>
+                </a>
+                <a href="https://www.ncnr.nist.gov/resources/n-lengths/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">NIST neutron scattering lengths and cross sections</h4>
+                  <p className="text-gray-300 text-sm">中性子散乱長と断面積のデータベース</p>
+                </a>
+                <a href="https://webbook.nist.gov/chemistry/form-ser/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">NIST Chemistry WebBook</h4>
+                  <p className="text-gray-300 text-sm">標準生成エンタルピー・エントロピー等の熱力学データ</p>
+                </a>
+                <a href="https://z-code-software.com" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">結晶構造解析 Rietveld: Z-code</h4>
+                  <p className="text-gray-300 text-sm">Rietveld解析ソフトウェア</p>
+                </a>
+                <a href="https://objcryst-fox.readthedocs.io/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">未知構造解析 FOX</h4>
+                  <p className="text-gray-300 text-sm">グローバル最適化による結晶構造解析</p>
+                </a>
+                <a href="https://www.dmse.nus.edu.sg/asn/softBV-GUI.html" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">BV解析: SoftBV</h4>
+                  <p className="text-gray-300 text-sm">ボンドバレンス法による構造解析ツール</p>
+                </a>
+                <a href="https://pybamm.org" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">Python 電池シミュレータ: PyBaMM</h4>
+                  <p className="text-gray-300 text-sm">電池モデリング・シミュレーションフレームワーク</p>
+                </a>
+                <a href="https://docs.matlantis.com/atomistic-simulation-tutorial/ja/1_1_welcome.html" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">構造物性計算 Matlantis documents</h4>
+                  <p className="text-gray-300 text-sm">Matlantisを用いた原子レベルシミュレーション</p>
+                </a>
+                <a href="https://docs.matlantis.com/atomistic-simulation-tutorial/ja/1_1_welcome.html" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">構造物性計算: 解析例 Matlantis contributer example</h4>
+                  <p className="text-gray-300 text-sm">Matlantisコントリビュータによる解析例</p>
+                </a>
+                <a href="https://owl.nagaokaut.ac.jp/cryspy/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">結晶構造探索 遺伝的アルゴ: CrySPY</h4>
+                  <p className="text-gray-300 text-sm">遺伝的アルゴリズムによる結晶構造予測</p>
+                </a>
+                <a href="https://github.com/kbknudsen/PyEIS" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">Python EIS解析: PyEIS</h4>
+                  <p className="text-gray-300 text-sm">電気化学インピーダンス分光解析ツール</p>
+                </a>
+                <a href="https://mpds.io/" target="_blank" rel="noopener noreferrer" className="block bg-gray-900/50 p-4 rounded-lg border border-gray-800 hover:border-cyan-400/30 transition-all">
+                  <h4 className="font-bold text-white mb-1">MPDSデータベース</h4>
+                  <p className="text-gray-300 text-sm">材料物性データベースプラットフォーム</p>
+                </a>
+              </div>
           </div>
         </div>
       </section>

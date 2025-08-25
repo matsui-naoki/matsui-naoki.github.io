@@ -12,7 +12,7 @@ const contentFiles = [
     title: '博士課程のキャリアパス',
     file: '/content/phd-carrier.md',
     type: 'markdown',
-    icon: '🎓',
+    icon: 'PHD',
     color: 'from-yellow-400 to-orange-500'
   },
   {
@@ -20,7 +20,7 @@ const contentFiles = [
     title: '給与比較表',
     file: '/content/salary-comparison-table.html',
     type: 'html',
-    icon: '💰',
+    icon: 'SAL',
     color: 'from-orange-500 to-red-500'
   }
 ]
@@ -29,6 +29,7 @@ export default function Miscellaneous() {
   const [selectedContent, setSelectedContent] = useState(contentFiles[0])
   const [content, setContent] = useState('')
   const [isLoading, setIsLoading] = useState(true)
+  const [showTOC, setShowTOC] = useState(false)
 
   useEffect(() => {
     const loadContent = async () => {
@@ -187,28 +188,83 @@ export default function Miscellaneous() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-between"
           >
-            <div>
-              <h1 className="text-4xl font-black mb-2">
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                  雑記
-                </span>
-              </h1>
-              <p className="text-gray-400">研究生活に関する様々な情報とリソース</p>
+            <div className="flex items-center space-x-4">
+              <div>
+                <h1 className="text-3xl lg:text-4xl font-black mb-2">
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                    雑記
+                  </span>
+                </h1>
+                <p className="text-gray-400 text-sm lg:text-base">研究生活に関する様々な情報とリソース</p>
+              </div>
+              {/* Mobile TOC Toggle */}
+              <button
+                onClick={() => setShowTOC(!showTOC)}
+                className="lg:hidden bg-gray-800/50 p-2 rounded-lg border border-yellow-400/30 text-yellow-400 hover:bg-yellow-400/10 transition-colors"
+                aria-label="目次を開く"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
             </div>
             <Link
               href="/learning"
-              className="px-4 py-2 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors"
+              className="hidden sm:flex px-4 py-2 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors"
             >
               ← 学習ページに戻る
+            </Link>
+            <Link
+              href="/learning"
+              className="sm:hidden p-2 border border-yellow-400/30 text-yellow-400 rounded-lg hover:bg-yellow-400/10 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
             </Link>
           </motion.div>
         </div>
       </section>
 
+      {/* Mobile TOC */}
+      {showTOC && (
+        <div className="lg:hidden bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <h2 className="text-lg font-bold mb-3 text-yellow-400">目次</h2>
+            <nav className="space-y-2">
+              {contentFiles.map((file) => (
+                <button
+                  key={file.id}
+                  onClick={() => {
+                    setSelectedContent(file)
+                    setShowTOC(false)
+                  }}
+                  className={`w-full text-left p-3 rounded-lg border transition-all duration-300 ${selectedContent.id === file.id
+                      ? 'bg-gradient-to-r from-yellow-500/20 to-orange-600/20 border-yellow-400/50'
+                      : 'bg-gray-800/30 border-gray-700/30 hover:border-yellow-400/30 hover:bg-gray-800/50'
+                    }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-xl">{file.icon}</span>
+                    <div>
+                      <div className="font-semibold text-white text-sm">{file.title}</div>
+                      <div className="text-xs text-gray-400">
+                        {file.id === 'phd-carrier' && 'キャリア選択の参考情報'}
+                        {file.id === 'salary-comparison' && '業界別給与データ'}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <div className="flex min-h-screen">
-        {/* Sidebar Navigation */}
-        <aside className="w-80 bg-gray-900/50 border-r border-gray-800">
+        {/* Desktop Sidebar Navigation */}
+        <aside className="hidden lg:block w-80 bg-gray-900/50 border-r border-gray-800">
           <div className="sticky top-20 p-6">
             <h2 className="text-lg font-bold mb-4 text-yellow-400">目次</h2>
             <nav className="space-y-2">
@@ -256,7 +312,7 @@ export default function Miscellaneous() {
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 max-w-4xl mx-auto p-8">
+        <main className="flex-1 max-w-4xl mx-auto p-4 lg:p-8">
           <motion.div
             key={selectedContent.id}
             initial={{ opacity: 0, y: 20 }}

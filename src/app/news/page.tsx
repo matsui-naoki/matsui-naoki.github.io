@@ -173,7 +173,7 @@ export default function NewsPage() {
                     
                     {news.hasImage && (
                       <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                        <p className="text-gray-400 text-sm italic">📷 写真付きニュース</p>
+                        <p className="text-gray-400 text-sm italic">[Photo] 写真付きニュース</p>
                       </div>
                     )}
                   </div>

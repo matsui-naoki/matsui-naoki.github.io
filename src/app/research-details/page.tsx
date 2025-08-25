@@ -28,6 +28,31 @@ export default function ResearchDetails() {
         </div>
       </section>
 
+      {/* Elements Image Section */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative mb-16"
+          >
+            <div className="relative">
+              <Image
+                src="/elements.png"
+                alt="Carrier Ions Elements"
+                width={1200}
+                height={400}
+                className="w-full rounded-2xl shadow-2xl border border-gray-800"
+              />
+              <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded-lg px-4 py-2">
+                <h3 className="text-lg font-bold text-white">取り扱うキャリアイオン</h3>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Research Topics */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
@@ -70,13 +95,36 @@ export default function ResearchDetails() {
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-2xl blur-xl"></div>
-                  <Image
-                    src="/F1.jpg"
-                    alt="Fluoride Ion Conductor"
-                    width={500}
-                    height={350}
-                    className="relative rounded-2xl shadow-2xl border border-gray-800"
-                  />
+                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-gray-900/50 rounded-2xl border border-gray-800">
+                    <Image
+                      src="/F1.jpg"
+                      alt="Fluoride Ion Conductor 1"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/F2.jpg"
+                      alt="Fluoride Ion Conductor 2"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/F3.jpg"
+                      alt="Fluoride Ion Conductor 3"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/F5.jpg"
+                      alt="Fluoride Ion Conductor 5"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -157,13 +205,36 @@ export default function ResearchDetails() {
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl"></div>
-                  <Image
-                    src="/H1.jpg"
-                    alt="Hydride Ion Conductor"
-                    width={500}
-                    height={350}
-                    className="relative rounded-2xl shadow-2xl border border-gray-800"
-                  />
+                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-gray-900/50 rounded-2xl border border-gray-800">
+                    <Image
+                      src="/H1.jpg"
+                      alt="Hydride Ion Conductor 1"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/H2.jpg"
+                      alt="Hydride Ion Conductor 2"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/H3.jpg"
+                      alt="Hydride Ion Conductor 3"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                    <Image
+                      src="/H4.jpg"
+                      alt="Hydride Ion Conductor 4"
+                      width={250}
+                      height={175}
+                      className="rounded-lg shadow-lg border border-gray-700"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -246,7 +317,7 @@ export default function ResearchDetails() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl"></div>
                   <Image
-                    src="/machine_learning.jpg"
+                    src="/virtual-space.jpg"
                     alt="Machine Learning Research"
                     width={500}
                     height={350}

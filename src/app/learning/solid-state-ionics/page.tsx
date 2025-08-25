@@ -11,21 +11,21 @@ const markdownFiles = [
     id: 'solid-state-ionics',
     title: '固体イオニクスの基礎理論',
     file: '/content/solid-state-ionics.md',
-    icon: '⚛️',
+    icon: 'ION',
     color: 'from-cyan-400 to-blue-500'
   },
   {
     id: 'fluoride-ion-conductor',
     title: 'フッ化物イオン伝導体',
     file: '/content/fluoride-ion-conductor.md',
-    icon: '🔋',
+    icon: 'BAT',
     color: 'from-blue-500 to-purple-500'
   },
   {
     id: 'battery-performance',
     title: '電池性能と評価',
     file: '/content/battery-performance.md',
-    icon: '📊',
+    icon: 'PERF',
     color: 'from-purple-500 to-pink-500'
   }
 ]
@@ -34,6 +34,7 @@ export default function SolidStateIonics() {
   const [selectedContent, setSelectedContent] = useState(markdownFiles[0])
   const [markdownContent, setMarkdownContent] = useState('')
   const [isLoading, setIsLoading] = useState(true)
+  const [showTOC, setShowTOC] = useState(false)
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -144,35 +145,80 @@ export default function SolidStateIonics() {
       <SimpleNavigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-8 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-20 sm:pt-24 pb-6 sm:pb-8 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center justify-between"
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
           >
             <div>
-              <h1 className="text-4xl font-black mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2">
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   固体イオニクス基礎
                 </span>
               </h1>
-              <p className="text-gray-400">固体中のイオン伝導現象の基本原理と応用</p>
+              <p className="text-sm sm:text-base text-gray-400">固体中のイオン伝導現象の基本原理と応用</p>
             </div>
-            <Link
-              href="/learning"
-              className="px-4 py-2 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-colors"
-            >
-              ← 学習ページに戻る
-            </Link>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowTOC(!showTOC)}
+                className="lg:hidden px-3 py-1.5 sm:px-4 sm:py-2 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-colors text-sm sm:text-base"
+              >
+                {showTOC ? '目次を閉じる' : '目次を開く'}
+              </button>
+              <Link
+                href="/learning"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-colors text-sm sm:text-base"
+              >
+                ← 戻る
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
+      {/* Mobile TOC */}
+      {showTOC && (
+        <div className="lg:hidden bg-gray-900/50 border-b border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <h2 className="text-base sm:text-lg font-bold mb-3 text-cyan-400">目次</h2>
+            <div className="space-y-2">
+              {markdownFiles.map((file) => (
+                <button
+                  key={file.id}
+                  onClick={() => {
+                    setSelectedContent(file)
+                    setShowTOC(false)
+                  }}
+                  className={`w-full text-left p-3 rounded-lg border transition-all duration-300 text-sm sm:text-base ${
+                    selectedContent.id === file.id
+                      ? 'bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border-cyan-400/50'
+                      : 'bg-gray-800/30 border-gray-700/30 hover:border-cyan-400/30 hover:bg-gray-800/50'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-lg sm:text-xl">{file.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-semibold text-white">{file.title}</div>
+                      <div className="text-xs text-gray-400 mt-1 hidden sm:block">
+                        {file.id === 'solid-state-ionics' && '基礎理論・欠陥化学・拡散機構'}
+                        {file.id === 'fluoride-ion-conductor' && '材料設計・合成・評価手法'}
+                        {file.id === 'battery-performance' && '電池特性・インピーダンス解析'}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <div className="flex min-h-screen">
-        {/* Sidebar Navigation */}
-        <aside className="w-80 bg-gray-900/50 border-r border-gray-800">
+        {/* Sidebar Navigation - Desktop */}
+        <aside className="hidden lg:block w-80 bg-gray-900/50 border-r border-gray-800">
           <div className="sticky top-20 p-6">
             <h2 className="text-lg font-bold mb-4 text-cyan-400">目次</h2>
             <nav className="space-y-2">
@@ -221,7 +267,7 @@ export default function SolidStateIonics() {
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 max-w-4xl mx-auto p-8">
+        <main className="flex-1 max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
           <motion.div
             key={selectedContent.id}
             initial={{ opacity: 0, y: 20 }}
@@ -229,10 +275,10 @@ export default function SolidStateIonics() {
             transition={{ duration: 0.5 }}
           >
             {/* Content Header */}
-            <div className="mb-8 pb-6 border-b border-gray-800">
-              <div className="flex items-center space-x-3 mb-4">
-                <span className="text-3xl">{selectedContent.icon}</span>
-                <h1 className="text-3xl font-black">
+            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-800">
+              <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                <span className="text-2xl sm:text-3xl">{selectedContent.icon}</span>
+                <h1 className="text-2xl sm:text-3xl font-black">
                   <span className={`bg-gradient-to-r ${selectedContent.color} bg-clip-text text-transparent`}>
                     {selectedContent.title}
                   </span>

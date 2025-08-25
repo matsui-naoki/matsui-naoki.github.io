@@ -3536,3 +3536,257 @@ if __name__ == "__main__":
 ```
 
 ---
+
+## wrlファイルからfbxファイルへ変換
+```python
+import bpy
+import os
+import sys
+import math
+import re
+from pathlib import Path
+import importlib.util
+
+# 外部スクリプトのインポート
+def import_merge_script():
+    """merge_same_color_mesh.pyモジュールを動的にインポート"""
+    script_path = "/Users/ryojikanno/Blender/scripts/merge_same_color_mesh.py"
+    spec = importlib.util.spec_from_file_location("merge_same_color_mesh", script_path)
+    merge_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(merge_module)
+    return merge_module
+
+def clear_scene():
+    """シーンの全オブジェクトとコレクションを削除"""
+    # 全オブジェクトを選択して削除
+    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.delete(use_global=False)
+    
+    # 全コレクションを削除
+    for collection in bpy.data.collections:
+        bpy.data.collections.remove(collection)
+    
+    # メッシュデータを削除
+    for mesh in bpy.data.meshes:
+        bpy.data.meshes.remove(mesh)
+    
+    # マテリアルを削除
+    for material in bpy.data.materials:
+        bpy.data.materials.remove(material)
+    
+    # カーブを削除
+    for curve in bpy.data.curves:
+        bpy.data.curves.remove(curve)
+    
+    # ライトを削除
+    for light in bpy.data.lights:
+        bpy.data.lights.remove(light)
+    
+    # カメラを削除
+    for camera in bpy.data.cameras:
+        bpy.data.cameras.remove(camera)
+
+def import_wrl_file(filepath):
+    """WRLファイルをインポート"""
+    try:
+        # X3D/WRLインポーターを使用
+        bpy.ops.import_scene.x3d(filepath=filepath)
+        
+        # インポート直後に全オブジェクトを表示状態にする
+        for obj in bpy.data.objects:
+            obj.hide_set(False)
+            obj.hide_viewport = False
+            
+        print(f"Successfully imported: {filepath}")
+        print(f"Total objects in scene: {len(bpy.data.objects)}")
+        return True
+    except Exception as e:
+        print(f"Error importing {filepath}: {e}")
+        return False
+
+def rotate_objects_x_axis():
+    """全オブジェクトをX軸で-90度回転（WRLインポート時の回転を修正）"""
+    
+    # まず全てのオブジェクトを表示状態にする
+    for obj in bpy.data.objects:
+        obj.hide_set(False)
+        obj.hide_viewport = False
+        obj.hide_select = False
+    
+    # 全オブジェクトを選択（Blenderの "A" キー相当）
+    bpy.ops.object.select_all(action='SELECT')
+    
+    # アクティブオブジェクトを設定（最初のオブジェクトをアクティブに）
+    if bpy.data.objects:
+        bpy.context.view_layer.objects.active = bpy.data.objects[0]
+    
+    # 選択したオブジェクトの数を確認
+    selected_count = len(bpy.context.selected_objects)
+    print(f"Selected {selected_count} objects for rotation")
+    
+    # X軸で-90度回転（Blenderの "R X -90" 相当）
+    # WRLインポート時は通常90度回転しているので、-90度で元に戻す
+    bpy.ops.transform.rotate(
+        value=math.radians(-90),  # -90度をラジアンに変換
+        orient_axis='X',           # X軸
+        orient_type='GLOBAL'       # グローバル座標系
+    )
+    
+    print(f"Rotated all {selected_count} objects by -90° on X axis")
+    
+    # 回転を適用（オプション：必要に応じてコメントアウト可能）
+    # これにより、回転値が実際のメッシュに適用され、rotation_eulerが0にリセットされる
+    try:
+        bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
+        print("Applied rotation transform to all objects")
+    except:
+        print("Could not apply transform (some objects may not support it)")
+    
+    # デバッグ用：いくつかのオブジェクトの最終回転値を確認
+    print("\n=== Rotation check for sample objects ===")
+    for i, obj in enumerate(bpy.data.objects[:5]):  # 最初の5個を確認
+        print(f"  {obj.name}: X rotation = {math.degrees(obj.rotation_euler[0]):.2f}°")
+    
+    # 全オブジェクトを選択状態のままにする（後続の処理のため）
+
+def adjust_materials_alpha():
+    """Shape_Color_*マテリアルのアルファを0.5に変更"""
+    for material in bpy.data.materials:
+        if material.name.startswith("Shape_Color_"):
+            # Principled BSDFノードを探す
+            if material.use_nodes:
+                for node in material.node_tree.nodes:
+                    if node.type == 'BSDF_PRINCIPLED':
+                        node.inputs['Alpha'].default_value = 0.5
+                        # Blend Modeを設定（透明度を有効にする）
+                        material.blend_method = 'BLEND'
+                        material.show_transparent_back = True
+            else:
+                # ノードを使用していない場合
+                material.diffuse_color[3] = 0.5  # アルファチャンネル
+
+def export_fbx(input_filepath):
+    """FBX形式でエクスポート（元のディレクトリとファイル名を保持）"""
+    # 入力ファイルのパスを解析
+    input_path = Path(input_filepath)
+    output_dir = input_path.parent
+    output_name = input_path.stem + ".fbx"
+    output_path = output_dir / output_name
+    
+    try:
+        # FBXエクスポート設定
+        bpy.ops.export_scene.fbx(
+            filepath=str(output_path),
+            use_selection=False,
+            global_scale=1.0,
+            apply_scale_options='FBX_SCALE_NONE',
+            axis_forward='-Z',
+            axis_up='Y',
+            use_mesh_modifiers=True,
+            mesh_smooth_type='FACE',
+            use_tspace=True
+        )
+        print(f"Exported FBX to: {output_path}")
+        return True
+    except Exception as e:
+        print(f"Error exporting FBX: {e}")
+        return False
+
+def process_single_file(filepath, merge_module):
+    """単一のWRLファイルを処理"""
+    print(f"\n--- Processing: {filepath} ---")
+    
+    # 1. シーンをクリア
+    clear_scene()
+    
+    # 2. WRLファイルをインポート
+    if not import_wrl_file(filepath):
+        return False
+    
+    # インポート後、全オブジェクトを確認
+    print(f"Imported {len(bpy.data.objects)} objects")
+    
+    # 3. X軸回転を修正（全オブジェクトに適用）
+    rotate_objects_x_axis()
+    
+    # 4. merge_similar_colorsを実行
+    try:
+        merge_module.merge_similar_colors(threshold=0.01)
+        print("Applied merge_similar_colors")
+    except Exception as e:
+        print(f"Error in merge_similar_colors: {e}")
+    
+    # 5. マテリアルのアルファを調整
+    adjust_materials_alpha()
+    
+    # 6. FBXとしてエクスポート
+    return export_fbx(filepath)
+
+# ファイル選択用のオペレータークラス
+class WRL_OT_batch_converter(bpy.types.Operator):
+    """WRL to FBX Batch Converter"""
+    bl_idname = "wm.wrl_batch_converter"
+    bl_label = "Select WRL Files"
+    bl_options = {'REGISTER', 'UNDO'}
+    
+    # ファイル選択プロパティ
+    files: bpy.props.CollectionProperty(
+        type=bpy.types.OperatorFileListElement,
+        options={'HIDDEN', 'SKIP_SAVE'}
+    )
+    
+    directory: bpy.props.StringProperty(
+        subtype='DIR_PATH'
+    )
+    
+    filter_glob: bpy.props.StringProperty(
+        default="*.wrl;*.x3d",
+        options={'HIDDEN'}
+    )
+    
+    def execute(self, context):
+        # merge_same_color_meshモジュールをインポート
+        try:
+            merge_module = import_merge_script()
+        except Exception as e:
+            self.report({'ERROR'}, f"Failed to import merge script: {e}")
+            return {'CANCELLED'}
+        
+        # 選択されたファイルを処理
+        processed = 0
+        failed = 0
+        
+        for file in self.files:
+            filepath = os.path.join(self.directory, file.name)
+            if process_single_file(filepath, merge_module):
+                processed += 1
+            else:
+                failed += 1
+        
+        # 結果を報告
+        self.report({'INFO'}, f"Processed: {processed} files, Failed: {failed} files")
+        return {'FINISHED'}
+    
+    def invoke(self, context, event):
+        context.window_manager.fileselect_add(self)
+        return {'RUNNING_MODAL'}
+
+def main():
+    """メイン処理：ファイル選択ダイアログを表示してバッチ処理を実行"""
+    
+    # オペレーターを登録（既に登録されている場合は一度解除）
+    try:
+        bpy.utils.unregister_class(WRL_OT_batch_converter)
+    except:
+        pass  # まだ登録されていない場合はパス
+    
+    bpy.utils.register_class(WRL_OT_batch_converter)
+    
+    # オペレーターを実行
+    bpy.ops.wm.wrl_batch_converter('INVOKE_DEFAULT')
+
+# スクリプト実行
+if __name__ == "__main__":
+    main()
+
+```

@@ -3,18 +3,49 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import SimpleNavigation from '@/components/SimpleNavigation'
 
+const CrystalBackground = lazy(() => import('@/components/CrystalBackground'))
+
 export default function Home() {
+  // SEO用の構造化データ
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ResearchOrganization",
+    "name": "松井直喜",
+    "alternateName": "Matsui Laboratory",
+    "url": "https://matsui-naoki.github.io",
+    "description": "東京科学大学 菅野鈴木研 松井直喜助教。全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体の研究開発",
+    "member": {
+      "@type": "Person",
+      "name": "松井直喜",
+      "jobTitle": "助教",
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "東京科学大学",
+        "alternateName": "Institute of Science Tokyo"
+      }
+    },
+    "researchAreas": [
+      "全固体電池",
+      "リチウムイオン電池",
+      "フッ化物イオン伝導体",
+      "フッ化物電池",
+      "ヒドリドイオン伝導体",
+      "固体イオニクス",
+      "材料インフォマティクス"
+    ]
+  }
   
   // Slideshow state
   const slides = [
     { src: '/solid-state-battery.jpg', alt: 'Solid State Battery' },
+    { src: '/solid-state-battery-experiment.jpg', alt: 'Solid State Battery Experiment' },
+    { src: '/BCNH.jpg', alt: 'BCNH Materials' },
+    { src: '/virtual-space.jpg', alt: 'Virtual Space' },
     { src: '/elements.png', alt: 'Periodic Elements' },
-    { src: '/hdyride_ion_conductor.png', alt: 'Hydride Ion Conductor' },
-    { src: '/energy_densities.jpg', alt: 'Energy Densities' },
-    { src: '/combinatorial.jpg', alt: 'Combinatorial Synthesis' }
+    { src: '/seminar.jpg', alt: 'Seminar' }
   ]
   
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -41,15 +72,23 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SimpleNavigation />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative">
+        <Suspense fallback={null}>
+          <CrystalBackground />
+        </Suspense>
+        <SimpleNavigation />
 
       {/* Hero Section - Tech Style */}
       <section id="home" className="pt-16 pb-8 min-h-screen flex items-center relative overflow-hidden">
         {/* Background Grid */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10"></div>
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.05) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.02) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }}></div>
         
@@ -66,7 +105,7 @@ export default function Home() {
                 </span>
               </div>
               
-              <h1 className="text-6xl lg:text-7xl font-black mb-8 leading-none">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 sm:mb-8 leading-none">
                 <span className="bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent">
                   NEXT-GEN
                 </span>
@@ -80,8 +119,8 @@ export default function Home() {
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-300 mb-8 font-light leading-relaxed">
-                固体イオニクス × 機械学習<br/>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 font-light leading-relaxed">
+                次世代電池 × 固体イオニクス × インフォマティクス<br/>
                 革新的エネルギー貯蔵システムの創造
               </p>
               
@@ -187,12 +226,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-black mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 RESEARCH DOMAINS
               </span>
             </h2>
-            <p className="text-xl text-gray-300 font-light">最先端技術で未来を創る</p>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 font-light">最先端技術で未来を創る</p>
           </motion.div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -221,7 +260,7 @@ export default function Home() {
               {
                 title: 'アニオンインターカレーション',
                 desc: 'アニオンのインターカレーション反応を活用した新しい電極材料の開発',
-                image: '/F4.jpg',
+                image: '/anion_intercalation.jpg',
                 color: 'from-green-400 to-cyan-500',
                 delay: 0.3
               },
@@ -260,13 +299,13 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                     
-                    <h3 className="text-xl font-black mb-3 leading-tight">
+                    <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 leading-tight">
                       <span className={`bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                         {item.title}
                       </span>
                     </h3>
                     
-                    <p className="text-gray-300 leading-relaxed text-sm">{item.desc}</p>
+                    <p className="text-gray-300 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
                     
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
                   </div>
@@ -292,11 +331,14 @@ export default function Home() {
                 </span>
               </div>
               
-              <h2 className="text-4xl font-black mb-6">
+              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6">
                 <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                   松井 直喜
                 </span>
               </h2>
+              <div className="mb-4">
+                <span className="text-lg font-semibold text-cyan-400">菅野鈴木研 助教</span>
+              </div>
               
               <div className="space-y-4 mb-8 text-gray-300">
                 <div className="flex items-center space-x-4">
@@ -357,8 +399,8 @@ export default function Home() {
                 <Image
                   src="/profile_photo.jpg"
                   alt="Profile Photo"
-                  width={500}
-                  height={500}
+                  width={300}
+                  height={300}
                   className="relative rounded-2xl shadow-2xl border border-gray-800 w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
@@ -366,7 +408,7 @@ export default function Home() {
                   <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3 border border-cyan-400/30">
                     <div className="text-xs font-mono text-cyan-400 mb-1">RESEARCHER</div>
                     <div className="text-sm font-semibold">松井 直喜</div>
-                    <div className="text-xs text-gray-300">固体イオニクス研究者</div>
+                    <div className="text-xs text-gray-300">菅野鈴木研 助教</div>
                   </div>
                 </div>
               </div>
@@ -383,12 +425,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-black mb-6">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 LATEST NEWS
               </span>
             </h2>
-            <p className="text-xl text-gray-300 font-light">研究の最新情報と成果</p>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 font-light">研究の最新情報と成果</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -396,7 +438,7 @@ export default function Home() {
               {
                 date: '2025.08.05',
                 title: '菅野・鈴木研のM1学生が固体イオニクスセミナーに参加',
-                desc: 'M1学生2名（板倉さん、亀若さん）が固体イオニクスセミナー@宮崎に参加し、新規固体電解質材料の探索について発表します。',
+                desc: 'M1学生2名（板倉さん、亀若さん）が固体イオニクスセミナー@宮城に参加し、新規固体電解質材料の探索について発表します。',
                 category: 'CONFERENCE'
               },
               {
@@ -456,11 +498,11 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3 leading-tight text-white">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 leading-tight text-white">
                   {news.title}
                 </h3>
                 
-                <p className="text-sm leading-relaxed text-gray-300">
+                <p className="text-xs sm:text-sm leading-relaxed text-gray-300">
                   {news.desc}
                 </p>
               </motion.div>
@@ -484,6 +526,7 @@ export default function Home() {
       </section>
 
 
-    </div>
+      </div>
+    </>
   )
 }

@@ -58,7 +58,7 @@
 #### 3.1. 最も簡単なコンポジット (F1 score + Euclidean + 2x colorramp)
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/powder_composite1.png" alt="ed">
+    <img src="/blender/powder_composite1.png" alt="ed">
     <p>VoronoiとF1スコア</p>
   </div>
 </div>
@@ -66,7 +66,7 @@
 #### 3.2. 結晶粒界 (端との距離 + 小スケール + 狭いカラーランプ範囲, 高解像度)
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/powder_composite2.png" alt="ed">
+    <img src="/blender/powder_composite2.png" alt="ed">
     <p>Voronoiと結晶粒界</p>
   </div>
 </div>
@@ -74,7 +74,7 @@
 #### 3.3. 三種類以上のコンポジット (Mathノードを使った明確な分離)
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/powder_composite3.png" alt="ed">
+    <img src="/blender/powder_composite3.png" alt="ed">
     <p>Voronoiとmathノードによる粒子の色配置</p>
   </div>
 </div>
@@ -82,7 +82,7 @@
 #### 3.4. 複合電極 + 空隙 (Voronoi/端との距離 を2個かさねて描画. 色々試したが、結局これが簡単で良い!)
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/powder_composite4.jpg" alt="ed">
+    <img src="/blender/powder_composite4.jpg" alt="ed">
     <p>Voronoiノードの二重描画</p>
   </div>
 </div>
@@ -93,7 +93,7 @@
 粒子表面にノイズテクスチャでディスプレイメント変形を加える
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/particle.png" alt="ed">
+    <img src="/blender/particle.png" alt="ed">
     <p>noise-surface-particle</p>
   </div>
 </div>
@@ -101,7 +101,7 @@
 細かいテクスチャでは粒子表面のざらつきが目立たない
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/powder_composite5.jpg" alt="ed">
+    <img src="/blender/powder_composite5.jpg" alt="ed">
     <p>複合電極 ノイズテクスチャ比較</p>
   </div>
 </div>
@@ -109,7 +109,7 @@
 ややラフ（粗）にするの方が良い
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/particle_surface.jpg" alt="ed">
+    <img src="/blender/particle_surface.jpg" alt="ed">
     <p>ノイズテクスチャ　密度を低く</p>
   </div>
 </div>
@@ -122,7 +122,7 @@
 - 後処理 : 下地は光沢BSDF(灰色、粗さ0.3), ライトはサンの強さ20
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/texture.jpg" alt="ed">
+    <img src="/blender/texture.jpg" alt="ed">
     <p>パーティクルへの画像テクスチャ</p>
   </div>
 </div>
@@ -141,14 +141,14 @@
 - 後処理2 : 背景やライトの調整、コンポジターノードで光彩比を調整
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/potential_procedure.jpg" alt="ed">
+    <img src="/blender/potential_procedure.jpg" alt="ed">
     <p>手順 VESTA ~ Blender</p>
   </div>
 </div>
 - 最終的につくった画像
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/potential_migration.jpg" alt="ed">
+    <img src="/blender/potential_migration.jpg" alt="ed">
     <p>ポテンシャルの谷をイオンが移動する模様</p>
   </div>
 </div>
@@ -173,7 +173,7 @@
 
 </div>
 <div class="large-photo-panel">
-<img src="./photo/blender/compositing.png" alt="Compositingノード設定画面">
+<img src="/blender/compositing.png" alt="Compositingノード設定画面">
 <p style="text-align: center;">設定画面</p>
 </div>
 </div>
