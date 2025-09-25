@@ -6,20 +6,29 @@ import SimpleNavigation from '@/components/SimpleNavigation'
 
 export default function NewsPage() {
   const allNews = [
+
+
     {
-      date: '2025.08.05',
-      title: '菅野・鈴木研のM1学生2名が固体イオニクスセミナー@宮崎に参加',
-      desc: '板倉さん、亀若さんが新規固体電解質材料の探索について発表します。頑張ってください!',
+      date: '2025.09.18',
+      title: 'ヒドリドイオン伝導体を用いた水素吸蔵デバイスの論文がScienceに掲載!',
+      desc: (
+        <span>
+          新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2025.09.18',
+      title: 'ISE/ELLIPSE会議@Germanyで発表, OliverClemensLab@Stuttgart訪問',
+      desc: 'フッ化物イオン伝導体開発を報告・議論しました',
       category: 'CONFERENCE'
     },
     {
-      date: '2025.08.05',
-      title: '菅野・鈴木研のM1学生2名が固体イオニクスセミナー@宮崎に参加',
-      desc: '板倉さん、亀若さんが新規固体電解質材料の探索について発表します。頑張ってください!',
-      category: 'CONFERENCE'
-    },
-    {
-      date: '2025.09.25',
+      date: '2025.09.17',
       title: 'JSTさきがけプログラムに研究課題が採択',
       desc: (
         <span>

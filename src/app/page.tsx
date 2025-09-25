@@ -436,6 +436,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
+                date: '2025.09.18',
+                title: 'ヒドリドイオン伝導体を用いた水素吸蔵デバイスの論文がScienceに掲載!',
+                desc: (
+                  <span>
+                    新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
+                    <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+                      論文ページ
+                    </a>
+                  </span>
+                ),
+                category: 'RESEARCH'
+              },
+              {
+                date: '2025.09.18',
+                title: 'ISE/ELLIPSE会議@Germanyで発表, OliverClemensLab@Stuttgart訪問',
+                desc: 'フッ化物イオン伝導体開発を報告・議論しました',
+                category: 'CONFERENCE'
+              },
+              {
+                date: '2025.09.17',
+                title: 'JSTさきがけプログラムに研究課題が採択',
+                desc: (
+                  <span>
+                    JSTさきがけに採択されました!
+                    <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+                      詳細はこちら
+                    </a>
+                  </span>
+                ),
+                category: 'RESEARCH'
+              },
+              {
                 date: '2025.08.05',
                 title: '菅野・鈴木研のM1学生が固体イオニクスセミナーに参加',
                 desc: 'M1学生2名（板倉さん、亀若さん）が固体イオニクスセミナー@宮城に参加し、新規固体電解質材料の探索について発表します。',
@@ -471,18 +503,8 @@ export default function Home() {
                 desc: '菅野・鈴木研究室の前期の論文輪読ゼミが終わりました。皆さんお疲れ様でした！',
                 category: 'SEMINAR'
               },
-              {
-                date: '2025.05.26',
-                title: 'St. Andrews大学の研究者が研究室を訪問',
-                desc: 'John Irvine先生の研究室のMariaanaとMichkelが菅野鈴木研を訪問し、双方の研究トピックについて議論しました。',
-                category: 'VISIT'
-              },
-              {
-                date: '2025.05.20',
-                title: 'Kim Sangryun教授との共著論文がJACSにアクセプト',
-                desc: 'ペロブスカイト型ヒドリドイオン伝導体に錯イオン(BH4-)を組み込んだ新たな材料系の報告です。',
-                category: 'RESEARCH'
-              }
+
+
             ].map((news, index) => (
               <motion.div
                 key={index}
