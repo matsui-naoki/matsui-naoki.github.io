@@ -13,6 +13,31 @@ export default function NewsPage() {
       category: 'CONFERENCE'
     },
     {
+      date: '2025.08.05',
+      title: '菅野・鈴木研のM1学生2名が固体イオニクスセミナー@宮崎に参加',
+      desc: '板倉さん、亀若さんが新規固体電解質材料の探索について発表します。頑張ってください!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.09.25',
+      title: 'JSTさきがけプログラムに研究課題が採択',
+      desc: (
+        <span>
+          JSTさきがけに採択されました!
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+            詳細はこちら
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2025.08.05',
+      title: '菅野・鈴木研のM1学生2名が固体イオニクスセミナー@宮崎に参加',
+      desc: '板倉さん、亀若さんが新規固体電解質材料の探索について発表します。頑張ってください!',
+      category: 'CONFERENCE'
+    },
+    {
       date: '2025.07.24',
       title: '菅野・鈴木研究室の前期の研究報告ゼミが終了',
       desc: '皆さんお疲れ様でした!',
