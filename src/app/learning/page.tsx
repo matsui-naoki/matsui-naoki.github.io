@@ -276,55 +276,6 @@ export default function Learning() {
               </Link>
             </motion.div>
 
-            {/* Miscellaneous */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <Link
-                href="/learning/miscellaneous"
-                className="block bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105"
-              >
-              <div className="mb-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-white text-xl font-bold mb-4">
-                  MS
-                </div>
-                <span className="px-3 py-1 text-xs font-mono bg-yellow-400/10 text-yellow-400 rounded-full border border-yellow-400/20">
-                  MISCELLANEOUS
-                </span>
-              </div>
-              
-              <h3 className="text-2xl font-black mb-4">
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                  雑記
-                </span>
-              </h3>
-              
-              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                博士課程のキャリアパスや給与比較など、研究生活に関する様々な情報を提供します。
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">博士課程のキャリアパス</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-                  <span className="text-sm">給与比較表</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <span className="text-sm">研究生活のヒント</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                  <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                  <span className="text-sm">その他の情報</span>
-                </div>
-              </div>
-              </Link>
-            </motion.div>
           </div>
         </div>
       </section>
