@@ -6,8 +6,120 @@ import SimpleNavigation from '@/components/SimpleNavigation'
 
 export default function NewsPage() {
   const allNews = [
-
-
+    {
+      date: '2026.02.12-13',
+      title: '修士学生3名の修論発表会',
+      desc: '立派な発表でした! お疲れ様!',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.02.09',
+      title: '立命館大学の鐘先生が来研されて交流・議論',
+      desc: '共同研究に向けた活発な議論が行われました。',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.02.04-06',
+      title: '日独交流会議@仙台に参加',
+      desc: '海外研究者と交流・ネットワークを形成しました!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.01.31',
+      title: 'SPring-8 BL02B2にて放射光粉末X線回折実験を実施',
+      desc: 'D2,M1学生が同行し, その場で測定結果について議論しました. 出張お疲れ様です!',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.26',
+      title: 'J-PARC BL09にて中性子回折実験を実施',
+      desc: 'M1学生さんも同行して中性子回折実験の一連の流れや装置の特徴を学びました.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.24',
+      title: '菅野先生の古希祝賀会を開催',
+      desc: '大勢のOBの皆様に参加いただき盛会でした!',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.01.16',
+      title: '近畿化学協会電池セミナーにて招待講演',
+      desc: '固体電解質開発について講演しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.01.06',
+      title: '博士学生の公聴会',
+      desc: 'お疲れ様でした. 残り僅かですが頑張ってください!',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2025.12.15',
+      title: 'Pacifichem @ Hawaiiにてフッ化物イオン伝導体について招待講演',
+      desc: '国際会議で最新の研究成果を報告しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.12.11-12',
+      title: '渋滞学シンポジウム@MRMに参加・発表',
+      desc: 'イオン渋滞学に関する発表を行いました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.12.09',
+      title: 'John Irvine教授(St Andrews)らとディスカッション',
+      desc: '固体イオニクスのトレンドについて議論しました。',
+      category: 'VISIT'
+    },
+    {
+      date: '2025.12.08',
+      title: '日本化学会電池部会にてフッ化物伝導体について招待講演',
+      desc: 'フッ化物イオン伝導体の最新研究について発表しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.11.25-27',
+      title: '固体イオニクス討論会@船堀に参加',
+      desc: 'コンビナトリアル実験について報告しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.11.18-19',
+      title: '電池討論会@名古屋に参加',
+      desc: 'グラフニューラルネットワークポテンシャルを用いたイオン伝導体スクリーニングについて報告しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.11.14-15',
+      title: '学術変革領域会議@筑波山に参加',
+      desc: '泊まり込みで発表・議論しました. 学生さんの実験結果についても報告しました.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2025.11.10',
+      title: 'さきがけのキックオフ会議に参加・発表',
+      desc: 'JSTさきがけのキックオフ会議で研究計画を発表しました。',
+      category: 'RESEARCH'
+    },
+    {
+      date: '2025.11.07-10',
+      title: 'SPring-8 BL28XUにて薄膜X線回折測定を実施',
+      desc: '学生も同行しました.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2025.11.01-03',
+      title: 'SPring-8 BL02B2にて粉末X線回折測定を実施',
+      desc: 'M1学生さん2名が同行して、各自のサンプル(なんと計100試料超え！)を測定しました.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2025.10.21-22',
+      title: '三重大学今西森研に訪問',
+      desc: '森先生らとフッ化物イオン伝導体について議論しました. M1, M2学生も同行して学生間で活発に議論しました.',
+      category: 'VISIT'
+    },
     {
       date: '2025.09.18',
       title: 'ヒドリドイオン伝導体を用いた水素吸蔵デバイスの論文がScienceに掲載!',
