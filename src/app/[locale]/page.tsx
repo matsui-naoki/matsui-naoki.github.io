@@ -119,77 +119,77 @@ export default function Home() {
   // News data with translations
   const newsData = locale === 'ja' ? [
     {
-      date: '2025.09.18',
-      title: 'ヒドリドイオン伝導体を用いた水素吸蔵デバイスの論文がScienceに掲載!',
-      desc: '新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました',
-      category: 'RESEARCH'
-    },
-    {
-      date: '2025.09.18',
-      title: 'ISE/ELLIPSE会議@Germanyで発表, OliverClemensLab@Stuttgart訪問',
-      desc: 'フッ化物イオン伝導体開発を報告・議論しました',
-      category: 'CONFERENCE'
-    },
-    {
-      date: '2025.09.17',
-      title: 'JSTさきがけプログラムに研究課題が採択',
-      desc: 'JSTさきがけに採択されました!',
-      category: 'RESEARCH'
-    },
-    {
-      date: '2025.08.05',
-      title: '菅野・鈴木研のM1学生が固体イオニクスセミナーに参加',
-      desc: 'M1学生2名が固体イオニクスセミナー@宮城に参加し発表します',
-      category: 'CONFERENCE'
-    },
-    {
-      date: '2025.07.24',
-      title: '前期の研究報告ゼミが終了',
-      desc: '菅野・鈴木研究室の前期の研究報告ゼミが終わりました',
+      date: '2026.02.12-13',
+      title: '修士学生3名の修論発表会',
+      desc: '立派な発表でした! お疲れ様!',
       category: 'SEMINAR'
     },
     {
-      date: '2025.07.10',
-      title: 'SPring-8で高エネルギーX線散乱実験を実施',
-      desc: 'SPring-8で高エネルギーX線散乱実験を行いました',
+      date: '2026.02.09',
+      title: '立命館大学の鐘先生が来研されて交流・議論',
+      desc: '共同研究に向けた活発な議論が行われました。',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.02.04-06',
+      title: '日独交流会議@仙台に参加',
+      desc: '海外研究者と交流・ネットワークを形成しました!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.01.31',
+      title: 'SPring-8 BL02B2にて放射光粉末X線回折実験を実施',
+      desc: 'D2,M1学生が同行し, その場で測定結果について議論しました.',
       category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.26',
+      title: 'J-PARC BL09にて中性子回折実験を実施',
+      desc: 'M1学生さんも同行して中性子回折実験の流れを学びました.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.24',
+      title: '菅野先生の古希祝賀会を開催',
+      desc: '大勢のOBの皆様に参加いただき盛会でした!',
+      category: 'SEMINAR'
     }
   ] : [
     {
-      date: '2025.09.18',
-      title: 'Paper on Hydrogen Storage Device Using Hydride Ion Conductor Published in Science!',
-      desc: 'Developed new solid electrolyte and Mg-H2 hydrogen storage device',
-      category: 'RESEARCH'
-    },
-    {
-      date: '2025.09.18',
-      title: 'Presentation at ISE/ELLIPSE Conference in Germany, Visit to OliverClemensLab@Stuttgart',
-      desc: 'Reported and discussed fluoride ion conductor development',
-      category: 'CONFERENCE'
-    },
-    {
-      date: '2025.09.17',
-      title: 'Research Project Selected for JST PRESTO Program',
-      desc: 'Selected for JST PRESTO!',
-      category: 'RESEARCH'
-    },
-    {
-      date: '2025.08.05',
-      title: 'M1 Students from Kanno-Suzuki Lab Participate in Solid Ionics Seminar',
-      desc: 'Two M1 students will present at Solid Ionics Seminar in Miyagi',
-      category: 'CONFERENCE'
-    },
-    {
-      date: '2025.07.24',
-      title: 'First Semester Research Seminar Completed',
-      desc: 'Kanno-Suzuki Lab first semester research seminar concluded',
+      date: '2026.02.12-13',
+      title: 'Master\'s Thesis Presentations for 3 Students',
+      desc: 'Excellent presentations! Great work!',
       category: 'SEMINAR'
     },
     {
-      date: '2025.07.10',
-      title: 'High-Energy X-ray Scattering Experiment at SPring-8',
-      desc: 'Conducted high-energy X-ray scattering experiments at SPring-8',
+      date: '2026.02.09',
+      title: 'Prof. Zhong from Ritsumeikan University Visited for Exchange',
+      desc: 'Active discussions were held toward collaborative research.',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.02.04-06',
+      title: 'Participated in Japan-Germany Exchange Conference @Sendai',
+      desc: 'Exchanged and networked with international researchers!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.01.31',
+      title: 'Synchrotron Powder X-ray Diffraction at SPring-8 BL02B2',
+      desc: 'D2 and M1 students accompanied and discussed results on-site.',
       category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.26',
+      title: 'Neutron Diffraction Experiment at J-PARC BL09',
+      desc: 'M1 student learned the workflow of neutron diffraction.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.01.24',
+      title: 'Celebrated Prof. Kanno\'s 70th Birthday',
+      desc: 'Many alumni participated and it was a great success!',
+      category: 'SEMINAR'
     }
   ]
 
