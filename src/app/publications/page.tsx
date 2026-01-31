@@ -8,6 +8,13 @@ export default function PublicationsPage() {  const publications = [
     // 2025年
     {
       year: '2025',
+      title: 'High-Capacity, Reversible Hydrogen Storage Using H⁻-Conducting Solid Electrolytes',
+      authors: 'T. Hirose, N. Matsui (corresponding author), T. Itoh, Y. Hinuma, K. Ikeda, K. Gotoh, G. Jiang, K. Suzuki, M. Hirayama, R. Kanno',
+      journal: 'Science, 389(6766) (2025) 1252-1255',
+      doi: '10.1126/science.adw1996'
+    },
+    {
+      year: '2025',
       title: 'Tailoring Polyhedral Linkage in K1–xBaxM2F7+x (M = Yb, Lu) for Enhanced Fluoride-Ion Conductivity',
       authors: 'N. Matsui (corresponding author), K. Mori, T. Saito, K. Noi, S. Fujinami, Y. Park, T. Tojigamori, K. Suzuki, T. Abe, R. Kanno',
       journal: 'Chem. Mater., 37(13) (2025) 4798-4806',

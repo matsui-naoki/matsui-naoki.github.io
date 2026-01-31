@@ -207,8 +207,8 @@ export default function Home() {
 
         {/* Hero Section */}
         <section id="home" className="pt-16 pb-8 min-h-screen flex items-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10"></div>
-          <div className="absolute inset-0" style={{
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none"></div>
+          <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.02) 1px, transparent 0)`,
             backgroundSize: '50px 50px'
           }}></div>
