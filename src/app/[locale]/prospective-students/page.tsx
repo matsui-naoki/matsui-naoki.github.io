@@ -257,6 +257,27 @@ export default function ProspectiveStudentsPage() {
                       ? '研究室は多数の高度な合成・計測設備を備えています。さらに、大型放射光施設SPring-8や中性子実験施設J-PARCでの出張実験で最先端計測技術を扱います。'
                       : 'The laboratory is equipped with numerous advanced synthesis and measurement facilities. Furthermore, we handle cutting-edge measurement technologies through experiments at large synchrotron facilities like SPring-8 and neutron facilities like J-PARC.'}
                   </p>
+                  <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-cyan-400/20">
+                    <p className="text-cyan-400 font-semibold mb-3">
+                      {locale === 'ja' ? '2026年1月: SPring-8 BL02B2での放射光粉末X線回折実験' : 'January 2026: Synchrotron Powder X-ray Diffraction at SPring-8 BL02B2'}
+                    </p>
+                    <div className="flex justify-center mb-3">
+                      <div className="w-full max-w-md">
+                        <Image
+                          src="/SPring8_260131.jpg"
+                          alt={locale === 'ja' ? 'SPring-8での実験の様子' : 'Experiment at SPring-8'}
+                          width={400}
+                          height={300}
+                          className="w-full rounded-lg"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-gray-400 text-sm italic text-center">
+                      {locale === 'ja'
+                        ? 'D2,M1学生が同行し, その場で測定結果について議論しました. 出張お疲れ様です!'
+                        : 'D2 and M1 students accompanied and discussed measurement results on-site. Great work on the trip!'}
+                    </p>
+                  </div>
                   <p>
                     {locale === 'ja'
                       ? '機械学習やニューラルネットワークポテンシャルなど最近ではコモディティ化した手法は素養としつつ、プラスαのオリジナリティを生み出すための着眼点を養います。'

@@ -467,7 +467,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-2xl blur-xl"></div>
                   <Image
-                    src="/profile_photo.jpg"
+                    src="/NaokiMatsui.jpg"
                     alt="Profile Photo"
                     width={300}
                     height={300}
