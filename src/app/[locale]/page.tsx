@@ -469,12 +469,12 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <a href="/ja/profile-detail" className="inline-flex items-center mt-6 text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer relative z-30">
+                  <Link href="/profile-detail" className="inline-flex items-center mt-6 text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer relative z-30">
                     <span className="font-semibold">{t('seeMore')}</span>
                     <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
 
