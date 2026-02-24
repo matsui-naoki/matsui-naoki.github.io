@@ -360,8 +360,8 @@ export default function Access() {
                       <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
                       <span>
                         {locale === 'ja'
-                          ? '第三京浜「都筑IC」から約20分'
-                          : 'Daisan-Keihin "Tsuzuki IC" ~20 min'}
+                          ? '東名高速「横浜青葉IC」から約10分'
+                          : 'Tomei Expressway "Yokohama-Aoba IC" ~10 min'}
                       </span>
                     </li>
                   </ul>
@@ -371,7 +371,6 @@ export default function Access() {
                   <h4 className="font-bold text-pink-400 mb-2">{t('parking')}</h4>
                   <ul className="text-gray-300 text-sm space-y-1">
                     <li>• {locale === 'ja' ? 'キャンパス内に有料駐車場あり' : 'Paid parking available on campus'}</li>
-                    <li>• {locale === 'ja' ? '事前予約不要' : 'No reservation required'}</li>
                     <li>• {locale === 'ja' ? '料金：1日100円' : 'Fee: ¥100/day'}</li>
                   </ul>
                 </div>

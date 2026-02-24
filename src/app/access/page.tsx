@@ -289,7 +289,7 @@ export default function Access() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                      <span>第三京浜「都筑IC」から約20分</span>
+                      <span>東名高速「横浜青葉IC」から約10分</span>
                     </li>
                   </ul>
                 </div>
@@ -298,7 +298,6 @@ export default function Access() {
                   <h4 className="font-bold text-pink-400 mb-2">駐車場情報</h4>
                   <ul className="text-gray-300 text-sm space-y-1">
                     <li>• キャンパス内に有料駐車場あり</li>
-                    <li>• 事前予約不要</li>
                     <li>• 料金：1日100円</li>
                   </ul>
                 </div>
