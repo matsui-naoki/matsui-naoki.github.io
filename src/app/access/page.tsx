@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 
@@ -155,6 +156,46 @@ export default function Access() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Campus Route Map */}
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-black mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                キャンパス内ルート
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 font-light">
+              すずかけ台駅からG1棟までの経路
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-6 border border-gray-800"
+          >
+            <div className="relative w-full rounded-2xl overflow-hidden">
+              <Image
+                src="/access_route.jpg"
+                alt="すずかけ台駅からG1棟へのアクセスマップ - 徒歩約8分"
+                width={1200}
+                height={1200}
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
+            <p className="text-center text-gray-400 text-sm mt-4">
+              赤線: 徒歩ルート（すずかけ台駅→G1棟 約8分） / 青線: 自動車ルート
+            </p>
+          </motion.div>
         </div>
       </section>
 
