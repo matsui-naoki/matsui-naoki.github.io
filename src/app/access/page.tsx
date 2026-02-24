@@ -285,7 +285,7 @@ export default function Access() {
                   <ul className="text-gray-300 text-sm space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                      <span>東名高速「横浜青葉IC」から約15分</span>
+                      <span>東名高速「横浜町田IC」から約15分</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-pink-400 rounded-full"></div>

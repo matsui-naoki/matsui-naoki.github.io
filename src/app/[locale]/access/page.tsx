@@ -352,8 +352,8 @@ export default function Access() {
                       <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                       <span>
                         {locale === 'ja'
-                          ? '東名高速「横浜青葉IC」から約15分'
-                          : 'Tomei Expressway "Yokohama-Aoba IC" ~15 min'}
+                          ? '東名高速「横浜町田IC」から約15分'
+                          : 'Tomei Expressway "Yokohama-Machida IC" ~15 min'}
                       </span>
                     </li>
                     <li className="flex items-center space-x-2">
