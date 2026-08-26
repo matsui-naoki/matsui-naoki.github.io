@@ -21,8 +21,8 @@ export default function Home() {
     "alternateName": "Matsui Laboratory",
     "url": "https://matsui-naoki.github.io",
     "description": locale === 'ja'
-      ? "東京科学大学 松井直喜准教授。全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体の研究開発"
-      : "Dr. Naoki Matsui, Associate Professor at Institute of Science Tokyo. Research on all-solid-state batteries, fluoride-ion conductors, and hydride-ion conductors",
+      ? "東京科学大学の電池研究室(菅野・鈴木・松井研)。松井直喜准教授。全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体など次世代電池の研究開発"
+      : "Battery research laboratory at Institute of Science Tokyo led by Dr. Naoki Matsui. Research on all-solid-state batteries, fluoride-ion conductors, and hydride-ion conductors",
     "member": {
       "@type": "Person",
       "name": locale === 'ja' ? "松井直喜" : "Naoki Matsui",

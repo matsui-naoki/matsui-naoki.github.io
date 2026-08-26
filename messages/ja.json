@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "松井直喜 | 東京科学大学 菅野・鈴木・松井研 | 全固体電池・固体イオニクス研究",
-    "description": "東京科学大学 菅野・鈴木・松井研 松井直喜准教授。全固体リチウム電池、リチウムイオン伝導体、フッ化物イオン伝導体、フッ化物電池、ヒドリドイオン伝導体の研究。"
+    "title": "松井直喜 | 東京科学大学の電池研究室(菅野・鈴木・松井研)",
+    "description": "東京科学大学の電池研究室・菅野・鈴木・松井研(松井直喜准教授)。全固体リチウム電池、リチウムイオン伝導体、フッ化物電池、ヒドリドイオン伝導体など次世代電池を研究する研究室。"
   },
   "navigation": {
     "home": "ホーム",
@@ -35,9 +35,9 @@
     "researchDomains": "研究テーマ",
     "researchDomainsSubtitle": "最先端技術で未来を創る",
     "fluorideIonConductor": "フッ化物イオン伝導体",
-    "fluorideIonConductorDesc": "全固体フッ化物電池のための革新的イオン伝導体材料の設計と合成",
+    "fluorideIonConductorDesc": "高エネルギー密度フッ化物イオン電池に向けた新物質探索",
     "lithiumIonConductor": "リチウムイオン伝導体",
-    "lithiumIonConductorDesc": "全固体リチウム電池のための超イオン伝導体の設計と精密構造解析",
+    "lithiumIonConductorDesc": "全固体リチウムイオン電池のための超イオン伝導体の設計と精密構造解析",
     "hydrideIonConductor": "ヒドリドイオン伝導体",
     "hydrideIonConductorDesc": "次世代電気化学デバイスのためのヒドリドイオン伝導材料の創製",
     "anionIntercalation": "アニオンインターカレーション",

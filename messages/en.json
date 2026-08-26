@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Naoki Matsui | Institute of Science Tokyo | Solid-State Battery & Solid Ionics Research",
-    "description": "Dr. Naoki Matsui, Associate Professor at Institute of Science Tokyo. Research on all-solid-state batteries, lithium-ion batteries, fluoride-ion conductors, fluoride batteries, and hydride-ion conductors."
+    "description": "Battery research laboratory at Institute of Science Tokyo (Kanno-Suzuki-Matsui Lab, Dr. Naoki Matsui). Research on all-solid-state lithium batteries, fluoride batteries, and next-generation battery materials."
   },
   "navigation": {
     "home": "Home",
@@ -35,9 +35,9 @@
     "researchDomains": "Research Topics",
     "researchDomainsSubtitle": "Pioneering the Future with Cutting-Edge Technology",
     "fluorideIonConductor": "Fluoride Ion Conductors",
-    "fluorideIonConductorDesc": "Design and synthesis of innovative ion conductor materials for all-solid-state fluoride batteries",
+    "fluorideIonConductorDesc": "Exploration of new materials for high-energy-density fluoride-ion batteries",
     "lithiumIonConductor": "Lithium Ion Conductors",
-    "lithiumIonConductorDesc": "Design and precise structural analysis of superionic conductors for all-solid-state lithium batteries",
+    "lithiumIonConductorDesc": "Design and precise structural analysis of superionic conductors for all-solid-state lithium-ion batteries",
     "hydrideIonConductor": "Hydride Ion Conductors",
     "hydrideIonConductorDesc": "Creation of hydride ion conducting materials for next-generation electrochemical devices",
     "anionIntercalation": "Anion Intercalation",
