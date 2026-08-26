@@ -28,15 +28,15 @@ export async function generateMetadata({
 
   const metadata = {
     ja: {
-      title: "松井直喜 | 東京科学大学 菅野鈴木研 | 全固体電池・固体イオニクス研究",
-      description: "東京科学大学 菅野鈴木研 松井直喜助教。全固体電池、リチウムイオン電池、フッ化物イオン伝導体、フッ化物電池、ヒドリドイオン伝導体の研究。固体イオニクス、材料インフォマティクス、機械学習を活用した次世代電池材料開発。",
-      keywords: "松井直喜, 菅野鈴木研, 東京科学大学, 全固体電池, リチウム電池, リチウムイオン電池, フッ化物イオン伝導体, フッ化物イオン導電体, フッ化物イオン, フッ化物電池, ヒドリド, ヒドリドイオン伝導体, 固体イオニクス, 電池材料, 次世代電池, 材料科学, ISCT, Institute of Science Tokyo",
+      title: "松井直喜 | 東京科学大学 菅野・鈴木・松井研 | 全固体電池・固体イオニクス研究",
+      description: "東京科学大学 菅野・鈴木・松井研 松井直喜准教授。全固体電池、リチウムイオン電池、フッ化物イオン伝導体、フッ化物電池、ヒドリドイオン伝導体の研究。固体イオニクス、材料インフォマティクス、機械学習を活用した次世代電池材料開発。",
+      keywords: "松井直喜, 松井研, 菅野・鈴木・松井研, 菅野鈴木松井研, 菅野鈴木研, 菅野研, 鈴木研, 東京科学大学, 全固体電池, リチウム電池, リチウムイオン電池, フッ化物イオン伝導体, フッ化物イオン導電体, フッ化物イオン, フッ化物電池, ヒドリド, ヒドリドイオン伝導体, 固体イオニクス, 電池材料, 次世代電池, 材料科学, ISCT, Institute of Science Tokyo",
       locale: "ja_JP"
     },
     en: {
       title: "Naoki Matsui | Institute of Science Tokyo | Solid-State Battery & Solid Ionics Research",
-      description: "Dr. Naoki Matsui, Assistant Professor at Kanno-Suzuki Lab, Institute of Science Tokyo. Research on all-solid-state batteries, lithium-ion batteries, fluoride-ion conductors, fluoride batteries, and hydride-ion conductors.",
-      keywords: "Naoki Matsui, Kanno-Suzuki Lab, Institute of Science Tokyo, solid-state battery, lithium battery, lithium-ion battery, fluoride ion conductor, fluoride battery, hydride, hydride ion conductor, solid ionics, battery materials, next-generation battery, materials science, ISCT",
+      description: "Dr. Naoki Matsui, Associate Professor at Institute of Science Tokyo (Dept. of Chemical Science and Engineering). Research on all-solid-state batteries, lithium-ion batteries, fluoride-ion conductors, fluoride batteries, and hydride-ion conductors.",
+      keywords: "Naoki Matsui, Matsui Lab, Kanno-Suzuki-Matsui Lab, Kanno-Suzuki Lab, Kanno Lab, Suzuki Lab, Institute of Science Tokyo, solid-state battery, lithium battery, lithium-ion battery, fluoride ion conductor, fluoride battery, hydride, hydride ion conductor, solid ionics, battery materials, next-generation battery, materials science, ISCT",
       locale: "en_US"
     }
   };
@@ -45,6 +45,7 @@ export async function generateMetadata({
   const meta = metadata[currentLocale] || metadata.ja;
 
   return {
+    metadataBase: new URL("https://matsui-naoki.github.io"),
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
@@ -56,11 +57,20 @@ export async function generateMetadata({
       siteName: locale === 'ja' ? "松井直喜 | 東京科学大学" : "Naoki Matsui | Institute of Science Tokyo",
       locale: meta.locale,
       type: "website",
+      images: [
+        {
+          url: "/solid-state-battery.jpg",
+          width: 1200,
+          height: 630,
+          alt: locale === 'ja' ? "全固体電池研究 - 松井研" : "All-solid-state battery research - Matsui Lab",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
+      images: ["/solid-state-battery.jpg"],
     },
     robots: {
       index: true,
@@ -74,9 +84,11 @@ export async function generateMetadata({
       },
     },
     alternates: {
+      canonical: locale === 'en' ? '/en' : '/ja',
       languages: {
-        'ja': '/',
+        'ja': '/ja',
         'en': '/en',
+        'x-default': '/ja',
       },
     },
   };

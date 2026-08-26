@@ -1,91 +1,67 @@
 ## VASP
 
 ### 注意事項
-- 計算理論の専門家ではない
-- 実用的な使用法と非常にシンプルで限定的なDFTの側面のみをカバー
+はじめにお断りしておくと、筆者は計算理論の専門家ではありません。そのため、このページでは実用的な使用法と、非常にシンプルで限定的なDFTの側面のみを扱います。
 
 ---
 
 ### VASP概要
-- VASP：密度汎関数理論のための第一原理計算パッケージ
-- 入力ファイル：
-  - INCAR：パラメータ
-  - POTCAR：ポテンシャル
-  - KPOINTS：k点
-  - POSCAR：初期構造
+VASPは、密度汎関数理論（DFT）に基づく第一原理計算パッケージです。計算を実行するには、次の4つの入力ファイルを用意します。
+
+- INCAR：パラメータ
+- POTCAR：ポテンシャル
+- KPOINTS：k点
+- POSCAR：初期構造
 
 ### 最適化プロセス
 
 #### 電子密度の最適化（Electronic loop）
-1. 初期電子密度を設定：E<sub>n</sub> = …（n=1）
-2. 勾配法（？）で電子密度を変更：E<sub>n+1</sub> = …、ΔE = E<sub>n+1</sub> - E<sub>n</sub>
-3. ΔE < EDIFFまでループ
-→ 収束した電子密度とエネルギー
+1. 初期電子密度を設定します：E<sub>n</sub> = …（n=1）
+2. 勾配法（？）で電子密度を変更します：E<sub>n+1</sub> = …、ΔE = E<sub>n+1</sub> - E<sub>n</sub>
+3. ΔE < EDIFFとなるまでループします
+
+このループが収束すると、収束した電子密度とエネルギーが得られます。
 
 #### 構造最適化（Ionic loop）
-1. 各原子の力を計算：F<sub>i</sub> = -∂E/∂R<sub>i</sub>
-   - F<sub>i</sub>：i番目の原子の力
-   - E：系のエネルギー
-   - R<sub>i</sub>：i番目の原子の座標
-2. 力ベクトルに沿って原子を変位
-→ 緩和構造
-各原子の力がEDIFFG以下になるまでループ
+1. 各原子に働く力を計算します：F<sub>i</sub> = -∂E/∂R<sub>i</sub>（ここで、F<sub>i</sub>はi番目の原子の力、Eは系のエネルギー、R<sub>i</sub>はi番目の原子の座標です）
+2. 力ベクトルに沿って原子を変位させます
+
+各原子の力がEDIFFG以下になるまでこのループを繰り返すことで、緩和構造が得られます。
 
 ---
 
 ### エネルギーと相対エネルギー
 
-#### 最適化されたターゲット系Xのエネルギー
-- E<sub>X</sub> = -5 eV
-- ✗ エネルギー自体の絶対値は意味がない
-- ◯ 相対エネルギーを使用
+最適化されたターゲット系Xのエネルギーとして、例えばE<sub>X</sub> = -5 eVといった値が得られます。しかし、このエネルギーの絶対値そのものには意味がありません。意味を持つのは相対エネルギーであり、必ず相対エネルギーを使用します。
 
 #### 相対エネルギーの種類
 
-1. **反応エネルギー**
-   - 反応物と生成物間の相対エネルギー
-   - A + B → AB、E = E(AB) - (E(A) + E(B))
+代表的な相対エネルギーには、次の5種類があります。
 
-2. **生成エネルギー**（Gibbs生成エネルギーのような）
-   - 金属（および/またはガス）から化合物への反応エネルギー
-   - 2Li + S → Li<sub>2</sub>S：E<sub>formation</sub> = E(Li<sub>2</sub>S) - (2×E(Li) + E(S))
-   - 3Li + P + 4S → Li<sub>3</sub>PS<sub>4</sub>：E<sub>formation</sub> = E(Li<sub>3</sub>PS<sub>4</sub>) - (3×E(Li) + E(P) + 4×E(S))
+1. **反応エネルギー**：反応物と生成物間の相対エネルギーです。A + B → ABという反応では、E = E(AB) - (E(A) + E(B))で定義されます。
 
-3. **Energy above the convex hull**
-   - 競合相とターゲット系の間の相対エネルギー
-   - 2Li + S → Li<sub>2</sub>S：E<sub>hull</sub> = E(Li<sub>2</sub>S) - 2×E(Li) - E(S)
-   - 3/2Li<sub>2</sub>S + 1/2P<sub>2</sub>S<sub>5</sub> → Li<sub>3</sub>PS<sub>4</sub>：E<sub>hull</sub> = E(Li<sub>3</sub>PS<sub>4</sub>) - (3/2×E(Li<sub>2</sub>S) + 1/2E(P<sub>2</sub>S<sub>5</sub>))
+2. **生成エネルギー**（Gibbs生成エネルギーのような）：金属（および/またはガス）から化合物への反応エネルギーです。例えば2Li + S → Li<sub>2</sub>Sという反応ではE<sub>formation</sub> = E(Li<sub>2</sub>S) - (2×E(Li) + E(S))、3Li + P + 4S → Li<sub>3</sub>PS<sub>4</sub>という反応ではE<sub>formation</sub> = E(Li<sub>3</sub>PS<sub>4</sub>) - (3×E(Li) + E(P) + 4×E(S))となります。
 
-4. **Migration energy**
-   - 安定点とサドルポイント間の相対エネルギー
-   - E<sub>mig</sub> = E(saddle) - E(initial)
+3. **Energy above the convex hull**：競合相とターゲット系の間の相対エネルギーです。2Li + S → Li<sub>2</sub>Sに対してはE<sub>hull</sub> = E(Li<sub>2</sub>S) - 2×E(Li) - E(S)、3/2Li<sub>2</sub>S + 1/2P<sub>2</sub>S<sub>5</sub> → Li<sub>3</sub>PS<sub>4</sub>に対してはE<sub>hull</sub> = E(Li<sub>3</sub>PS<sub>4</sub>) - (3/2×E(Li<sub>2</sub>S) + 1/2E(P<sub>2</sub>S<sub>5</sub>))となります。
 
-5. **欠陥形成エネルギー**
-   - 内在欠陥：
-     - Frenkel：M<sub>M</sub> + V<sub>i</sub> → V<sub>M</sub> + M<sub>i</sub>
-     - Schottky：M<sub>M</sub> + X<sub>X</sub> → V<sub>M</sub> + V<sub>X</sub> + MX
-   - 外因性欠陥：MO<sub>2</sub> → x/2O<sub>2</sub> + MO<sub>2-x</sub>
-   - ドーピング：MO<sub>2</sub> + 0.1AO → M<sub>0.9</sub>A<sub>0.1</sub>O<sub>1.9</sub> + 0.1MO<sub>2</sub>
+4. **Migration energy**：安定点とサドルポイント間の相対エネルギーで、E<sub>mig</sub> = E(saddle) - E(initial)と定義されます。
 
-**相対エネルギーは反応によって厳密に定義される！！**
-言い換えれば、上記のメトリクスを得るために事前に反応を定義する必要がある
+5. **欠陥形成エネルギー**：内在欠陥にはFrenkel型（M<sub>M</sub> + V<sub>i</sub> → V<sub>M</sub> + M<sub>i</sub>）とSchottky型（M<sub>M</sub> + X<sub>X</sub> → V<sub>M</sub> + V<sub>X</sub> + MX）があります。外因性欠陥はMO<sub>2</sub> → x/2O<sub>2</sub> + MO<sub>2-x</sub>のように、ドーピングはMO<sub>2</sub> + 0.1AO → M<sub>0.9</sub>A<sub>0.1</sub>O<sub>1.9</sub> + 0.1MO<sub>2</sub>のように表されます。
+
+**相対エネルギーは反応によって厳密に定義されます！** 言い換えれば、上記のメトリクスを得るためには、事前に反応を定義しておく必要があります。
 
 ### 生成エネルギーの曖昧さ
-- ほとんどの場合、生成エネルギーは金属（および/またはガス）から化合物への反応エネルギーによって定義される
-- このコンテキストはMaterials Projectで一般的
-- しかし、生成エネルギーは任意の反応に対してしばしば与えられる
-- いずれにせよ、反応を指定することで生成エネルギーを定義する必要がある
+
+ほとんどの場合、生成エネルギーは金属（および/またはガス）から化合物への反応エネルギーとして定義され、この文脈はMaterials Projectでも一般的です。しかし実際には、生成エネルギーが任意の反応に対して与えられていることもしばしばあります。いずれにせよ、反応を指定することによって生成エネルギーを定義する必要があります。
 
 ### Materials Projectにおける生成エネルギーとE<sub>hull</sub>
-- 生成エネルギー ≠ E<sub>hull</sub>
-- 生成エネルギーは金属（および/またはガス）から化合物への反応エネルギーによって定義される
-- Li<sub>2</sub>S + S → 2LiS
-- E<sub>hull</sub>(LiS) [eV atom<sup>-1</sup>] = (2E(LiS) - E(Li<sub>2</sub>S) - E(S))/4
+
+生成エネルギーとE<sub>hull</sub>は同じものではありません。生成エネルギーは金属（および/またはガス）から化合物への反応エネルギーによって定義されます。一方、例えばLi<sub>2</sub>S + S → 2LiSという反応を考えると、E<sub>hull</sub>(LiS) [eV atom<sup>-1</sup>] = (2E(LiS) - E(Li<sub>2</sub>S) - E(S))/4のように計算されます。
 
 ### Energy above the hullの計算
-1. 化学系内の安定エントリ（●）を特定（相図を作成）
-2. ターゲット化合物の競合相を特定
-3. 分解反応を定義してΔEを計算（DE = -E<sub>hull</sub>）
+1. 化学系内の安定エントリ（●）を特定します（相図を作成）
+2. ターゲット化合物の競合相を特定します
+3. 分解反応を定義してΔEを計算します（DE = -E<sub>hull</sub>）
 
 ### E<sub>hull</sub>の実用的な計算
 
@@ -130,57 +106,32 @@ for entry, amount in decomp.items():
 
 ### 熱力学的安定性の感覚
 
-#### T = 0 K（DFT）での熱力学的安定性
-- ΔG = ΔH（T = 0 Kで）
+DFTが対象とするT = 0 Kでは、ΔG = ΔHが成り立ちます。T = 298 KではΔG = ΔH - TΔSとなりますが、固体ではΔSは無視できるため、やはりΔG ≈ ΔHです。したがって一般に、計算結果についてはエンタルピーをGibbsエネルギーとして扱います。
 
-#### T = 298 Kでの熱力学的安定性
-- ΔG = ΔH - TΔS
-- 固体ではΔSは無視できる
-- ΔG ≈ ΔH
-- 一般に、計算結果についてエンタルピーをGibbsエネルギーとして扱う
+Energy above the hull（E<sub>hull</sub>）は熱力学的安定性の指標となります。E<sub>hull</sub> = 0であれば0 Kで熱力学的に安定であり、E<sub>hull</sub> = 500 meV/atomであれば0 Kで熱力学的に不安定です。また、E<sub>hull</sub> ≤ 50-100 meV/atom程度の化合物は、しばしば「準安定」と呼ばれます。
 
-#### Energy above the hull（E<sub>hull</sub>）
-- E<sub>hull</sub> = 0：0 Kで熱力学的に安定
-- E<sub>hull</sub> = 500 meV/atom：0 Kで熱力学的に不安定
-- E<sub>hull</sub> ≤ 50-100 meV/atom：しばしば「準安定」と呼ばれる
-
-#### 準安定とは何か？
-- 準安定：熱力学的に不安定だが実験的にアクセス可能
-- 例：高温からのクエンチング、メカノケミカルミリング、薄膜…
+では、準安定とは何でしょうか。準安定とは、熱力学的には不安定であるものの、実験的にはアクセス可能な状態を指します。例えば、高温からのクエンチング、メカノケミカルミリング、薄膜などによって得られます。
 
 ### LGPSの例
-- 実験的センス（相図）から：LGPSは298から約550 Kで熱力学的に安定
-- DFTセンス（E<sub>hull</sub> = 2meV/atom）から：LGPSは0Kで熱力学的に不安定で、Li<sub>4</sub>GeS<sub>4</sub>とLi<sub>3</sub>PS<sub>4</sub>に分解
-- 数値誤差がこの判断に影響することに注意
-- LGPSはDFTレベルで0Kで熱力学的に不安定
-- LGPSは298Kで安定で実験的にアクセス可能
-- LGPSは計算から準安定と呼ばれる
+
+実験的センス（相図）から見ると、LGPSは298から約550 Kで熱力学的に安定です。一方、DFTセンス（E<sub>hull</sub> = 2meV/atom）から見ると、LGPSは0Kで熱力学的に不安定であり、Li<sub>4</sub>GeS<sub>4</sub>とLi<sub>3</sub>PS<sub>4</sub>に分解します。ただし、数値誤差がこの判断に影響することには注意が必要です。まとめると、LGPSはDFTレベルでは0Kで熱力学的に不安定である一方、298Kでは安定で実験的にアクセス可能です。そのため、LGPSは計算の観点から準安定と呼ばれます。
 
 ### なぜ生成エネルギーがしばしば議論されるのか？
-- E<sub>hull</sub> ≈ 相安定性：P = exp(-E<sub>hull</sub>/kT)
-- E<sub>f</sub> ≠ 相安定性
-- 特に機械学習の目的では、E<sub>f</sub>が採用されている
-- E<sub>f</sub>は単元素（金属/ガス）からの反応によって明確に定義されるため
-- E<sub>hull</sub>はデータベース内の利用可能な競合相（曖昧！）に依存
-- 未知の競合相を見逃す可能性がある
+
+E<sub>hull</sub>はP = exp(-E<sub>hull</sub>/kT)という形で相安定性とおおよそ対応しますが、生成エネルギーE<sub>f</sub>は相安定性とは対応しません。それにもかかわらず、特に機械学習の目的ではE<sub>f</sub>が採用されています。これは、E<sub>f</sub>が単元素（金属/ガス）からの反応によって明確に定義されるためです。一方、E<sub>hull</sub>はデータベース内の利用可能な競合相に依存するという曖昧さがあり、未知の競合相を見逃す可能性があります。
 
 ---
 
 ### エネルギーの正規化
-- VASP出力は系（セル）の全エネルギー
-- 例：
-  - Li<sub>20</sub>S<sub>10</sub>：-240 eV
-  - Li<sub>3</sub>：-9 eV
-  - S<sub>6</sub>：-72 eV
-- 2Li + S → Li<sub>2</sub>S
-- ΔE = -24 - (2×3 + 1×12) = -6 eV
-- 化学式単位（Li<sub>2</sub>S）あたりの生成エネルギー：-6 eV
-- 原子あたりの生成エネルギー：-3 eV
-- 原子あたりのエネルギーを使用する方が良い
+
+VASPが出力するのは、系（セル）の全エネルギーです。例えば、Li<sub>20</sub>S<sub>10</sub>が-240 eV、Li<sub>3</sub>が-9 eV、S<sub>6</sub>が-72 eVと得られたとします。ここで2Li + S → Li<sub>2</sub>Sという反応を考えると、ΔE = -24 - (2×3 + 1×12) = -6 eVとなります。つまり、化学式単位（Li<sub>2</sub>S）あたりの生成エネルギーは-6 eV、原子あたりの生成エネルギーは-3 eVです。一般には、原子あたりのエネルギーを使用する方が良いでしょう。
 
 ---
 
 ### VASP出力ファイル
+
+主な出力ファイルは次の通りです。
+
 - 最適化構造：CONTCAR
 - 電子およびイオンループのログ：OSZICAR
 - 計算のログ：OUTCARおよびvasprun.xml
@@ -188,28 +139,25 @@ for entry, amount in decomp.items():
 - 電子密度：CHGCAR
 - MDの軌跡：XDATCAR
 - …
-- CONTCAR、OSZICAR、OUTCARを手動でチェックできる
-- pymatgen.ioはvasprun.xmlを自動的に読み取ることができる
+
+CONTCAR、OSZICAR、OUTCARは手動でチェックすることができます。また、pymatgen.ioを使えばvasprun.xmlを自動的に読み取ることができます。
 
 ---
 
 ### POTCAR（擬ポテンシャル）
-- 全電子の計算：高い計算コスト
-- 価電子のみを変化させることを考慮し、コア電子は固定
-- 擬ポテンシャルは固定コア電子と可変価電子を持つ
+
+全電子を計算すると計算コストが高くなります。そこで、価電子のみを変化させ、コア電子は固定することを考えます。擬ポテンシャルは、このように固定されたコア電子と可変な価電子を持ちます。
 
 #### 擬ポテンシャルの種類
-- Ce vs Ce_3
-- Li vs Li_sv
-- Pb vs Pb_d
-- _sv、_pv、_d：内側のs、p、d軌道の電子を価電子として扱う
-- _3：f電子を凍結コア電子として扱う（価電子ではない）
 
-推奨ポテンシャル（VASP wiki）またはMaterials Projectsによるポテンシャル選択を参照：
+擬ポテンシャルには、Ce vs Ce_3、Li vs Li_sv、Pb vs Pb_dのように、同じ元素でも複数の種類が用意されています。_sv、_pv、_dは内側のs、p、d軌道の電子を価電子として扱うことを意味し、_3はf電子を凍結コア電子として（価電子ではなく）扱うことを意味します。
+
+どれを選ぶかは、推奨ポテンシャル（VASP wiki）またはMaterials Projectsによるポテンシャル選択を参照してください。
+
 - https://docs.materialsproject.org/methodology/materials-methodology/calculation-details/gga+u-calculations/pseudopotentials
 - https://www.vasp.at/wiki/index.php/Choosing_pseudopotentials
 
-私の場合、ほとんどの場合MP選択を使用。より多くの電子はより正確だが、計算コストが高い。
+私の場合、ほとんどの場合MP選択を使用しています。より多くの電子を扱うほど正確になりますが、その分計算コストは高くなります。
 
 ---
 
@@ -219,7 +167,7 @@ for entry, amount in decomp.items():
 VESTAでcifを開く → vasp形式でエクスポート → 名前を"POSCAR"に変更
 
 #### Python方法
-構造を読み込んでPOSCARとしてエクスポート
+構造を読み込んでPOSCARとしてエクスポートします。
 
 ```python
 from pymatgen.core import Structure
@@ -228,34 +176,19 @@ structure.to_file('POSCAR')
 ```
 
 
-Conventionalセルの選択が常に推奨される。
+Conventionalセルの選択が常に推奨されます。
 
-注：DFTは部分占有を扱えない。そのような場合、スーパーセルを使用して{0, 1}秩序構造をモデル化する必要がある。
+なお、DFTは部分占有を扱えません。そのような場合は、スーパーセルを使用して{0, 1}秩序構造をモデル化する必要があります。
 
 ### POSCARの準備（私の場合）
 
-#### わずかに無秩序な構造の場合
-- pymatgen order-disorderパッケージ、ただし組み合わせ爆発のため高度に無秩序な構造には重い
-
-#### 高度に無秩序な構造の場合
-- 元のコード（ioncon）によるランダムサンプリング
-- SQS（Special Quasi-random Structure、icet）
-- クラスター展開（CULPAN）
-
-#### 難易度低
-- 置換：手動（VESTA）またはpymatgen
-- スーパーセル：手動（VESTA）、元のコード（ioncon）
+わずかに無秩序な構造の場合は、pymatgenのorder-disorderパッケージを使用します。ただし、組み合わせ爆発のため、高度に無秩序な構造には重すぎます。高度に無秩序な構造の場合は、元のコード（ioncon）によるランダムサンプリング、SQS（Special Quasi-random Structure、icet）、クラスター展開（CULPAN）を使用します。難易度の低い操作としては、置換は手動（VESTA）またはpymatgenで、スーパーセルの作成は手動（VESTA）または元のコード（ioncon）で行えます。
 
 ---
 
 ## KPOINTS
 
-- セルサイズ：a、b、c
-- 絶縁体（固体電解質）の場合：20/a、20/b、20/cのk点
-- 金属（電極）の場合：40/a、40/b、40/c
-- 基本的にMonkhorst-Pack（MP）法を使用、ただし六方晶格子はgamma-centered法
-- POTCARを準備するためにpymatgen.io.vaspを強く推奨
-- DFTMDの場合、gamma-centered単一k点が通常使用される
+k点はセルサイズa、b、cに応じて決めます。絶縁体（固体電解質）の場合は20/a、20/b、20/cのk点を、金属（電極）の場合は40/a、40/b、40/cを用います。基本的にはMonkhorst-Pack（MP）法を使用しますが、六方晶格子ではgamma-centered法を使用します。準備にはpymatgen.io.vaspを強く推奨します。なお、DFTMDの場合は、gamma-centeredの単一k点が通常使用されます。
 
 ---
 
@@ -275,9 +208,7 @@ LASPH = TRUE
 ISPIN = 1 # スピン分極をオフにする
 ```
 
-### 収束基準
-- EDIFFG = -0.01 / eV Å<sup>-1</sup>
-- EDIFF = 1e-4 / eV
+収束基準としては、EDIFFG = -0.01 / eV Å<sup>-1</sup>、EDIFF = 1e-4 / eVを用います。
 
 ---
 
@@ -302,16 +233,9 @@ ISPIN = 1 # スピン分極をオフにする
 
 ### Kröger-Vink記法
 
-M<sub>S</sub><sup>C</sup>：
-- Mは元素、ホール（h）、電子（e）、または空孔（V）
-- Sはホスト格子内のサイト
-- Cは電荷（X：中性、●：正、'：負）
+M<sub>S</sub><sup>C</sup>という表記では、Mは元素、ホール（h）、電子（e）、または空孔（V）を表し、Sはホスト格子内のサイトを、Cは電荷（X：中性、●：正、'：負）を表します。
 
-例：Li_svの場合（Liではなく）
-- "Li_sv"：3電子（注："Li"ポテンシャルは1電子）
-- Li<sup>+</sup>は"Li_sv"で2電子（注：Li<sup>+</sup>の"Li"では0電子）
-- Li<sup>+</sup>としてLiを除去する場合、2電子のみを除去（3ではない！）
-- F<sup>-</sup>としてFを除去する場合、8電子を除去（7ではない）
+例として、Li_svを使う場合（Liではなく）を考えます。"Li_sv"は3電子を持ちます（"Li"ポテンシャルは1電子です）。Li<sup>+</sup>は"Li_sv"では2電子となります（Li<sup>+</sup>を"Li"で表すと0電子です）。したがって、Li<sup>+</sup>としてLiを除去する場合は2電子のみを除去します（3電子ではありません！）。同様に、F<sup>-</sup>としてFを除去する場合は8電子を除去します（7電子ではありません）。
 
 ## 欠陥構造最適化のためのINCAR
 
@@ -438,79 +362,43 @@ TEEND = 1400 # 終了温度
 
 ### 計算条件1
 
-- MPのDBにはGGA、GGA+U、meta-GGA r2SCANの計算結果が混在
-- r2SCANはGGAに電子のkinetic energyを取り入れたmeta-GGAの一種
-- SCANはより正確に反応エネルギーを計算できる一方、数値安定性（計算コストとの兼ね合い？）に課題があった
-- r2SCANは数値安定性も向上して、HTスクリーニングに適用され始めている
-- とはいえ、計算はまだ重いので、MPではGGA-PBEsolで構造緩和して、次にr2SCANを計算している
-- GGA、GGA+U、meta-GGAのエネルギーをconsistentに比較するためのエネルギー補正スキームが一応ある
-- r2SCANはカットオフエネルギーは高め（680 eV）
-- k-meshはようわからんが、基本MP法
-- Pseudo-potentialsはSCAN用のものがないので、PBEのものを流用している
-- → MPRelaxでGGA+Uを使用する。r2SCANはまだ手を出さないようにする
+MPのデータベースには、GGA、GGA+U、meta-GGA r2SCANの計算結果が混在しています。r2SCANは、GGAに電子のkinetic energyを取り入れたmeta-GGAの一種です。SCANはより正確に反応エネルギーを計算できる一方、数値安定性（計算コストとの兼ね合い？）に課題がありました。r2SCANでは数値安定性も向上しており、HTスクリーニングに適用され始めています。とはいえ計算はまだ重いので、MPではGGA-PBEsolで構造緩和して、次にr2SCANを計算するという手順を取っています。GGA、GGA+U、meta-GGAのエネルギーをconsistentに比較するためのエネルギー補正スキームも一応存在します。r2SCANのカットオフエネルギーは高め（680 eV）です。k-meshはようわかりませんが、基本はMP法です。また、SCAN用のpseudo-potentialsは存在しないため、PBEのものを流用しています。以上を踏まえて、当面はMPRelaxでGGA+Uを使用し、r2SCANにはまだ手を出さないようにします。
 
 ### エネルギー補正
 
-- Anion GGA/GGA+U補正とGGA/GGA+U/r2SCAN補正がある
-- 現状と過去はanion GGA/GGA+U補正が使われているようだが、今後は後者の補正に変わる
-- GGAとGGA+U補正のエネルギー比較にも補正が必要
-- GGA/GGA+U補正はAPIでは自動で行われるようだが、本当か？
+エネルギー補正には、Anion GGA/GGA+U補正とGGA/GGA+U/r2SCAN補正があります。現状と過去はanion GGA/GGA+U補正が使われているようですが、今後は後者の補正に変わります。GGAとGGA+U補正のエネルギー比較にも補正が必要です。GGA/GGA+U補正はAPIでは自動で行われるようですが、本当でしょうか？
 
 ### 絶対値誤差の原因（系統）
 
-- 0K、0atom vs 1atom？RT → 30meV/atom以下の誤差が生まれるとのこと [S. Lany, Phys. Rev. B 78 2008 1-8]
-- 重元素では相対論効果（大きな原子核の正電荷と電子の相互作用）
-- ゼロ点エネルギーももちろん誤差に含まれる
-- 個別の誤差は大きいが、反応エネルギー的な相対評価では絶対値誤差の中心値は0なので問題なし
+まず、0K、0atom vs 1atom？RTの条件差により、30meV/atom以下の誤差が生まれるとのことです [S. Lany, Phys. Rev. B 78 2008 1-8]。また、重元素では相対論効果（大きな原子核の正電荷と電子の相互作用）が誤差要因となり、ゼロ点エネルギーももちろん誤差に含まれます。個別の誤差は大きいものの、反応エネルギー的な相対評価では絶対値誤差の中心値は0になるため、問題ありません。
 
 ### 計算条件2
 
-- 基本的に、スピン分極あり、初期スピン配列はハイスピンの強磁性を採用している
-- 以下Inorganic Solid Fluoridesから引用："Strong electronic localization excludes narrow-band or itinerant electron magnetism. As a consequence of lower covalency the magnetic interactions are weaker. At first approximation they often concern only the nearest-neighbor magnetic cations…. High-spin configurations are much more common for fluorides than for oxides due to smaller d-orbital splitting."
-- → フッ化物はHigh-spin配列を採用して良さそう
-- カットオフエネルギー：520 eV
-- k-point mesh：1000/(number of atoms in the cell)
-- k-point with MP method but Γ-centered for hexagonal cells
-- tetrahedron method for k-point integration
-- → このあたりはそのまま使う
+MPでは基本的に、スピン分極ありで、初期スピン配列はハイスピンの強磁性を採用しています。Inorganic Solid Fluoridesから引用すると、"Strong electronic localization excludes narrow-band or itinerant electron magnetism. As a consequence of lower covalency the magnetic interactions are weaker. At first approximation they often concern only the nearest-neighbor magnetic cations…. High-spin configurations are much more common for fluorides than for oxides due to smaller d-orbital splitting." とあり、フッ化物はHigh-spin配列を採用して良さそうです。そのほかの条件は、カットオフエネルギーが520 eV、k-point meshが1000/(number of atoms in the cell)、k点はMP法（ただし六方晶セルはΓ-centered）、k点積分はtetrahedron法となっており、このあたりはそのまま使います。
 
 ### 計算条件3：ハバード（Hubbard）モデル
 
-- 非局在化電子（混成強、バンド幅が広い）は、他の電子との相互作用（電子のポテンシャル場）は平均化された状態
-- 局在電子の場合、電子間の相互作用が平均場で記述できない問題。同一原子内の電子の相互作用を指す
-- → フッ化物イオンは共有結合性が低く（M-Fの軌道の重なりが小さい）、バンド幅は狭く、電子は局在化の傾向
-- 局在電子相関のUを取り入れる必要がある。特に遷移金属化合物の酸化還元電位を計算する場合に重要
-- U-valuesはOxidesの生成エネルギーの実験値を元に補正
-- Co、Cr、Fe、Mn、Mo、Ni、V、Wで補正済み
-- FとOは厳密には別の値が定義されるべきだが、MPではUは酸化物の値で統一している
-- Uはpseudo-potential依存。結晶サイトにも依存するが、全サイト同じ値を適用
+非局在化電子（混成が強く、バンド幅が広い）では、他の電子との相互作用（電子のポテンシャル場）は平均化された状態にあります。一方、局在電子の場合は、電子間の相互作用が平均場で記述できないという問題があります。これは同一原子内の電子の相互作用を指します。フッ化物イオンは共有結合性が低く（M-Fの軌道の重なりが小さい）、バンド幅は狭く、電子は局在化する傾向にあるため、局在電子相関のUを取り入れる必要があります。これは特に、遷移金属化合物の酸化還元電位を計算する場合に重要です。U-valuesはOxidesの生成エネルギーの実験値を元に補正されており、Co、Cr、Fe、Mn、Mo、Ni、V、Wで補正済みです。FとOは厳密には別の値が定義されるべきですが、MPではUは酸化物の値で統一されています。なお、Uはpseudo-potential依存であり、結晶サイトにも依存しますが、全サイトに同じ値が適用されます。
 
 ### 反応電位計算に関する文献
 
 #### D. H. McTaggart et al., Assessing ternary materials for fluoride-ion batteries, Sci. data, 10:90 (2023)
-- フッ化物の３元系の反応電位を調査したもの
-- MPのGGA/GGA+Uの計算条件に準拠
-- 結論の見えないよくわからない論文
-- 70meV/atom以下を対象にしている。この値を使うことにする
+
+フッ化物の３元系の反応電位を調査した論文で、MPのGGA/GGA+Uの計算条件に準拠しています。結論の見えないよくわからない論文ですが、70meV/atom以下を対象にしているので、この値を使うことにします。
 
 #### A. Jain et al., Formation enthalpies by mixing GGA and GGA+U calculations, Phys. Rev. B, 84, 045115 (2011)
-- 有名なCederグループの報告
-- GGAとGGA+Uを比較するための補正提案
-- GGA+Uは遷移金属フッ化物（酸化物）で必要だが、遷移金属のメタルではGGA+Uはもはや不要で、GGA計算が必要
-- コンバージョン反応系では、金属と金属フッ化物間の反応であるが、それぞれ計算条件（U有り無し）が異なるので、GGAとGGA+Uの比較が困難であった
-- この文献では補正式を用いて、LiFeF<sub>3</sub>のリチウムコンバージョン電極の電位がGGA単体より高精度に求まったと述べている
-- この考え方はフッ化物電池の電極活物質の計算でも重要になる
+
+有名なCederグループの報告で、GGAとGGA+Uを比較するための補正を提案しています。GGA+Uは遷移金属フッ化物（酸化物）で必要ですが、遷移金属のメタルではGGA+Uはもはや不要で、GGA計算が必要です。コンバージョン反応系は金属と金属フッ化物間の反応であり、それぞれ計算条件（U有り無し）が異なるため、GGAとGGA+Uの比較が困難でした。この文献では、補正式を用いることで、LiFeF<sub>3</sub>のリチウムコンバージョン電極の電位がGGA単体より高精度に求まったと述べられています。この考え方は、フッ化物電池の電極活物質の計算でも重要になります。
 
 ### 計算条件4
 
-- MPRelaxでGGA+Uを使用
+MPRelaxでGGA+Uを使用します。使用する値は次の通りです。
+
 - U-value：Co: 3.32、Cr: 3.7、Fe: 5.3、Mn: 3.9、Mo: 4.38、Ni: 6.2、V: 3.25、W: 6.2
 - ΔE<sub>M</sub>：V: -1.7、Cr: -1.999、Mn: -1.668、Fe: -2.256、Co: -1.638、Ni: -2.541、W: -4.438、Mo: -3.202
 
 ### 計算条件5：MaterialsProject2020補正
 
 #### アニオン補正
-- 酸化物では結合長によりperoxide、superoxideに分類
-- 他のアニオンでは酸化数分類は未適用
-- アニオンか否かの判別は酸化数判別か、もっとも電気陰性度の高い元素であるかのいずれか
-- → 部分的にフッ素を導入した組成でアニオン判別が切り替わるので、やはりこの補正はかけたくない
+
+酸化物では、結合長によりperoxide、superoxideに分類されます。他のアニオンでは酸化数分類は未適用です。アニオンか否かの判別は、酸化数判別か、もっとも電気陰性度の高い元素であるかのいずれかで行われます。部分的にフッ素を導入した組成ではアニオン判別が切り替わってしまうため、やはりこの補正はかけたくありません。

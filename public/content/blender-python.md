@@ -2,15 +2,7 @@
 
 #### 1. create_electric_flow_background
 
-発光ストリング + ゴースト処理で光とか波とか電気とかを表現
-
-**Compositing設定**
-- Compositing nodesからエフェクト→グレア→ミックス、カラーバランスの色を調整
-- 一度レンダリングしておくとcompositingで結果を見ながらパラメーターをいじれる
-
-**その他の調整**
-- マテリアルのサーフェス（放射）の強さをあげる（5とか）
-- 被写体とカメラの距離を変える（広がり方がかわる）
+発光ストリングとゴースト処理を組み合わせることで、光や波、電気のようなエフェクトを表現できます。Compositingの設定としては、Compositing nodesからエフェクト→グレア→ミックスと辿り、カラーバランスの色を調整します。一度レンダリングしておくと、compositingで結果を見ながらパラメーターをいじれます。その他の調整としては、マテリアルのサーフェス（放射）の強さをあげたり（5とか）、被写体とカメラの距離を変えたりすると、光の広がり方がかわります。
 
 #### 画像ファイルを背景に設定する方法
 
@@ -30,9 +22,7 @@
 
 
 ## 5. 背景用3Dマインクラフト地形
-正規分布データの生成、クラスタリングのデータ分布のイメージ図として
-Blender4.5で動作. 4.2は未検証. 
-最後にカラーランプの範囲や色、マテリアルの色などを調整するとなお良い
+正規分布データの生成や、クラスタリングのデータ分布のイメージ図として使えるコードです。Blender 4.5で動作します（4.2は未検証です）。最後にカラーランプの範囲や色、マテリアルの色などを調整すると、なお良い仕上がりになります。
 ```python
 import bpy
 import bmesh
@@ -363,7 +353,7 @@ if __name__ == "__main__":
 ---
 
 ## 6. 背景用雷コード
-色々なパターンの雷を作成できる
+色々なパターンの雷を作成できます。
 ```python
 import bpy
 import math
@@ -894,7 +884,7 @@ setup_scene_for_lightning()
 print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.objects if 'Lightning' in o.name])}")
 ```
 
-- 例1 : 一番シンプルな雷、なんだかんだこれが使いやすい？　intermediateがおすすめ（中間が太い）
+**例1**: 一番シンプルな雷です。なんだかんだこれが一番使いやすいかもしれません。intermediate（中間が太い設定）がおすすめです。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/light_simple.jpg" alt="ed">
@@ -902,7 +892,7 @@ print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.o
   </div>
 </div>
 
-- 例2 : 分岐つき雷。分岐の方向が主軸と平行に近いタイトなもの
+**例2**: 分岐つき雷で、分岐の方向が主軸と平行に近いタイトなものです。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/light_branched.jpg" alt="ed">
@@ -910,7 +900,7 @@ print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.o
   </div>
 </div>
 
-- 例3 : 分岐つき雷。分岐の方向が主軸と垂直な広がりのある樹形ライク雷
+**例3**: 同じく分岐つき雷ですが、分岐の方向が主軸と垂直な、広がりのある樹形ライクな雷です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/light_branched_wide.jpg" alt="ed">
@@ -918,7 +908,7 @@ print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.o
   </div>
 </div>
 
-- 例4 : 中心から放射状に広がる雷
+**例4**: 中心から放射状に広がる雷です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/light_sphere.jpg" alt="ed">
@@ -927,8 +917,7 @@ print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.o
 </div>
 
 
-- 例5 : 放射状に広がる雷と中心にオブジェクトを配置
-random_center + サイズを適当に大きくすると、中心に空間ができるので、そこにボールを配置すると、ボールから放射状に広がる放電模様が描ける。厨二病が喜ぶやつ。
+**例5**: 放射状に広がる雷の中心にオブジェクトを配置した例です。random_centerを指定してサイズを適当に大きくすると中心に空間ができるので、そこにボールを配置すると、ボールから放射状に広がる放電模様が描けます。厨二病が喜ぶやつです。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/light_ball.jpg" alt="ed">
@@ -938,7 +927,7 @@ random_center + サイズを適当に大きくすると、中心に空間がで�
 
 ## 6. 軌跡エフェクト
 
-作製に時間をかけた割りには、たいしたものは出来なかった。とはいえ、スクラッチでつくると意外と大変なので、自動化したメリットは大きいはず。
+作製に時間をかけた割りには、たいしたものは出来ませんでした。とはいえ、スクラッチでつくると意外と大変なので、自動化したメリットは大きいはずです。
 ```python
 import bpy
 import math
@@ -1917,8 +1906,7 @@ generate_ball_motion_effect(
 )
 ```
 
-- 例1 : 複数本のラインで軌跡を描画
-aplphaグラデーションと、ランダム=Trueとlength_rangeを(0.2, 1)とかに設定すると良い感じ
+**例1**: 複数本のラインで軌跡を描画した例です。alphaグラデーションに加えて、ランダム=Trueとし、length_rangeを(0.2, 1)などに設定すると良い感じになります。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/trajectory_line.jpg" alt="ed">
@@ -1926,8 +1914,7 @@ aplphaグラデーションと、ランダム=Trueとlength_rangeを(0.2, 1)と�
   </div>
 </div>
 
-- 例2 : 残像でホッピングを表現
-aplphaグラデーションと、サイズグラデーション、軌跡をcircularにするとホッピングしている感じになる。
+**例2**: 残像でホッピングを表現した例です。alphaグラデーションとサイズグラデーションを設定し、軌跡をcircularにすると、ホッピングしている感じになります。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/trajectory_ghost.jpg" alt="ed">
@@ -1935,8 +1922,7 @@ aplphaグラデーションと、サイズグラデーション、軌跡をcircu
   </div>
 </div>
 
-- 例3 : 円筒の軌跡
-aplphaグラデーションと、テーパー比率で調整。下記上部がテーパー1(ストレート)、下部がテーパ0(点に収束)
+**例3**: 円筒の軌跡です。alphaグラデーションとテーパー比率で調整します。下記の上部がテーパー1（ストレート）、下部がテーパー0（点に収束）です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/trajectory_taper.jpg" alt="ed">
@@ -1944,8 +1930,7 @@ aplphaグラデーションと、テーパー比率で調整。下記上部が�
   </div>
 </div>
 
-- 例4 : 円筒+線の軌跡
-組み合わせたって良い
+**例4**: 円筒と線を組み合わせた軌跡です。このように組み合わせても構いません。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
     <img src="./photo/blender/trajectory_taper_line.jpg" alt="ed">

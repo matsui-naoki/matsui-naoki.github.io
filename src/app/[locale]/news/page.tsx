@@ -12,6 +12,194 @@ export default function NewsPage() {
 
   const allNews = locale === 'ja' ? [
     {
+      date: '2026.08.28',
+      title: 'プロジェクトの会議@京都に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.08.20',
+      title: '京大陰山研の吉田特定准教授・大阪公立大学林研の本橋助教を訪問',
+      desc: '有意義な材料設計の議論をおこないました。',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.08.12',
+      title: 'M2板倉さんの筆頭論文がSmall Structuresに掲載',
+      desc: (
+        <span>
+          「Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4」おめでとう!!
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.08.08-16',
+      title: 'お盆休み',
+      desc: '',
+      category: 'LAB'
+    },
+    {
+      date: '2026.08.06',
+      title: '信州大学の手嶋研究室を見学',
+      desc: '',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.07.31',
+      title: 'Laboratory Automation研究会にオンライン参加',
+      desc: '分野の急成長にいつも驚かされます.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.30-08.04',
+      title: 'OBのAyuさんが共同研究のため来校',
+      desc: '現インドネシア大学講師としてご活躍中。お元気そうで良かったです.',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.07.24',
+      title: 'イオン渋滞学の公開シンポジウムに参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.17-20',
+      title: 'SPring-8 BL02B2で回折実験を実施',
+      desc: '大量の高温sweep測定データを獲得しました。',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.07.16',
+      title: '前期の研究進捗報告ゼミが開始',
+      desc: '後半戦も頑張りましょう!',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.07.05-10',
+      title: 'SSI-25th@シンガポールに参加',
+      desc: 'Young Scientist Awardのコンペで発表しました。とても良い経験でした。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.05-10',
+      title: 'M2学生がSSI-25thでポスター発表',
+      desc: '国際学会で研究成果を発信しました!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.20-21',
+      title: 'ゼミ旅行@八丈島',
+      desc: '私だけフライトが悪天候で飛ばず不参加… 学生さんは楽しめたようで良かったです.',
+      category: 'LAB'
+    },
+    {
+      date: '2026.06.14',
+      title: '研究室メンバーでBBQを開催',
+      desc: '学生さんはお疲れ様でした!',
+      category: 'LAB'
+    },
+    {
+      date: '2026.06.12-13',
+      title: '渋滞学領域会議@名古屋に参加',
+      desc: '進捗を報告しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.11',
+      title: '水素研究会@仙台に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.01-04',
+      title: '共同研究先@サンフランシスコを訪問',
+      desc: '有意義なディスカッションでした。',
+      category: 'COLLABORATION'
+    },
+    {
+      date: '2026.06.01',
+      title: '准教授に昇任しました',
+      desc: '東京科学大学 物質理工学院 応用化学系 化学システム分野の准教授として、引き続き次世代電池材料の研究を推進します。',
+      category: 'LAB'
+    },
+    {
+      date: '2026.05.23-29',
+      title: 'ECS Meeting@シアトルに参加',
+      desc: 'コンビナトリアル実験について報告しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.18-21',
+      title: 'International Forum of Solid State Batteries@仙台に参加',
+      desc: '最近の取り組みを講演しました。',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.13',
+      title: 'NIMSにてアニオン導電性材料の開発を講演',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.08-09',
+      title: 'さきがけ領域会議@仙台に参加',
+      desc: 'もっと精進します!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.01',
+      title: '硫化物固体電解質について勉強会を開催',
+      desc: '夜ご飯を食べながら気軽にディスカッションしました。',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.04.24-27',
+      title: 'SPring-8 BL28XUで薄膜XRD測定を実施',
+      desc: '',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.04.20',
+      title: '新入生がゼミで自己紹介',
+      desc: '鈴木研には新しくM1が3名加わりました!',
+      category: 'MEMBER'
+    },
+    {
+      date: '2026.04.18',
+      title: '研究室有志メンバーで高尾山~相模湖までハイキング',
+      desc: '良いリフレッシュになりました!',
+      category: 'LAB'
+    },
+    {
+      date: '2026.04.06',
+      title: 'イオン渋滞学WG@つくば国際会議場に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.03.25',
+      title: 'OBのAyuさんとの共著論文がJ. Mater. Chem. Aに掲載',
+      desc: (
+        <span>
+          「Fast hydride-ion conduction in complex hydride Ba2MgH6」複合水素化物Ba2MgH6の高速ヒドリドイオン伝導を報告しました。
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.03.17-19',
+      title: '電気化学会@理科大に実行委員として参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
       date: '2026.02.12-13',
       title: '修士学生3名の修論発表会',
       desc: '立派な発表でした! お疲れ様!',
@@ -131,7 +319,7 @@ export default function NewsPage() {
       desc: (
         <span>
           新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -150,7 +338,7 @@ export default function NewsPage() {
       desc: (
         <span>
           JSTさきがけに採択されました!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
             詳細はこちら
           </a>
         </span>
@@ -249,6 +437,194 @@ export default function NewsPage() {
       category: 'AWARD'
     }
   ] : [
+    {
+      date: '2026.08.28',
+      title: 'Project Meeting @ Kyoto',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.08.20',
+      title: 'Visited Dr. Yoshida (Kageyama Lab, Kyoto Univ.) and Dr. Motohashi (Hayashi Lab, Osaka Metropolitan Univ.)',
+      desc: 'Fruitful discussions on materials design.',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.08.12',
+      title: 'M2 Student Itakura\'s First-Author Paper Published in Small Structures',
+      desc: (
+        <span>
+          &quot;Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4&quot; Congratulations!!
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.08.08-16',
+      title: 'Obon Holiday',
+      desc: '',
+      category: 'LAB'
+    },
+    {
+      date: '2026.08.06',
+      title: 'Visited the Teshima Laboratory at Shinshu University',
+      desc: '',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.07.31',
+      title: 'Joined a Laboratory Automation Workshop Online',
+      desc: 'Always amazed by the rapid growth of this field.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.30-08.04',
+      title: 'Alumnus Ayu (now Lecturer at Universitas Indonesia) Visited for Collaboration',
+      desc: 'Glad to see they are doing well.',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.07.24',
+      title: 'Public Symposium on Ion Jamology',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.17-20',
+      title: 'Diffraction Experiments at SPring-8 BL02B2',
+      desc: 'Acquired a large set of high-temperature sweep measurement data.',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.07.16',
+      title: 'First-Semester Research Progress Seminars Began',
+      desc: 'Keep up the good work!',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.07.05-10',
+      title: 'Participated in SSI-25th @ Singapore',
+      desc: 'Presented in the Young Scientist Award competition. A great experience.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.07.05-10',
+      title: 'M2 Students Presented Posters at SSI-25th',
+      desc: 'Presented research results at the international conference!',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.20-21',
+      title: 'Lab Retreat @ Hachijojima',
+      desc: 'My flight was cancelled due to bad weather... glad the students enjoyed it!',
+      category: 'LAB'
+    },
+    {
+      date: '2026.06.14',
+      title: 'Lab BBQ',
+      desc: 'Great job, everyone!',
+      category: 'LAB'
+    },
+    {
+      date: '2026.06.12-13',
+      title: 'Jamology Area Meeting @ Nagoya',
+      desc: 'Reported our progress.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.11',
+      title: 'Hydrogen Research Meeting @ Sendai',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.06.01-04',
+      title: 'Visited Collaborators in San Francisco',
+      desc: 'Fruitful discussions.',
+      category: 'COLLABORATION'
+    },
+    {
+      date: '2026.06.01',
+      title: 'Promoted to Associate Professor',
+      desc: 'Continuing research on next-generation battery materials at the Dept. of Chemical Science and Engineering, Institute of Science Tokyo.',
+      category: 'LAB'
+    },
+    {
+      date: '2026.05.23-29',
+      title: 'Participated in ECS Meeting @ Seattle',
+      desc: 'Reported on combinatorial experiments.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.18-21',
+      title: 'International Forum of Solid State Batteries @ Sendai',
+      desc: 'Gave a talk on our recent work.',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.13',
+      title: 'Lecture at NIMS on Anion-Conducting Materials',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.08-09',
+      title: 'PRESTO Area Meeting @ Sendai',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.05.01',
+      title: 'Study Session on Sulfide Solid Electrolytes',
+      desc: 'Casual discussion over dinner.',
+      category: 'SEMINAR'
+    },
+    {
+      date: '2026.04.24-27',
+      title: 'Thin-Film XRD Measurements at SPring-8 BL28XU',
+      desc: '',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.04.20',
+      title: 'New Students Introduced Themselves at the Seminar',
+      desc: 'Three new M1 students joined the Suzuki Lab!',
+      category: 'MEMBER'
+    },
+    {
+      date: '2026.04.18',
+      title: 'Hiking from Mt. Takao to Lake Sagami',
+      desc: 'A great refresh with lab members!',
+      category: 'LAB'
+    },
+    {
+      date: '2026.04.06',
+      title: 'Ion Jamology WG @ Tsukuba International Congress Center',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.03.25',
+      title: 'Paper with Alumnus Ayu Published in J. Mater. Chem. A',
+      desc: (
+        <span>
+          &quot;Fast hydride-ion conduction in complex hydride Ba2MgH6&quot; — reporting fast hydride-ion conduction in the complex hydride Ba2MgH6.
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.03.17-19',
+      title: 'ECSJ Meeting @ Tokyo Univ. of Science',
+      desc: 'Participated as an organizing committee member.',
+      category: 'CONFERENCE'
+    },
     {
       date: '2026.02.12-13',
       title: 'Master\'s thesis presentations for 3 students',
@@ -369,7 +745,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Developed a new solid electrolyte and Mg-H2 hydrogen storage device. Joint achievement with Dr. Hirose (now Assistant Professor at Arai Lab), doctoral student at Hirayama Lab, Institute of Science Tokyo.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
             Paper link
           </a>
         </span>
@@ -388,7 +764,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Selected for JST PRESTO!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
             Details here
           </a>
         </span>
@@ -489,7 +865,7 @@ export default function NewsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -501,11 +877,11 @@ export default function NewsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-[#e6e9ea]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-gray-300 font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -529,16 +905,16 @@ export default function NewsPage() {
 
                 <div className="flex items-start space-x-6">
                   {/* Timeline Dot */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#6fc3cf] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     {news.date.split('.')[1]}
                   </div>
 
                   {/* News Content */}
-                  <div className="flex-1 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-gray-800 hover:border-gray-700 transition-all duration-300">
+                  <div className="flex-1 bg-[#16191c] rounded p-6 border border-[#262b2e] hover:border-[#3a4247] transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-sm font-mono text-cyan-400">{news.date}</div>
+                      <div className="text-sm font-mono text-[#6fc3cf]">{news.date}</div>
                       <div className={`px-3 py-1 text-xs font-mono rounded border ${
-                        news.category === 'RESEARCH' ? 'bg-cyan-400/10 text-cyan-400 border-cyan-400/20' :
+                        news.category === 'RESEARCH' ? 'bg-[#6fc3cf]/10 text-[#6fc3cf] border-[#6fc3cf]/20' :
                         news.category === 'CONFERENCE' ? 'bg-purple-400/10 text-purple-400 border-purple-400/20' :
                         news.category === 'SEMINAR' ? 'bg-blue-400/10 text-blue-400 border-blue-400/20' :
                         news.category === 'EXPERIMENT' ? 'bg-green-400/10 text-green-400 border-green-400/20' :
@@ -546,7 +922,7 @@ export default function NewsPage() {
                         news.category === 'AWARD' ? 'bg-yellow-400/10 text-yellow-400 border-yellow-400/20' :
                         news.category === 'COLLABORATION' ? 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20' :
                         news.category === 'MEMBER' ? 'bg-pink-400/10 text-pink-400 border-pink-400/20' :
-                        'bg-gray-400/10 text-gray-400 border-gray-400/20'
+                        'bg-gray-400/10 text-[#8b959a] border-gray-400/20'
                       }`}>
                         {news.category}
                       </div>
@@ -556,13 +932,13 @@ export default function NewsPage() {
                       {news.title}
                     </h3>
 
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-[#aab3b6] leading-relaxed">
                       {news.desc}
                     </p>
 
                     {news.hasImage && (
-                      <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-gray-700/30">
-                        <p className="text-gray-400 text-sm italic">
+                      <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#3a4247]/30">
+                        <p className="text-[#8b959a] text-sm italic">
                           {locale === 'ja' ? '[Photo] 写真付きニュース' : '[Photo] News with image'}
                         </p>
                       </div>
@@ -576,7 +952,7 @@ export default function NewsPage() {
       </section>
 
       {/* Stats Summary */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
+      <section className="py-16 bg-[#16191c]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -584,7 +960,7 @@ export default function NewsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-[#e6e9ea]">
                 {t('activitySummary')}
               </span>
             </h2>
@@ -602,13 +978,13 @@ export default function NewsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6"
+                className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6"
               >
-                <div className={`text-4xl font-black bg-gradient-to-r from-${stat.color}-400 to-${stat.color}-600 bg-clip-text text-transparent mb-2`}>
+                <div className={`text-4xl font-black text-[#e6e9ea] mb-2`}>
                   {stat.number}
                 </div>
-                <div className="text-sm font-mono text-gray-400 tracking-wider mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.desc}</div>
+                <div className="text-sm font-mono text-[#8b959a] tracking-wider mb-1">{stat.label}</div>
+                <div className="text-xs text-[#6a7378]">{stat.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -617,7 +993,7 @@ export default function NewsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

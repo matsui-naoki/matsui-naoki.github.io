@@ -35,7 +35,7 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/80 backdrop-blur-md border-b border-gray-800' 
+          ? 'bg-[#101315]/90 backdrop-blur-md border-b border-[#262b2e]' 
           : 'bg-black/70 backdrop-blur-sm'
       }`}
     >
@@ -61,10 +61,10 @@ export default function Navigation() {
                   key={item.id}
                   href={item.href}
                   whileHover={{ y: -1 }}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded ${
                     isActive
-                      ? 'text-cyan-400 bg-cyan-400/10'
-                      : 'text-gray-300 hover:text-cyan-400 hover:bg-white/5'
+                      ? 'text-[#6fc3cf] bg-[#6fc3cf]/10'
+                      : 'text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -73,10 +73,10 @@ export default function Navigation() {
                 <Link key={item.id} href={item.href}>
                   <motion.div
                     whileHover={{ y: -1 }}
-                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded-lg cursor-pointer ${
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded cursor-pointer ${
                       isActive
-                        ? 'text-cyan-400 bg-cyan-400/10'
-                        : 'text-gray-300 hover:text-cyan-400 hover:bg-white/5'
+                        ? 'text-[#6fc3cf] bg-[#6fc3cf]/10'
+                        : 'text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-white/5'
                     }`}
                   >
                     {item.label}

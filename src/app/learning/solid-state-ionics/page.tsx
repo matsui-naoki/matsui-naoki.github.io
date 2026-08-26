@@ -64,53 +64,53 @@ export default function SolidStateIonics() {
       // Parse header
       const headers = header.split('|').filter((h: string) => h.trim())
       const headerCells = headers.map((h: string) => 
-        `<th class="border border-gray-700 px-4 py-2 bg-gray-800 text-cyan-400 font-semibold">${h.trim()}</th>`
+        `<th class="border border-[#3a4247] px-4 py-2 bg-[#1c2124] text-[#6fc3cf] font-semibold">${h.trim()}</th>`
       ).join('')
       
       // Parse body rows
       const rows = body.trim().split('\n').map((row: string) => {
         const cells = row.split('|').filter((c: string) => c.trim())
         const cellsHtml = cells.map((c: string) => 
-          `<td class="border border-gray-700 px-4 py-2 text-gray-300">${c.trim()}</td>`
+          `<td class="border border-[#3a4247] px-4 py-2 text-[#aab3b6]">${c.trim()}</td>`
         ).join('')
-        return `<tr class="hover:bg-gray-800/50">${cellsHtml}</tr>`
+        return `<tr class="hover:bg-[#1c2124]">${cellsHtml}</tr>`
       }).join('')
       
-      return `<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-gray-700 rounded-lg overflow-hidden">
+      return `<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-[#3a4247] rounded overflow-hidden">
         <thead><tr>${headerCells}</tr></thead>
         <tbody>${rows}</tbody>
       </table></div>`
     })
     
     // Headers
-    html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-semibold mt-4 mb-2 text-blue-400">$1</h4>')
-    html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-6 mb-3 text-cyan-400">$1</h3>')
+    html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-semibold mt-4 mb-2 text-[#6fc3cf]">$1</h4>')
+    html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-6 mb-3 text-[#6fc3cf]">$1</h3>')
     html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4 text-white">$1</h2>')
-    html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-black mt-8 mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">$1</h1>')
+    html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-black mt-8 mb-6 text-[#e6e9ea]">$1</h1>')
     
     // Bold and italic
-    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="font-bold text-cyan-300"><em>$1</em></strong>')
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-cyan-300">$1</strong>')
+    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="font-bold text-[#9adae4]"><em>$1</em></strong>')
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#9adae4]">$1</strong>')
     html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
     
     // Lists
-    html = html.replace(/^\* (.*$)/gim, '<li class="ml-6 mb-2 text-gray-300 list-disc">$1</li>')
-    html = html.replace(/^- (.*$)/gim, '<li class="ml-6 mb-2 text-gray-300 list-disc">$1</li>')
-    html = html.replace(/^\d+\. (.*$)/gim, '<li class="ml-6 mb-2 text-gray-300 list-decimal">$1</li>')
+    html = html.replace(/^\* (.*$)/gim, '<li class="ml-6 mb-2 text-[#aab3b6] list-disc">$1</li>')
+    html = html.replace(/^- (.*$)/gim, '<li class="ml-6 mb-2 text-[#aab3b6] list-disc">$1</li>')
+    html = html.replace(/^\d+\. (.*$)/gim, '<li class="ml-6 mb-2 text-[#aab3b6] list-decimal">$1</li>')
     
     // Code blocks
-    html = html.replace(/```([^`]+)```/g, '<pre class="bg-gray-900 border border-gray-700 rounded-lg p-4 my-4 overflow-x-auto"><code class="text-cyan-300 font-mono text-sm">$1</code></pre>')
-    html = html.replace(/`([^`]+)`/g, '<code class="bg-gray-800 text-cyan-300 px-1 py-0.5 rounded font-mono text-sm">$1</code>')
+    html = html.replace(/```([^`]+)```/g, '<pre class="bg-[#16191c] border border-[#3a4247] rounded p-4 my-4 overflow-x-auto"><code class="text-[#9adae4] font-mono text-sm">$1</code></pre>')
+    html = html.replace(/`([^`]+)`/g, '<code class="bg-[#1c2124] text-[#9adae4] px-1 py-0.5 rounded font-mono text-sm">$1</code>')
     
     // Horizontal rules
-    html = html.replace(/^---$/gim, '<hr class="border-gray-700 my-8">')
+    html = html.replace(/^---$/gim, '<hr class="border-[#3a4247] my-8">')
     
     // Blockquotes
-    html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-cyan-400 pl-4 my-4 text-gray-400 italic">$1</blockquote>')
+    html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-[#6fc3cf] pl-4 my-4 text-[#8b959a] italic">$1</blockquote>')
     
     // Paragraphs
-    html = html.replace(/\n\n/g, '</p><p class="mb-4 text-gray-300 leading-relaxed">')
-    html = '<p class="mb-4 text-gray-300 leading-relaxed">' + html + '</p>'
+    html = html.replace(/\n\n/g, '</p><p class="mb-4 text-[#aab3b6] leading-relaxed">')
+    html = '<p class="mb-4 text-[#aab3b6] leading-relaxed">' + html + '</p>'
     
     // Fix list wrapping
     html = html.replace(/(<li[^>]*>.*<\/li>\s*)+/g, function(match) {
@@ -125,13 +125,13 @@ export default function SolidStateIonics() {
     html = html.replace(/<sub>(.*?)<\/sub>/g, '<sub class="text-xs">$1</sub>')
     
     // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-cyan-400 hover:text-cyan-300 underline">$1</a>')
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[#6fc3cf] hover:text-[#9adae4] underline">$1</a>')
     
     // Images (markdown style)
-    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded-lg my-4 mx-auto">')
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded my-4 mx-auto">')
     
     // Process HTML img tags that are already in the markdown
-    html = html.replace(/<img\s+src="([^"]+)"\s+alt="([^"]+)"[^>]*>/g, '<img src="$1" alt="$2" class="max-w-full h-auto rounded-lg my-4 mx-auto">')
+    html = html.replace(/<img\s+src="([^"]+)"\s+alt="([^"]+)"[^>]*>/g, '<img src="$1" alt="$2" class="max-w-full h-auto rounded my-4 mx-auto">')
     
     // Style div containers for images
     html = html.replace(/<div\s+class="large-photo-container">/g, '<div class="flex justify-center my-8">')
@@ -141,11 +141,11 @@ export default function SolidStateIonics() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
       <SimpleNavigation />
 
       {/* Hero Section */}
-      <section className="pt-20 sm:pt-24 pb-6 sm:pb-8 border-b border-gray-800">
+      <section className="pt-20 sm:pt-24 pb-6 sm:pb-8 border-b border-[#262b2e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -154,22 +154,22 @@ export default function SolidStateIonics() {
           >
             <div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="text-[#e6e9ea]">
                   固体イオニクス基礎
                 </span>
               </h1>
-              <p className="text-sm sm:text-base text-gray-400">固体中のイオン伝導現象の基本原理と応用</p>
+              <p className="text-sm sm:text-base text-[#8b959a]">固体中のイオン伝導現象の基本原理と応用</p>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => setShowTOC(!showTOC)}
-                className="lg:hidden px-3 py-1.5 sm:px-4 sm:py-2 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-colors text-sm sm:text-base"
+                className="lg:hidden px-3 py-1.5 sm:px-4 sm:py-2 border border-[#6fc3cf]/30 text-[#6fc3cf] rounded hover:bg-[#6fc3cf]/10 transition-colors text-sm sm:text-base"
               >
                 {showTOC ? '目次を閉じる' : '目次を開く'}
               </button>
               <Link
                 href="/learning"
-                className="px-3 py-1.5 sm:px-4 sm:py-2 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-colors text-sm sm:text-base"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[#6fc3cf]/30 text-[#6fc3cf] rounded hover:bg-[#6fc3cf]/10 transition-colors text-sm sm:text-base"
               >
                 ← 戻る
               </Link>
@@ -180,9 +180,9 @@ export default function SolidStateIonics() {
 
       {/* Mobile TOC */}
       {showTOC && (
-        <div className="lg:hidden bg-gray-900/50 border-b border-gray-800">
+        <div className="lg:hidden bg-[#16191c]/90 border-b border-[#262b2e]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-            <h2 className="text-base sm:text-lg font-bold mb-3 text-cyan-400">目次</h2>
+            <h2 className="text-base sm:text-lg font-bold mb-3 text-[#6fc3cf]">目次</h2>
             <div className="space-y-2">
               {markdownFiles.map((file) => (
                 <button
@@ -191,17 +191,17 @@ export default function SolidStateIonics() {
                     setSelectedContent(file)
                     setShowTOC(false)
                   }}
-                  className={`w-full text-left p-3 rounded-lg border transition-all duration-300 text-sm sm:text-base ${
+                  className={`w-full text-left p-3 rounded border transition-all duration-300 text-sm sm:text-base ${
                     selectedContent.id === file.id
-                      ? 'bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border-cyan-400/50'
-                      : 'bg-gray-800/30 border-gray-700/30 hover:border-cyan-400/30 hover:bg-gray-800/50'
+                      ? 'bg-[#1c2124] border border-[#3a4247] border-[#6fc3cf]/50'
+                      : 'bg-[#1c2124]/70 border-[#3a4247]/30 hover:border-[#6fc3cf]/30 hover:bg-[#1c2124]'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-lg sm:text-xl">{file.icon}</span>
                     <div className="flex-1">
                       <div className="font-semibold text-white">{file.title}</div>
-                      <div className="text-xs text-gray-400 mt-1 hidden sm:block">
+                      <div className="text-xs text-[#8b959a] mt-1 hidden sm:block">
                         {file.id === 'solid-state-ionics' && '基礎理論・欠陥化学・拡散機構'}
                         {file.id === 'fluoride-ion-conductor' && '材料設計・合成・評価手法'}
                         {file.id === 'battery-performance' && '電池特性・インピーダンス解析'}
@@ -218,9 +218,9 @@ export default function SolidStateIonics() {
       {/* Main Content */}
       <div className="flex min-h-screen">
         {/* Sidebar Navigation - Desktop */}
-        <aside className="hidden lg:block w-80 bg-gray-900/50 border-r border-gray-800">
+        <aside className="hidden lg:block w-80 bg-[#16191c]/90 border-r border-[#262b2e]">
           <div className="sticky top-20 p-6">
-            <h2 className="text-lg font-bold mb-4 text-cyan-400">目次</h2>
+            <h2 className="text-lg font-bold mb-4 text-[#6fc3cf]">目次</h2>
             <nav className="space-y-2">
               {markdownFiles.map((file, index) => (
                 <motion.button
@@ -229,17 +229,17 @@ export default function SolidStateIonics() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setSelectedContent(file)}
-                  className={`w-full text-left p-4 rounded-lg border transition-all duration-300 ${
+                  className={`w-full text-left p-4 rounded border transition-all duration-300 ${
                     selectedContent.id === file.id
-                      ? 'bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border-cyan-400/50'
-                      : 'bg-gray-800/30 border-gray-700/30 hover:border-cyan-400/30 hover:bg-gray-800/50'
+                      ? 'bg-[#1c2124] border border-[#3a4247] border-[#6fc3cf]/50'
+                      : 'bg-[#1c2124]/70 border-[#3a4247]/30 hover:border-[#6fc3cf]/30 hover:bg-[#1c2124]'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">{file.icon}</span>
                     <div className="flex-1">
                       <div className="font-semibold text-white">{file.title}</div>
-                      <div className="text-xs text-gray-400 mt-1">
+                      <div className="text-xs text-[#8b959a] mt-1">
                         {file.id === 'solid-state-ionics' && '基礎理論・欠陥化学・拡散機構'}
                         {file.id === 'fluoride-ion-conductor' && '材料設計・合成・評価手法'}
                         {file.id === 'battery-performance' && '電池特性・インピーダンス解析'}
@@ -247,16 +247,16 @@ export default function SolidStateIonics() {
                     </div>
                   </div>
                   {selectedContent.id === file.id && (
-                    <div className="mt-2 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+                    <div className="mt-2 h-1 bg-[#6fc3cf] rounded-full"></div>
                   )}
                 </motion.button>
               ))}
             </nav>
 
             {/* Additional Info */}
-            <div className="mt-8 p-4 bg-gray-800/30 rounded-lg border border-gray-700/30">
-              <h3 className="text-sm font-bold text-cyan-400 mb-2">学習のポイント</h3>
-              <ul className="text-xs text-gray-400 space-y-1">
+            <div className="mt-8 p-4 bg-[#1c2124]/70 rounded border border-[#3a4247]/30">
+              <h3 className="text-sm font-bold text-[#6fc3cf] mb-2">学習のポイント</h3>
+              <ul className="text-xs text-[#8b959a] space-y-1">
                 <li>• 基礎理論から順番に学習</li>
                 <li>• 数式の導出過程を理解</li>
                 <li>• 実験データとの対応を確認</li>
@@ -275,11 +275,11 @@ export default function SolidStateIonics() {
             transition={{ duration: 0.5 }}
           >
             {/* Content Header */}
-            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-800">
+            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-[#262b2e]">
               <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
                 <span className="text-2xl sm:text-3xl">{selectedContent.icon}</span>
                 <h1 className="text-2xl sm:text-3xl font-black">
-                  <span className={`bg-gradient-to-r ${selectedContent.color} bg-clip-text text-transparent`}>
+                  <span className={`text-[#e6e9ea]`}>
                     {selectedContent.title}
                   </span>
                 </h1>
@@ -290,8 +290,8 @@ export default function SolidStateIonics() {
             {isLoading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400 mx-auto mb-4"></div>
-                  <p className="text-gray-400">コンテンツを読み込んでいます...</p>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#6fc3cf] mx-auto mb-4"></div>
+                  <p className="text-[#8b959a]">コンテンツを読み込んでいます...</p>
                 </div>
               </div>
             ) : (
@@ -308,7 +308,7 @@ export default function SolidStateIonics() {
       <div className="fixed bottom-8 right-8 space-y-4">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="bg-gray-800/90 backdrop-blur-sm text-cyan-400 p-3 rounded-full shadow-lg hover:bg-gray-700/90 transition-colors border border-cyan-400/30"
+          className="bg-[#1c2124]/90 backdrop-blur-sm text-[#6fc3cf] p-3 rounded-full shadow-lg hover:bg-gray-700/90 transition-colors border border-[#6fc3cf]/30"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

@@ -11,6 +11,21 @@ export default function PublicationsPage() {
   const locale = useLocale()
 
   const publications = [
+    // 2026年
+    {
+      year: '2026',
+      title: 'Unlocking High Fluoride-Ion Conductivity by Regulating the Order–Disorder Transition in Bi-substituted PbSnF₄',
+      authors: 'S. Itakura, N. Matsui (corresponding author), K. Mori, T. Saito, F. Song, S. Song, K. Shimizu, K. Suzuki, R. Kanno',
+      journal: 'Small Struct., (2026)',
+      doi: '10.1002/sstr.70579'
+    },
+    {
+      year: '2026',
+      title: 'Fast Hydride-Ion Conduction in Complex Hydride Ba₂MgH₆',
+      authors: 'N. I. P. Ayu, N. Matsui (corresponding author), Y. Toda, T. Mezaki, G. Jiang, K. Suzuki, R. Kanno',
+      journal: 'J. Mater. Chem. A, 14 (2026) 23180-23186',
+      doi: '10.1039/d5ta09966h'
+    },
     // 2025年
     {
       year: '2025',
@@ -342,7 +357,7 @@ export default function PublicationsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -354,18 +369,18 @@ export default function PublicationsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-[#e6e9ea]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-gray-300 font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
             <div className="mt-4 text-center">
-              <div className="inline-flex items-center space-x-4 bg-gray-800/50 rounded-lg px-6 py-3 border border-cyan-400/20">
-                <span className="text-cyan-400 font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-gray-400">|</span>
-                <span className="text-blue-400 font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-gray-400">|</span>
-                <span className="text-green-400 font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
+              <div className="inline-flex items-center space-x-4 bg-[#1c2124] rounded px-6 py-3 border border-[#6fc3cf]/20">
+                <span className="text-[#6fc3cf] font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#8b959a]">|</span>
+                <span className="text-[#6fc3cf] font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#8b959a]">|</span>
+                <span className="text-[#6fc3cf] font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
               </div>
             </div>
           </motion.div>
@@ -373,10 +388,10 @@ export default function PublicationsPage() {
       </section>
 
       {/* Publications List */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
+      <section className="py-16 bg-[#16191c]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-black mb-8">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-[#e6e9ea]">
               {t('peerReviewed')}
             </span>
           </h2>
@@ -387,38 +402,38 @@ export default function PublicationsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: Math.min(index * 0.01, 0.3) }}
-                className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all duration-300"
+                className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6 hover:border-[#3a4247] transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="text-sm font-mono text-cyan-400">{pub.year}</div>
+                  <div className="text-sm font-mono text-[#6fc3cf]">{pub.year}</div>
                 </div>
 
                 <h3 className="text-lg font-bold text-white mb-3 leading-tight">
                   {pub.title}
                 </h3>
 
-                <p className="text-gray-300 text-sm mb-2 leading-relaxed">
+                <p className="text-[#aab3b6] text-sm mb-2 leading-relaxed">
                   {pub.authors}
                 </p>
 
-                <p className="text-gray-400 text-sm italic mb-2">
+                <p className="text-[#8b959a] text-sm italic mb-2">
                   {pub.journal}
                 </p>
 
                 {pub.doi && (
                   <div className="text-xs">
-                    <span className="text-cyan-400">DOI: </span>
+                    <span className="text-[#6fc3cf]">DOI: </span>
                     {pub.doi.startsWith('10.') ? (
                       <a
                         href={`https://doi.org/${pub.doi}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-400 font-mono hover:text-cyan-400 transition-colors"
+                        className="text-[#8b959a] font-mono hover:text-[#6fc3cf] transition-colors"
                       >
                         {pub.doi}
                       </a>
                     ) : (
-                      <span className="text-gray-400 font-mono">{pub.doi}</span>
+                      <span className="text-[#8b959a] font-mono">{pub.doi}</span>
                     )}
                   </div>
                 )}
@@ -430,7 +445,7 @@ export default function PublicationsPage() {
           {reviews.length > 0 && (
             <>
               <h2 className="text-3xl font-black mb-8">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                <span className="text-[#e6e9ea]">
                   {t('reviews')}
                 </span>
               </h2>
@@ -441,21 +456,21 @@ export default function PublicationsPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="bg-gray-900/50 backdrop-blur-sm border border-purple-800/30 rounded-xl p-6 hover:border-purple-700/50 transition-all duration-300"
+                    className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6 hover:border-[#3a4247] transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <div className="text-sm font-mono text-purple-400">{review.year}</div>
+                      <div className="text-sm font-mono text-[#6fc3cf]">{review.year}</div>
                     </div>
 
                     <h3 className="text-lg font-bold text-white mb-3 leading-tight">
                       {review.title}
                     </h3>
 
-                    <p className="text-gray-300 text-sm mb-2 leading-relaxed">
+                    <p className="text-[#aab3b6] text-sm mb-2 leading-relaxed">
                       {review.authors}
                     </p>
 
-                    <p className="text-gray-400 text-sm italic">
+                    <p className="text-[#8b959a] text-sm italic">
                       {review.journal}
                     </p>
                   </motion.div>
@@ -471,28 +486,28 @@ export default function PublicationsPage() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-16 text-center"
           >
-            <div className="bg-gradient-to-r from-gray-900 to-black rounded-2xl p-8 border border-gray-800">
+            <div className="bg-[#16191c] rounded p-8 border border-[#262b2e]">
               <h3 className="text-2xl font-black mb-4">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="text-[#e6e9ea]">
                   {t('summary')}
                 </span>
               </h3>
               <div className="grid md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-black text-cyan-400 mb-2">{publications.length}</div>
-                  <div className="text-sm text-gray-400">{t('peerReviewed')}</div>
+                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">{publications.length}</div>
+                  <div className="text-sm text-[#8b959a]">{t('peerReviewed')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-purple-400 mb-2">{reviews.length}</div>
-                  <div className="text-sm text-gray-400">{t('reviews')}</div>
+                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">{reviews.length}</div>
+                  <div className="text-sm text-[#8b959a]">{t('reviews')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-green-400 mb-2">8</div>
-                  <div className="text-sm text-gray-400">{t('patents')}</div>
+                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">8</div>
+                  <div className="text-sm text-[#8b959a]">{t('patents')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-pink-400 mb-2">9</div>
-                  <div className="text-sm text-gray-400">{t('researchPeriod')}</div>
+                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">9</div>
+                  <div className="text-sm text-[#8b959a]">{t('researchPeriod')}</div>
                 </div>
               </div>
             </div>
@@ -502,7 +517,7 @@ export default function PublicationsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

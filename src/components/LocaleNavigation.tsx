@@ -1,6 +1,7 @@
 'use client'
 
 import { Link, usePathname } from '@/i18n/navigation'
+import NextLink from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState, useRef, useEffect } from 'react'
 
@@ -31,20 +32,20 @@ export default function LocaleNavigation() {
   const otherLocale = locale === 'ja' ? 'en' : 'ja'
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#101315]/90 backdrop-blur-xl border-b border-[#262b2e]">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent whitespace-nowrap">
-            Matsui@ISCT
+          <Link href="/" className="text-base sm:text-lg font-bold text-[#e6e9ea] hover:text-[#6fc3cf] transition-colors whitespace-nowrap">
+            {locale === 'ja' ? '松井研(菅野鈴木松井研)@東京科学大学' : 'Matsui Lab (Kanno-Suzuki-Matsui) @ Science Tokyo'}
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center">
-            <div className="flex flex-wrap gap-x-0.5 gap-y-1 text-xs xl:text-sm">
-              <Link href="/#home" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+            <div className="flex flex-wrap gap-x-1 gap-y-1 text-sm xl:text-[15px]">
+              <Link href="/#home" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('home')}
               </Link>
-              <Link href="/#research" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/#research" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('researchOverview')}
               </Link>
 
@@ -52,7 +53,7 @@ export default function LocaleNavigation() {
               <div className="relative" ref={profileDropdownRef}>
                 <button
                   onMouseEnter={() => setShowProfileDropdown(true)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 flex items-center whitespace-nowrap"
+                  className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent flex items-center whitespace-nowrap"
                 >
                   {t('profile')}
                   <svg className="ml-0.5 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,19 +63,19 @@ export default function LocaleNavigation() {
 
                 {showProfileDropdown && (
                   <div
-                    className="absolute top-full left-0 mt-1 bg-gray-900/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-lg overflow-hidden min-w-[100px] z-50"
+                    className="absolute top-full left-0 mt-1 bg-[#16191c]/95 backdrop-blur-sm border border-[#262b2e] rounded shadow-lg overflow-hidden min-w-[100px] z-50"
                     onMouseLeave={() => setShowProfileDropdown(false)}
                   >
                     <Link
                       href="/#profile"
-                      className="block px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-colors text-xs"
+                      className="block px-3 py-2 text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-[#1c2124] transition-colors text-sm"
                       onClick={() => setShowProfileDropdown(false)}
                     >
                       {t('profileOverview')}
                     </Link>
                     <Link
                       href="/profile-detail"
-                      className="block px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-colors text-xs"
+                      className="block px-3 py-2 text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-[#1c2124] transition-colors text-sm"
                       onClick={() => setShowProfileDropdown(false)}
                     >
                       {t('profileDetail')}
@@ -87,7 +88,7 @@ export default function LocaleNavigation() {
               <div className="relative" ref={newsDropdownRef}>
                 <button
                   onMouseEnter={() => setShowNewsDropdown(true)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 flex items-center whitespace-nowrap"
+                  className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent flex items-center whitespace-nowrap"
                 >
                   {t('news')}
                   <svg className="ml-0.5 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,19 +98,19 @@ export default function LocaleNavigation() {
 
                 {showNewsDropdown && (
                   <div
-                    className="absolute top-full left-0 mt-1 bg-gray-900/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-lg overflow-hidden min-w-[100px] z-50"
+                    className="absolute top-full left-0 mt-1 bg-[#16191c]/95 backdrop-blur-sm border border-[#262b2e] rounded shadow-lg overflow-hidden min-w-[100px] z-50"
                     onMouseLeave={() => setShowNewsDropdown(false)}
                   >
                     <Link
                       href="/#news"
-                      className="block px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-colors text-xs"
+                      className="block px-3 py-2 text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-[#1c2124] transition-colors text-sm"
                       onClick={() => setShowNewsDropdown(false)}
                     >
                       {t('latestNews')}
                     </Link>
                     <Link
                       href="/news"
-                      className="block px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-colors text-xs"
+                      className="block px-3 py-2 text-[#aab3b6] hover:text-[#6fc3cf] hover:bg-[#1c2124] transition-colors text-sm"
                       onClick={() => setShowNewsDropdown(false)}
                     >
                       {t('newsDetail')}
@@ -117,27 +118,33 @@ export default function LocaleNavigation() {
                   </div>
                 )}
               </div>
-              <Link href="/publications" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/publications" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('publications')}
               </Link>
-              <Link href="/research-details" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/research-details" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('researchDetails')}
               </Link>
-              <Link href="/access" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/access" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('access')}
               </Link>
-              <Link href="/prospective-students" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/prospective-students" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('prospectiveStudents')}
               </Link>
-              <Link href="/crystal-gallery" className="text-gray-300 hover:text-cyan-400 transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-cyan-400/30 whitespace-nowrap">
+              <Link href="/crystal-gallery" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
                 {t('crystalGallery')}
               </Link>
+              <NextLink href="/learning" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
+                {t('learning')}
+              </NextLink>
+              <NextLink href="/links" className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors px-1 xl:px-1.5 py-1 rounded border border-transparent hover:border-transparent whitespace-nowrap">
+                {t('links')}
+              </NextLink>
 
               {/* Language Switcher */}
               <Link
                 href={pathname}
                 locale={otherLocale}
-                className="ml-2 px-2 py-1 text-xs font-semibold bg-cyan-400/10 text-cyan-400 rounded border border-cyan-400/30 hover:bg-cyan-400/20 transition-colors whitespace-nowrap"
+                className="ml-2 px-2 py-1 text-sm font-semibold text-[#6fc3cf] rounded border border-[#3a4247] hover:border-[#6fc3cf] transition-colors whitespace-nowrap"
               >
                 {locale === 'ja' ? 'EN' : 'JA'}
               </Link>
@@ -150,14 +157,14 @@ export default function LocaleNavigation() {
             <Link
               href={pathname}
               locale={otherLocale}
-              className="px-2 py-1 text-xs font-semibold bg-cyan-400/10 text-cyan-400 rounded border border-cyan-400/30 hover:bg-cyan-400/20 transition-colors"
+              className="px-2 py-1 text-xs font-semibold text-[#6fc3cf] rounded border border-[#3a4247] hover:border-[#6fc3cf] transition-colors"
             >
               {locale === 'ja' ? 'EN' : 'JA'}
             </Link>
 
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="text-gray-300 hover:text-cyan-400 p-2"
+              className="text-[#aab3b6] hover:text-[#6fc3cf] p-2"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {showMobileMenu ? (
@@ -172,85 +179,99 @@ export default function LocaleNavigation() {
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div className="lg:hidden mt-4 border-t border-gray-800 pt-4 max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="lg:hidden mt-4 border-t border-[#262b2e] pt-4 max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               <Link
                 href="/#home"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('home')}
               </Link>
               <Link
                 href="/#research"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('researchOverview')}
               </Link>
               <Link
                 href="/#profile"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('profileOverview')}
               </Link>
               <Link
                 href="/profile-detail"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50 pl-8"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124] pl-8"
                 onClick={() => setShowMobileMenu(false)}
               >
                 └ {t('profileDetail')}
               </Link>
               <Link
                 href="/#news"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('latestNews')}
               </Link>
               <Link
                 href="/news"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50 pl-8"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124] pl-8"
                 onClick={() => setShowMobileMenu(false)}
               >
                 └ {t('newsDetail')}
               </Link>
               <Link
                 href="/publications"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('publications')}
               </Link>
               <Link
                 href="/research-details"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('researchDetails')}
               </Link>
               <Link
                 href="/access"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('access')}
               </Link>
               <Link
                 href="/prospective-students"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('prospectiveStudents')}
               </Link>
               <Link
                 href="/crystal-gallery"
-                className="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-3 rounded hover:bg-gray-800/50"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
                 onClick={() => setShowMobileMenu(false)}
               >
                 {t('crystalGallery')}
               </Link>
+              <NextLink
+                href="/learning"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {t('learning')}
+              </NextLink>
+              <NextLink
+                href="/links"
+                className="text-[#aab3b6] hover:text-[#6fc3cf] transition-colors py-2 px-3 rounded hover:bg-[#1c2124]"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {t('links')}
+              </NextLink>
             </div>
           </div>
         )}

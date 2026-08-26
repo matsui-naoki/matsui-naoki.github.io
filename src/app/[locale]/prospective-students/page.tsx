@@ -64,7 +64,7 @@ export default function ProspectiveStudentsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -76,11 +76,11 @@ export default function ProspectiveStudentsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-[#e6e9ea]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-gray-300 font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -89,176 +89,104 @@ export default function ProspectiveStudentsPage() {
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
 
-          {/* About Lab */}
+          {/* 1. About Lab */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('aboutLab')}
             </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-[#aab3b6] leading-relaxed">
               <p>
                 {locale === 'ja'
-                  ? '菅野・鈴木研では新入生を募集しています。私自身は助教の立場ですので、指導教員になることは当然できませんが、東京科学大学 物質理工学院 応用化学系 菅野・鈴木研の鈴木耕太准教授を指導教員として選んでいただくことで菅野鈴木研として一緒に研究活動を行えます。'
-                  : 'Kanno-Suzuki Lab is recruiting new students. As an assistant professor, I cannot be a main supervisor, but by selecting Associate Professor Kota Suzuki as your supervisor at the Department of Chemical Science and Engineering, Institute of Science Tokyo, you can conduct research activities together in Kanno-Suzuki Lab.'}
+                  ? '新入生を募集しています。2026年6月に准教授に昇任し、研究室は菅野・鈴木・松井研究室となりました。私自身を指導教員として選んでいただき、一緒に研究活動を行えます。'
+                  : 'We are recruiting new students. As of June 2026, I was promoted to Associate Professor and our laboratory is now the Kanno-Suzuki-Matsui Lab. You can choose me as your supervisor and conduct research together.'}
               </p>
               <p>
                 {locale === 'ja'
-                  ? '基本的には横・上下の隔たりなく、常に気軽に相談できる環境を心がけています。日々の研究活動において、教員・学生間の垣根を低くし、自由闊達な議論ができる研究室を目指しています。'
-                  : 'We maintain an environment where you can freely consult with anyone regardless of position. In daily research activities, we aim for a laboratory where barriers between faculty and students are low, enabling free and open discussions.'}
+                  ? '研究室は全固体電池研究センターの中核として活動しており、教員・研究員・技術支援員・学生を合わせて総勢約109名(2026年時点)の大所帯です。学生はセンター共通の居室や全体報告会・イベントを通じて研究室の枠を越えて交流し、様々な共同研究・国家プロジェクトに携わる機会があります。'
+                  : 'The lab operates at the core of the All-Solid-State Battery Research Center — about 109 members in total (as of 2026), including faculty, researchers, technical staff, and students. Students interact beyond lab boundaries through shared offices, center-wide progress meetings, and events, with many opportunities to join collaborative research and national projects.'}
+              </p>
+              <p>
+                {locale === 'ja'
+                  ? '基本的には横・上下の隔たりなく、常に気軽に相談できる環境を心がけています。化学系・材料系・生物系(私自身がそうです)など、多様なバックグラウンドのメンバーが垣根なく議論しながら研究に取り組んでいます。'
+                  : 'We maintain an environment where you can freely consult with anyone regardless of position. Members from chemistry, materials science, and biology (my own background) work together, discussing openly across disciplines.'}
               </p>
             </div>
           </motion.div>
 
-          {/* Research Features */}
+          {/* 2. Research Features */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('labFeatures')}
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-purple-400 mb-3">{t('labFeaturesTitle')}</h3>
-                <div className="space-y-3 text-gray-300">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '誰も知らない材料を創る' : 'Creating Materials No One Knows Yet'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
                   <p>
                     {locale === 'ja'
-                      ? '固体化学をベースに新規な固体電解質・電極の開発と、デバイス性能向上に向けたメカニズム解明に取り組んでいます。特に固体電解質の開発に注力して、より優れた特性を有する新材料の開発に取り組んでいます。'
-                      : 'Based on solid-state chemistry, we work on developing novel solid electrolytes and electrodes, and elucidating mechanisms for device performance improvement. We particularly focus on developing solid electrolytes and creating new materials with superior properties.'}
-                  </p>
-                  <p>
-                    {locale === 'ja'
-                      ? '新たな固体電解質の開発は、時に一筋縄ではいかない難しい挑戦です。最先端の機械学習やシミュレーション、多様な合成技術を駆使して、効果的な材料探索を展開します。研究室での活動を通じて、皆さんに自身が開発した材料を最低1個、追求してもらいます。世の中の誰もが知らない新しい材料を創成する、わくわくする研究です。'
-                      : 'Developing new solid electrolytes is sometimes a challenging task that doesn\'t go smoothly. We deploy effective materials exploration using cutting-edge machine learning, simulation, and diverse synthesis techniques. Through laboratory activities, we expect each student to pursue at least one material they developed themselves. It\'s exciting research creating new materials that no one in the world knows about.'}
+                      ? '固体化学をベースに、新規な固体電解質・電極の開発と、デバイス性能向上に向けたメカニズム解明に取り組んでいます。研究室での活動を通じて、皆さんには自身が開発した材料を最低1つ、追求してもらいます。世の中の誰もが知らない新しい材料を創成する、わくわくする研究です。'
+                      : 'Based on solid-state chemistry, we develop novel solid electrolytes and electrodes and elucidate mechanisms for improving device performance. Through your lab work, you will pursue at least one material of your own creation — exciting research that brings materials no one in the world has seen into existence.'}
                   </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-blue-400 mb-3">{t('researchCenter')}</h3>
-                <p className="text-gray-300">
-                  {locale === 'ja'
-                    ? '同時に全固体電池研究センターとしての側面もあります。全固体電池研究センターには多数の教員・職員が在籍しており、日々研究に専念しています。その観点で、菅野・鈴木研では様々な共同研究・国プロジェクトに携わる機会があると思います。これらの経験を通じて、多角的な視野・ネットワークを養うことを期待します。'
-                    : 'There is also an aspect as the All-Solid-State Battery Research Center. The Research Center has many faculty members and staff dedicated to daily research. From this perspective, there are opportunities to engage in various collaborative research and national projects in Kanno-Suzuki Lab. We expect you to develop a multifaceted perspective and network through these experiences.'}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-green-400 mb-3">{t('diversity')}</h3>
-                <p className="text-gray-300 mb-3">
-                  {locale === 'ja'
-                    ? '様々なバックグラウンドの方々が一同に集まって日々研究に取り組んでいます：'
-                    : 'People from various backgrounds gather together to conduct daily research:'}
-                </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                  <li>{locale === 'ja' ? '化学系出身者' : 'Chemistry background'}</li>
-                  <li>{locale === 'ja' ? '材料系出身者' : 'Materials science background'}</li>
-                  <li>{locale === 'ja' ? '生物系出身者（私がまさにそう）' : 'Biology background (like myself)'}</li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Education Policy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
-          >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-              {t('educationPolicy')}
-            </h2>
-
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-bold text-orange-400 mb-3">{t('presentations')}</h3>
-                <p className="text-gray-300 mb-4">
-                  {locale === 'ja'
-                    ? '早くに学会発表、場合によっては国際誌に論文を投稿ができるよう丁寧に指導します。'
-                    : 'We carefully guide you to make conference presentations early, and in some cases, submit papers to international journals.'}
-                </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                  <li>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '自動実験 × AI — コンビナトリアル自動実験ラボ' : 'Automated Experiments × AI — Combinatorial Automated Lab'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                  <p>
                     {locale === 'ja'
-                      ? 'ゼミでのディスカッション：他者に解りやすく説明するスキルを身につけてもらいます'
-                      : 'Seminar discussions: Develop skills to explain clearly to others'}
-                  </li>
-                  <li>
-                    {locale === 'ja'
-                      ? '若手の会などでポスター発表'
-                      : 'Poster presentations at young researcher meetings'}
-                  </li>
-                  <li>
-                    {locale === 'ja'
-                      ? '国内学会での口頭発表にチャレンジ'
-                      : 'Challenge oral presentations at domestic conferences'}
-                  </li>
-                  <li>
-                    {locale === 'ja'
-                      ? '査読付き論文の執筆・投稿、国際学会での発表'
-                      : 'Write and submit peer-reviewed papers, present at international conferences'}
-                  </li>
-                </ul>
-
-                <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-cyan-400/20">
-                  <p className="text-cyan-400 font-semibold mb-3">
-                    {locale === 'ja' ? '学会参加の様子 (M1)' : 'Conference Participation (M1)'}
+                      ? '当研究室の大きな強みが、コンビナトリアル自動実験ラボ「CLABAM」です。多元スパッタ成膜により4インチウェハ上に89セルの材料ライブラリを一括作製し、178本のプローブによる自動インピーダンス測定で約200試料をわずか6時間で評価します。粉末合成でも秤量・混合・成型・焼成・計測・データベース化を自動化するロボット実験基盤を構築中で、実験データ約4,500件・文献データ約15,000件・構造データ約5,000件を蓄積し、機械学習やLLMを組み合わせたAI駆動材料開発を展開しています。'
+                      : 'A major strength of our lab is CLABAM, our combinatorial automated experiment laboratory. Multi-target sputtering creates a library of 89 cells on a single 4-inch wafer, and automated impedance measurements with 178 probes evaluate about 200 samples in just 6 hours. For powder synthesis, a robotic platform automating weighing, mixing, pressing, firing, measurement, and database registration is under development. With ~4,500 experimental records, ~15,000 literature entries, and ~5,000 structures, we pursue AI-driven materials development combining machine learning and LLMs.'}
                   </p>
-                  <div className="flex gap-4 justify-center">
-                    <div className="w-40">
+                  <p>
+                    {locale === 'ja'
+                      ? 'こうした最先端の研究基盤を、学生が自分の研究に日常的に使えます。機械学習やニューラルネットワークポテンシャルは標準的な道具として身につけつつ、プラスαのオリジナリティを生み出す着眼点を養います。'
+                      : 'Students use this cutting-edge infrastructure in their own daily research — mastering machine learning and neural network potentials as standard tools while cultivating the perspective to create original science beyond them.'}
+                  </p>
+                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
+                    <div className="mb-2">
                       <Image
-                        src="/student_conference1.jpg"
-                        alt={locale === 'ja' ? '学会参加の様子1' : 'Conference scene 1'}
-                        width={160}
-                        height={120}
-                        className="w-full rounded-lg"
+                        src="/combinatorial.jpg"
+                        alt={locale === 'ja' ? 'コンビナトリアル実験' : 'Combinatorial experiments'}
+                        width={600}
+                        height={400}
+                        className="w-full rounded"
                       />
                     </div>
-                    <div className="w-40">
-                      <Image
-                        src="/student_conference2.jpg"
-                        alt={locale === 'ja' ? '学会参加の様子2' : 'Conference scene 2'}
-                        width={160}
-                        height={120}
-                        className="w-full rounded-lg"
-                      />
-                    </div>
+                    <p className="text-[#8b959a] text-sm italic text-center">
+                      {locale === 'ja' ? 'コンビナトリアル合成・ハイスループット評価' : 'Combinatorial synthesis and high-throughput evaluation'}
+                    </p>
                   </div>
-                </div>
-                <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-orange-400/20">
-                  <div className="mb-2">
-                    <Image
-                      src="/seminar.jpg"
-                      alt={locale === 'ja' ? 'ゼミの様子' : 'Seminar scene'}
-                      width={600}
-                      height={400}
-                      className="w-full rounded-lg"
-                    />
-                  </div>
-                  <p className="text-gray-400 text-sm italic text-center">
-                    {locale === 'ja' ? 'ゼミの様子 (2025/7)' : 'Seminar (2025/7)'}
-                  </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-cyan-400 mb-3">{t('advancedTech')}</h3>
-                <div className="space-y-3 text-gray-300">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '最先端の設備・大型実験施設・計算資源' : 'Advanced Facilities, Beamlines, and Computing'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
                   <p>
                     {locale === 'ja'
-                      ? '研究室は多数の高度な合成・計測設備を備えています。さらに、大型放射光施設SPring-8や中性子実験施設J-PARCでの出張実験で最先端計測技術を扱います。'
-                      : 'The laboratory is equipped with numerous advanced synthesis and measurement facilities. Furthermore, we handle cutting-edge measurement technologies through experiments at large synchrotron facilities like SPring-8 and neutron facilities like J-PARC.'}
+                      ? '研究室は多数の高度な合成・計測設備を備えています。さらに、大型放射光施設SPring-8(兵庫)や中性子実験施設J-PARC(茨城)への出張実験で、最先端の計測技術を学生自身が扱います。計算面では、東京科学大学のスーパーコンピュータTSUBAMEやPreferred Networksの計算クラウド環境Matlantisを利用できます。'
+                      : 'The lab is equipped with numerous advanced synthesis and measurement facilities. Students themselves handle cutting-edge measurements through beamtime experiments at SPring-8 (synchrotron, Hyogo) and J-PARC (neutron facility, Ibaraki). For computation, the TSUBAME supercomputer at Science Tokyo and the Matlantis cloud environment by Preferred Networks are available.'}
                   </p>
-                  <div className="mt-4 p-4 bg-gray-800/30 rounded-lg border border-cyan-400/20">
-                    <p className="text-cyan-400 font-semibold mb-3">
+                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
+                    <p className="text-[#6fc3cf] font-semibold mb-3">
                       {locale === 'ja' ? '2026年1月: SPring-8 BL02B2での放射光粉末X線回折実験' : 'January 2026: Synchrotron Powder X-ray Diffraction at SPring-8 BL02B2'}
                     </p>
                     <div className="flex justify-center mb-3">
@@ -268,63 +196,222 @@ export default function ProspectiveStudentsPage() {
                           alt={locale === 'ja' ? 'SPring-8での実験の様子' : 'Experiment at SPring-8'}
                           width={400}
                           height={300}
-                          className="w-full rounded-lg"
+                          className="w-full rounded"
                         />
                       </div>
                     </div>
-                    <p className="text-gray-400 text-sm italic text-center">
+                    <p className="text-[#8b959a] text-sm italic text-center">
                       {locale === 'ja'
                         ? 'D2,M1学生が同行し, その場で測定結果について議論しました. 出張お疲れ様です!'
                         : 'D2 and M1 students accompanied and discussed measurement results on-site. Great work on the trip!'}
                     </p>
                   </div>
-                  <p>
-                    {locale === 'ja'
-                      ? '機械学習やニューラルネットワークポテンシャルなど最近ではコモディティ化した手法は素養としつつ、プラスαのオリジナリティを生み出すための着眼点を養います。'
-                      : 'While learning recently commoditized methods like machine learning and neural network potentials as basic knowledge, we cultivate perspectives to create plus-alpha originality.'}
-                  </p>
-                  <div className="bg-gray-800/50 rounded-lg p-4 border border-cyan-400/20">
-                    <h4 className="font-bold text-cyan-400 mb-2">
-                      {locale === 'ja' ? '利用可能な計算資源：' : 'Available Computing Resources:'}
-                    </h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• {locale === 'ja' ? '東京科学大学のTSUBAMEスーパーコンピュータ' : 'TSUBAME Supercomputer at Institute of Science Tokyo'}</li>
-                      <li>• {locale === 'ja' ? 'Preferred Networks の計算クラウド環境 Matlantis' : 'Preferred Networks computing cloud environment Matlantis'}</li>
-                    </ul>
-                  </div>
-                  <p className="text-sm">
-                    {locale === 'ja'
-                      ? '最先端の手法を常にキャッチアップして（インフォ分野は追いつくのに精一杯ですが・・・）、効率的に材料を開発する手法を模索しています。'
-                      : 'We constantly catch up with cutting-edge methods (although it\'s hard to keep up with the informatics field...) and explore ways to develop materials efficiently.'}
-                  </p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Lab Visit */}
+          {/* 3. Education Policy = Rapid Growth */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-[#16191c] rounded p-8 border border-[#6fc3cf]/40"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-2 text-[#e6e9ea]">
+              {t('educationPolicy')}
+            </h2>
+            <p className="text-[#6fc3cf] font-semibold mb-6">
+              {locale === 'ja' ? '— 1年で成果を出す、圧倒的な成長環境' : '— Results in your first year: an environment for rapid growth'}
+            </p>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '早期の学会発表・論文投稿' : 'Early Conference Presentations and Publications'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                  <p>
+                    {locale === 'ja'
+                      ? 'テーマ割り当てから1年以内の成果創出を目指し、成果の目処がついたら早期に学会発表・論文投稿に挑戦します。ゼミでのディスカッションで伝わる説明のスキルを磨き、若手の会でのポスター発表、国内学会での口頭発表、そして査読付き論文の執筆・国際学会での発表へとステップアップしていきます。'
+                      : 'We aim to produce results within one year of theme assignment, and challenge conference presentations and paper submissions as soon as results take shape. Students hone clear communication through seminar discussions, then step up from poster sessions at young researcher meetings to oral presentations at domestic conferences, and on to peer-reviewed papers and international conferences.'}
+                  </p>
+                  <p>
+                    {locale === 'ja'
+                      ? '実際に、M1・M2の段階で国際誌に筆頭論文を投稿した実績が複数あり、2026年にはM2学生の筆頭論文がSmall Structuresに掲載されました。M1からECS(ハワイ)やSSI(シンガポール)などの国際学会で発表した学生もいます。'
+                      : 'In fact, several students have submitted first-author papers to international journals at the M1/M2 stage — in 2026, an M2 student\'s first-author paper was published in Small Structures. Some students have presented at international conferences such as ECS (Hawaii) and SSI (Singapore) from their first year.'}
+                  </p>
+                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
+                    <p className="text-[#6fc3cf] font-semibold mb-3">
+                      {locale === 'ja' ? '学会参加の様子 (M1)' : 'Conference Participation (M1)'}
+                    </p>
+                    <div className="flex gap-4 justify-center">
+                      <div className="w-40">
+                        <Image
+                          src="/student_conference1.jpg"
+                          alt={locale === 'ja' ? '学会参加の様子1' : 'Conference scene 1'}
+                          width={160}
+                          height={120}
+                          className="w-full rounded"
+                        />
+                      </div>
+                      <div className="w-40">
+                        <Image
+                          src="/student_conference2.jpg"
+                          alt={locale === 'ja' ? '学会参加の様子2' : 'Conference scene 2'}
+                          width={160}
+                          height={120}
+                          className="w-full rounded"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? 'ゼミと研究支援' : 'Seminars and Research Support'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                  <p>
+                    {locale === 'ja'
+                      ? 'ゼミでは年6回の発表機会(輪読ゼミ2回+研究進捗報告4回)に加えて定期的なミーティングがあり、発表・議論のスキルを集中的に鍛えます。共同研究や国家プロジェクトに参画する機会も多く、リサーチアシスタントとして給与が支給される場合もあります。'
+                      : 'Seminars provide six presentation opportunities per year (two paper-reading and four progress reports) plus regular meetings, intensively training presentation and discussion skills. There are also many opportunities to join collaborative research and national projects, in some cases with paid research assistant positions.'}
+                  </p>
+                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#d9b83f]/20">
+                    <div className="mb-2">
+                      <Image
+                        src="/seminar.jpg"
+                        alt={locale === 'ja' ? 'ゼミの様子' : 'Seminar scene'}
+                        width={600}
+                        height={400}
+                        className="w-full rounded"
+                      />
+                    </div>
+                    <p className="text-[#8b959a] text-sm italic text-center">
+                      {locale === 'ja' ? 'ゼミの様子 (2025/7)' : 'Seminar (2025/7)'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '分野が違っても大丈夫 — 学習サポート' : 'Different Background? No Problem — Learning Support'}
+                </h3>
+                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                  <p>
+                    {locale === 'ja'
+                      ? '私自身、生物系出身から固体化学の世界に飛び込みました。だからこそ、異分野出身の学生が基礎から着実にキャッチアップできる体制を大事にしています。「固体化学の基礎」「イオン伝導体の基礎」「シミュレーション応用」「研究の進め方」などをテーマにした勉強会を自主開催しており、夜ご飯を食べながらの気軽なディスカッション形式で開くこともあります。少しでも無機材料・固体化学・電池に興味があれば、遠慮なく飛び込んできてください。'
+                      : 'I myself jumped into solid-state chemistry from a biology background — which is exactly why we value a system where students from different fields can catch up steadily from the basics. We hold self-organized study sessions on fundamentals of solid-state chemistry, ion conductors, applied simulation, and how to conduct research, sometimes as casual discussions over dinner. If you have any interest in inorganic materials, solid-state chemistry, or batteries, do not hesitate to jump in.'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
+                <h4 className="font-bold text-[#6fc3cf] mb-2">
+                  {locale === 'ja' ? '在学中に習得できる技術の例：' : 'Examples of skills you can acquire:'}
+                </h4>
+                <ul className="text-sm space-y-1">
+                  <li>• {locale === 'ja' ? '合成・分析: 固相合成 / XRD / SEM / 電気化学測定' : 'Synthesis & analysis: solid-state synthesis / XRD / SEM / electrochemical measurements'}</li>
+                  <li>• {locale === 'ja' ? '計算・AI: 第一原理計算 / 機械学習ポテンシャル / 機械学習・データ解析' : 'Computation & AI: first-principles calculations / ML potentials / machine learning & data analysis'}</li>
+                  <li>• {locale === 'ja' ? '自動化: 自動実験制御・ハイスループット評価' : 'Automation: automated experiment control & high-throughput evaluation'}</li>
+                  <li>• {locale === 'ja' ? '大型施設: 放射光X線回折(SPring-8) / 中性子回折(J-PARC)の出張実験' : 'Large facilities: synchrotron XRD (SPring-8) / neutron diffraction (J-PARC) beamtime experiments'}</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 4. Careers & Events */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+          >
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+              {locale === 'ja' ? '卒業後の進路・研究室イベント' : 'Career Paths & Lab Events'}
+            </h2>
+            <div className="space-y-6 text-[#aab3b6] leading-relaxed">
+              <div>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '卒業後の進路' : 'Career paths after graduation'}
+                </h3>
+                <p>
+                  {locale === 'ja'
+                    ? '直近で松井が指導に関与した卒業生は、自動車メーカー・電池材料メーカー・電機メーカー・鉄鋼メーカー・半導体メーカーなど、エネルギー・材料分野の第一線に進んでいます。博士課程への進学者もおり、経済的な支援制度があります。'
+                    : 'Recent graduates supervised by Matsui have joined leading companies in automobiles, battery materials, electronics, steel, and semiconductors. Some have advanced to doctoral programs, for which financial support is available.'}
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                  {locale === 'ja' ? '研究室イベント' : 'Lab events'}
+                </h3>
+                <p>
+                  {locale === 'ja'
+                    ? '年1回のゼミ旅行(2026年は八丈島)のほか、高尾山〜相模湖ハイキングやBBQ、不定期の飲み会など、研究以外の交流も活発です。オンとオフを切り替えながら、気持ちよく研究に打ち込める雰囲気を大事にしています。'
+                    : 'Besides the annual lab retreat (Hachijojima in 2026), we enjoy hiking from Mt. Takao to Lake Sagami, BBQs, and casual get-togethers. We value an atmosphere where you can switch between focused research and refreshing downtime.'}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Photo Gallery */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+          >
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+              {locale === 'ja' ? 'フォトギャラリー — 研究室の日常' : 'Photo Gallery — Lab Life'}
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                { src: '/welcome_party.jpg', ja: '新入生歓迎会', en: 'Welcome party for new members' },
+                { src: '/lab_bbq.jpg', ja: '研究室BBQ (2026/6)', en: 'Lab BBQ (June 2026)' },
+                { src: '/labtrip_fishing.jpg', ja: 'ゼミ旅行にて釣り (八丈島, 2026/6)', en: 'Fishing on the lab retreat (Hachijojima, June 2026)' },
+                { src: '/promotion_party.jpg', ja: '昇進のお祝い会 — 学生の皆さんが開いてくれました', en: 'Celebration for the promotion, organized by students' },
+                { src: '/suzuki_birthday.jpg', ja: '鈴木先生のお誕生日会', en: 'Birthday celebration for Prof. Suzuki' },
+                { src: '/celebration_pizza.jpg', ja: '2025年度卒業生の送別会', en: 'Farewell party for our 2025 graduates' },
+                { src: '/campus_sakura.jpg', ja: '春のキャンパス — 桜 (2026/3)', en: 'Cherry blossoms on campus (March 2026)' },
+                { src: '/spring8_deer.jpg', ja: 'SPring-8出張にて — 鹿に遭遇', en: 'A deer encounter during a SPring-8 beamtime trip' }
+              ].map((photo, index) => (
+                <div key={index} className="bg-[#1c2124]/70 rounded overflow-hidden border border-[#262b2e]">
+                  <Image
+                    src={photo.src}
+                    alt={locale === 'ja' ? photo.ja : photo.en}
+                    width={400}
+                    height={300}
+                    className="w-full h-44 sm:h-52 object-cover"
+                  />
+                  <p className="text-[#8b959a] text-xs sm:text-sm px-3 py-2">
+                    {locale === 'ja' ? photo.ja : photo.en}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* 5. Lab Visit */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+          >
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('labVisit')}
             </h2>
-            <div className="space-y-4 text-gray-300">
+            <div className="space-y-4 text-[#aab3b6]">
               <p>
                 {locale === 'ja'
-                  ? '研究室見学はいつでも歓迎します。ご希望の場合は、事前にメールで日程候補をご連絡ください。'
-                  : 'Lab visits are always welcome. If you wish to visit, please contact us by email in advance with candidate dates.'}
+                  ? '研究室見学はいつでも歓迎します。ご希望の場合は、事前にメールで日程候補をご連絡ください。遠方の方や訪問が困難な場合は、Zoom等でのオンライン面談も可能です。お気軽にご相談ください。'
+                  : 'Lab visits are always welcome — please contact us by email in advance with candidate dates. For those from afar or if visiting is difficult, online meetings via Zoom are also possible. Feel free to reach out.'}
               </p>
-              <p>
-                {locale === 'ja'
-                  ? '遠方の方や、訪問が困難な場合は、Zoom等でのオンライン面談も可能です。お気軽にご相談ください。'
-                  : 'For those from afar or if visiting is difficult, online meetings via Zoom are also possible. Please feel free to contact us.'}
-              </p>
-              <div className="bg-gray-800/50 rounded-lg p-4 border border-green-400/20">
-                <h4 className="font-bold text-green-400 mb-3">{t('visitFlow')}</h4>
+              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
+                <h4 className="font-bold text-[#6fc3cf] mb-3">{t('visitFlow')}</h4>
                 <ul className="text-sm space-y-1">
                   <li>• {locale === 'ja' ? '研究室のM1-2学生との面談（30分）' : 'Meeting with M1-2 students (30 min)'}</li>
                   <li>• {locale === 'ja' ? 'ラボツアー（実験設備の見学）（30分）' : 'Lab tour (facility visit) (30 min)'}</li>
@@ -334,37 +421,37 @@ export default function ProspectiveStudentsPage() {
             </div>
           </motion.div>
 
-          {/* Q&A */}
+          {/* 6. Q&A */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('qAndA')}
             </h2>
             <div className="space-y-6">
               {qaData.map((qa, index) => (
-                <div key={index} className="border border-gray-700 rounded-lg p-4">
-                  <h4 className="font-bold text-yellow-400 mb-2">Q: {qa.q}</h4>
-                  <p className="text-gray-300 text-sm">A: {qa.a}</p>
+                <div key={index} className="border border-[#3a4247] rounded p-4">
+                  <h4 className="font-bold text-[#d9b83f] mb-2">Q: {qa.q}</h4>
+                  <p className="text-[#aab3b6] text-sm">A: {qa.a}</p>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Message */}
+          {/* 7. Message */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('message')}
             </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-[#aab3b6] leading-relaxed">
               <p>
                 {locale === 'ja'
                   ? '新しい材料の発見は、社会を大きく変える可能性を秘めています。特に、エネルギー問題の解決に向けた蓄電デバイスの開発は、人類の持続可能な発展に不可欠です。'
@@ -375,10 +462,10 @@ export default function ProspectiveStudentsPage() {
                   ? '私たちと一緒に、材料科学の最前線で研究に取り組んでみませんか？熱意ある学生の参加をお待ちしています。'
                   : 'Would you like to work with us on research at the forefront of materials science? We look forward to the participation of enthusiastic students.'}
               </p>
-              <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-lg p-4 border border-pink-400/20">
-                <p className="text-pink-400 font-semibold">
+              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
+                <p className="text-[#6fc3cf] font-semibold">
                   {locale === 'ja' ? '連絡先: ' : 'Contact: '}
-                  <Link href="/access" className="hover:text-pink-300 underline">
+                  <Link href="/access" className="hover:text-[#9adae4] underline">
                     {locale === 'ja' ? 'Contactページ' : 'Contact page'}
                   </Link>
                   {locale === 'ja' ? 'をご覧ください。' : '.'}
@@ -391,7 +478,7 @@ export default function ProspectiveStudentsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

@@ -1,96 +1,67 @@
 ## Graph Neural Network (GNN)
 
 ### CGCNN（Crystal Graph Neural Network）
-- T. Xie, et al. (2017, 2018)
-- グラフネットワークの結晶構造への適用
-- 2017年以降のMI界隈のホットトピック
-- m3gnet、matlantis、GNoME等もこの延長線に位置
-- CGCNNがプロトタイプかつベンチマーク
+
+CGCNNは、T. Xieらが2017年から2018年にかけて発表した、グラフネットワークを結晶構造へ適用した手法です。2017年以降のマテリアルズ・インフォマティクス界隈のホットトピックとなっており、m3gnet、matlantis、GNoME等もこの延長線上に位置づけられます。その意味で、CGCNNはプロトタイプであると同時にベンチマークとしての役割も担っています。
 
 ### アーキテクチャ
-- グラフ = ノード（原子）+ エッジ（結合）
-- 原子：族、周期、半径、電荷などの特徴量ベクトル
-- 結合：距離ベクトル
-- 畳み込み層、プーリング層、完全連結層
+
+グラフはノード（原子）とエッジ（結合）から構成されます。原子は族、周期、半径、電荷などの特徴量ベクトルとして、結合は距離ベクトルとして表現されます。ネットワーク本体は畳み込み層、プーリング層、完全連結層から構成されます。
 
 ### 応用
-- バルク物性：total energy、生成エネルギー、分解エネルギー、バンドギャップ等の回帰、分類
-- サイト特徴：force、stress tensor、欠陥生成エネルギー等の回帰
-- 汎用ポテンシャルへ展開
+
+応用先としては、total energy、生成エネルギー、分解エネルギー、バンドギャップ等のバルク物性の回帰・分類に加えて、force、stress tensor、欠陥生成エネルギー等のサイト特徴の回帰が挙げられます。さらに、これらの技術は汎用ポテンシャルへと展開されています。
 
 ---
 
 ### GNoME
-- いずれGNoMEのデータ（DFT with PBE）がMaterials projectに登録されるとのこと
-- 23.12.25現在、まだ反映されていない
+
+GNoMEのデータ（DFT with PBE）は、いずれMaterials Projectに登録されるとのことですが、2023年12月25日現在まだ反映されていません。
 
 #### コンセプト
-- NNP学習(MP)→NNPで安定構造探索→DFT→NNP学習→…
-- 強化学習的に探索とモデル訓練を続ける
-- 疑問：バラエティが広がるか？
-- 予想：m3gnetも強化学習を取り入れているかは不明だが、元素置換の網羅的探索はすでに公開済み（matterverse）
-- 今後m3gnetも大幅なアップデートが想定
+
+GNoMEのコンセプトは、Materials ProjectのデータでNNPを学習し、そのNNPで安定構造を探索し、得られた構造をDFTで評価して再びNNPを学習する、というループを強化学習的に繰り返して探索とモデル訓練を続ける点にあります。ただし、この方法で構造のバラエティが広がるのかという疑問は残ります。m3gnetが強化学習を取り入れているかは不明ですが、元素置換の網羅的探索はすでにmatterverseとして公開されており、今後m3gnetも大幅なアップデートが想定されます。
 
 #### 詳細
-- 元素置換として、６元まで考えたみたい
-- 元素置換は既報の元素置換の確率に基づき実施
-- 組成から構造を生成する試みは、ランダムに100構造を生成（これなに？）→ structure matcherで一致構造は排除
-- trained potentialは公開されていない！
-- DFT-MDとの連携について興味深い。例えば短時間DFT-MDで得られた構造で追加学習など
-- ポテンシャル学習時のノウハウが凄まじい（test-time augmentationで緩和前構造も予測できるように、など）
-- GNNの枠組みで、エネルギー（E<sub>formation</sub>）を予測するプロセスを入れている
+
+元素置換としては6元系まで考慮されており、置換は既報の元素置換の確率に基づいて実施されます。組成から構造を生成する試みとしては、ランダムに100構造を生成し（この生成方法の詳細には疑問が残ります）、structure matcherで一致した構造を排除しています。なお、学習済みポテンシャル（trained potential）は公開されていない点に注意が必要です。DFT-MDとの連携も興味深く、例えば短時間のDFT-MDで得られた構造による追加学習などが考えられます。ポテンシャル学習時のノウハウも凄まじく、test-time augmentationにより緩和前構造も予測できるようにするなどの工夫が施されています。また、GNNの枠組みの中に、エネルギー（E<sub>formation</sub>）を予測するプロセスが組み込まれています。
 
 ---
 
 ### 動向調査：Graph Neural Networkの適用
-- 汎用GNNはfine tuningが必須
-- M3GNetを用いたLi伝導体スクリーニング→ Na<sub>x</sub>Li<sub>3-x</sub>YCl<sub>6</sub>を報告（新しいか？）
-- C. Chen, arxiv (2024) Microsoft
-- 構造空間の拡張が必須
-- disorder構造も取り入れるべき
-- 生成AIについては？
-- 同様の課題を議論
+
+汎用GNNを実際の探索に用いるにはfine tuningが必須です。M3GNetを用いたLi伝導体スクリーニングではNa<sub>x</sub>Li<sub>3-x</sub>YCl<sub>6</sub>が報告されていますが、これが新しい物質と言えるかは検討の余地があります。C. Chenら（Microsoft、arxiv 2024）の報告では、構造空間の拡張が必須であること、disorder構造も取り入れるべきであること、さらに生成AIをどう活用するかといった、同様の課題が議論されています。
 
 ---
 
 ### EquiformerV2 + OMat
-- Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models
-- Luis Barroso-Luque, et al., 10.48550/arXiv.2410.12771 (2024)
-- 非平衡状態（MDやボルツマン分布likeに構造を変位）を含むデータセット
-- Matlantisと同じ感じ。モデルはMIT licenseで公開されているので使いやすい
-- OMatのpretrained modelから、MPtrajでfine-tuning：matbenchのSoTAモデル
-- OMatのpretrained modelから、MPtraj+Alexandriaでfine-tuningモデルもある
-- Energy MAE：10 meV/atom（OMat24テストスプリット）
+
+Open Materials 2024（OMat24）Inorganic Materials Dataset and Models（Luis Barroso-Luque, et al., 10.48550/arXiv.2410.12771 (2024)）は、MDやボルツマン分布likeに構造を変位させた非平衡状態を含むデータセットです。位置づけとしてはMatlantisと同じイメージですが、モデルがMIT licenseで公開されているため使いやすいのが特徴です。OMatのpretrained modelからMPtrajでfine-tuningしたモデルはmatbenchのSoTAモデルとなっており、MPtraj+Alexandriaでfine-tuningしたモデルもあります。Energy MAEは10 meV/atom（OMat24テストスプリット）です。
 
 ---
 
 ### MACEのアーキテクチャ
-- SoTAの精度：
-  - Energy：5 meV atom<sup>-1</sup>
-  - Force：0.1 eV Å<sup>-1</sup>
+
+MACEはSoTAの精度を達成しており、Energyで5 meV atom<sup>-1</sup>、Forceで0.1 eV Å<sup>-1</sup>程度です。
 
 #### 一般的なLocal MLIP
-- 原子密度、結合長、角度ベースの回帰モデル（線形~kernel~NN）
-- 計算効率が高いが、系が複雑（構成元素↑）になるほど計算効率が下がる（組み合わせ爆発）
-- 最近のLMLIPは原子クラスター展開を採用し、効率的に多体間項を取り入れている
+
+一般的なLocal MLIPは、原子密度、結合長、角度をベースとした回帰モデル（線形からカーネル法、NNまで）です。計算効率が高い一方で、構成元素が増えて系が複雑になるほど組み合わせ爆発により計算効率が下がります。そのため、最近のLocal MLIPは原子クラスター展開を採用し、効率的に多体間項を取り入れています。
 
 #### Graph MLIP
-- メッセージ伝達ニューラルネットワーク
-- 系の複雑さに対してロバストだが、多体間相互作用の表現が苦手（？）
-- 最近のGMLIPは、多体間相互作用を取り入れる設計
-  - 三体間相互作用を取り入れたM3GNet
-  - 原子クラスター展開を取り入れたMACE
+
+Graph MLIPは、メッセージ伝達ニューラルネットワークに基づく手法です。系の複雑さに対してロバストである一方で、多体間相互作用の表現は苦手とされています。そこで最近のGraph MLIPは多体間相互作用を取り入れる設計となっており、三体間相互作用を取り入れたM3GNetや、原子クラスター展開を取り入れたMACEがその例です。
 
 #### 原子クラスター展開
-- 原子iの全隣接原子の距離等の評価→原子i近傍の原子密度分布関数として表現
+
+原子クラスター展開では、原子iの全隣接原子との距離等を評価し、原子i近傍の原子密度分布関数として表現します。
 
 ### MACE詳細
-- https://www.doc.ic.ac.uk/~bkainz/teaching/DL/notes/equivariance.pdf
-- IP：順伝搬NN、ガウス過程回帰、線形回帰
-- GNN：二体間相互作用 for DTNN、SchNet、HIP-NN、PhysNet、or DimeNet
-- MACE：多体間相互作用を取り入れた（M3GNetとの違いとは）
+
+等変性（equivariance）については https://www.doc.ic.ac.uk/~bkainz/teaching/DL/notes/equivariance.pdf が参考になります。原子間ポテンシャル（IP）としては順伝搬NN、ガウス過程回帰、線形回帰があり、GNN系ではDTNN、SchNet、HIP-NN、PhysNet、DimeNetなどが二体間相互作用を扱います。MACEはこれらに対して多体間相互作用を取り入れた手法です（M3GNetとの違いがどこにあるかが論点です）。
 
 #### アーキテクチャ：Message Passing Neural Network（Graph NNの一種）
+
 - σ<sub>i</sub><sup>(t)</sup> = (r<sub>i</sub>, z<sub>i</sub>, h<sub>i</sub><sup>(t)</sup>)
 - r<sub>i</sub> ∈ ℝ<sup>3</sup>：r<sub>i</sub>は3次元実数ベクトル空間ℝ<sup>3</sup>に属する
 - h<sub>i</sub><sup>(t+1)</sup> = U<sub>t</sub>(σ<sub>i</sub><sup>(t)</sup>, m<sub>i</sub><sup>(t)</sup>)
@@ -98,10 +69,8 @@
 - E<sub>i</sub> = Σ<sub>t=1</sub><sup>T</sup> R<sub>t</sub>(σ<sub>i</sub><sup>(t)</sup>)
 
 ### MACE学習
-- 200エポック、40-80 NVIDIA A100 GPU、10-20ノード
-- 中規模モデルの学習：約2,600 GPU時間
-- TSUBAME：Tesla P100 × 4、4GPU × 30 node = 80 GPUs
-- 2600GPU hours/80GPU = 40hours
+
+MACEの学習は200エポックで、40-80台のNVIDIA A100 GPU（10-20ノード）を用いて行われています。中規模モデルの学習には約2,600 GPU時間が必要です。TSUBAME（Tesla P100 × 4、4GPU × 30 node = 80 GPUs）を利用する場合、2,600 GPU時間 ÷ 80 GPU = 40時間に相当します。
 
 ### MACEパラメータ詳細
 
@@ -133,14 +102,15 @@
 - --eval_interval：evalで評価するインターバル、いらないかも
 - --amsgrad：adamsのoptimizerの一種
 - --restart_latest：これを入れておくとcheckpointsのベストなモデルで再開してくれる
+
 ### 注意事項
-- Self-consistent loopが収束しない計算は教師データから外す
-- loss functionはMSEよりRMSEが良いとのこと
+
+Self-consistent loopが収束しない計算は教師データから外します。また、loss functionはMSEよりRMSEが良いとのことです。
 
 ### Descriptorについて
-- https://mace-docs.readthedocs.io/en/latest/guide/descriptors.html
-- 論文では元素の特徴量ベクトルを抽出しているが、構造の特徴量ベクトルとして出力できないか？
+
+MACEのdescriptorについては https://mace-docs.readthedocs.io/en/latest/guide/descriptors.html にドキュメントがあります。論文では元素の特徴量ベクトルを抽出していますが、これを構造の特徴量ベクトルとして出力できないか、というのが検討課題です。
 
 ### データ処理
-- OUTCAR → data ≈ 20,000,000
-- Input data：random 1,000 → MACE descriptors → 図を作る
+
+OUTCARから得られるデータは約20,000,000件にのぼります。入力データとしてはランダムに1,000件を抽出し、MACE descriptorsを計算して図を作成します。

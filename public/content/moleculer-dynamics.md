@@ -16,11 +16,7 @@
 
 ### 推奨
 
-- 短いステップで正確なシミュレーション：TSUBAMEでDFTMD
-- 中程度のステップで正確なシミュレーション：TSUBAMEでDFTMD+MLFF
-- 中規模スクリーニング：MATLANTISでMatlantis
-- 大規模ラフスクリーニング：TSUBAMEでeqV2OMat
-- 大規模精密スクリーニング：TSUBAMEで任意のアーキテクチャを使用して独自のポテンシャルを訓練
+用途に応じた使い分けの目安は次の通りです。短いステップで正確なシミュレーションを行いたい場合はTSUBAMEでDFTMDを、中程度のステップで正確なシミュレーションを行いたい場合はTSUBAMEでDFTMD+MLFFを使用します。中規模のスクリーニングにはMATLANTISでMatlantisを、大規模なラフスクリーニングにはTSUBAMEでeqV2OMatを使用します。さらに大規模かつ精密なスクリーニングを行う場合は、TSUBAMEで任意のアーキテクチャを使用して独自のポテンシャルを訓練します。
 
 ---
 
@@ -28,152 +24,123 @@
 
 ### NPTアンサンブル：粒子数(N)、圧力(P)、温度(T)一定
 
-熱浴：
-- VASP：Langevin
-- ASE：Nose-Hoover（推奨）
-
-仕様：シミュレーション中に体積と格子形状が可変
-
-使用法：
-- 相転移のシミュレーション
-- 平衡体積の決定 → NVT計算を引き継ぐことができる
-- GNNモデルの訓練データ作成（訓練データには100-200 K高い温度を設定）
-- アモルファス構造の作成
+NPTアンサンブルでは、シミュレーション中に体積と格子形状が可変となります。熱浴としては、VASPではLangevinを、ASEではNose-Hoover（推奨）を使用します。用途としては、相転移のシミュレーション、平衡体積の決定（その結果をNVT計算に引き継ぐことができます）、GNNモデルの訓練データ作成（訓練データには100-200 K高い温度を設定します）、アモルファス構造の作成などが挙げられます。
 
 ### NVTアンサンブル：粒子数(N)、体積(V)、温度(T)一定
 
-熱浴：
-- VASP：Langevin、Nose-Hoover（推奨）
-- ASE：Langevin、Nose-Hoover（推奨）
-
-仕様：シミュレーション中に体積と格子形状が固定
-
-使用法：
-- 0Kで事前最適化された構造またはNPT計算から時間平均された構造からのイオン伝導率のシミュレーション
+NVTアンサンブルでは、シミュレーション中に体積と格子形状が固定されます。熱浴としては、VASP、ASEともにLangevinとNose-Hooverが利用でき、いずれの場合もNose-Hooverを推奨します。用途としては、0Kで事前最適化された構造、またはNPT計算から時間平均された構造を出発点とするイオン伝導率のシミュレーションに使用します。
 
 ### 注意事項
 
-- NPTはより柔軟だが、応力の正確な推定が必要
-- 一般に、応力のDFT計算には多くの計算コストが必要（ENCUT = ENMAX × 1.3、Pulay応力を参照）
-- 事前訓練ポテンシャルを使用する場合、訓練データが高いENCUTで計算されたことに注意
-- NVTはイオン伝導率を計算する一般的なアプローチ。固定格子は融点以上でも構造変形や融解を抑制できる
-- DFTMDの場合、ENCUT=EMAXを設定することで計算コストを削減できる（通常400 eV）
+NPTはより柔軟ですが、応力の正確な推定が必要です。一般に、応力のDFT計算には多くの計算コストが必要となります（ENCUT = ENMAX × 1.3、Pulay応力を参照）。事前訓練ポテンシャルを使用する場合は、訓練データが高いENCUTで計算されていることに注意してください。一方、NVTはイオン伝導率を計算する一般的なアプローチであり、固定格子は融点以上でも構造変形や融解を抑制できます。DFTMDの場合は、ENCUT=EMAXを設定することで計算コストを削減できます（通常400 eV）。
 
 ---
 
 ## パラメータのヒント
 
 ### タイムステップ
-- 軽元素H：0.5 fs（振動周波数がHで高い）
-- Li：1-2 fs
-- その他の重い元素：2fs以上
+
+タイムステップは元素の振動周波数に応じて選びます。軽元素であるHは振動周波数が高いため0.5 fs、Liは1-2 fs、その他の重い元素は2fs以上が目安です。
 
 ### データ間隔
-- 特定の目的を除いて、10-50間隔が推奨される
-- 毎(1)間隔は大きすぎる軌跡ファイルを引き起こし、ラップトップで処理できない可能性がある！
+
+特定の目的を除いて、10-50間隔を推奨します。毎(1)間隔で保存すると軌跡ファイルが大きくなりすぎて、ラップトップで処理できない可能性があります！
 
 ### 総時間
-- DFTMD：50-100 ps
-- GNNMD：~1000 ps（1 ns）
+
+総シミュレーション時間の目安は、DFTMDで50-100 ps、GNNMDで~1000 ps（1 ns）です。
 
 ### 温度
-- Arrheniusプロットには少なくとも4点が必要
-- 典型的な範囲は高伝導率材料で300～800 K、低伝導率材料で600～1200 K
+
+Arrheniusプロットには少なくとも4点が必要です。典型的な温度範囲は、高伝導率材料で300～800 K、低伝導率材料で600～1200 Kです。
 
 ### DFT特有
-- K点：計算コストを削減するために単一ガンマ点が推奨される
-- 擬ポテンシャル：電子数の少ないポテンシャルを選択
-- 原子数（≈スーパーセルサイズ）：
-  - DFTMD：50-200
-  - GNNMD：150-500
+
+- K点：計算コストを削減するために単一ガンマ点を推奨します
+- 擬ポテンシャル：電子数の少ないポテンシャルを選択します
+- 原子数（≈スーパーセルサイズ）：DFTMDでは50-200、GNNMDでは150-500が目安です
 
 ### VASPのヒント
-- POSCARの最後に書かれたゼロ速度を削除（CONTCARからPOSCARを作成した場合）
-- ノード：INCARのNPAR（job.shの"mpirun -n xxx"のxxxを変更）
-  - cpu40：NPAR=5
-  - cpu160：NPAR=8
-- 長い計算の場合、ノード予約（例：4日間）についてMatsuiに尋ねる
+
+- CONTCARからPOSCARを作成した場合、POSCARの最後に書かれたゼロ速度を削除します
+- ノード：INCARのNPARを設定します（job.shの"mpirun -n xxx"のxxxを変更）。cpu40ではNPAR=5、cpu160ではNPAR=8です
+- 長い計算の場合、ノード予約（例：4日間）についてMatsuiに尋ねてください
 
 ### MATLANTIS上のPFPのヒント
-- 再現性のために、使用したPFPバージョンに注意する
-- ドキュメントと開発者貢献リポジトリを読む
-  - ドキュメント：https://docs.matlantis.com/atomistic-simulation-tutorial/en/
-  - リポジトリ：https://github.com/matlantis-pfcc/matlantis-contrib/tree/main/matlantis_contrib_examples
-- 約2-3ノードのみ利用可能
+
+再現性のために、使用したPFPのバージョンに注意してください。また、以下のドキュメントと開発者貢献リポジトリを読むことをおすすめします。なお、利用可能なのは約2-3ノードのみです。
+
+- ドキュメント：https://docs.matlantis.com/atomistic-simulation-tutorial/en/
+- リポジトリ：https://github.com/matlantis-pfcc/matlantis-contrib/tree/main/matlantis_contrib_examples
 
 ### その他のGNNMDのヒント
-- TSUBAMEには強力なGPUノードがある。TSUBAME内のGPUでGNNMDを実行することを強く推奨
+
+TSUBAMEには強力なGPUノードがあります。TSUBAME内のGPUでGNNMDを実行することを強く推奨します。
 
 ---
 
 ## 出力ファイル
 
 ### VASP
-- vasprun.xml：すべての情報がこれに含まれている。aseまたはpmgを介してこのxmlから軌跡を読み取ることができる。ウォールタイムでジョブが中止された場合、このxmlファイルは壊れて開けない
-- XDATCAR：軌跡（Ovitoで読み取り可能）。aseを介してこのファイルを読み取ることができる
+
+- vasprun.xml：すべての情報がこのファイルに含まれています。aseまたはpmgを介してこのxmlから軌跡を読み取ることができます。ただし、ウォールタイムでジョブが中止された場合、このxmlファイルは壊れて開けなくなります
+- XDATCAR：軌跡（Ovitoで読み取り可能）。aseを介してこのファイルを読み取ることができます
 - CONTCAR：速度を含む最後の構造
 - …
 
 再開方法：
-1. 上書きを避けるためにXDATCARの名前を変更
-2. CONTCARをPOSCARにコピー
-3. ジョブを提出
+1. 上書きを避けるためにXDATCARの名前を変更します
+2. CONTCARをPOSCARにコピーします
+3. ジョブを提出します
 
 ### ASE
-- xxx.traj：軌跡。aseを介してこのファイルを読み取ることができる
+
+ASEの場合、軌跡はxxx.trajに出力され、aseを介してこのファイルを読み取ることができます。
 
 再開方法：
-1. ase.md.XXXXオブジェクトで"append_trajectory=True"を設定
-2. ジョブをsubmit
+1. ase.md.XXXXオブジェクトで"append_trajectory=True"を設定します
+2. ジョブをsubmitします
 
 ---
 
 ## 解析
 
 ### トレーサー拡散係数
+
 D<sub>tr</sub> = lim<sub>t→∞</sub> Δx<sup>2</sup>/(6t)
 
-- Δx<sup>2</sup>：平均二乗変位
-- MSD(Δt)-Δtプロットの傾き = D<sub>tr</sub>
+ここで、Δx<sup>2</sup>は平均二乗変位です。MSD(Δt)-Δtプロットの傾きがD<sub>tr</sub>となります。
 
 ### Nernst-Einstein式
+
 σ = (Z<sub>c</sub><sup>2</sup>e<sup>2</sup>C)/(k<sub>B</sub>T) × D<sub>tr</sub>
 
-C = N<sub>c</sub>/V
-
-Nernst-Einsteinの使用は物議を醸しており、最近議論されている：
+ここで、C = N<sub>c</sub>/Vです。なお、Nernst-Einstein式の使用は物議を醸しており、最近も議論されています：
 A. Marcolongo, N. Marzari, Ionic correlations and failure of Nernst-Einstein relation in solid-state electrolytes, Phys. Rev. Mat., 1, 025402 (2017)
 
 ### Arrhenius則
+
 σ = (σ<sub>0</sub>/T) × exp(-E<sub>a</sub>/(kT))
 
 log σT = log σ<sub>0</sub> - 2.303 × E<sub>a</sub>/(kT)
 
-log σT vs 1000/Tの傾き = -2.303 × E<sub>a</sub>/(1000k)
+log σT vs 1000/Tプロットの傾きが-2.303 × E<sub>a</sub>/(1000k)となります。
 
 ### 上記の特性を計算する方法
 
-1. pymatgen diffusion-analyzerを使用
-   - 使いやすい。このモジュールの時間平均化がMSD(Δt)-Δtプロットに人工的な偏差を引き起こすことに注意
-
-2. numpy等で計算（https://github.com/matlantis-pfcc/matlantis-contrib/blob/main/matlantis_contrib_examples/MD_Li_diffusion_in_LGPS）
+1. pymatgen diffusion-analyzerを使用する方法。使いやすいのが利点ですが、このモジュールの時間平均化がMSD(Δt)-Δtプロットに人工的な偏差を引き起こすことに注意してください
+2. numpy等で計算する方法（https://github.com/matlantis-pfcc/matlantis-contrib/blob/main/matlantis_contrib_examples/MD_Li_diffusion_in_LGPS）
 
 ### 時間平均MSD vs 通常のMSD
-- 時間平均MSD(Δt)（式7）は平滑化されたMSDプロファイルを提供するが、Dの誤差を減らさない
-- さらに、平滑化はMSD(t)-tプロットの末尾（終端）領域の人工的な偏差を引き起こす
-- 通常のMSD(Δt)（式6）は明確さのためにより良い（私の意見では）
+
+時間平均MSD(Δt)（式7）は平滑化されたMSDプロファイルを提供しますが、Dの誤差を減らすわけではありません。さらに、平滑化はMSD(t)-tプロットの末尾（終端）領域に人工的な偏差を引き起こします。私の意見では、明確さの点で通常のMSD(Δt)（式6）の方が優れています。
 
 ### MSD(Δt)-ΔtとArrheniusプロットのフィッティングのヒント
-- ✗低温での線形性が悪い：ホッピングイベントが少なく、誤差が大きい
-- ◎高温での線形性が良い：ホッピングイベントが多く、統計が良い
-- (1) 正確なデータでフィッティング
-- (2) 精度の低い低温データを含む全体フィッティング
-- 精度が低い→室温で高い伝導率を予測する傾向があるが、これは間違い！！！！！
-- 私の意見では、5 Å未満のMSDは破棄すべき
-- 10 Åを超えるMSDの使用がより良い
+
+低温ではホッピングイベントが少なく誤差が大きいため線形性が悪く、逆に高温ではホッピングイベントが多く統計が良いため線形性が良くなります。フィッティングの方法としては、(1) 正確なデータのみでフィッティングする方法と、(2) 精度の低い低温データを含めて全体をフィッティングする方法があります。精度の低いデータを含めると室温で高い伝導率を予測する傾向がありますが、これは間違いです！！！！！ 私の意見では、5 Å未満のMSDは破棄すべきで、10 Åを超えるMSDを使用する方が良いでしょう。
 
 ---
 
 ### Electrostatic ground-state (ESGS)構造とSpecial quasi-random structure構造の比較研究
-- Liサイトは1a、24kの2通り
-- SQSの方がESGS構造より実験により近いイオン伝導率を示した
+
+この比較研究では、Liサイトは1a、24kの2通りです。SQSの方がESGS構造よりも、実験に近いイオン伝導率を示しました。

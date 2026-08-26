@@ -82,7 +82,7 @@ export default function PublicationsSection() {
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     activeTab === tab.id
                       ? 'neon-glow bg-white/10 text-white'
-                      : 'text-gray-400 hover:text-white'
+                      : 'text-[#8b959a] hover:text-white'
                   }`}
                 >
                   {tab.label}
@@ -105,23 +105,23 @@ export default function PublicationsSection() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-effect p-6 rounded-2xl hover:neon-glow transition-all duration-300"
+                  className="glass-effect p-6 rounded hover:neon-glow transition-all duration-300"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-sm font-bold text-blue-400">{pub.year}</span>
+                        <span className="text-sm font-bold text-[#6fc3cf]">{pub.year}</span>
                         <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                           pub.type === 'journal' 
-                            ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-purple-500/20 text-purple-400'
+                            ? 'bg-green-500/20 text-[#6fc3cf]' 
+                            : 'bg-purple-500/20 text-[#6fc3cf]'
                         }`}>
                           {pub.type === 'journal' ? '学術誌' : '学会発表'}
                         </span>
                       </div>
                       <h3 className="text-lg font-semibold text-white mb-2">{pub.title}</h3>
-                      <p className="text-gray-400 text-sm mb-2">{pub.authors}</p>
-                      <p className="text-blue-300 text-sm">
+                      <p className="text-[#8b959a] text-sm mb-2">{pub.authors}</p>
+                      <p className="text-[#9adae4] text-sm">
                         {pub.type === 'journal' ? pub.journal : `${pub.conference}, ${pub.location}`}
                       </p>
                     </div>
@@ -145,15 +145,15 @@ export default function PublicationsSection() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass-effect p-6 rounded-2xl hover:neon-glow transition-all duration-300"
+                  className="glass-effect p-6 rounded hover:neon-glow transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="text-sm font-mono text-blue-400 whitespace-nowrap">
+                    <div className="text-sm font-mono text-[#6fc3cf] whitespace-nowrap">
                       {new Date(news.date).toLocaleDateString('ja-JP')}
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-white mb-2">{news.title}</h3>
-                      <p className="text-gray-300 leading-relaxed">{news.description}</p>
+                      <p className="text-[#aab3b6] leading-relaxed">{news.description}</p>
                     </div>
                   </div>
                 </motion.div>

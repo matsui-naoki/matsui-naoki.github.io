@@ -12,12 +12,14 @@ export default function ProfileDetailPage() {
 
   // Career data
   const careerData = locale === 'ja' ? [
-    { period: '2024年10月 - 現在', position: '東京科学大学 助教' },
+    { period: '2026年6月 - 現在', position: '東京科学大学 准教授' },
+    { period: '2024年10月 - 2026年5月', position: '東京科学大学 助教' },
     { period: '2021年4月 - 2024年9月', position: '東京工業大学 助教' },
     { period: '2020年4月 - 2021年3月', position: '東京工業大学 研究員' },
     { period: '2019年4月 - 2020年3月', position: '日本学術振興会特別研究員（DC2）' }
   ] : [
-    { period: 'Oct 2024 - Present', position: 'Assistant Professor, Institute of Science Tokyo' },
+    { period: 'Jun 2026 - Present', position: 'Associate Professor, Institute of Science Tokyo' },
+    { period: 'Oct 2024 - May 2026', position: 'Assistant Professor, Institute of Science Tokyo' },
     { period: 'Apr 2021 - Sep 2024', position: 'Assistant Professor, Tokyo Institute of Technology' },
     { period: 'Apr 2020 - Mar 2021', position: 'Postdoctoral Researcher, Tokyo Institute of Technology' },
     { period: 'Apr 2019 - Mar 2020', position: 'JSPS Research Fellow (DC2)' }
@@ -66,7 +68,7 @@ export default function ProfileDetailPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -78,11 +80,11 @@ export default function ProfileDetailPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="text-[#e6e9ea]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-gray-300 font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -96,45 +98,45 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('basicInfo')}
             </h2>
-            <div className="grid md:grid-cols-2 gap-6 text-gray-300">
+            <div className="grid md:grid-cols-2 gap-6 text-[#aab3b6]">
               <div className="space-y-3">
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('name')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('name')}</span>
                   <p className="text-white">{t('nameValue')}</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('positionLabel')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('positionLabel')}</span>
                   <p className="text-white">{t('positionValue')}</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('affiliation')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('affiliation')}</span>
                   <p className="text-white">{t('affiliationValue')}</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('birthDate')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('birthDate')}</span>
                   <p className="text-white">{t('birthDateValue')}</p>
                 </div>
               </div>
               <div className="space-y-3">
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('researchField')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('researchField')}</span>
                   <p className="text-white">{t('researchFieldValue')}</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('address')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('address')}</span>
                   <p className="text-white">{t('addressValue')}</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('emailLabel')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('emailLabel')}</span>
                   <p className="text-white">matsui.n.ee49[at]m.isct.ac.jp</p>
                 </div>
                 <div>
-                  <span className="text-cyan-400 font-semibold">{t('telFax')}</span>
+                  <span className="text-[#6fc3cf] font-semibold">{t('telFax')}</span>
                   <p className="text-white">045-924-5561</p>
                 </div>
               </div>
@@ -146,36 +148,36 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('education')}
             </h2>
             <div className="space-y-6">
-              <div className="border-l-4 border-purple-400 pl-6">
-                <div className="text-purple-400 font-mono text-sm mb-1">
+              <div className="border-l-4 border-[#6fc3cf] pl-6">
+                <div className="text-[#6fc3cf] font-mono text-sm mb-1">
                   {locale === 'ja' ? '2017年4月 - 2020年3月' : 'Apr 2017 - Mar 2020'}
                 </div>
                 <div className="text-white font-bold text-lg mb-2">{t('phd')}</div>
-                <div className="text-gray-300" style={{ whiteSpace: 'pre-line' }}>
+                <div className="text-[#aab3b6]" style={{ whiteSpace: 'pre-line' }}>
                   {t('phdDetail')}
                 </div>
               </div>
-              <div className="border-l-4 border-purple-400 pl-6">
-                <div className="text-purple-400 font-mono text-sm mb-1">
+              <div className="border-l-4 border-[#6fc3cf] pl-6">
+                <div className="text-[#6fc3cf] font-mono text-sm mb-1">
                   {locale === 'ja' ? '2015年4月 - 2017年3月' : 'Apr 2015 - Mar 2017'}
                 </div>
                 <div className="text-white font-bold text-lg mb-2">{t('masters')}</div>
-                <div className="text-gray-300">
+                <div className="text-[#aab3b6]">
                   {t('mastersDetail')}
                 </div>
               </div>
-              <div className="border-l-4 border-purple-400 pl-6">
-                <div className="text-purple-400 font-mono text-sm mb-1">
+              <div className="border-l-4 border-[#6fc3cf] pl-6">
+                <div className="text-[#6fc3cf] font-mono text-sm mb-1">
                   {locale === 'ja' ? '2011年4月 - 2015年3月' : 'Apr 2011 - Mar 2015'}
                 </div>
                 <div className="text-white font-bold text-lg mb-2">{t('bachelors')}</div>
-                <div className="text-gray-300">
+                <div className="text-[#aab3b6]">
                   {t('bachelorsDetail')}
                 </div>
               </div>
@@ -187,17 +189,17 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('career')}
             </h2>
             <div className="space-y-4">
               {careerData.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="w-3 h-3 bg-green-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                  <div className="w-3 h-3 bg-[#6fc3cf] rounded-full mt-1.5 flex-shrink-0"></div>
                   <div className="flex-1">
-                    <div className="text-green-400 font-mono text-sm">{item.period}</div>
+                    <div className="text-[#6fc3cf] font-mono text-sm">{item.period}</div>
                     <div className="text-white font-semibold">{item.position}</div>
                   </div>
                 </div>
@@ -210,35 +212,35 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {locale === 'ja' ? '代表的な研究成果' : 'Representative Research Achievements'}
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-orange-400 mb-4">
+                <h3 className="text-xl font-bold text-[#d9b83f] mb-4">
                   {locale === 'ja'
                     ? '1. 新たなフッ化物イオン伝導体の設計・開発'
                     : '1. Design and Development of Novel Fluoride Ion Conductors'}
                 </h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-orange-400 mr-2">•</span>
+                    <span className="text-[#d9b83f] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>新たな結晶構造系(KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub>の擬似二成分系)で優れたイオン伝導性と電気化学的安定性を両立した固体電解質候補物質を開発しました（<span className="text-cyan-400 italic">Chem. Mater.</span>, 2025）</>
-                        : <>Developed solid electrolyte candidate materials with excellent ionic conductivity and electrochemical stability in a new crystal structure system (KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub> pseudo-binary system) (<span className="text-cyan-400 italic">Chem. Mater.</span>, 2025)</>
+                        ? <>新たな結晶構造系(KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub>の擬似二成分系)で優れたイオン伝導性と電気化学的安定性を両立した固体電解質候補物質を開発しました（<span className="text-[#6fc3cf] italic">Chem. Mater.</span>, 2025）</>
+                        : <>Developed solid electrolyte candidate materials with excellent ionic conductivity and electrochemical stability in a new crystal structure system (KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub> pseudo-binary system) (<span className="text-[#6fc3cf] italic">Chem. Mater.</span>, 2025)</>
                       }
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-orange-400 mr-2">•</span>
+                    <span className="text-[#d9b83f] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>において、Pb 6s<sup>2</sup>孤立電子対の動的再配向がイオン輸送を促進することを実験・計算双方のアプローチから世界で初めて実証しました（<span className="text-cyan-400 italic">J. Mater. Chem. A</span>, 2024）</>
-                        : <>First demonstration that dynamic reorientation of Pb 6s<sup>2</sup> lone pair electrons promotes ion transport in CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>, using both experimental and computational approaches (<span className="text-cyan-400 italic">J. Mater. Chem. A</span>, 2024)</>
+                        ? <>CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>において、Pb 6s<sup>2</sup>孤立電子対の動的再配向がイオン輸送を促進することを実験・計算双方のアプローチから世界で初めて実証しました（<span className="text-[#6fc3cf] italic">J. Mater. Chem. A</span>, 2024）</>
+                        : <>First demonstration that dynamic reorientation of Pb 6s<sup>2</sup> lone pair electrons promotes ion transport in CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>, using both experimental and computational approaches (<span className="text-[#6fc3cf] italic">J. Mater. Chem. A</span>, 2024)</>
                       }
                     </span>
                   </li>
@@ -246,27 +248,27 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-blue-400 mb-4">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-4">
                   {locale === 'ja'
                     ? '2. 機械学習による高効率な材料探索'
                     : '2. High-Efficiency Materials Discovery Using Machine Learning'}
                 </h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-blue-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>配位多面体に基づくリチウムイオン伝導体の局所配置とイオン伝導率の相関を解析し、分子動力学計算と実験的検証により新たなリチウムイオン伝導体を開発しました（<span className="text-cyan-400 italic">JACS</span>, 2025）</>
-                        : <>Analyzed correlation between local configurations and ionic conductivity of lithium ion conductors based on coordination polyhedra, and developed new lithium ion conductors through molecular dynamics calculations and experimental validation (<span className="text-cyan-400 italic">JACS</span>, 2025)</>
+                        ? <>配位多面体に基づくリチウムイオン伝導体の局所配置とイオン伝導率の相関を解析し、分子動力学計算と実験的検証により新たなリチウムイオン伝導体を開発しました（<span className="text-[#6fc3cf] italic">JACS</span>, 2025）</>
+                        : <>Analyzed correlation between local configurations and ionic conductivity of lithium ion conductors based on coordination polyhedra, and developed new lithium ion conductors through molecular dynamics calculations and experimental validation (<span className="text-[#6fc3cf] italic">JACS</span>, 2025)</>
                       }
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>組成記述子に基づくイオン伝導率予測の機械学習モデルを開発し、フッ化物イオン伝導体の効率的な探索手法を提案し、実際にSn系として初のタイソナイト型フッ化物イオン伝導体Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) を発見しました（<span className="text-cyan-400 italic">ACS Appl. Energy Mater.</span>, 2023）</>
-                        : <>Developed machine learning model for ionic conductivity prediction based on compositional descriptors, proposed efficient search method for fluoride ion conductors, and discovered first tysonite-type fluoride ion conductor in Sn system: Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) (<span className="text-cyan-400 italic">ACS Appl. Energy Mater.</span>, 2023)</>
+                        ? <>組成記述子に基づくイオン伝導率予測の機械学習モデルを開発し、フッ化物イオン伝導体の効率的な探索手法を提案し、実際にSn系として初のタイソナイト型フッ化物イオン伝導体Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) を発見しました（<span className="text-[#6fc3cf] italic">ACS Appl. Energy Mater.</span>, 2023）</>
+                        : <>Developed machine learning model for ionic conductivity prediction based on compositional descriptors, proposed efficient search method for fluoride ion conductors, and discovered first tysonite-type fluoride ion conductor in Sn system: Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) (<span className="text-[#6fc3cf] italic">ACS Appl. Energy Mater.</span>, 2023)</>
                       }
                     </span>
                   </li>
@@ -274,27 +276,36 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-purple-400 mb-4">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-4">
                   {locale === 'ja'
-                    ? '3. ヒドリドイオン伝導体の設計指針の確立'
-                    : '3. Establishment of Design Guidelines for Hydride Ion Conductors'}
+                    ? '3. ヒドリドイオン伝導体の開発と水素吸蔵デバイスの創出'
+                    : '3. Development of Hydride Ion Conductors and Creation of Hydrogen Storage Devices'}
                 </h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>ペロブスカイト型SrLiH<sub>3</sub>系において、カチオンサイズとイオン移動障壁を系統的に解明し、低温で比較的高い特性を示す固体電解質を開発（<span className="text-cyan-400 italic">ACS Appl. Energy Mater.</span>, 2021）</>
-                        : <>Systematically elucidated relationship between cation size and ion migration barriers in perovskite-type SrLiH<sub>3</sub> system, developing solid electrolyte with relatively high performance at low temperature (<span className="text-cyan-400 italic">ACS Appl. Energy Mater.</span>, 2021)</>
+                        ? <>電気化学的安定性とイオン伝導率を兼ね備えた新たな固体電解質の開発と、それを用いた新規水素吸蔵デバイスを創出しました（<span className="text-[#6fc3cf] italic">Science</span>, 2025）</>
+                        : <>Developed a novel solid electrolyte combining electrochemical stability and ionic conductivity, and created a new hydrogen storage device using it (<span className="text-[#6fc3cf] italic">Science</span>, 2025)</>
                       }
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>K<sub>2</sub>NiF<sub>4</sub>型LnSrLiH<sub>2</sub>O<sub>2</sub>系において、中性子回折・第一原理計算を駆使して、カチオンサイズがヒドリドイオン伝導に与える影響を系統的に解明しました（<span className="text-cyan-400 italic">J. Mater. Chem. A</span>, 2020）</>
-                        : <>Systematically elucidated the effect of cation size on hydride ion conduction in K<sub>2</sub>NiF<sub>4</sub>-type LnSrLiH<sub>2</sub>O<sub>2</sub> system using neutron diffraction and first-principles calculations (<span className="text-cyan-400 italic">J. Mater. Chem. A</span>, 2020)</>
+                        ? <>ペロブスカイト型SrLiH<sub>3</sub>系において、カチオンサイズとイオン移動障壁を系統的に解明し、低温で比較的高い特性を示す固体電解質を開発（<span className="text-[#6fc3cf] italic">ACS Appl. Energy Mater.</span>, 2021）</>
+                        : <>Systematically elucidated relationship between cation size and ion migration barriers in perovskite-type SrLiH<sub>3</sub> system, developing solid electrolyte with relatively high performance at low temperature (<span className="text-[#6fc3cf] italic">ACS Appl. Energy Mater.</span>, 2021)</>
+                      }
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#6fc3cf] mr-2">•</span>
+                    <span>
+                      {locale === 'ja'
+                        ? <>K<sub>2</sub>NiF<sub>4</sub>型LnSrLiH<sub>2</sub>O<sub>2</sub>系において、中性子回折・第一原理計算を駆使して、カチオンサイズがヒドリドイオン伝導に与える影響を系統的に解明しました（<span className="text-[#6fc3cf] italic">J. Mater. Chem. A</span>, 2020）</>
+                        : <>Systematically elucidated the effect of cation size on hydride ion conduction in K<sub>2</sub>NiF<sub>4</sub>-type LnSrLiH<sub>2</sub>O<sub>2</sub> system using neutron diffraction and first-principles calculations (<span className="text-[#6fc3cf] italic">J. Mater. Chem. A</span>, 2020)</>
                       }
                     </span>
                   </li>
@@ -308,15 +319,15 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('awards')}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {awardsData.map((item, index) => (
-                <div key={index} className="flex items-start space-x-3 bg-gray-800/30 rounded-lg p-3">
-                  <div className="text-yellow-400 font-mono text-sm flex-shrink-0">{item.year}</div>
+                <div key={index} className="flex items-start space-x-3 bg-[#1c2124]/70 rounded p-3">
+                  <div className="text-[#d9b83f] font-mono text-sm flex-shrink-0">{item.year}</div>
                   <div className="text-white text-sm">{item.award}</div>
                 </div>
               ))}
@@ -328,18 +339,33 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('funding')}
             </h2>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-bold text-indigo-400 mb-4">{t('fundingPI')}</h3>
-                <ul className="space-y-3 text-gray-300">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-4">{t('fundingPI')}</h3>
+                <ul className="space-y-3 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-indigo-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
+                    <div>
+                      <span className="font-semibold text-white">
+                        {locale === 'ja'
+                          ? 'JST さきがけ（2025-2028年度）'
+                          : 'JST PRESTO (2025-2028)'}
+                      </span><br/>
+                      <span className="text-sm">
+                        {locale === 'ja'
+                          ? '「革新的なエネルギー変換を可能とする量子・電子制御」領域'
+                          : 'Research Area: "Quantum and Electronic Control for Innovative Energy Conversion"'}
+                      </span>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <div>
                       <span className="font-semibold text-white">
                         {locale === 'ja'
@@ -354,7 +380,7 @@ export default function ProfileDetailPage() {
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-indigo-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <div>
                       <span className="font-semibold text-white">
                         {locale === 'ja'
@@ -369,7 +395,7 @@ export default function ProfileDetailPage() {
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-indigo-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <span className="font-semibold text-white">
                       {locale === 'ja'
                         ? '東京工業大学 挑戦的研究賞（2023年度）'
@@ -377,7 +403,7 @@ export default function ProfileDetailPage() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-indigo-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <span className="font-semibold text-white">
                       {locale === 'ja'
                         ? '東京工業大学 基礎研究機構 広域基礎研究塾 新研究挑戦奨励金 (2023年度)'
@@ -385,7 +411,7 @@ export default function ProfileDetailPage() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-indigo-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <div>
                       <span className="font-semibold text-white">
                         {locale === 'ja'
@@ -403,10 +429,10 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-purple-400 mb-4">{t('fundingCoI')}</h3>
-                <ul className="space-y-3 text-gray-300">
+                <h3 className="text-xl font-bold text-[#6fc3cf] mb-4">{t('fundingCoI')}</h3>
+                <ul className="space-y-3 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <span className="font-semibold text-white">
                       {locale === 'ja'
                         ? 'NEDO 電気自動車用革新型蓄電池開発（2021-2025年度）'
@@ -414,14 +440,14 @@ export default function ProfileDetailPage() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <div>
                       <span className="font-semibold text-white">
                         {locale === 'ja'
                           ? '科学研究費助成事業 基盤研究(B)（2022-2024年度）'
                           : 'KAKENHI Grant-in-Aid for Scientific Research (B) (2022-2024)'}
                       </span><br/>
-                      <span className="text-gray-400 text-sm ml-4">
+                      <span className="text-[#8b959a] text-sm ml-4">
                         {locale === 'ja'
                           ? '研究代表者：山本 隆文先生'
                           : 'PI: Prof. Takafumi Yamamoto'}
@@ -429,7 +455,7 @@ export default function ProfileDetailPage() {
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-purple-400 mr-2">▸</span>
+                    <span className="text-[#6fc3cf] mr-2">▸</span>
                     <span className="font-semibold text-white">
                       {locale === 'ja'
                         ? 'NEDO 革新型蓄電池実用化促進基盤技術開発（2019-2020年度）'
@@ -446,18 +472,18 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('teaching')}
             </h2>
-            <div className="bg-gray-800/30 rounded-lg p-4">
+            <div className="bg-[#1c2124]/70 rounded p-4">
               <h3 className="text-lg font-bold text-teal-400 mb-2">
                 {locale === 'ja'
                   ? '応化専門実験第4 基礎電気化学と燃料電池'
                   : 'Applied Chemistry Laboratory 4: Basic Electrochemistry and Fuel Cells'}
               </h3>
-              <p className="text-gray-300">
+              <p className="text-[#aab3b6]">
                 {locale === 'ja'
                   ? '電気化学の基礎理論から燃料電池の実践的な応用まで、実験を通じて学生に指導しています。'
                   : 'Guiding students from basic electrochemistry theory to practical applications of fuel cells through experiments.'}
@@ -470,18 +496,18 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('academicActivities')}
             </h2>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-bold text-pink-400 mb-3">{t('peerReview')}</h3>
+                <h3 className="text-lg font-bold text-[#6fc3cf] mb-3">{t('peerReview')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {peerReviewJournals.map((journal, index) => (
-                    <span key={index} className="px-3 py-1 bg-gray-800/50 text-gray-300 rounded-full text-sm border border-gray-700">
+                    <span key={index} className="px-3 py-1 bg-[#1c2124] text-[#aab3b6] rounded-full text-sm border border-[#3a4247]">
                       {journal}
                     </span>
                   ))}
@@ -489,10 +515,10 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-purple-400 mb-3">{t('affiliations')}</h3>
+                <h3 className="text-lg font-bold text-[#6fc3cf] mb-3">{t('affiliations')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {societies.map((society, index) => (
-                    <span key={index} className="px-3 py-1 bg-gray-800/50 text-gray-300 rounded-full text-sm border border-gray-700">
+                    <span key={index} className="px-3 py-1 bg-[#1c2124] text-[#aab3b6] rounded-full text-sm border border-[#3a4247]">
                       {society}
                     </span>
                   ))}
@@ -500,10 +526,10 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-cyan-400 mb-3">{t('seminars')}</h3>
-                <ul className="space-y-2 text-gray-300">
+                <h3 className="text-lg font-bold text-[#6fc3cf] mb-3">{t('seminars')}</h3>
+                <ul className="space-y-2 text-[#aab3b6]">
                   <li className="flex items-start">
-                    <span className="text-cyan-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
                         ? '電気化学会 電気化学セミナーA'
@@ -511,7 +537,7 @@ export default function ProfileDetailPage() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-cyan-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
                         ? '電気化学会関東支部 基礎セミナー'
@@ -519,7 +545,7 @@ export default function ProfileDetailPage() {
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-cyan-400 mr-2">•</span>
+                    <span className="text-[#6fc3cf] mr-2">•</span>
                     <span>
                       {locale === 'ja'
                         ? '東陽テクニカ 技術セミナー'
@@ -536,12 +562,12 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('philosophy')}
             </h2>
-            <div className="text-gray-300 leading-relaxed space-y-4">
+            <div className="text-[#aab3b6] leading-relaxed space-y-4">
               <p>{t('philosophyText1')}</p>
               <p>{t('philosophyText2')}</p>
             </div>
@@ -552,12 +578,12 @@ export default function ProfileDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 border border-gray-800"
+            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
           >
-            <h2 className="text-3xl font-black mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
               {t('hobbies')}
             </h2>
-            <div className="text-gray-300 leading-relaxed space-y-4">
+            <div className="text-[#aab3b6] leading-relaxed space-y-4">
               <p>{t('hobbiesText1')}</p>
               <p>{t('hobbiesText2')}</p>
             </div>
@@ -567,7 +593,7 @@ export default function ProfileDetailPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

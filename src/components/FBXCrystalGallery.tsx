@@ -11,8 +11,8 @@ const formatChemicalFormula = (formula: string) => {
 const FBXModel = dynamic(() => import('./FBXModel'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-gray-900/50 rounded-xl">
-      <div className="text-gray-400">Loading 3D Model...</div>
+    <div className="w-full h-full flex items-center justify-center bg-[#16191c]/50 rounded">
+      <div className="text-[#8b959a]">Loading 3D Model...</div>
     </div>
   ),
 })
@@ -27,7 +27,7 @@ export default function FBXCrystalGallery({ crystals }: FBXCrystalGalleryProps) 
       {crystals.map((crystal, index) => (
         <div 
           key={index} 
-          className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-105"
+          className="bg-[#16191c]/50 backdrop-blur-sm border border-[#262b2e] rounded overflow-hidden hover:border-[#3a4247] transition-all duration-300"
         >
           <div className="h-80 relative" style={{ background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)' }}>
             <FBXModel 
@@ -37,11 +37,11 @@ export default function FBXCrystalGallery({ crystals }: FBXCrystalGalleryProps) 
           </div>
           <div className="p-6">
             <h3 
-              className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2"
+              className="text-xl font-bold text-[#e6e9ea] mb-2"
               dangerouslySetInnerHTML={{ __html: formatChemicalFormula(crystal.formula) }}
             />
-            <p className="text-sm text-cyan-400 font-mono mb-2">{crystal.description}</p>
-            <p className="text-xs text-gray-400">{crystal.properties}</p>
+            <p className="text-sm text-[#6fc3cf] font-mono mb-2">{crystal.description}</p>
+            <p className="text-xs text-[#8b959a]">{crystal.properties}</p>
           </div>
         </div>
       ))}
