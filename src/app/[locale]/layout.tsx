@@ -46,6 +46,9 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://matsui-naoki.github.io"),
+    verification: {
+      google: "F13fLSJPsCYbAcZoj3x3dm7O4aHFnPpERcEihhrUqoQ",
+    },
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
