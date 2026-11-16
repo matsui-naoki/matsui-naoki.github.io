@@ -37,7 +37,7 @@ export default function Access() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
+    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -49,11 +49,11 @@ export default function Access() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -69,27 +69,27 @@ export default function Access() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-[#16191c] rounded p-8 border border-[#262b2e]">
+              <div className="bg-[#1a2236] rounded p-8 border border-[#2a3550]">
                 <div className="mb-6">
-                  <span className="px-3 py-1 text-xs font-mono bg-[#6fc3cf]/10 text-[#6fc3cf] rounded-full border border-[#6fc3cf]/20">
+                  <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
                     LOCATION
                   </span>
                 </div>
 
                 <h2 className="text-3xl font-black mb-8">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('labLocation')}
                   </span>
                 </h2>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-[#6fc3cf] flex items-center justify-center text-black text-sm font-bold">
+                    <div className="w-6 h-6 rounded-full bg-[#d4ad5a] flex items-center justify-center text-black text-sm font-bold">
                       LOC
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">{t('addressLabel')}</h3>
-                      <p className="text-[#aab3b6] leading-relaxed">
+                      <p className="text-[#b4b6c0] leading-relaxed">
                         {locale === 'ja' ? (
                           <>
                             〒226-8503<br/>
@@ -110,36 +110,36 @@ export default function Access() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-[#6fc3cf] flex items-center justify-center text-black text-sm font-bold">
+                    <div className="w-6 h-6 rounded-full bg-[#d4ad5a] flex items-center justify-center text-black text-sm font-bold">
                       @
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">{t('emailLabel')}</h3>
-                      <p className="text-[#aab3b6] font-mono">
+                      <p className="text-[#b4b6c0] font-mono">
                         matsui.n.ee49[at]m.isct.ac.jp
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-[#6fc3cf] flex items-center justify-center text-black text-sm font-bold">
+                    <div className="w-6 h-6 rounded-full bg-[#d4ad5a] flex items-center justify-center text-black text-sm font-bold">
                       TEL
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">{t('phoneLabel')}</h3>
-                      <p className="text-[#aab3b6] font-mono">
+                      <p className="text-[#b4b6c0] font-mono">
                         045-924-5561 {locale === 'ja' ? '(研究室直通)' : '(Direct line)'}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-[#6fc3cf] flex items-center justify-center text-black text-sm font-bold">
+                    <div className="w-6 h-6 rounded-full bg-[#d4ad5a] flex items-center justify-center text-black text-sm font-bold">
                       BLDG
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-2">{t('affiliationLabel')}</h3>
-                      <p className="text-[#aab3b6] leading-relaxed">
+                      <p className="text-[#b4b6c0] leading-relaxed">
                         {locale === 'ja' ? (
                           <>
                             東京科学大学（Institute of Science Tokyo）<br/>
@@ -166,21 +166,21 @@ export default function Access() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-[#16191c] rounded p-8 border border-[#262b2e] h-full">
+              <div className="bg-[#1a2236] rounded p-8 border border-[#2a3550] h-full">
                 <div className="mb-6">
-                  <span className="px-3 py-1 text-xs font-mono bg-[#6fc3cf]/10 text-[#6fc3cf] rounded-full border border-[#6fc3cf]/20">
+                  <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
                     MAP
                   </span>
                 </div>
 
                 <h3 className="text-2xl font-black mb-6">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('campusMap')}
                   </span>
                 </h3>
 
                 {/* Google Maps Embedded */}
-                <div className="relative w-full h-80 bg-[#1c2124] rounded overflow-hidden border border-[#3a4247]">
+                <div className="relative w-full h-80 bg-[#202a40] rounded overflow-hidden border border-[#3d4a68]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.8!2d139.48352!3d35.51368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185f0df6c06c7b%3A0x8f3f8b3e3c8f3b3!2z57eP5ZCI55CG5bel5a2m56CU56m26aCf77yR5Y-377yI77yh77yR5qOf77yJ!5e0!3m2!1sja!2sjp!4v1642568394917"
                     width="100%"
@@ -199,7 +199,7 @@ export default function Access() {
                     href="https://www.google.com/maps/place/Tokyo+Institute+of+Technology+Suzukakedai+Campus/@35.505309,139.483425,17z"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-[#e6e9ea] text-[#101315] px-6 py-3 rounded font-bold transition-all duration-300"
+                    className="inline-block bg-[#ece7dc] text-[#131a2c] px-6 py-3 rounded font-bold transition-all duration-300"
                   >
                     {t('openInMaps')}
                   </a>
@@ -219,11 +219,11 @@ export default function Access() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {locale === 'ja' ? 'キャンパス内ルート' : 'Campus Route'}
               </span>
             </h2>
-            <p className="text-xl text-[#aab3b6] font-light">
+            <p className="text-xl text-[#b4b6c0] font-light">
               {locale === 'ja'
                 ? 'すずかけ台駅からG1棟までの経路'
                 : 'Route from Suzukakedai Station to Building G1'}
@@ -234,7 +234,7 @@ export default function Access() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#16191c] rounded p-6 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-6 border border-[#2a3550]"
           >
             <div className="relative w-full rounded overflow-hidden">
               <Image
@@ -247,7 +247,7 @@ export default function Access() {
                 className="w-full h-auto rounded"
               />
             </div>
-            <p className="text-center text-[#8b959a] text-sm mt-4">
+            <p className="text-center text-[#9a9eae] text-sm mt-4">
               {locale === 'ja'
                 ? '赤線: 徒歩ルート（すずかけ台駅→G1棟 約8分） / 青線: 自動車ルート'
                 : 'Red line: Walking route (Suzukakedai Sta. → G1 Bldg. ~8 min) / Blue line: Car route'}
@@ -257,7 +257,7 @@ export default function Access() {
       </section>
 
       {/* Transportation */}
-      <section className="py-16 bg-[#16191c]">
+      <section className="py-16 bg-[#1a2236]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -265,11 +265,11 @@ export default function Access() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('transportation')}
               </span>
             </h2>
-            <p className="text-xl text-[#aab3b6] font-light">{t('transportationSubtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('transportationSubtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -278,25 +278,25 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-8"
+              className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
                   TRAIN
                 </div>
                 <h3 className="text-2xl font-black">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('byTrain')}
                   </span>
                 </h3>
               </div>
 
               <div className="space-y-4">
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">{t('nearestStation')}</h4>
-                  <ul className="text-[#aab3b6] text-sm space-y-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">{t('nearestStation')}</h4>
+                  <ul className="text-[#b4b6c0] text-sm space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-[#6fc3cf] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#d4ad5a] rounded-full"></div>
                       <span>
                         {locale === 'ja'
                           ? '東急田園都市線「すずかけ台駅」徒歩5分'
@@ -304,7 +304,7 @@ export default function Access() {
                       </span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-[#6fc3cf] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#d4ad5a] rounded-full"></div>
                       <span>
                         {locale === 'ja'
                           ? 'JR横浜線「長津田駅」から東急田園都市線乗り換え'
@@ -314,9 +314,9 @@ export default function Access() {
                   </ul>
                 </div>
 
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">{t('travelTime')}</h4>
-                  <ul className="text-[#aab3b6] text-sm space-y-1">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">{t('travelTime')}</h4>
+                  <ul className="text-[#b4b6c0] text-sm space-y-1">
                     <li>• {locale === 'ja' ? '渋谷駅から：約40分' : 'From Shibuya: ~40 min'}</li>
                     <li>• {locale === 'ja' ? '横浜駅から：約30分' : 'From Yokohama: ~30 min'}</li>
                     <li>• {locale === 'ja' ? '新横浜駅から：約25分' : 'From Shin-Yokohama: ~25 min'}</li>
@@ -331,25 +331,25 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-8"
+              className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
                   CAR
                 </div>
                 <h3 className="text-2xl font-black">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('byCar')}
                   </span>
                 </h3>
               </div>
 
               <div className="space-y-4">
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">{t('highway')}</h4>
-                  <ul className="text-[#aab3b6] text-sm space-y-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">{t('highway')}</h4>
+                  <ul className="text-[#b4b6c0] text-sm space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-[#6fc3cf] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#d4ad5a] rounded-full"></div>
                       <span>
                         {locale === 'ja'
                           ? '東名高速「横浜町田IC」から約15分'
@@ -357,7 +357,7 @@ export default function Access() {
                       </span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-[#6fc3cf] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#d4ad5a] rounded-full"></div>
                       <span>
                         {locale === 'ja'
                           ? '東名高速「横浜青葉IC」から約10分'
@@ -367,9 +367,9 @@ export default function Access() {
                   </ul>
                 </div>
 
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">{t('parking')}</h4>
-                  <ul className="text-[#aab3b6] text-sm space-y-1">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">{t('parking')}</h4>
+                  <ul className="text-[#b4b6c0] text-sm space-y-1">
                     <li>• {locale === 'ja' ? 'キャンパス内に有料駐車場あり' : 'Paid parking available on campus'}</li>
                     <li>• {locale === 'ja' ? '料金：1日100円' : 'Fee: ¥100/day'}</li>
                   </ul>
@@ -389,11 +389,11 @@ export default function Access() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('visitorInfo')}
               </span>
             </h2>
-            <p className="text-xl text-[#aab3b6] font-light">{t('visitorInfoSubtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('visitorInfoSubtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -401,13 +401,13 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-[#16191c] rounded p-6 border border-[#262b2e]"
+              className="bg-[#1a2236] rounded p-6 border border-[#2a3550]"
             >
-              <div className="w-16 h-16 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold mb-4">
+              <div className="w-16 h-16 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold mb-4">
                 ENTRY
               </div>
               <h3 className="text-xl font-bold text-[#d9b83f] mb-3">{t('entryProcedure')}</h3>
-              <p className="text-[#aab3b6] text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
+              <p className="text-[#b4b6c0] text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
                 {t('entryProcedureDesc')}
               </p>
             </motion.div>
@@ -416,13 +416,13 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#16191c] rounded p-6 border border-[#262b2e]"
+              className="bg-[#1a2236] rounded p-6 border border-[#2a3550]"
             >
-              <div className="w-16 h-16 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold mb-4">
+              <div className="w-16 h-16 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold mb-4">
                 TIME
               </div>
-              <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">{t('receptionHours')}</h3>
-              <p className="text-[#aab3b6] text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
+              <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">{t('receptionHours')}</h3>
+              <p className="text-[#b4b6c0] text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
                 {t('receptionHoursDesc')}
               </p>
             </motion.div>
@@ -431,13 +431,13 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-[#16191c] rounded p-6 border border-[#262b2e]"
+              className="bg-[#1a2236] rounded p-6 border border-[#2a3550]"
             >
-              <div className="w-16 h-16 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold mb-4">
+              <div className="w-16 h-16 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold mb-4">
                 APPT
               </div>
-              <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">{t('appointment')}</h3>
-              <p className="text-[#aab3b6] text-sm leading-relaxed">
+              <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">{t('appointment')}</h3>
+              <p className="text-[#b4b6c0] text-sm leading-relaxed">
                 {t('appointmentDesc')}
               </p>
             </motion.div>
@@ -446,7 +446,7 @@ export default function Access() {
       </section>
 
       {/* Campus Facilities */}
-      <section className="py-16 bg-[#16191c]">
+      <section className="py-16 bg-[#1a2236]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,11 +454,11 @@ export default function Access() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('campusFacilities')}
               </span>
             </h2>
-            <p className="text-xl text-[#aab3b6] font-light">{t('campusFacilitiesSubtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('campusFacilitiesSubtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -468,17 +468,17 @@ export default function Access() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6 text-center hover:border-[#3a4247] transition-all duration-300"
+                className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 text-center hover:border-[#3d4a68] transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-xs font-bold mb-4">{facility.icon}</div>
+                <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-xs font-bold mb-4">{facility.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2">{facility.title}</h3>
-                <p className="text-[#aab3b6] text-sm mb-2">{facility.desc}</p>
+                <p className="text-[#b4b6c0] text-sm mb-2">{facility.desc}</p>
                 {facility.link && (
                   <a
                     href={facility.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#6fc3cf] text-xs hover:text-[#9adae4] transition-colors"
+                    className="text-[#d4ad5a] text-xs hover:text-[#e7c97f] transition-colors"
                   >
                     {locale === 'ja' ? '詳細はこちら →' : 'Details →'}
                   </a>
@@ -490,7 +490,7 @@ export default function Access() {
       </section>
 
       {/* Nearby Facilities */}
-      <section className="py-16 bg-[#16191c]">
+      <section className="py-16 bg-[#1a2236]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -498,11 +498,11 @@ export default function Access() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('nearbyFacilities')}
               </span>
             </h2>
-            <p className="text-xl text-[#aab3b6] font-light">{t('nearbyFacilitiesSubtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('nearbyFacilitiesSubtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-16">
@@ -511,49 +511,49 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-8"
+              className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
                   HOTEL
                 </div>
                 <h3 className="text-2xl font-black">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('accommodation')}
                   </span>
                 </h3>
               </div>
 
               <div className="space-y-4">
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">
                     {locale === 'ja' ? '東横INN南町田' : 'Toyoko Inn Minamimachida'}
                   </h4>
-                  <p className="text-[#aab3b6] text-sm mb-2">
+                  <p className="text-[#b4b6c0] text-sm mb-2">
                     {locale === 'ja' ? 'アクセス便利なビジネスホテル' : 'Conveniently located business hotel'}
                   </p>
                   <a
                     href="https://www.toyoko-inn.com/search/detail/00358/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#6fc3cf] text-xs hover:text-[#9adae4] transition-colors"
+                    className="text-[#d4ad5a] text-xs hover:text-[#e7c97f] transition-colors"
                   >
                     {locale === 'ja' ? '公式サイト →' : 'Official Website →'}
                   </a>
                 </div>
 
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">
                     {locale === 'ja' ? '万葉の湯' : 'Manyo no Yu'}
                   </h4>
-                  <p className="text-[#aab3b6] text-sm mb-2">
+                  <p className="text-[#b4b6c0] text-sm mb-2">
                     {locale === 'ja' ? '温泉・宿泊・リラクゼーション施設' : 'Hot spring, accommodation & relaxation facility'}
                   </p>
                   <a
                     href="https://www.manyo.co.jp/machida/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#6fc3cf] text-xs hover:text-[#9adae4] transition-colors"
+                    className="text-[#d4ad5a] text-xs hover:text-[#e7c97f] transition-colors"
                   >
                     {locale === 'ja' ? '公式サイト →' : 'Official Website →'}
                   </a>
@@ -566,34 +566,34 @@ export default function Access() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-8"
+              className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-12 h-12 rounded bg-[#1c2124] border border-[#3a4247] flex items-center justify-center text-white text-sm font-bold">
+                <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
                   FOOD
                 </div>
                 <h3 className="text-2xl font-black">
-                  <span className="text-[#e6e9ea]">
+                  <span className="text-[#ece7dc]">
                     {t('dining')}
                   </span>
                 </h3>
               </div>
 
               <div className="space-y-4">
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">
                     {locale === 'ja' ? '朝日屋' : 'Asahiya'}
                   </h4>
-                  <p className="text-[#aab3b6] text-sm">
+                  <p className="text-[#b4b6c0] text-sm">
                     {locale === 'ja' ? 'そば・うどん専門店' : 'Soba & Udon specialty restaurant'}
                   </p>
                 </div>
 
-                <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                  <h4 className="font-bold text-[#6fc3cf] mb-2">
+                <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                  <h4 className="font-bold text-[#d4ad5a] mb-2">
                     {locale === 'ja' ? 'マラバル' : 'Malabar'}
                   </h4>
-                  <p className="text-[#aab3b6] text-sm">
+                  <p className="text-[#b4b6c0] text-sm">
                     {locale === 'ja' ? '本格カレー料理' : 'Authentic curry cuisine'}
                   </p>
                 </div>
@@ -605,7 +605,7 @@ export default function Access() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

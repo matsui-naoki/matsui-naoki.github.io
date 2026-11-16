@@ -14,9 +14,44 @@ export default function PublicationsPage() {
     // 2026年
     {
       year: '2026',
+      title: 'Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn₁₋ₓInₓF₄₊ₓ',
+      authors: 'S. Itakura, N. Matsui, K. Shimizu, K. Suzuki, R. Kanno',
+      journal: 'Electrochemistry, 94(11) (2026) 117004 (Editor\'s Choice)',
+      doi: '10.5796/electrochemistry.26-00082'
+    },
+    {
+      year: '2026',
+      title: 'Screening Lithium-Ion Conductors Based on Local and Global Topology',
+      authors: 'S. Kong, Z. Yu, K. Suzuki, S. Hori, S. Hiroi, K. Ohara, K. Watanabe, K. Nomoto, N. Matsui, R. Kanno',
+      journal: 'J. Am. Chem. Soc., 148(44) (2026) 47703-47711',
+      doi: '10.1021/jacs.6c00345'
+    },
+    {
+      year: '2026',
+      title: 'Halogen-Dependent Ionic Conductivity in Na₁₁Sn₂PS₁₂: Reduction by Cl and Enhancement by Br Substitution',
+      authors: 'R. Kamewaka, K. Mori, T. Saito, F. Song, S. Hiroi, K. Ohara, N. Matsui, S. Hori, K. Nomoto, R. Kanno, K. Suzuki',
+      journal: 'ACS Appl. Energy Mater., 9(18) (2026) 12343-12349',
+      doi: '10.1021/acsaem.6c01715'
+    },
+    {
+      year: '2026',
+      title: 'From Composition to Ionic Conductivity: Machine Learning-Guided Discovery and Experimental Validation of Argyrodite-Type Lithium-Ion Electrolytes',
+      authors: 'S. Kong, Z. Yu, N. Matsui, M. Kamiya, Y. Iwamizu, Y. Tanaka, N. Kubota, K. Nomoto, S. Hori, M. Hirayama, K. Suzuki, R. Kanno',
+      journal: 'Small, 22(2) (2026) e09918',
+      doi: '10.1002/smll.202509918'
+    },
+    {
+      year: '2026',
+      title: '全固体電池研究のためのLow-Cost統合実験Database Systemの開発',
+      authors: '柏山正守, 中村武雄, 神谷倫代, 押野谷恵美, 松井直喜, 堀智, 鈴木耕太, 菅野了次',
+      journal: '日本データベース学会和文論文誌, 24-J (2026) Article 12',
+      doi: ''
+    },
+    {
+      year: '2026',
       title: 'Unlocking High Fluoride-Ion Conductivity by Regulating the Order–Disorder Transition in Bi-substituted PbSnF₄',
       authors: 'S. Itakura, N. Matsui (corresponding author), K. Mori, T. Saito, F. Song, S. Song, K. Shimizu, K. Suzuki, R. Kanno',
-      journal: 'Small Struct., (2026)',
+      journal: 'Small Struct., 7(8) (2026) e70579',
       doi: '10.1002/sstr.70579'
     },
     {
@@ -357,7 +392,7 @@ export default function PublicationsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
+    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -369,18 +404,18 @@ export default function PublicationsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
             <div className="mt-4 text-center">
-              <div className="inline-flex items-center space-x-4 bg-[#1c2124] rounded px-6 py-3 border border-[#6fc3cf]/20">
-                <span className="text-[#6fc3cf] font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-[#8b959a]">|</span>
-                <span className="text-[#6fc3cf] font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-[#8b959a]">|</span>
-                <span className="text-[#6fc3cf] font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
+              <div className="inline-flex items-center space-x-4 bg-[#202a40] rounded px-6 py-3 border border-[#d4ad5a]/20">
+                <span className="text-[#d4ad5a] font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#9a9eae]">|</span>
+                <span className="text-[#d4ad5a] font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#9a9eae]">|</span>
+                <span className="text-[#d4ad5a] font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
               </div>
             </div>
           </motion.div>
@@ -388,10 +423,10 @@ export default function PublicationsPage() {
       </section>
 
       {/* Publications List */}
-      <section className="py-16 bg-[#16191c]">
+      <section className="py-16 bg-[#1a2236]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-black mb-8">
-            <span className="text-[#e6e9ea]">
+            <span className="text-[#ece7dc]">
               {t('peerReviewed')}
             </span>
           </h2>
@@ -402,38 +437,38 @@ export default function PublicationsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: Math.min(index * 0.01, 0.3) }}
-                className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6 hover:border-[#3a4247] transition-all duration-300"
+                className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="text-sm font-mono text-[#6fc3cf]">{pub.year}</div>
+                  <div className="text-sm font-mono text-[#d4ad5a]">{pub.year}</div>
                 </div>
 
                 <h3 className="text-lg font-bold text-white mb-3 leading-tight">
                   {pub.title}
                 </h3>
 
-                <p className="text-[#aab3b6] text-sm mb-2 leading-relaxed">
+                <p className="text-[#b4b6c0] text-sm mb-2 leading-relaxed">
                   {pub.authors}
                 </p>
 
-                <p className="text-[#8b959a] text-sm italic mb-2">
+                <p className="text-[#9a9eae] text-sm italic mb-2">
                   {pub.journal}
                 </p>
 
                 {pub.doi && (
                   <div className="text-xs">
-                    <span className="text-[#6fc3cf]">DOI: </span>
+                    <span className="text-[#d4ad5a]">DOI: </span>
                     {pub.doi.startsWith('10.') ? (
                       <a
                         href={`https://doi.org/${pub.doi}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#8b959a] font-mono hover:text-[#6fc3cf] transition-colors"
+                        className="text-[#9a9eae] font-mono hover:text-[#d4ad5a] transition-colors"
                       >
                         {pub.doi}
                       </a>
                     ) : (
-                      <span className="text-[#8b959a] font-mono">{pub.doi}</span>
+                      <span className="text-[#9a9eae] font-mono">{pub.doi}</span>
                     )}
                   </div>
                 )}
@@ -445,7 +480,7 @@ export default function PublicationsPage() {
           {reviews.length > 0 && (
             <>
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#e6e9ea]">
+                <span className="text-[#ece7dc]">
                   {t('reviews')}
                 </span>
               </h2>
@@ -456,21 +491,21 @@ export default function PublicationsPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6 hover:border-[#3a4247] transition-all duration-300"
+                    className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <div className="text-sm font-mono text-[#6fc3cf]">{review.year}</div>
+                      <div className="text-sm font-mono text-[#d4ad5a]">{review.year}</div>
                     </div>
 
                     <h3 className="text-lg font-bold text-white mb-3 leading-tight">
                       {review.title}
                     </h3>
 
-                    <p className="text-[#aab3b6] text-sm mb-2 leading-relaxed">
+                    <p className="text-[#b4b6c0] text-sm mb-2 leading-relaxed">
                       {review.authors}
                     </p>
 
-                    <p className="text-[#8b959a] text-sm italic">
+                    <p className="text-[#9a9eae] text-sm italic">
                       {review.journal}
                     </p>
                   </motion.div>
@@ -486,28 +521,28 @@ export default function PublicationsPage() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-16 text-center"
           >
-            <div className="bg-[#16191c] rounded p-8 border border-[#262b2e]">
+            <div className="bg-[#1a2236] rounded p-8 border border-[#2a3550]">
               <h3 className="text-2xl font-black mb-4">
-                <span className="text-[#e6e9ea]">
+                <span className="text-[#ece7dc]">
                   {t('summary')}
                 </span>
               </h3>
               <div className="grid md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">{publications.length}</div>
-                  <div className="text-sm text-[#8b959a]">{t('peerReviewed')}</div>
+                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">{publications.length}</div>
+                  <div className="text-sm text-[#9a9eae]">{t('peerReviewed')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">{reviews.length}</div>
-                  <div className="text-sm text-[#8b959a]">{t('reviews')}</div>
+                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">{reviews.length}</div>
+                  <div className="text-sm text-[#9a9eae]">{t('reviews')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">8</div>
-                  <div className="text-sm text-[#8b959a]">{t('patents')}</div>
+                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">8</div>
+                  <div className="text-sm text-[#9a9eae]">{t('patents')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#6fc3cf] mb-2">9</div>
-                  <div className="text-sm text-[#8b959a]">{t('researchPeriod')}</div>
+                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">9</div>
+                  <div className="text-sm text-[#9a9eae]">{t('researchPeriod')}</div>
                 </div>
               </div>
             </div>
@@ -517,7 +552,7 @@ export default function PublicationsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

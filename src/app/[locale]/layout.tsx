@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Shippori_Mincho_B1, Zen_Kaku_Gothic_New } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bodyFont = Zen_Kaku_Gothic_New({
+  variable: "--font-body",
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
+});
+
+const displayFont = Shippori_Mincho_B1({
+  variable: "--font-display",
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
@@ -111,7 +122,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${bodyFont.variable} ${displayFont.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

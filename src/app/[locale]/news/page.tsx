@@ -12,6 +12,93 @@ export default function NewsPage() {
 
   const allNews = locale === 'ja' ? [
     {
+      date: '2026.11.14-16',
+      title: 'さきがけ「ゆらぎの理解と制御による材料革新」領域会議@東京に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.10',
+      title: 'NIMS Awardsに参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.06-08',
+      title: 'Battery Forum@ソウル国立大学に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.06',
+      title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載',
+      desc: (
+        <span>
+          「Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x」Editor&apos;s Choiceに選ばれました。おめでとう!!
+          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.11.02-04',
+      title: 'イオン渋滞学 領域会議@福岡に参加',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.10.28-30',
+      title: 'SPring-8で回折実験を実施',
+      desc: '',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.10.08',
+      title: '新入生歓迎会を開催',
+      desc: '',
+      category: 'LAB'
+    },
+    {
+      date: '2026.09.18',
+      title: 'Kongさんの筆頭論文がJ. Am. Chem. Soc.に掲載',
+      desc: (
+        <span>
+          「Screening Lithium-Ion Conductors Based on Local and Global Topology」
+          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.09.16',
+      title: 'Poeppelmeier先生(Northwestern大学)が研究室を訪問',
+      desc: '',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.09.15',
+      title: '亀若さんの筆頭論文がACS Appl. Energy Mater.に掲載',
+      desc: (
+        <span>
+          「Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution」
+          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.09.03',
+      title: 'Poeppelmeier先生(Northwestern大学)の講演を聴講',
+      desc: '',
+      category: 'SEMINAR'
+    },
+    {
       date: '2026.08.28',
       title: 'プロジェクトの会議@京都に参加',
       desc: '',
@@ -29,7 +116,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4」おめでとう!!
-          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -186,7 +273,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Fast hydride-ion conduction in complex hydride Ba2MgH6」複合水素化物Ba2MgH6の高速ヒドリドイオン伝導を報告しました。
-          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -319,7 +406,7 @@ export default function NewsPage() {
       desc: (
         <span>
           新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -338,7 +425,7 @@ export default function NewsPage() {
       desc: (
         <span>
           JSTさきがけに採択されました!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             詳細はこちら
           </a>
         </span>
@@ -438,6 +525,93 @@ export default function NewsPage() {
     }
   ] : [
     {
+      date: '2026.11.14-16',
+      title: 'JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.10',
+      title: 'Attended NIMS Awards',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.06-08',
+      title: 'Battery Forum @ Seoul National University',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.11.06',
+      title: "M2 Student Itakura's First-Author Paper Published in Electrochemistry",
+      desc: (
+        <span>
+          &quot;Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x&quot; Selected as Editor&apos;s Choice. Congratulations!!
+          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.11.02-04',
+      title: 'Ion Traffic Jam Area Meeting @ Fukuoka',
+      desc: '',
+      category: 'CONFERENCE'
+    },
+    {
+      date: '2026.10.28-30',
+      title: 'Diffraction Experiments at SPring-8',
+      desc: '',
+      category: 'EXPERIMENT'
+    },
+    {
+      date: '2026.10.08',
+      title: 'Welcome Party for New Members',
+      desc: '',
+      category: 'LAB'
+    },
+    {
+      date: '2026.09.18',
+      title: "Kong's First-Author Paper Published in J. Am. Chem. Soc.",
+      desc: (
+        <span>
+          &quot;Screening Lithium-Ion Conductors Based on Local and Global Topology&quot;
+          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.09.16',
+      title: 'Prof. Poeppelmeier (Northwestern University) Visited Our Lab',
+      desc: '',
+      category: 'VISIT'
+    },
+    {
+      date: '2026.09.15',
+      title: "Kamewaka's First-Author Paper Published in ACS Appl. Energy Mater.",
+      desc: (
+        <span>
+          &quot;Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution&quot;
+          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
+      date: '2026.09.03',
+      title: 'Attended a Lecture by Prof. Poeppelmeier (Northwestern University)',
+      desc: '',
+      category: 'SEMINAR'
+    },
+    {
       date: '2026.08.28',
       title: 'Project Meeting @ Kyoto',
       desc: '',
@@ -455,7 +629,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4&quot; Congratulations!!
-          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             Article
           </a>
         </span>
@@ -612,7 +786,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Fast hydride-ion conduction in complex hydride Ba2MgH6&quot; — reporting fast hydride-ion conduction in the complex hydride Ba2MgH6.
-          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             Article
           </a>
         </span>
@@ -745,7 +919,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Developed a new solid electrolyte and Mg-H2 hydrogen storage device. Joint achievement with Dr. Hirose (now Assistant Professor at Arai Lab), doctoral student at Hirayama Lab, Institute of Science Tokyo.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             Paper link
           </a>
         </span>
@@ -764,7 +938,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Selected for JST PRESTO!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#6fc3cf] hover:text-[#9adae4] underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
             Details here
           </a>
         </span>
@@ -865,7 +1039,7 @@ export default function NewsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
+    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -877,11 +1051,11 @@ export default function NewsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -905,16 +1079,16 @@ export default function NewsPage() {
 
                 <div className="flex items-start space-x-6">
                   {/* Timeline Dot */}
-                  <div className="w-12 h-12 rounded-full bg-[#6fc3cf] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#d4ad5a] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                     {news.date.split('.')[1]}
                   </div>
 
                   {/* News Content */}
-                  <div className="flex-1 bg-[#16191c] rounded p-6 border border-[#262b2e] hover:border-[#3a4247] transition-all duration-300">
+                  <div className="flex-1 bg-[#1a2236] rounded p-6 border border-[#2a3550] hover:border-[#3d4a68] transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-sm font-mono text-[#6fc3cf]">{news.date}</div>
+                      <div className="text-sm font-mono text-[#d4ad5a]">{news.date}</div>
                       <div className={`px-3 py-1 text-xs font-mono rounded border ${
-                        news.category === 'RESEARCH' ? 'bg-[#6fc3cf]/10 text-[#6fc3cf] border-[#6fc3cf]/20' :
+                        news.category === 'RESEARCH' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
                         news.category === 'CONFERENCE' ? 'bg-purple-400/10 text-purple-400 border-purple-400/20' :
                         news.category === 'SEMINAR' ? 'bg-blue-400/10 text-blue-400 border-blue-400/20' :
                         news.category === 'EXPERIMENT' ? 'bg-green-400/10 text-green-400 border-green-400/20' :
@@ -922,7 +1096,7 @@ export default function NewsPage() {
                         news.category === 'AWARD' ? 'bg-yellow-400/10 text-yellow-400 border-yellow-400/20' :
                         news.category === 'COLLABORATION' ? 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20' :
                         news.category === 'MEMBER' ? 'bg-pink-400/10 text-pink-400 border-pink-400/20' :
-                        'bg-gray-400/10 text-[#8b959a] border-gray-400/20'
+                        'bg-gray-400/10 text-[#9a9eae] border-gray-400/20'
                       }`}>
                         {news.category}
                       </div>
@@ -932,13 +1106,13 @@ export default function NewsPage() {
                       {news.title}
                     </h3>
 
-                    <p className="text-[#aab3b6] leading-relaxed">
+                    <p className="text-[#b4b6c0] leading-relaxed">
                       {news.desc}
                     </p>
 
                     {news.hasImage && (
-                      <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#3a4247]/30">
-                        <p className="text-[#8b959a] text-sm italic">
+                      <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#3d4a68]/30">
+                        <p className="text-[#9a9eae] text-sm italic">
                           {locale === 'ja' ? '[Photo] 写真付きニュース' : '[Photo] News with image'}
                         </p>
                       </div>
@@ -952,7 +1126,7 @@ export default function NewsPage() {
       </section>
 
       {/* Stats Summary */}
-      <section className="py-16 bg-[#16191c]">
+      <section className="py-16 bg-[#1a2236]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -960,7 +1134,7 @@ export default function NewsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('activitySummary')}
               </span>
             </h2>
@@ -978,13 +1152,13 @@ export default function NewsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#16191c]/90 backdrop-blur-sm border border-[#262b2e] rounded p-6"
+                className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6"
               >
-                <div className={`text-4xl font-black text-[#e6e9ea] mb-2`}>
+                <div className={`text-4xl font-black text-[#ece7dc] mb-2`}>
                   {stat.number}
                 </div>
-                <div className="text-sm font-mono text-[#8b959a] tracking-wider mb-1">{stat.label}</div>
-                <div className="text-xs text-[#6a7378]">{stat.desc}</div>
+                <div className="text-sm font-mono text-[#9a9eae] tracking-wider mb-1">{stat.label}</div>
+                <div className="text-xs text-[#767c90]">{stat.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -993,7 +1167,7 @@ export default function NewsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

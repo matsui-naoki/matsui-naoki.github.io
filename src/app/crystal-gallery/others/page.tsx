@@ -8,7 +8,7 @@ import { otherCrystals } from '@/lib/crystalFbxData'
 
 export default function OthersPage() {
   return (
-    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
+    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
       <SimpleNavigation />
 
       {/* Hero Section */}
@@ -20,14 +20,14 @@ export default function OthersPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 その他のイオン伝導体
               </span>
             </h1>
-            <p className="text-xl text-[#aab3b6] font-light mb-4">
+            <p className="text-xl text-[#b4b6c0] font-light mb-4">
               Other Ion Conductors
             </p>
-            <p className="text-[#8b959a] max-w-3xl mx-auto">
+            <p className="text-[#9a9eae] max-w-3xl mx-auto">
               銀イオン、ナトリウムイオン、カリウムイオンなどの様々なイオン種を伝導する材料群。
               イオン伝導の基礎研究や特殊用途に用いられる重要な材料です。
             </p>
@@ -51,12 +51,12 @@ export default function OthersPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-16 bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="mt-16 bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-2xl font-bold mb-6 text-[#e6e9ea]">
+            <h2 className="text-2xl font-bold mb-6 text-[#ece7dc]">
               多様なイオン伝導材料
             </h2>
-            <div className="grid md:grid-cols-2 gap-6 text-[#aab3b6]">
+            <div className="grid md:grid-cols-2 gap-6 text-[#b4b6c0]">
               <div>
                 <h3 className="text-lg font-semibold text-[#d98a8a] mb-3">金属イオン伝導体</h3>
                 <ul className="space-y-2 text-sm">
@@ -104,16 +104,16 @@ export default function OthersPage() {
             <div className="mt-6 space-y-4">
               <div className="p-4 bg-red-900/30 rounded border border-red-800/50">
                 <h4 className="font-semibold text-[#e3b0b0] mb-2">超イオン伝導現象</h4>
-                <p className="text-sm text-[#aab3b6]">
+                <p className="text-sm text-[#b4b6c0]">
                   β-AgIは147°C以上で液体に匹敵する高いイオン伝導率（1 S/cm以上）を示し、
                   「超イオン伝導体」と呼ばれます。この現象は固体中でのイオンの液体的な運動に起因し、
                   イオン伝導機構の理解に重要な知見を提供しています。
                 </p>
               </div>
 
-              <div className="p-4 bg-[#16191c] rounded border border-[#262b2e]">
+              <div className="p-4 bg-[#1a2236] rounded border border-[#2a3550]">
                 <h4 className="font-semibold text-[#e8cd6e] mb-2">構造の多様性</h4>
-                <p className="text-sm text-[#aab3b6]">
+                <p className="text-sm text-[#b4b6c0]">
                   β-アルミナの2次元層状構造、ホランダイト型の1次元トンネル構造、
                   Rb4Cu16I7Cl13の複雑な3次元ネットワーク構造など、
                   様々な結晶構造がイオン伝導を実現しており、構造とイオン伝導性の関係解明に貢献しています。
@@ -126,7 +126,7 @@ export default function OthersPage() {
 
       {/* Back to Gallery Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/crystal-gallery" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/crystal-gallery" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
           ギャラリーに戻る
         </Link>
       </div>

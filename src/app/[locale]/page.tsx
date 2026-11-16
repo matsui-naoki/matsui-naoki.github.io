@@ -1,32 +1,32 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
-import { useState, useEffect, lazy, Suspense } from 'react'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import { lazy, Suspense } from 'react'
 
 const CrystalBackground = lazy(() => import('@/components/CrystalBackground'))
 
 export default function Home() {
   const t = useTranslations('home')
   const locale = useLocale()
+  const ja = locale === 'ja'
 
   // SEO structured data
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ResearchOrganization",
-    "name": locale === 'ja' ? "松井直喜" : "Naoki Matsui",
+    "name": ja ? "松井直喜" : "Naoki Matsui",
     "alternateName": "Matsui Laboratory",
     "url": "https://matsui-naoki.github.io",
-    "description": locale === 'ja'
+    "description": ja
       ? "東京科学大学の電池研究室(菅野・鈴木・松井研)。松井直喜准教授。全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体など次世代電池の研究開発"
       : "Battery research laboratory at Institute of Science Tokyo led by Dr. Naoki Matsui. Research on all-solid-state batteries, fluoride-ion conductors, and hydride-ion conductors",
     "member": {
       "@type": "Person",
-      "name": locale === 'ja' ? "松井直喜" : "Naoki Matsui",
-      "jobTitle": locale === 'ja' ? "准教授" : "Associate Professor",
+      "name": ja ? "松井直喜" : "Naoki Matsui",
+      "jobTitle": ja ? "准教授" : "Associate Professor",
       "sameAs": [
         "https://www.linkedin.com/in/naoki-matsui-ssi",
         "https://github.com/matsui-naoki",
@@ -34,121 +34,111 @@ export default function Home() {
       ],
       "affiliation": {
         "@type": "EducationalOrganization",
-        "name": locale === 'ja' ? "東京科学大学" : "Institute of Science Tokyo",
+        "name": ja ? "東京科学大学" : "Institute of Science Tokyo",
         "alternateName": "Institute of Science Tokyo"
       }
     },
-    "researchAreas": locale === 'ja'
+    "researchAreas": ja
       ? ["全固体電池", "リチウムイオン電池", "フッ化物イオン伝導体", "フッ化物電池", "ヒドリドイオン伝導体", "固体イオニクス", "材料インフォマティクス"]
       : ["All-solid-state batteries", "Lithium-ion batteries", "Fluoride ion conductors", "Fluoride batteries", "Hydride ion conductors", "Solid ionics", "Materials informatics"]
   }
 
-  // Slideshow state
-  const slides = [
-    { src: '/solid-state-battery.jpg', alt: 'Solid State Battery' },
-    { src: '/solid-state-battery-experiment.jpg', alt: 'Solid State Battery Experiment' },
-    { src: '/BCNH.jpg', alt: 'BCNH Materials' },
-    { src: '/virtual-space.jpg', alt: 'Virtual Space' },
-    { src: '/elements.png', alt: 'Periodic Elements' },
-    { src: '/seminar.jpg', alt: 'Seminar' }
-  ]
-
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-
-  useEffect(() => {
-    if (!isAutoPlaying) return
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, slides.length])
-
-  const nextSlide = () => {
-    setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
-
-  const prevSlide = () => {
-    setIsAutoPlaying(false)
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
-
-  const researchAreas = [
-    { titleKey: 'lithiumIonConductor', descKey: 'lithiumIonConductorDesc', image: '/Li1.jpg' },
-    { titleKey: 'fluorideIonConductor', descKey: 'fluorideIonConductorDesc', image: '/F1.jpg' },
-    { titleKey: 'hydrideIonConductor', descKey: 'hydrideIonConductorDesc', image: '/H1.jpg' },
-    { titleKey: 'anionIntercalation', descKey: 'anionIntercalationDesc', image: '/anion_intercalation.jpg' },
-    { titleKey: 'machineLearning', descKey: 'machineLearningDesc', image: '/mi.jpg' },
-    { titleKey: 'highThroughput', descKey: 'highThroughputDesc', image: '/combinatorial.jpg' }
-  ]
-
-  // News data with translations
-  const newsData = locale === 'ja' ? [
+  // From idea to picture: the actual order of work in the lab
+  const process = ja ? [
     {
-      date: '2026.08.12',
-      title: 'M2板倉さんの筆頭論文がSmall Structuresに掲載',
-      desc: 'Bi置換PbSnF4の秩序-無秩序転移の制御による高フッ化物イオン伝導の実現。おめでとう!!'
+      verb: '設計',
+      text: '機械学習やグラフニューラルネットワークポテンシャルを使い、多数の候補物質からイオン伝導度の高そうな組成・構造を選びます。',
+      image: '/virtual-space.jpg',
+      caption: '計算で絞り込んだ候補物質のイメージ（Blender）'
     },
     {
-      date: '2026.03.25',
-      title: 'OBのAyuさんとの共著論文がJ. Mater. Chem. Aに掲載',
-      desc: '複合水素化物Ba2MgH6の高速ヒドリドイオン伝導を報告。'
+      verb: '合成',
+      text: '固相反応やメカノケミカル法で試料を合成します。ハイスループット合成では一度に数十試料を作製・評価します。',
+      image: '/combinatorial.jpg',
+      caption: 'ハイスループット合成のるつぼ（Blender）'
     },
     {
-      date: '2026.08.28',
-      title: 'プロジェクトの会議@京都に参加',
-      desc: ''
+      verb: '構造解析',
+      text: 'SPring-8 や J-PARC で放射光X線・中性子回折を測定し、Rietveld 解析などで結晶構造とイオンの伝導経路を決定します。学生も実験に参加します。',
+      image: '/SPring8_260131.jpg',
+      caption: 'SPring-8 BL02B2 での測定（2026年1月）'
     },
     {
-      date: '2026.08.20',
-      title: '京大陰山研の吉田特定准教授・大阪公立大学林研の本橋助教を訪問',
-      desc: '有意義な材料設計の議論をおこないました。'
-    },
-    {
-      date: '2026.08.06',
-      title: '信州大学の手嶋研究室を見学',
-      desc: ''
-    },
-    {
-      date: '2026.07.30-08.04',
-      title: 'OBのAyuさんが共同研究のため来校',
-      desc: '現インドネシア大学講師としてご活躍中。お元気そうで良かったです.'
+      verb: '可視化',
+      text: '解析した結晶構造、ポテンシャル分布、イオンの軌跡を Blender で図にします。Python スクリプトでデータから直接シーンを作るため、論文の図や表紙にも使っています。',
+      image: '/BCNH.jpg',
+      caption: '結晶の中を移動するイオンの軌跡（Blender）'
     }
   ] : [
     {
-      date: '2026.08.12',
-      title: 'M2 Student Itakura\'s First-Author Paper Published in Small Structures',
-      desc: 'Unlocking high fluoride-ion conductivity in Bi-substituted PbSnF4. Congratulations!!'
+      verb: 'Design',
+      text: 'Machine learning and graph-neural-network potentials are used to select compositions and structures likely to show high ionic conductivity.',
+      image: '/virtual-space.jpg',
+      caption: 'Candidate materials screened by computation (Blender)'
     },
     {
-      date: '2026.03.25',
-      title: 'Paper with Alumnus Ayu Published in J. Mater. Chem. A',
-      desc: 'Fast hydride-ion conduction in the complex hydride Ba2MgH6.'
+      verb: 'Synthesis',
+      text: 'Samples are made by solid-state reaction or mechanochemical synthesis. High-throughput synthesis prepares and evaluates dozens of samples at once.',
+      image: '/combinatorial.jpg',
+      caption: 'Crucibles for high-throughput synthesis (Blender)'
     },
     {
-      date: '2026.08.28',
-      title: 'Project Meeting @ Kyoto',
-      desc: ''
+      verb: 'Structure analysis',
+      text: 'Synchrotron X-ray and neutron diffraction at SPring-8 and J-PARC, followed by Rietveld analysis, determine the crystal structure and the ion-conduction pathways. Students take part in the experiments.',
+      image: '/SPring8_260131.jpg',
+      caption: 'Measurement at SPring-8 BL02B2 (January 2026)'
     },
     {
-      date: '2026.08.20',
-      title: 'Visited Dr. Yoshida (Kyoto Univ.) and Dr. Motohashi (Osaka Metropolitan Univ.)',
-      desc: 'Fruitful discussions on materials design.'
-    },
-    {
-      date: '2026.08.06',
-      title: 'Visited the Teshima Laboratory at Shinshu University',
-      desc: ''
-    },
-    {
-      date: '2026.07.30-08.04',
-      title: 'Alumnus Ayu Visited for Collaboration',
-      desc: 'Now Lecturer at Universitas Indonesia. Glad to see they are doing well.'
+      verb: 'Visualization',
+      text: 'Crystal structures, potential maps and ion trajectories are rendered in Blender. Scenes are built from the data with Python scripts and are used for paper figures and journal covers.',
+      image: '/BCNH.jpg',
+      caption: 'Trajectory of an ion moving through the crystal (Blender)'
     }
   ]
+
+  // Research grouped by the ion that carries the charge
+  const ions = [
+    { symbol: 'Li', charge: '+', color: '#8fa3ff', titleKey: 'lithiumIonConductor', descKey: 'lithiumIonConductorDesc', image: '/Li1.jpg' },
+    { symbol: 'F', charge: '−', color: '#a6d982', titleKey: 'fluorideIonConductor', descKey: 'fluorideIonConductorDesc', image: '/F1.jpg' },
+    { symbol: 'H', charge: '−', color: '#e8ecf4', titleKey: 'hydrideIonConductor', descKey: 'hydrideIonConductorDesc', image: '/H1.jpg' }
+  ]
+
+  const methods = [
+    { titleKey: 'anionIntercalation', descKey: 'anionIntercalationDesc' },
+    { titleKey: 'machineLearning', descKey: 'machineLearningDesc' },
+    { titleKey: 'highThroughput', descKey: 'highThroughputDesc' }
+  ]
+
+  // News data with translations
+  const newsData = ja ? [
+    { date: '2026.11.14-16', title: 'さきがけ「ゆらぎの理解と制御による材料革新」領域会議@東京に参加', desc: '' },
+    { date: '2026.11.10', title: 'NIMS Awardsに参加', desc: '' },
+    { date: '2026.11.06-08', title: 'Battery Forum@ソウル国立大学に参加', desc: '' },
+    { date: '2026.11.06', title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載', desc: 'In置換β-PbSnF4の室温フッ化物イオン伝導。Editor\'s Choiceに選ばれました。おめでとう!!' },
+    { date: '2026.11.02-04', title: 'イオン渋滞学 領域会議@福岡に参加', desc: '' },
+    { date: '2026.10.28-30', title: 'SPring-8で回折実験を実施', desc: '' }
+  ] : [
+    { date: '2026.11.14-16', title: 'JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo', desc: '' },
+    { date: '2026.11.10', title: 'Attended NIMS Awards', desc: '' },
+    { date: '2026.11.06-08', title: 'Battery Forum @ Seoul National University', desc: '' },
+    { date: '2026.11.06', title: 'M2 Student Itakura\'s First-Author Paper Published in Electrochemistry', desc: 'Room-temperature fluoride-ion conduction in In-substituted β-PbSnF4. Selected as Editor\'s Choice. Congratulations!!' },
+    { date: '2026.11.02-04', title: 'Ion Traffic Jam Area Meeting @ Fukuoka', desc: '' },
+    { date: '2026.10.28-30', title: 'Diffraction Experiments at SPring-8', desc: '' }
+  ]
+
+  const profileRows = ja ? [
+    ['役職', '准教授'],
+    ['所属', '東京科学大学 物質理工学院 応用化学系 化学システム分野'],
+    ['学位', '博士（工学）2020年'],
+    ['専門', '固体イオニクス・材料インフォマティクス']
+  ] : [
+    ['Position', 'Associate Professor'],
+    ['Affiliation', 'Dept. of Chemical Science and Engineering, Institute of Science Tokyo'],
+    ['Degree', 'Ph.D. in Engineering (2020)'],
+    ['Field', 'Solid-state ionics and materials informatics']
+  ]
+
+  const textLink = 'text-[#d4ad5a] underline decoration-[#d4ad5a]/40 underline-offset-[6px] hover:decoration-[#d4ad5a] transition-colors'
 
   return (
     <>
@@ -156,350 +146,222 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="min-h-screen bg-[#101315] text-[#e6e9ea] relative">
+      <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
         <Suspense fallback={null}>
           <CrystalBackground />
         </Suspense>
         <LocaleNavigation />
 
-        {/* Hero Section */}
-        <section id="home" className="pt-16 pb-8 min-h-screen flex items-center relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="font-mono text-sm sm:text-base text-[#6fc3cf] tracking-wide mb-7">
-                  {t('badge')}
-                </div>
-
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-snug text-[#e6e9ea]">
-                  {t('heroTitle1')}
-                  <br />
-                  {t('heroTitle2')}
-                </h1>
-
-                <p className="text-base sm:text-lg text-[#9aa4a8] mb-8 sm:mb-10 leading-loose max-w-xl">
-                  {t('heroDescription')}
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/research-details"
-                    className="bg-[#e6e9ea] text-[#101315] px-8 py-3.5 rounded font-medium hover:bg-white transition-colors text-center text-base"
-                  >
-                    {t('exploreResearch')}
-                  </Link>
-                  <Link
-                    href="/publications"
-                    className="border border-[#3a4247] text-[#e6e9ea] px-8 py-3.5 rounded font-medium hover:border-[#6fc3cf] hover:text-[#6fc3cf] transition-colors text-center text-base"
-                  >
-                    {t('viewPublications')}
-                  </Link>
-                </div>
-
-                <div className="flex items-baseline gap-5 mt-12">
-                  <div className="font-mono text-xs text-[#566065] tracking-wider">KEYWORDS</div>
-                  <div className="text-sm sm:text-base text-[#8b959a]">{t('keywords')}</div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.15 }}
-                className="relative"
-              >
-                <div className="relative group">
-                  <div className="relative overflow-hidden rounded border border-[#262b2e]">
-                    <div
-                      className="flex transition-transform duration-500 ease-in-out"
-                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                      {slides.map((slide, index) => (
-                        <div key={index} className="w-full flex-shrink-0">
-                          <Image
-                            src={slide.src}
-                            alt={slide.alt}
-                            width={600}
-                            height={400}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#101315]/70 backdrop-blur-sm rounded-full p-3 border border-[#3a4247] opacity-0 group-hover:opacity-100 transition-opacity hover:border-[#6fc3cf]"
-                    >
-                      <svg className="w-5 h-5 text-[#e6e9ea]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#101315]/70 backdrop-blur-sm rounded-full p-3 border border-[#3a4247] opacity-0 group-hover:opacity-100 transition-opacity hover:border-[#6fc3cf]"
-                    >
-                      <svg className="w-5 h-5 text-[#e6e9ea]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                      {slides.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => {
-                            setIsAutoPlaying(false)
-                            setCurrentSlide(index)
-                          }}
-                          className={`w-1.5 h-1.5 rounded-full transition-colors ${index === currentSlide ? 'bg-[#e6e9ea]' : 'bg-[#e6e9ea]/30'}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Recruiting Banner */}
-        <section className="pb-4">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="relative z-30 bg-[#16191c] border border-[#6fc3cf]/40 rounded p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
-            >
-              <div>
-                <div className="font-mono text-xs text-[#6fc3cf] tracking-widest mb-2">JOIN US</div>
-                <div className="text-xl sm:text-2xl font-bold text-[#e6e9ea] mb-1.5">
-                  {locale === 'ja' ? '大学院生 募集中!' : 'Graduate Students Wanted!'}
-                </div>
-                <p className="text-sm sm:text-base text-[#9aa4a8]">
-                  {locale === 'ja'
-                    ? '無機材料・固体化学・電池に少しでも興味があれば大歓迎。分野の違いは勉強会でフォローします。M1から国際学会・国際誌デビューを狙える環境です。'
-                    : 'If you have any interest in inorganic materials, solid-state chemistry, or batteries, you are welcome. Study sessions support students from different backgrounds — aim for international conferences and journals from your first year.'}
-                </p>
+        <div className="relative z-10">
+        {/* Hero */}
+        <section id="home" className="min-h-[100svh] flex items-center pt-24 pb-16">
+          <div className="max-w-6xl w-full mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            <div className="lg:col-span-6 hero-rise">
+              <p className="text-sm sm:text-base text-[#c9c4b8] mb-5">
+                {ja ? '東京科学大学 菅野・鈴木・松井研究室' : 'Kanno–Suzuki–Matsui Laboratory, Institute of Science Tokyo'}
+              </p>
+              <h1 className="font-serif font-bold text-[2.1rem] leading-[1.35] sm:text-5xl sm:leading-[1.3] tracking-[0.04em] mb-7">
+                {ja ? <>全固体電池のための<br />イオン伝導体の研究</> : <>Ion conductors for<br />all-solid-state batteries</>}
+              </h1>
+              <p className="text-base sm:text-lg text-[#d8d3c8] leading-[1.95] max-w-[34rem] mb-9">
+                {ja
+                  ? 'リチウム・フッ化物・ヒドリドイオンが固体中を速く動く物質を探索しています。機械学習による候補選定、合成、放射光・中性子回折による構造解析を組み合わせて研究を進めています。'
+                  : 'We search for solids in which lithium, fluoride and hydride ions move fast, combining machine-learning screening, synthesis, and structure analysis by synchrotron X-ray and neutron diffraction.'}
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-3 text-base">
+                <Link href="/research-details" className={textLink}>{t('exploreResearch')}</Link>
+                <Link href="/publications" className={textLink}>{t('viewPublications')}</Link>
+                <Link href="/prospective-students" className={textLink}>{ja ? '研究室を希望する方へ' : 'For prospective students'}</Link>
               </div>
-              <Link
-                href="/prospective-students"
-                className="flex-shrink-0 bg-[#6fc3cf] text-[#101315] px-7 py-3.5 rounded font-bold text-base hover:bg-[#9adae4] transition-colors"
-              >
-                {locale === 'ja' ? '研究室希望者へ →' : 'For Prospective Students →'}
-              </Link>
-            </motion.div>
+            </div>
+
+            <figure className="lg:col-span-6">
+              <div className="relative aspect-[4096/2400] overflow-hidden rounded-sm">
+                <Image
+                  src="/blender/solid-state-battery.jpg"
+                  alt={ja ? '全固体電池の模式図。固体電解質の結晶の中をリチウムイオンが移動している' : 'Schematic of an all-solid-state battery, with lithium ions moving through the solid electrolyte crystal'}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="figure-caption mt-3">
+                {ja ? '全固体電池の模式図（Blender で作成）' : 'Schematic of an all-solid-state battery (made in Blender)'}
+              </figcaption>
+            </figure>
           </div>
         </section>
 
-        {/* Research Areas */}
-        <section id="research" className="py-20">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-baseline gap-4 mb-10"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#e6e9ea]">
-                {t('researchDomains')}
+        {/* From idea to picture */}
+        <section id="making" className="py-24 sm:py-32">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+            <div className="max-w-[40rem] mb-16 sm:mb-24">
+              <h2 className="font-serif font-bold text-3xl sm:text-[2.6rem] leading-[1.45] tracking-[0.04em] mb-8">
+                {ja ? '研究の進め方' : 'How we work'}
               </h2>
-              <div className="h-px bg-[#262b2e] flex-grow"></div>
-              <div className="font-mono text-xs text-[#566065] tracking-widest">RESEARCH</div>
-            </motion.div>
+              <p className="text-base sm:text-[1.0625rem] text-[#d8d3c8] leading-[2]">
+                {ja
+                  ? '新しい電池材料の開発は、候補となる結晶構造を考えるところから始まります。計算で候補を選び、合成し、回折実験で構造とイオンの伝導経路を調べ、結果を Blender で図にまとめます。一人の学生がこの流れを一通り経験できるようにしています。'
+                  : 'Developing a new battery material starts with candidate crystal structures. We select candidates by computation, synthesize them, determine the structure and conduction pathways by diffraction, and summarize the results as figures made in Blender. Each student can experience the whole sequence.'}
+              </p>
+            </div>
 
-            <div className="grid md:grid-cols-3 gap-5">
-              {researchAreas.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group relative"
-                >
-                  <Link href="/research-details" className="block h-full">
-                    <div className="bg-[#16191c]/90 border border-[#262b2e] rounded p-5 h-full hover:border-[#3a4247] transition-colors">
-                      <div className="relative mb-5 overflow-hidden rounded">
-                        <Image
-                          src={item.image}
-                          alt={t(item.titleKey as keyof typeof t)}
-                          width={300}
-                          height={200}
-                          className="w-full h-44 object-cover"
-                        />
-                      </div>
-
-                      <div className="flex items-baseline justify-between mb-2">
-                        <h3 className="text-lg sm:text-xl font-bold leading-tight text-[#e6e9ea]">
-                          {t(item.titleKey as keyof typeof t)}
-                        </h3>
-                        <span className="font-mono text-xs text-[#6fc3cf] ml-3 flex-shrink-0">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                      </div>
-
-                      <p className="text-[#8b959a] leading-relaxed text-sm sm:text-base">{t(item.descKey as keyof typeof t)}</p>
+            <ol className="space-y-20 sm:space-y-28">
+              {process.map((step, i) => (
+                <li key={step.verb} className="grid md:grid-cols-12 gap-7 md:gap-12 items-center">
+                  <figure className={`md:col-span-7 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                    <div className="relative aspect-[3/2] overflow-hidden rounded-sm bg-[#1a2236]">
+                      <Image src={step.image} alt={step.caption} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
                     </div>
-                  </Link>
-                </motion.div>
+                    <figcaption className="figure-caption mt-3">{step.caption}</figcaption>
+                  </figure>
+                  <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                    <h3 className="font-serif font-bold text-2xl sm:text-[1.75rem] tracking-[0.06em] mb-4">{step.verb}</h3>
+                    <p className="text-base text-[#c9c4b8] leading-[2]">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* Research grouped by mobile ion */}
+        <section id="research" className="py-24 sm:py-32">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
+              <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-[0.04em]">{t('researchDomains')}</h2>
+              <Link href="/research-details" className={textLink}>{ja ? '研究内容の詳細' : 'Research details'}</Link>
+            </div>
+
+            <p className="text-base text-[#c9c4b8] leading-[2] max-w-[40rem] mb-12">
+              {ja
+                ? '伝導するイオンの種類で分けると、主に三つの物質群を扱っています。'
+                : 'Grouped by the conducting ion, we work on three families of materials.'}
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-x-8 gap-y-14 mb-20">
+              {ions.map((ion) => (
+                <Link key={ion.symbol} href="/research-details" className="group block">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#1a2236] mb-5">
+                    <Image src={ion.image} alt={t(ion.titleKey as keyof typeof t)} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="flex items-baseline gap-4 mb-2">
+                    <span className="font-serif font-bold text-4xl leading-none" style={{ color: ion.color }}>
+                      {ion.symbol}<sup className="text-xl ml-0.5">{ion.charge}</sup>
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#ece7dc] group-hover:text-[#d4ad5a] transition-colors">
+                      {t(ion.titleKey as keyof typeof t)}
+                    </h3>
+                  </div>
+                  <p className="text-[#aeb1bc] leading-[1.9] text-[0.9375rem]">{t(ion.descKey as keyof typeof t)}</p>
+                </Link>
               ))}
             </div>
+
+            <h3 className="font-serif font-bold text-xl sm:text-2xl tracking-[0.04em] mb-6">
+              {ja ? '手法' : 'Methods'}
+            </h3>
+            <dl className="grid md:grid-cols-3 gap-x-8 gap-y-6 border-t border-[#2a3550] pt-6">
+              {methods.map((m) => (
+                <div key={m.titleKey}>
+                  <dt className="font-bold text-[#ece7dc] mb-1.5">{t(m.titleKey as keyof typeof t)}</dt>
+                  <dd className="text-[#aeb1bc] leading-[1.9] text-[0.9375rem]">{t(m.descKey as keyof typeof t)}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
-        {/* Profile Section */}
-        <section id="profile" className="py-20">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="font-mono text-xs text-[#566065] tracking-widest mb-5">
-                  PRINCIPAL INVESTIGATOR
-                </div>
-
-                <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-[#e6e9ea]">
-                  {t('matsuiNaoki')}
-                </h2>
-                <div className="mb-8">
-                  <span className="text-lg text-[#6fc3cf]">{t('position')}</span>
-                </div>
-
-                <div className="space-y-3 mb-10 text-base text-[#9aa4a8]">
-                  <div className="flex gap-4">
-                    <span className="text-[#566065] w-20 flex-shrink-0">{t('positionLabel')}</span>
-                    <span>{t('positionValue')}</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-[#566065] w-20 flex-shrink-0">{t('affiliationLabel')}</span>
-                    <span>{t('affiliationValue')}</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-[#566065] w-20 flex-shrink-0">{t('degreeLabel')}</span>
-                    <span>{t('degreeValue')}</span>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-[#566065] w-20 flex-shrink-0">{t('expertiseLabel')}</span>
-                    <span>{t('expertiseValue')}</span>
-                  </div>
-                </div>
-
-                <div className="bg-[#16191c]/90 border border-[#262b2e] rounded p-6 relative z-20">
-                  <h3 className="text-lg font-bold mb-5 text-[#e6e9ea]">
-                    {t('getInTouch')}
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="font-mono text-xs text-[#566065] tracking-wider mb-1">{t('email')}</div>
-                      <div className="text-base text-[#e6e9ea]">matsui.n.ee49[at]m.isct.ac.jp</div>
-                    </div>
-                    <div>
-                      <div className="font-mono text-xs text-[#566065] tracking-wider mb-1">{t('location')}</div>
-                      <div className="text-base text-[#e6e9ea]">{t('locationValue')}</div>
-                    </div>
-                    <div>
-                      <div className="font-mono text-xs text-[#566065] tracking-wider mb-1">SNS</div>
-                      <div className="flex space-x-4 mt-2 relative z-30">
-                        <a href="https://www.linkedin.com/in/naoki-matsui-ssi" target="_blank" rel="noopener noreferrer" className="text-[#8b959a] hover:text-[#6fc3cf] transition-colors cursor-pointer">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </a>
-                        <a href="https://github.com/matsui-naoki" target="_blank" rel="noopener noreferrer" className="text-[#8b959a] hover:text-[#6fc3cf] transition-colors cursor-pointer">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                          </svg>
-                        </a>
-                        <a href="https://x.com/naoki_matsui_ex" target="_blank" rel="noopener noreferrer" className="text-[#8b959a] hover:text-[#6fc3cf] transition-colors cursor-pointer">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Link href="/profile-detail" className="inline-flex items-center mt-6 text-[#6fc3cf] hover:text-[#9adae4] transition-colors group cursor-pointer relative z-30 text-base">
-                    <span className="font-medium">{t('seeMore')}</span>
-                    <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.15 }}
-                className="relative"
-              >
-                <div className="relative">
-                  <Image
-                    src="/NaokiMatsui.jpg"
-                    alt="Profile Photo"
-                    width={300}
-                    height={300}
-                    className="relative rounded border border-[#262b2e] w-full h-auto"
-                  />
-                </div>
-              </motion.div>
+        {/* Recruiting */}
+        <section className="pb-24 sm:pb-32">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+            <div className="border-y border-[#d4ad5a]/50 py-10 sm:py-12 grid md:grid-cols-12 gap-6 items-center">
+              <h2 className="md:col-span-5 font-serif font-bold text-2xl sm:text-3xl leading-[1.5] tracking-[0.04em]">
+                {ja ? '大学院生の募集' : 'Graduate students'}
+              </h2>
+              <div className="md:col-span-7">
+                <p className="text-base text-[#c9c4b8] leading-[2] mb-5">
+                  {ja
+                    ? '無機材料・固体化学・電池に興味のある大学院生を募集しています。他分野からの進学者向けに勉強会を行っています。M1から放射光実験に参加し、国際学会や国際誌での発表を目指します。'
+                    : 'We welcome graduate students interested in inorganic materials, solid-state chemistry or batteries. Study sessions support students from other fields. Students join synchrotron experiments from their first year and aim to present at international conferences and in journals.'}
+                </p>
+                <Link href="/prospective-students" className={textLink}>
+                  {ja ? '研究室を希望する方へ' : 'For prospective students'}
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* News Section */}
-        <section id="news" className="py-20">
-          <div className="max-w-5xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-baseline gap-4 mb-6"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#e6e9ea]">
-                {t('latestNewsTitle')}
-              </h2>
-              <div className="h-px bg-[#262b2e] flex-grow"></div>
-              <Link href="/news" className="text-base text-[#6fc3cf] hover:text-[#9adae4] transition-colors relative z-30">
-                {t('viewAllNews')} →
-              </Link>
-            </motion.div>
+        {/* News */}
+        <section id="news" className="pb-24 sm:pb-32">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4 mb-8">
+              <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-[0.04em]">{t('latestNewsTitle')}</h2>
+              <Link href="/news" className={textLink}>{ja ? 'ニュース一覧' : 'All news'}</Link>
+            </div>
 
-            <div className="flex flex-col">
-              {newsData.map((news, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
-                  className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-9 py-4 border-b border-[#1c2124]"
-                >
-                  <div className="font-mono text-sm text-[#6a7378] w-32 flex-shrink-0">{news.date}</div>
+            <ul className="border-t border-[#2a3550]">
+              {newsData.map((news) => (
+                <li key={news.date + news.title} className="grid sm:grid-cols-[10rem_1fr] gap-1 sm:gap-8 py-5 border-b border-[#2a3550]">
+                  <time className="text-sm text-[#9a9eae] tabular-nums pt-0.5">{news.date}</time>
                   <div>
-                    <div className="text-base sm:text-lg text-[#ccd3d6] font-medium">{news.title}</div>
-                    <div className="text-sm sm:text-base text-[#8b959a] mt-0.5">{news.desc}</div>
+                    <div className="text-base sm:text-[1.0625rem] text-[#ece7dc] leading-[1.8]">{news.title}</div>
+                    {news.desc && <div className="text-[0.9375rem] text-[#aeb1bc] leading-[1.8] mt-1">{news.desc}</div>}
                   </div>
-                </motion.div>
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Profile */}
+        <section id="profile" className="pb-24 sm:pb-32">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+            <div className="md:col-span-4">
+              <Image
+                src="/NaokiMatsui.jpg"
+                alt={ja ? '松井直喜' : 'Naoki Matsui'}
+                width={559}
+                height={641}
+                className="w-full max-w-[18rem] h-auto rounded-sm"
+              />
+            </div>
+            <div className="md:col-span-8">
+              <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-[0.08em] mb-2">{t('matsuiNaoki')}</h2>
+              <p className="text-[#aeb1bc] mb-8">{ja ? 'Naoki Matsui' : '松井 直喜'}</p>
+
+              <dl className="grid grid-cols-[5.5rem_1fr] gap-x-6 gap-y-3 text-base mb-10">
+                {profileRows.map(([k, v]) => (
+                  <div key={k} className="contents">
+                    <dt className="text-[#9a9eae]">{k}</dt>
+                    <dd className="text-[#d8d3c8]">{v}</dd>
+                  </div>
+                ))}
+                <dt className="text-[#9a9eae]">{ja ? '連絡先' : 'Email'}</dt>
+                <dd className="text-[#d8d3c8]">matsui.n.ee49[at]m.isct.ac.jp</dd>
+                <dt className="text-[#9a9eae]">{ja ? '居室' : 'Office'}</dt>
+                <dd className="text-[#d8d3c8]">{t('locationValue')}</dd>
+              </dl>
+
+              <div className="flex flex-wrap gap-x-7 gap-y-3 text-base">
+                <Link href="/profile-detail" className={textLink}>{ja ? '経歴・受賞' : 'CV and awards'}</Link>
+                <a href="https://www.linkedin.com/in/naoki-matsui-ssi" target="_blank" rel="noopener noreferrer" className={textLink}>LinkedIn</a>
+                <a href="https://github.com/matsui-naoki" target="_blank" rel="noopener noreferrer" className={textLink}>GitHub</a>
+                <a href="https://x.com/naoki_matsui_ex" target="_blank" rel="noopener noreferrer" className={textLink}>X</a>
+              </div>
             </div>
           </div>
         </section>
+
+        </div>
 
         {/* Footer */}
-        <footer className="border-t border-[#262b2e] mt-8">
-          <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between gap-3 text-sm text-[#566065]">
-            <div className="font-mono">© 2026 Naoki Matsui — {locale === 'ja' ? '東京科学大学 すずかけ台キャンパス G1-914' : 'Institute of Science Tokyo, Suzukakedai Campus G1-914'}</div>
-            <div className="flex gap-5">
-              <a href="https://www.linkedin.com/in/naoki-matsui-ssi" target="_blank" rel="noopener noreferrer" className="hover:text-[#6fc3cf] transition-colors">LinkedIn</a>
-              <a href="https://github.com/matsui-naoki" target="_blank" rel="noopener noreferrer" className="hover:text-[#6fc3cf] transition-colors">GitHub</a>
-              <a href="https://x.com/naoki_matsui_ex" target="_blank" rel="noopener noreferrer" className="hover:text-[#6fc3cf] transition-colors">X</a>
-            </div>
+        <footer className="relative z-10 border-t border-[#2a3550]">
+          <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row justify-between gap-3 text-sm text-[#9a9eae]">
+            <div>© 2026 Naoki Matsui　{ja ? '東京科学大学 すずかけ台キャンパス G1-914' : 'Institute of Science Tokyo, Suzukakedai Campus G1-914'}</div>
+            <Link href="/access" className="hover:text-[#d4ad5a] transition-colors">{ja ? 'アクセス' : 'Access'}</Link>
           </div>
         </footer>
       </div>

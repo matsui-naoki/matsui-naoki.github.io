@@ -64,7 +64,7 @@ export default function ProspectiveStudentsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#101315] text-[#e6e9ea]">
+    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -76,11 +76,11 @@ export default function ProspectiveStudentsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#e6e9ea]">
+              <span className="text-[#ece7dc]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#aab3b6] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -94,12 +94,12 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {t('aboutLab')}
             </h2>
-            <div className="space-y-4 text-[#aab3b6] leading-relaxed">
+            <div className="space-y-4 text-[#b4b6c0] leading-relaxed">
               <p>
                 {locale === 'ja'
                   ? '新入生を募集しています。2026年6月に准教授に昇任し、研究室は菅野・鈴木・松井研究室となりました。私自身を指導教員として選んでいただき、一緒に研究活動を行えます。'
@@ -123,18 +123,18 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {t('labFeatures')}
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '誰も知らない材料を創る' : 'Creating Materials No One Knows Yet'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? '固体化学をベースに、新規な固体電解質・電極の開発と、デバイス性能向上に向けたメカニズム解明に取り組んでいます。研究室での活動を通じて、皆さんには自身が開発した材料を最低1つ、追求してもらいます。世の中の誰もが知らない新しい材料を創成する、わくわくする研究です。'
@@ -144,10 +144,10 @@ export default function ProspectiveStudentsPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '自動実験 × AI — コンビナトリアル自動実験ラボ' : 'Automated Experiments × AI — Combinatorial Automated Lab'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? '当研究室の大きな強みが、コンビナトリアル自動実験ラボ「CLABAM」です。多元スパッタ成膜により4インチウェハ上に89セルの材料ライブラリを一括作製し、178本のプローブによる自動インピーダンス測定で約200試料をわずか6時間で評価します。粉末合成でも秤量・混合・成型・焼成・計測・データベース化を自動化するロボット実験基盤を構築中で、実験データ約4,500件・文献データ約15,000件・構造データ約5,000件を蓄積し、機械学習やLLMを組み合わせたAI駆動材料開発を展開しています。'
@@ -158,7 +158,7 @@ export default function ProspectiveStudentsPage() {
                       ? 'こうした最先端の研究基盤を、学生が自分の研究に日常的に使えます。機械学習やニューラルネットワークポテンシャルは標準的な道具として身につけつつ、プラスαのオリジナリティを生み出す着眼点を養います。'
                       : 'Students use this cutting-edge infrastructure in their own daily research — mastering machine learning and neural network potentials as standard tools while cultivating the perspective to create original science beyond them.'}
                   </p>
-                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
+                  <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#d4ad5a]/20">
                     <div className="mb-2">
                       <Image
                         src="/combinatorial.jpg"
@@ -168,7 +168,7 @@ export default function ProspectiveStudentsPage() {
                         className="w-full rounded"
                       />
                     </div>
-                    <p className="text-[#8b959a] text-sm italic text-center">
+                    <p className="text-[#9a9eae] text-sm italic text-center">
                       {locale === 'ja' ? 'コンビナトリアル合成・ハイスループット評価' : 'Combinatorial synthesis and high-throughput evaluation'}
                     </p>
                   </div>
@@ -176,17 +176,17 @@ export default function ProspectiveStudentsPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '最先端の設備・大型実験施設・計算資源' : 'Advanced Facilities, Beamlines, and Computing'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? '研究室は多数の高度な合成・計測設備を備えています。さらに、大型放射光施設SPring-8(兵庫)や中性子実験施設J-PARC(茨城)への出張実験で、最先端の計測技術を学生自身が扱います。計算面では、東京科学大学のスーパーコンピュータTSUBAMEやPreferred Networksの計算クラウド環境Matlantisを利用できます。'
                       : 'The lab is equipped with numerous advanced synthesis and measurement facilities. Students themselves handle cutting-edge measurements through beamtime experiments at SPring-8 (synchrotron, Hyogo) and J-PARC (neutron facility, Ibaraki). For computation, the TSUBAME supercomputer at Science Tokyo and the Matlantis cloud environment by Preferred Networks are available.'}
                   </p>
-                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
-                    <p className="text-[#6fc3cf] font-semibold mb-3">
+                  <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#d4ad5a]/20">
+                    <p className="text-[#d4ad5a] font-semibold mb-3">
                       {locale === 'ja' ? '2026年1月: SPring-8 BL02B2での放射光粉末X線回折実験' : 'January 2026: Synchrotron Powder X-ray Diffraction at SPring-8 BL02B2'}
                     </p>
                     <div className="flex justify-center mb-3">
@@ -200,7 +200,7 @@ export default function ProspectiveStudentsPage() {
                         />
                       </div>
                     </div>
-                    <p className="text-[#8b959a] text-sm italic text-center">
+                    <p className="text-[#9a9eae] text-sm italic text-center">
                       {locale === 'ja'
                         ? 'D2,M1学生が同行し, その場で測定結果について議論しました. 出張お疲れ様です!'
                         : 'D2 and M1 students accompanied and discussed measurement results on-site. Great work on the trip!'}
@@ -216,21 +216,21 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#16191c] rounded p-8 border border-[#6fc3cf]/40"
+            className="bg-[#1a2236] rounded p-8 border border-[#d4ad5a]/40"
           >
-            <h2 className="text-3xl font-black mb-2 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-2 text-[#ece7dc]">
               {t('educationPolicy')}
             </h2>
-            <p className="text-[#6fc3cf] font-semibold mb-6">
+            <p className="text-[#d4ad5a] font-semibold mb-6">
               {locale === 'ja' ? '— 1年で成果を出す、圧倒的な成長環境' : '— Results in your first year: an environment for rapid growth'}
             </p>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '早期の学会発表・論文投稿' : 'Early Conference Presentations and Publications'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? 'テーマ割り当てから1年以内の成果創出を目指し、成果の目処がついたら早期に学会発表・論文投稿に挑戦します。ゼミでのディスカッションで伝わる説明のスキルを磨き、若手の会でのポスター発表、国内学会での口頭発表、そして査読付き論文の執筆・国際学会での発表へとステップアップしていきます。'
@@ -241,8 +241,8 @@ export default function ProspectiveStudentsPage() {
                       ? '実際に、M1・M2の段階で国際誌に筆頭論文を投稿した実績が複数あり、2026年にはM2学生の筆頭論文がSmall Structuresに掲載されました。M1からECS(ハワイ)やSSI(シンガポール)などの国際学会で発表した学生もいます。'
                       : 'In fact, several students have submitted first-author papers to international journals at the M1/M2 stage — in 2026, an M2 student\'s first-author paper was published in Small Structures. Some students have presented at international conferences such as ECS (Hawaii) and SSI (Singapore) from their first year.'}
                   </p>
-                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#6fc3cf]/20">
-                    <p className="text-[#6fc3cf] font-semibold mb-3">
+                  <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#d4ad5a]/20">
+                    <p className="text-[#d4ad5a] font-semibold mb-3">
                       {locale === 'ja' ? '学会参加の様子 (M1)' : 'Conference Participation (M1)'}
                     </p>
                     <div className="flex gap-4 justify-center">
@@ -270,16 +270,16 @@ export default function ProspectiveStudentsPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? 'ゼミと研究支援' : 'Seminars and Research Support'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? 'ゼミでは年6回の発表機会(輪読ゼミ2回+研究進捗報告4回)に加えて定期的なミーティングがあり、発表・議論のスキルを集中的に鍛えます。共同研究や国家プロジェクトに参画する機会も多く、リサーチアシスタントとして給与が支給される場合もあります。'
                       : 'Seminars provide six presentation opportunities per year (two paper-reading and four progress reports) plus regular meetings, intensively training presentation and discussion skills. There are also many opportunities to join collaborative research and national projects, in some cases with paid research assistant positions.'}
                   </p>
-                  <div className="mt-4 p-4 bg-[#1c2124]/70 rounded border border-[#d9b83f]/20">
+                  <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#d9b83f]/20">
                     <div className="mb-2">
                       <Image
                         src="/seminar.jpg"
@@ -289,7 +289,7 @@ export default function ProspectiveStudentsPage() {
                         className="w-full rounded"
                       />
                     </div>
-                    <p className="text-[#8b959a] text-sm italic text-center">
+                    <p className="text-[#9a9eae] text-sm italic text-center">
                       {locale === 'ja' ? 'ゼミの様子 (2025/7)' : 'Seminar (2025/7)'}
                     </p>
                   </div>
@@ -297,10 +297,10 @@ export default function ProspectiveStudentsPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '分野が違っても大丈夫 — 学習サポート' : 'Different Background? No Problem — Learning Support'}
                 </h3>
-                <div className="space-y-3 text-[#aab3b6] leading-relaxed">
+                <div className="space-y-3 text-[#b4b6c0] leading-relaxed">
                   <p>
                     {locale === 'ja'
                       ? '私自身、生物系出身から固体化学の世界に飛び込みました。だからこそ、異分野出身の学生が基礎から着実にキャッチアップできる体制を大事にしています。「固体化学の基礎」「イオン伝導体の基礎」「シミュレーション応用」「研究の進め方」などをテーマにした勉強会を自主開催しており、夜ご飯を食べながらの気軽なディスカッション形式で開くこともあります。少しでも無機材料・固体化学・電池に興味があれば、遠慮なく飛び込んできてください。'
@@ -309,8 +309,8 @@ export default function ProspectiveStudentsPage() {
                 </div>
               </div>
 
-              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                <h4 className="font-bold text-[#6fc3cf] mb-2">
+              <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                <h4 className="font-bold text-[#d4ad5a] mb-2">
                   {locale === 'ja' ? '在学中に習得できる技術の例：' : 'Examples of skills you can acquire:'}
                 </h4>
                 <ul className="text-sm space-y-1">
@@ -328,14 +328,14 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {locale === 'ja' ? '卒業後の進路・研究室イベント' : 'Career Paths & Lab Events'}
             </h2>
-            <div className="space-y-6 text-[#aab3b6] leading-relaxed">
+            <div className="space-y-6 text-[#b4b6c0] leading-relaxed">
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '卒業後の進路' : 'Career paths after graduation'}
                 </h3>
                 <p>
@@ -345,7 +345,7 @@ export default function ProspectiveStudentsPage() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[#6fc3cf] mb-3">
+                <h3 className="text-xl font-bold text-[#d4ad5a] mb-3">
                   {locale === 'ja' ? '研究室イベント' : 'Lab events'}
                 </h3>
                 <p>
@@ -362,9 +362,9 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {locale === 'ja' ? 'フォトギャラリー — 研究室の日常' : 'Photo Gallery — Lab Life'}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -378,7 +378,7 @@ export default function ProspectiveStudentsPage() {
                 { src: '/campus_sakura.jpg', ja: '春のキャンパス — 桜 (2026/3)', en: 'Cherry blossoms on campus (March 2026)' },
                 { src: '/spring8_deer.jpg', ja: 'SPring-8出張にて — 鹿に遭遇', en: 'A deer encounter during a SPring-8 beamtime trip' }
               ].map((photo, index) => (
-                <div key={index} className="bg-[#1c2124]/70 rounded overflow-hidden border border-[#262b2e]">
+                <div key={index} className="bg-[#202a40]/70 rounded overflow-hidden border border-[#2a3550]">
                   <Image
                     src={photo.src}
                     alt={locale === 'ja' ? photo.ja : photo.en}
@@ -386,7 +386,7 @@ export default function ProspectiveStudentsPage() {
                     height={300}
                     className="w-full h-44 sm:h-52 object-cover"
                   />
-                  <p className="text-[#8b959a] text-xs sm:text-sm px-3 py-2">
+                  <p className="text-[#9a9eae] text-xs sm:text-sm px-3 py-2">
                     {locale === 'ja' ? photo.ja : photo.en}
                   </p>
                 </div>
@@ -399,19 +399,19 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {t('labVisit')}
             </h2>
-            <div className="space-y-4 text-[#aab3b6]">
+            <div className="space-y-4 text-[#b4b6c0]">
               <p>
                 {locale === 'ja'
                   ? '研究室見学はいつでも歓迎します。ご希望の場合は、事前にメールで日程候補をご連絡ください。遠方の方や訪問が困難な場合は、Zoom等でのオンライン面談も可能です。お気軽にご相談ください。'
                   : 'Lab visits are always welcome — please contact us by email in advance with candidate dates. For those from afar or if visiting is difficult, online meetings via Zoom are also possible. Feel free to reach out.'}
               </p>
-              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                <h4 className="font-bold text-[#6fc3cf] mb-3">{t('visitFlow')}</h4>
+              <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                <h4 className="font-bold text-[#d4ad5a] mb-3">{t('visitFlow')}</h4>
                 <ul className="text-sm space-y-1">
                   <li>• {locale === 'ja' ? '研究室のM1-2学生との面談（30分）' : 'Meeting with M1-2 students (30 min)'}</li>
                   <li>• {locale === 'ja' ? 'ラボツアー（実験設備の見学）（30分）' : 'Lab tour (facility visit) (30 min)'}</li>
@@ -426,16 +426,16 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {t('qAndA')}
             </h2>
             <div className="space-y-6">
               {qaData.map((qa, index) => (
-                <div key={index} className="border border-[#3a4247] rounded p-4">
+                <div key={index} className="border border-[#3d4a68] rounded p-4">
                   <h4 className="font-bold text-[#d9b83f] mb-2">Q: {qa.q}</h4>
-                  <p className="text-[#aab3b6] text-sm">A: {qa.a}</p>
+                  <p className="text-[#b4b6c0] text-sm">A: {qa.a}</p>
                 </div>
               ))}
             </div>
@@ -446,12 +446,12 @@ export default function ProspectiveStudentsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="bg-[#16191c] rounded p-8 border border-[#262b2e]"
+            className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
           >
-            <h2 className="text-3xl font-black mb-6 text-[#e6e9ea]">
+            <h2 className="text-3xl font-black mb-6 text-[#ece7dc]">
               {t('message')}
             </h2>
-            <div className="space-y-4 text-[#aab3b6] leading-relaxed">
+            <div className="space-y-4 text-[#b4b6c0] leading-relaxed">
               <p>
                 {locale === 'ja'
                   ? '新しい材料の発見は、社会を大きく変える可能性を秘めています。特に、エネルギー問題の解決に向けた蓄電デバイスの開発は、人類の持続可能な発展に不可欠です。'
@@ -462,10 +462,10 @@ export default function ProspectiveStudentsPage() {
                   ? '私たちと一緒に、材料科学の最前線で研究に取り組んでみませんか？熱意ある学生の参加をお待ちしています。'
                   : 'Would you like to work with us on research at the forefront of materials science? We look forward to the participation of enthusiastic students.'}
               </p>
-              <div className="bg-[#1c2124] rounded p-4 border border-[#6fc3cf]/20">
-                <p className="text-[#6fc3cf] font-semibold">
+              <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
+                <p className="text-[#d4ad5a] font-semibold">
                   {locale === 'ja' ? '連絡先: ' : 'Contact: '}
-                  <Link href="/access" className="hover:text-[#9adae4] underline">
+                  <Link href="/access" className="hover:text-[#e7c97f] underline">
                     {locale === 'ja' ? 'Contactページ' : 'Contact page'}
                   </Link>
                   {locale === 'ja' ? 'をご覧ください。' : '.'}
@@ -478,7 +478,7 @@ export default function ProspectiveStudentsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#e6e9ea] text-[#101315] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>
