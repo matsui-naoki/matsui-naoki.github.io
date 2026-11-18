@@ -6,8 +6,8 @@ import { CrystalData } from '@/lib/crystalData'
 const CrystalStructure = dynamic(() => import('./CrystalStructure'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-[#1a2236]/50 rounded">
-      <div className="text-[#9a9eae]">Loading 3D Model...</div>
+    <div className="w-full h-full flex items-center justify-center bg-[#111111]/50 rounded">
+      <div className="text-[#9a9a9a]">Loading 3D Model...</div>
     </div>
   ),
 })
@@ -15,8 +15,8 @@ const CrystalStructure = dynamic(() => import('./CrystalStructure'), {
 const FBXModel = dynamic(() => import('./FBXModel'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-[#1a2236]/50 rounded">
-      <div className="text-[#9a9eae]">Loading FBX Model...</div>
+    <div className="w-full h-full flex items-center justify-center bg-[#111111]/50 rounded">
+      <div className="text-[#9a9a9a]">Loading FBX Model...</div>
     </div>
   ),
 })
@@ -45,7 +45,7 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {showFBXModel && fbxModels.map((model, index) => (
-        <div key={index} className="bg-[#1a2236]/50 backdrop-blur-sm border border-[#2a3550] rounded overflow-hidden hover:border-[#3d4a68] transition-all duration-300">
+        <div key={index} className="bg-[#111111]/50 backdrop-blur-sm border border-[#262626] rounded overflow-hidden hover:border-[#3a3a3a] transition-all duration-300">
           <div className="h-80 relative" style={{ background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)' }}>
             <FBXModel 
               url={model.url} 
@@ -53,11 +53,11 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
             />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-bold text-[#ece7dc] mb-2">
+            <h3 className="text-xl font-bold text-[#ffffff] mb-2">
               {model.name}
             </h3>
-            <p className="text-sm text-[#d4ad5a] font-mono mb-2">{model.formula}</p>
-            <p className="text-xs text-[#9a9eae]">{model.description}</p>
+            <p className="text-sm text-[#76b900] font-mono mb-2">{model.formula}</p>
+            <p className="text-xs text-[#9a9a9a]">{model.description}</p>
           </div>
         </div>
       ))}
@@ -65,7 +65,7 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
       {crystals.map((crystal, index) => (
         <div
           key={index}
-          className="bg-[#1a2236]/50 backdrop-blur-sm border border-[#2a3550] rounded overflow-hidden hover:border-[#3d4a68] transition-all duration-300"
+          className="bg-[#111111]/50 backdrop-blur-sm border border-[#262626] rounded overflow-hidden hover:border-[#3a3a3a] transition-all duration-300"
         >
           <div className="h-80" style={{ background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)' }}>
             <CrystalStructure
@@ -75,11 +75,11 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
             />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-bold text-[#ece7dc] mb-2">
+            <h3 className="text-xl font-bold text-[#ffffff] mb-2">
               {crystal.name}
             </h3>
-            <p className="text-sm text-[#d4ad5a] font-mono mb-2">{crystal.formula}</p>
-            <p className="text-xs text-[#9a9eae]">{crystal.description}</p>
+            <p className="text-sm text-[#76b900] font-mono mb-2">{crystal.formula}</p>
+            <p className="text-xs text-[#9a9a9a]">{crystal.description}</p>
           </div>
         </div>
       ))}

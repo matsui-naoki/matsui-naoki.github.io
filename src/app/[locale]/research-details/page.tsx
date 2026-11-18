@@ -72,7 +72,7 @@ export default function ResearchDetails() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -84,11 +84,11 @@ export default function ResearchDetails() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#cfcfcf] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -108,10 +108,10 @@ export default function ResearchDetails() {
                 alt="Carrier Ions Elements"
                 width={1200}
                 height={400}
-                className="w-full rounded shadow-2xl border border-[#2a3550]"
+                className="w-full rounded shadow-2xl border border-[#262626]"
               />
               <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm rounded px-4 py-2">
-                <h3 className="text-lg font-bold text-white">{t('carrierIons')}</h3>
+                <h3 className="text-lg font-bold text-[#ffffff]">{t('carrierIons')}</h3>
               </div>
             </div>
           </motion.div>
@@ -128,25 +128,25 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">
-                  <Image src="/Li1.jpg" alt="Lithium Ion Conductor" width={500} height={350} className="relative rounded shadow-2xl border border-[#2a3550]" />
+                  <Image src="/Li1.jpg" alt="Lithium Ion Conductor" width={500} height={350} className="relative rounded shadow-2xl border border-[#262626]" />
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                       LITHIUM ION CONDUCTORS
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('lithiumTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('lithiumDesc')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
-                      <h4 className="font-bold text-[#d4ad5a] mb-2">{t('achievements')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
+                      <h4 className="font-bold text-[#76b900] mb-2">{t('achievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {lithiumAchievements.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -163,23 +163,23 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                       FLUORIDE ION CONDUCTORS
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('fluorideTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('fluorideDesc1')}</p>
                     <p>{t('fluorideDesc2')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
-                      <h4 className="font-bold text-[#d4ad5a] mb-2">{t('mainAchievements')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
+                      <h4 className="font-bold text-[#76b900] mb-2">{t('mainAchievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {fluorideAchievements.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -189,11 +189,11 @@ export default function ResearchDetails() {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-[#1a2236]/90 rounded border border-[#2a3550]">
-                    <Image src="/F1.jpg" alt="Fluoride Ion Conductor 1" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/F2.jpg" alt="Fluoride Ion Conductor 2" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/F3.jpg" alt="Fluoride Ion Conductor 3" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/F5.jpg" alt="Fluoride Ion Conductor 5" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
+                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-[#111111]/90 rounded border border-[#262626]">
+                    <Image src="/F1.jpg" alt="Fluoride Ion Conductor 1" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/F2.jpg" alt="Fluoride Ion Conductor 2" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/F3.jpg" alt="Fluoride Ion Conductor 3" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/F5.jpg" alt="Fluoride Ion Conductor 5" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
                   </div>
                 </div>
               </div>
@@ -204,22 +204,22 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                       HYDRIDE ION CONDUCTORS
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('hydrideTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('hydrideDesc')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
-                      <h4 className="font-bold text-[#d4ad5a] mb-2">{t('researchContents')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
+                      <h4 className="font-bold text-[#76b900] mb-2">{t('researchContents')}</h4>
                       <ul className="text-sm space-y-1">
                         {hydrideContents.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -229,11 +229,11 @@ export default function ResearchDetails() {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-[#1a2236]/90 rounded border border-[#2a3550]">
-                    <Image src="/H1.jpg" alt="Hydride Ion Conductor 1" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/H2.jpg" alt="Hydride Ion Conductor 2" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/H3.jpg" alt="Hydride Ion Conductor 3" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
-                    <Image src="/H4.jpg" alt="Hydride Ion Conductor 4" width={250} height={175} className="rounded shadow-lg border border-[#3d4a68]" />
+                  <div className="relative grid grid-cols-2 gap-4 p-4 bg-[#111111]/90 rounded border border-[#262626]">
+                    <Image src="/H1.jpg" alt="Hydride Ion Conductor 1" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/H2.jpg" alt="Hydride Ion Conductor 2" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/H3.jpg" alt="Hydride Ion Conductor 3" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
+                    <Image src="/H4.jpg" alt="Hydride Ion Conductor 4" width={250} height={175} className="rounded shadow-lg border border-[#3a3a3a]" />
                   </div>
                 </div>
               </div>
@@ -244,25 +244,25 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">
-                  <Image src="/anion_intercalation.jpg" alt="Anion Intercalation Electrode" width={500} height={350} className="relative rounded shadow-2xl border border-[#2a3550]" />
+                  <Image src="/anion_intercalation.jpg" alt="Anion Intercalation Electrode" width={500} height={350} className="relative rounded shadow-2xl border border-[#262626]" />
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                       ANION INTERCALATION
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('anionTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('anionDesc')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
-                      <h4 className="font-bold text-[#d4ad5a] mb-2">{t('achievements')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
+                      <h4 className="font-bold text-[#76b900] mb-2">{t('achievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {anionAchievements.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -279,22 +279,22 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                       MACHINE LEARNING
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('mlTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('mlDesc')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d4ad5a]/20">
-                      <h4 className="font-bold text-[#d4ad5a] mb-2">{t('approach')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
+                      <h4 className="font-bold text-[#76b900] mb-2">{t('approach')}</h4>
                       <ul className="text-sm space-y-1">
                         {mlApproaches.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -304,7 +304,7 @@ export default function ResearchDetails() {
                   </div>
                 </div>
                 <div className="relative">
-                  <Image src="/virtual-space.jpg" alt="Machine Learning Research" width={500} height={350} className="relative rounded shadow-2xl border border-[#2a3550]" />
+                  <Image src="/virtual-space.jpg" alt="Machine Learning Research" width={500} height={350} className="relative rounded shadow-2xl border border-[#262626]" />
                 </div>
               </div>
             </motion.div>
@@ -314,25 +314,25 @@ export default function ResearchDetails() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">
-                  <Image src="/combinatorial.jpg" alt="High-Throughput Synthesis" width={500} height={350} className="relative rounded shadow-2xl border border-[#2a3550]" />
+                  <Image src="/combinatorial.jpg" alt="High-Throughput Synthesis" width={500} height={350} className="relative rounded shadow-2xl border border-[#262626]" />
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="mb-6">
-                    <span className="px-3 py-1 text-xs font-mono bg-[#d9b83f]/10 text-[#d9b83f] rounded-full border border-[#d9b83f]/20">
+                    <span className="px-3 py-1 text-xs font-mono bg-[#e0c060]/10 text-[#e0c060] rounded-full border border-[#e0c060]/20">
                       HIGH-THROUGHPUT SYNTHESIS
                     </span>
                   </div>
-                  <h2 className="text-4xl font-black mb-6 text-[#ece7dc]">
+                  <h2 className="text-4xl font-black mb-6 text-[#ffffff]">
                     {t('htsTitle')}
                   </h2>
-                  <div className="space-y-4 text-[#b4b6c0]">
+                  <div className="space-y-4 text-[#cfcfcf]">
                     <p>{t('htsDesc')}</p>
-                    <div className="bg-[#202a40] rounded p-4 border border-[#d9b83f]/20">
-                      <h4 className="font-bold text-[#d9b83f] mb-2">{t('method')}</h4>
+                    <div className="bg-[#1a1a1a] rounded p-4 border border-[#e0c060]/20">
+                      <h4 className="font-bold text-[#e0c060] mb-2">{t('method')}</h4>
                       <ul className="text-sm space-y-1">
                         {htsMethods.map((item, index) => (
                           <li key={index}>• {item}</li>
@@ -349,7 +349,7 @@ export default function ResearchDetails() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tc('backToHome')}
         </Link>
       </div>

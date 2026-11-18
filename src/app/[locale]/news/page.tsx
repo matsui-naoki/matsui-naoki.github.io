@@ -35,7 +35,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x」Editor&apos;s Choiceに選ばれました。おめでとう!!
-          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -66,7 +66,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Screening Lithium-Ion Conductors Based on Local and Global Topology」
-          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -85,7 +85,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution」
-          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -116,7 +116,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4」おめでとう!!
-          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -273,7 +273,7 @@ export default function NewsPage() {
       desc: (
         <span>
           「Fast hydride-ion conduction in complex hydride Ba2MgH6」複合水素化物Ba2MgH6の高速ヒドリドイオン伝導を報告しました。
-          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -406,7 +406,7 @@ export default function NewsPage() {
       desc: (
         <span>
           新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
         </span>
@@ -425,7 +425,7 @@ export default function NewsPage() {
       desc: (
         <span>
           JSTさきがけに採択されました!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             詳細はこちら
           </a>
         </span>
@@ -548,7 +548,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x&quot; Selected as Editor&apos;s Choice. Congratulations!!
-          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
         </span>
@@ -579,7 +579,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Screening Lithium-Ion Conductors Based on Local and Global Topology&quot;
-          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1021/jacs.6c00345" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
         </span>
@@ -598,7 +598,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution&quot;
-          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
         </span>
@@ -629,7 +629,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4&quot; Congratulations!!
-          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
         </span>
@@ -786,7 +786,7 @@ export default function NewsPage() {
       desc: (
         <span>
           &quot;Fast hydride-ion conduction in complex hydride Ba2MgH6&quot; — reporting fast hydride-ion conduction in the complex hydride Ba2MgH6.
-          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
         </span>
@@ -919,7 +919,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Developed a new solid electrolyte and Mg-H2 hydrogen storage device. Joint achievement with Dr. Hirose (now Assistant Professor at Arai Lab), doctoral student at Hirayama Lab, Institute of Science Tokyo.
-          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Paper link
           </a>
         </span>
@@ -938,7 +938,7 @@ export default function NewsPage() {
       desc: (
         <span>
           Selected for JST PRESTO!
-          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#d4ad5a] hover:text-[#e7c97f] underline ml-1">
+          <a href="https://www.jst.go.jp/kisoken/presto/" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Details here
           </a>
         </span>
@@ -1039,7 +1039,7 @@ export default function NewsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -1051,11 +1051,11 @@ export default function NewsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#cfcfcf] font-light">{t('subtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -1079,16 +1079,16 @@ export default function NewsPage() {
 
                 <div className="flex items-start space-x-6">
                   {/* Timeline Dot */}
-                  <div className="w-12 h-12 rounded-full bg-[#d4ad5a] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#76b900] flex items-center justify-center text-[#000000] font-bold text-sm flex-shrink-0">
                     {news.date.split('.')[1]}
                   </div>
 
                   {/* News Content */}
-                  <div className="flex-1 bg-[#1a2236] rounded p-6 border border-[#2a3550] hover:border-[#3d4a68] transition-all duration-300">
+                  <div className="flex-1 bg-[#111111] rounded p-6 border border-[#262626] hover:border-[#3a3a3a] transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-sm font-mono text-[#d4ad5a]">{news.date}</div>
+                      <div className="text-sm font-mono text-[#76b900]">{news.date}</div>
                       <div className={`px-3 py-1 text-xs font-mono rounded border ${
-                        news.category === 'RESEARCH' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
+                        news.category === 'RESEARCH' ? 'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20' :
                         news.category === 'CONFERENCE' ? 'bg-purple-400/10 text-purple-400 border-purple-400/20' :
                         news.category === 'SEMINAR' ? 'bg-blue-400/10 text-blue-400 border-blue-400/20' :
                         news.category === 'EXPERIMENT' ? 'bg-green-400/10 text-green-400 border-green-400/20' :
@@ -1096,23 +1096,23 @@ export default function NewsPage() {
                         news.category === 'AWARD' ? 'bg-yellow-400/10 text-yellow-400 border-yellow-400/20' :
                         news.category === 'COLLABORATION' ? 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20' :
                         news.category === 'MEMBER' ? 'bg-pink-400/10 text-pink-400 border-pink-400/20' :
-                        'bg-gray-400/10 text-[#9a9eae] border-gray-400/20'
+                        'bg-gray-400/10 text-[#9a9a9a] border-gray-400/20'
                       }`}>
                         {news.category}
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-3 text-white leading-tight">
+                    <h3 className="text-xl font-bold mb-3 text-[#ffffff] leading-tight">
                       {news.title}
                     </h3>
 
-                    <p className="text-[#b4b6c0] leading-relaxed">
+                    <p className="text-[#cfcfcf] leading-relaxed">
                       {news.desc}
                     </p>
 
                     {news.hasImage && (
-                      <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#3d4a68]/30">
-                        <p className="text-[#9a9eae] text-sm italic">
+                      <div className="mt-4 p-4 bg-[#1a1a1a]/70 rounded border border-[#3a3a3a]/30">
+                        <p className="text-[#9a9a9a] text-sm italic">
                           {locale === 'ja' ? '[Photo] 写真付きニュース' : '[Photo] News with image'}
                         </p>
                       </div>
@@ -1126,7 +1126,7 @@ export default function NewsPage() {
       </section>
 
       {/* Stats Summary */}
-      <section className="py-16 bg-[#1a2236]">
+      <section className="py-16 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1134,7 +1134,7 @@ export default function NewsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 {t('activitySummary')}
               </span>
             </h2>
@@ -1152,13 +1152,13 @@ export default function NewsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6"
+                className="bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6"
               >
-                <div className={`text-4xl font-black text-[#ece7dc] mb-2`}>
+                <div className={`text-4xl font-black text-[#ffffff] mb-2`}>
                   {stat.number}
                 </div>
-                <div className="text-sm font-mono text-[#9a9eae] tracking-wider mb-1">{stat.label}</div>
-                <div className="text-xs text-[#767c90]">{stat.desc}</div>
+                <div className="text-sm font-mono text-[#9a9a9a] tracking-wider mb-1">{stat.label}</div>
+                <div className="text-xs text-[#9a9a9a]">{stat.desc}</div>
               </motion.div>
             ))}
           </div>
@@ -1167,7 +1167,7 @@ export default function NewsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

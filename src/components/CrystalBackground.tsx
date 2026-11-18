@@ -14,12 +14,13 @@ function Crystal() {
       // Apply emissive material to all meshes in the FBX
       meshRef.current.traverse((child) => {
         if (child instanceof THREE.Mesh) {
-          child.material = new THREE.MeshPhongMaterial({
-            color: 0x00ffff,
-            emissive: 0x00ffff,
-            emissiveIntensity: 0.8,
+          // Ultramarine pigment, printed flat on parchment
+          child.material = new THREE.MeshLambertMaterial({
+            color: 0x2942ab,
+            emissive: 0x1b2e87,
+            emissiveIntensity: 0.35,
             transparent: true,
-            opacity: 0.9
+            opacity: 0.85
           })
         }
       })
@@ -47,14 +48,14 @@ function Crystal() {
 
 export default function CrystalBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 opacity-50">
+    <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.13] mix-blend-multiply" aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0, 15], fov: 45 }}
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={1} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#00ffff" />
-        <pointLight position={[-10, -10, -10]} intensity={1.2} color="#0088ff" />
+        <pointLight position={[10, 10, 10]} intensity={1.2} color="#ffffff" />
+        <pointLight position={[-10, -10, -10]} intensity={0.6} color="#050505" />
         <pointLight position={[0, 0, 5]} intensity={1} color="#ffffff" />
         
         <Suspense fallback={null}>

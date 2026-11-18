@@ -35,7 +35,7 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#131a2c]/90 backdrop-blur-md border-b border-[#2a3550]' 
+          ? 'bg-[#050505]/90 backdrop-blur-md border-b border-[#262626]' 
           : 'bg-black/70 backdrop-blur-sm'
       }`}
     >
@@ -63,8 +63,8 @@ export default function Navigation() {
                   whileHover={{ y: -1 }}
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded ${
                     isActive
-                      ? 'text-[#d4ad5a] bg-[#d4ad5a]/10'
-                      : 'text-[#b4b6c0] hover:text-[#d4ad5a] hover:bg-white/5'
+                      ? 'text-[#76b900] bg-[#76b900]/10'
+                      : 'text-[#cfcfcf] hover:text-[#76b900] hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -75,8 +75,8 @@ export default function Navigation() {
                     whileHover={{ y: -1 }}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-300 rounded cursor-pointer ${
                       isActive
-                        ? 'text-[#d4ad5a] bg-[#d4ad5a]/10'
-                        : 'text-[#b4b6c0] hover:text-[#d4ad5a] hover:bg-white/5'
+                        ? 'text-[#76b900] bg-[#76b900]/10'
+                        : 'text-[#cfcfcf] hover:text-[#76b900] hover:bg-white/5'
                     }`}
                   >
                     {item.label}

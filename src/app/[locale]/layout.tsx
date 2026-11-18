@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Shippori_Mincho_B1, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Geist_Mono, Geologica, IBM_Plex_Sans_JP } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
 
-const bodyFont = Zen_Kaku_Gothic_New({
-  variable: "--font-body",
-  weight: ["400", "500", "700"],
+// Geologica (with its sharpened-corner axis) for Latin, IBM Plex Sans JP for Japanese
+const geologica = Geologica({
+  variable: "--font-geologica",
+  weight: "variable",
+  axes: ["SHRP"],
   subsets: ["latin"],
   display: "swap",
-  preload: false,
 });
 
-const displayFont = Shippori_Mincho_B1({
-  variable: "--font-display",
-  weight: ["500", "700"],
+const plexJP = IBM_Plex_Sans_JP({
+  variable: "--font-plex-jp",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
   preload: false,
@@ -122,7 +123,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${bodyFont.variable} ${displayFont.variable} ${geistMono.variable} antialiased`}
+        className={`${geologica.variable} ${plexJP.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

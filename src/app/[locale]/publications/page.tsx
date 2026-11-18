@@ -392,7 +392,7 @@ export default function PublicationsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <LocaleNavigation />
 
       {/* Hero Section */}
@@ -404,18 +404,18 @@ export default function PublicationsPage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 {t('title')}
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light">{t('subtitle')}</p>
+            <p className="text-xl text-[#cfcfcf] font-light">{t('subtitle')}</p>
             <div className="mt-4 text-center">
-              <div className="inline-flex items-center space-x-4 bg-[#202a40] rounded px-6 py-3 border border-[#d4ad5a]/20">
-                <span className="text-[#d4ad5a] font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-[#9a9eae]">|</span>
-                <span className="text-[#d4ad5a] font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
-                <span className="text-[#9a9eae]">|</span>
-                <span className="text-[#d4ad5a] font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
+              <div className="inline-flex items-center space-x-4 bg-[#1a1a1a] rounded px-6 py-3 border border-[#76b900]/20">
+                <span className="text-[#76b900] font-mono text-sm">{t('totalPapers')} {publications.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#9a9a9a]">|</span>
+                <span className="text-[#76b900] font-mono text-sm">{t('reviewArticles')} {reviews.length}{locale === 'ja' ? '報' : ''}</span>
+                <span className="text-[#9a9a9a]">|</span>
+                <span className="text-[#76b900] font-mono text-sm">{t('patents')} 8{locale === 'ja' ? '件' : ''}</span>
               </div>
             </div>
           </motion.div>
@@ -423,10 +423,10 @@ export default function PublicationsPage() {
       </section>
 
       {/* Publications List */}
-      <section className="py-16 bg-[#1a2236]">
+      <section className="py-16 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-black mb-8">
-            <span className="text-[#ece7dc]">
+            <span className="text-[#ffffff]">
               {t('peerReviewed')}
             </span>
           </h2>
@@ -437,38 +437,38 @@ export default function PublicationsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: Math.min(index * 0.01, 0.3) }}
-                className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                className="bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="text-sm font-mono text-[#d4ad5a]">{pub.year}</div>
+                  <div className="text-sm font-mono text-[#76b900]">{pub.year}</div>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-3 leading-tight">
+                <h3 className="text-lg font-bold text-[#ffffff] mb-3 leading-tight">
                   {pub.title}
                 </h3>
 
-                <p className="text-[#b4b6c0] text-sm mb-2 leading-relaxed">
+                <p className="text-[#cfcfcf] text-sm mb-2 leading-relaxed">
                   {pub.authors}
                 </p>
 
-                <p className="text-[#9a9eae] text-sm italic mb-2">
+                <p className="text-[#9a9a9a] text-sm italic mb-2">
                   {pub.journal}
                 </p>
 
                 {pub.doi && (
                   <div className="text-xs">
-                    <span className="text-[#d4ad5a]">DOI: </span>
+                    <span className="text-[#76b900]">DOI: </span>
                     {pub.doi.startsWith('10.') ? (
                       <a
                         href={`https://doi.org/${pub.doi}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#9a9eae] font-mono hover:text-[#d4ad5a] transition-colors"
+                        className="text-[#9a9a9a] font-mono hover:text-[#76b900] transition-colors"
                       >
                         {pub.doi}
                       </a>
                     ) : (
-                      <span className="text-[#9a9eae] font-mono">{pub.doi}</span>
+                      <span className="text-[#9a9a9a] font-mono">{pub.doi}</span>
                     )}
                   </div>
                 )}
@@ -480,7 +480,7 @@ export default function PublicationsPage() {
           {reviews.length > 0 && (
             <>
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   {t('reviews')}
                 </span>
               </h2>
@@ -491,21 +491,21 @@ export default function PublicationsPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                    className="bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <div className="text-sm font-mono text-[#d4ad5a]">{review.year}</div>
+                      <div className="text-sm font-mono text-[#76b900]">{review.year}</div>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white mb-3 leading-tight">
+                    <h3 className="text-lg font-bold text-[#ffffff] mb-3 leading-tight">
                       {review.title}
                     </h3>
 
-                    <p className="text-[#b4b6c0] text-sm mb-2 leading-relaxed">
+                    <p className="text-[#cfcfcf] text-sm mb-2 leading-relaxed">
                       {review.authors}
                     </p>
 
-                    <p className="text-[#9a9eae] text-sm italic">
+                    <p className="text-[#9a9a9a] text-sm italic">
                       {review.journal}
                     </p>
                   </motion.div>
@@ -521,28 +521,28 @@ export default function PublicationsPage() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-16 text-center"
           >
-            <div className="bg-[#1a2236] rounded p-8 border border-[#2a3550]">
+            <div className="bg-[#111111] rounded p-8 border border-[#262626]">
               <h3 className="text-2xl font-black mb-4">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   {t('summary')}
                 </span>
               </h3>
               <div className="grid md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">{publications.length}</div>
-                  <div className="text-sm text-[#9a9eae]">{t('peerReviewed')}</div>
+                  <div className="text-3xl font-black text-[#76b900] mb-2">{publications.length}</div>
+                  <div className="text-sm text-[#9a9a9a]">{t('peerReviewed')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">{reviews.length}</div>
-                  <div className="text-sm text-[#9a9eae]">{t('reviews')}</div>
+                  <div className="text-3xl font-black text-[#76b900] mb-2">{reviews.length}</div>
+                  <div className="text-sm text-[#9a9a9a]">{t('reviews')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">8</div>
-                  <div className="text-sm text-[#9a9eae]">{t('patents')}</div>
+                  <div className="text-3xl font-black text-[#76b900] mb-2">8</div>
+                  <div className="text-sm text-[#9a9a9a]">{t('patents')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#d4ad5a] mb-2">9</div>
-                  <div className="text-sm text-[#9a9eae]">{t('researchPeriod')}</div>
+                  <div className="text-3xl font-black text-[#76b900] mb-2">9</div>
+                  <div className="text-sm text-[#9a9a9a]">{t('researchPeriod')}</div>
                 </div>
               </div>
             </div>
@@ -552,7 +552,7 @@ export default function PublicationsPage() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           {tCommon('backToHome')}
         </Link>
       </div>

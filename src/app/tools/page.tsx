@@ -164,7 +164,7 @@ export default function Tools() {
   }
 
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <SimpleNavigation />
 
       {/* Hero Section */}
@@ -176,11 +176,11 @@ export default function Tools() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 CALCULATION TOOLS
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light">電池材料研究用計算ツール</p>
+            <p className="text-xl text-[#cfcfcf] font-light">電池材料研究用計算ツール</p>
           </motion.div>
         </div>
       </section>
@@ -195,23 +195,23 @@ export default function Tools() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="mb-6">
-                <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                   MOLECULAR WEIGHT
                 </span>
               </div>
               
               <h2 className="text-2xl font-black mb-6">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   分子量計算機
                 </span>
               </h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     組成式
                   </label>
                   <input
@@ -219,24 +219,24 @@ export default function Tools() {
                     value={formula}
                     onChange={(e) => setFormula(e.target.value)}
                     placeholder="例: LiFePO4, Ca0.5Sr0.5TiO3"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                   {formulaError && (
-                    <p className="text-[#d98a8a] text-sm mt-1">{formulaError}</p>
+                    <p className="text-[#f08a8a] text-sm mt-1">{formulaError}</p>
                   )}
                 </div>
                 
                 <button
                   onClick={calculateMolecularWeight}
-                  className="w-full bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded font-bold transition-all duration-300"
+                  className="w-full bg-[#ffffff] text-[#050505] px-4 py-2 rounded font-bold transition-all duration-300"
                 >
                   計算
                 </button>
                 
                 {molecularWeight !== null && (
-                  <div className="mt-4 p-4 bg-[#d4ad5a]/10 border border-[#d4ad5a]/30 rounded">
-                    <p className="text-sm text-[#b4b6c0]">分子量:</p>
-                    <p className="text-2xl font-bold text-[#d4ad5a]">
+                  <div className="mt-4 p-4 bg-[#76b900]/10 border border-[#76b900]/30 rounded">
+                    <p className="text-sm text-[#cfcfcf]">分子量:</p>
+                    <p className="text-2xl font-bold text-[#76b900]">
                       {molecularWeight} g/mol
                     </p>
                   </div>
@@ -249,23 +249,23 @@ export default function Tools() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="mb-6">
-                <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                   SPECIFIC CAPACITY
                 </span>
               </div>
               
               <h2 className="text-2xl font-black mb-6">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   比容量計算機
                 </span>
               </h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     分子量 (g/mol)
                   </label>
                   <input
@@ -273,12 +273,12 @@ export default function Tools() {
                     value={mw}
                     onChange={(e) => setMw(e.target.value)}
                     placeholder="例: 157.757"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     反応電子数
                   </label>
                   <input
@@ -286,21 +286,21 @@ export default function Tools() {
                     value={electrons}
                     onChange={(e) => setElectrons(e.target.value)}
                     placeholder="例: 1"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                 </div>
                 
                 <button
                   onClick={calculateSpecificCapacity}
-                  className="w-full bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded font-bold transition-all duration-300"
+                  className="w-full bg-[#ffffff] text-[#050505] px-4 py-2 rounded font-bold transition-all duration-300"
                 >
                   計算
                 </button>
                 
                 {specificCapacity !== null && (
-                  <div className="mt-4 p-4 bg-[#d4ad5a]/10 border border-[#d4ad5a]/30 rounded">
-                    <p className="text-sm text-[#b4b6c0]">理論比容量:</p>
-                    <p className="text-2xl font-bold text-[#d4ad5a]">
+                  <div className="mt-4 p-4 bg-[#76b900]/10 border border-[#76b900]/30 rounded">
+                    <p className="text-sm text-[#cfcfcf]">理論比容量:</p>
+                    <p className="text-2xl font-bold text-[#76b900]">
                       {specificCapacity} mAh/g
                     </p>
                   </div>
@@ -313,23 +313,23 @@ export default function Tools() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="mb-6">
-                <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                   C-RATE
                 </span>
               </div>
               
               <h2 className="text-2xl font-black mb-6">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   Cレート計算機
                 </span>
               </h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     計算モード
                   </label>
                   <div className="flex space-x-2">
@@ -337,8 +337,8 @@ export default function Tools() {
                       onClick={() => setCalculationMode('crate')}
                       className={`flex-1 px-3 py-2 rounded font-medium transition-all ${
                         calculationMode === 'crate'
-                          ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                          : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                          ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                          : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                       }`}
                     >
                       Cレート算出
@@ -347,8 +347,8 @@ export default function Tools() {
                       onClick={() => setCalculationMode('current')}
                       className={`flex-1 px-3 py-2 rounded font-medium transition-all ${
                         calculationMode === 'current'
-                          ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                          : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                          ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                          : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                       }`}
                     >
                       電流値算出
@@ -357,7 +357,7 @@ export default function Tools() {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     比容量 (mAh/g)
                   </label>
                   <input
@@ -365,12 +365,12 @@ export default function Tools() {
                     value={capacity}
                     onChange={(e) => setCapacity(e.target.value)}
                     placeholder="例: 170"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     活物質重量 (mg)
                   </label>
                   <input
@@ -378,13 +378,13 @@ export default function Tools() {
                     value={activeMass}
                     onChange={(e) => setActiveMass(e.target.value)}
                     placeholder="例: 10"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                 </div>
                 
                 {calculationMode === 'crate' ? (
                   <div>
-                    <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                    <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                       電流値 (mA)
                     </label>
                     <input
@@ -392,12 +392,12 @@ export default function Tools() {
                       value={current}
                       onChange={(e) => setCurrent(e.target.value)}
                       placeholder="例: 0.17"
-                      className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                      className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                     />
                   </div>
                 ) : (
                   <div>
-                    <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                    <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                       Cレート
                     </label>
                     <input
@@ -405,31 +405,31 @@ export default function Tools() {
                       value={cRate}
                       onChange={(e) => setCRate(e.target.value)}
                       placeholder="例: 0.1"
-                      className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                      className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                     />
                   </div>
                 )}
                 
                 <button
                   onClick={calculateCRate}
-                  className="w-full bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded font-bold transition-all duration-300"
+                  className="w-full bg-[#ffffff] text-[#050505] px-4 py-2 rounded font-bold transition-all duration-300"
                 >
                   計算
                 </button>
                 
                 {calculationMode === 'crate' && cRate && (
-                  <div className="mt-4 p-4 bg-[#d4ad5a]/10 border border-[#d4ad5a]/30 rounded">
-                    <p className="text-sm text-[#b4b6c0]">Cレート:</p>
-                    <p className="text-2xl font-bold text-[#d4ad5a]">
+                  <div className="mt-4 p-4 bg-[#76b900]/10 border border-[#76b900]/30 rounded">
+                    <p className="text-sm text-[#cfcfcf]">Cレート:</p>
+                    <p className="text-2xl font-bold text-[#76b900]">
                       {cRate} C
                     </p>
                   </div>
                 )}
                 
                 {calculationMode === 'current' && current && (
-                  <div className="mt-4 p-4 bg-[#d4ad5a]/10 border border-[#d4ad5a]/30 rounded">
-                    <p className="text-sm text-[#b4b6c0]">電流値:</p>
-                    <p className="text-2xl font-bold text-[#d4ad5a]">
+                  <div className="mt-4 p-4 bg-[#76b900]/10 border border-[#76b900]/30 rounded">
+                    <p className="text-sm text-[#cfcfcf]">電流値:</p>
+                    <p className="text-2xl font-bold text-[#76b900]">
                       {current} mA
                     </p>
                   </div>
@@ -442,23 +442,23 @@ export default function Tools() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+              className="bg-[#111111] rounded p-8 border border-[#262626]"
             >
               <div className="mb-6">
-                <span className="px-3 py-1 text-xs font-mono bg-[#d4ad5a]/10 text-[#d4ad5a] rounded-full border border-[#d4ad5a]/20">
+                <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
                   EFFECTIVE PRESSURE
                 </span>
               </div>
               
               <h2 className="text-2xl font-black mb-6">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   実効圧力計算ツール
                 </span>
               </h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     計算モード
                   </label>
                   <div className="flex space-x-2">
@@ -466,8 +466,8 @@ export default function Tools() {
                       onClick={() => setPressureMode('effective-to-display')}
                       className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                         pressureMode === 'effective-to-display'
-                          ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                          : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                          ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                          : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                       }`}
                     >
                       実効圧→表示圧
@@ -476,8 +476,8 @@ export default function Tools() {
                       onClick={() => setPressureMode('display-to-effective')}
                       className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                         pressureMode === 'display-to-effective'
-                          ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                          : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                          ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                          : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                       }`}
                     >
                       表示圧→実効圧
@@ -486,7 +486,7 @@ export default function Tools() {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     プレス器受圧面積
                   </label>
                   <div className="space-y-2">
@@ -495,8 +495,8 @@ export default function Tools() {
                         onClick={() => handlePressAreaChange('ms1')}
                         className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                           pressAreaType === 'ms1'
-                            ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                            : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                            ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                            : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                         }`}
                       >
                         MS1-*
@@ -505,8 +505,8 @@ export default function Tools() {
                         onClick={() => handlePressAreaChange('ms05')}
                         className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                           pressAreaType === 'ms05'
-                            ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                            : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                            ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                            : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                         }`}
                       >
                         MS05-*
@@ -515,8 +515,8 @@ export default function Tools() {
                         onClick={() => handlePressAreaChange('custom')}
                         className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                           pressAreaType === 'custom'
-                            ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                            : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                            ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                            : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                         }`}
                       >
                         カスタム
@@ -528,15 +528,15 @@ export default function Tools() {
                       onChange={(e) => setPressArea(e.target.value)}
                       placeholder="プレス器面積 (cm²)"
                       disabled={pressAreaType !== 'custom'}
-                      className={`w-full px-4 py-2 border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none ${
-                        pressAreaType === 'custom' ? 'bg-[#202a40]' : 'bg-[#202a40]/70 text-[#767c90]'
+                      className={`w-full px-4 py-2 border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none ${
+                        pressAreaType === 'custom' ? 'bg-[#1a1a1a]' : 'bg-[#1a1a1a]/70 text-[#9a9a9a]'
                       }`}
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     試料断面積
                   </label>
                   <div className="space-y-2">
@@ -545,8 +545,8 @@ export default function Tools() {
                         onClick={() => setSampleAreaType('radius')}
                         className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                           sampleAreaType === 'radius'
-                            ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                            : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                            ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                            : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                         }`}
                       >
                         半径から計算
@@ -555,8 +555,8 @@ export default function Tools() {
                         onClick={() => setSampleAreaType('area')}
                         className={`flex-1 px-3 py-2 rounded font-medium transition-all text-xs ${
                           sampleAreaType === 'area'
-                            ? 'bg-[#d4ad5a]/20 text-[#d4ad5a] border border-[#d4ad5a]/30'
-                            : 'bg-[#202a40] text-[#9a9eae] border border-[#3d4a68]'
+                            ? 'bg-[#76b900]/20 text-[#76b900] border border-[#76b900]/30'
+                            : 'bg-[#1a1a1a] text-[#9a9a9a] border border-[#3a3a3a]'
                         }`}
                       >
                         面積直接入力
@@ -568,7 +568,7 @@ export default function Tools() {
                         value={sampleRadius}
                         onChange={(e) => setSampleRadius(e.target.value)}
                         placeholder="試料半径 (mm)"
-                        className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                        className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                       />
                     ) : (
                       <input
@@ -576,14 +576,14 @@ export default function Tools() {
                         value={sampleArea}
                         onChange={(e) => setSampleArea(e.target.value)}
                         placeholder="試料断面積 (cm²)"
-                        className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                        className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                       />
                     )}
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-[#b4b6c0] mb-2">
+                  <label className="block text-sm font-medium text-[#cfcfcf] mb-2">
                     {pressureMode === 'effective-to-display' ? '実効圧力 (GPa)' : '表示圧 (GPa)'}
                   </label>
                   <input
@@ -591,23 +591,23 @@ export default function Tools() {
                     value={inputPressure}
                     onChange={(e) => setInputPressure(e.target.value)}
                     placeholder="圧力値"
-                    className="w-full px-4 py-2 bg-[#202a40] border border-[#3d4a68] rounded text-white placeholder-gray-500 focus:border-[#d4ad5a] focus:outline-none"
+                    className="w-full px-4 py-2 bg-[#1a1a1a] border border-[#3a3a3a] rounded text-[#ffffff] placeholder-gray-500 focus:border-[#76b900] focus:outline-none"
                   />
                 </div>
                 
                 <button
                   onClick={calculatePressure}
-                  className="w-full bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded font-bold transition-all duration-300"
+                  className="w-full bg-[#ffffff] text-[#050505] px-4 py-2 rounded font-bold transition-all duration-300"
                 >
                   計算
                 </button>
                 
                 {outputPressure !== null && (
-                  <div className="mt-4 p-4 bg-[#d4ad5a]/10 border border-[#d4ad5a]/30 rounded">
-                    <p className="text-sm text-[#b4b6c0]">
+                  <div className="mt-4 p-4 bg-[#76b900]/10 border border-[#76b900]/30 rounded">
+                    <p className="text-sm text-[#cfcfcf]">
                       {pressureMode === 'effective-to-display' ? '表示圧:' : '実効圧力:'}
                     </p>
-                    <p className="text-2xl font-bold text-[#d4ad5a]">
+                    <p className="text-2xl font-bold text-[#76b900]">
                       {outputPressure} GPa
                     </p>
                   </div>
@@ -620,7 +620,7 @@ export default function Tools() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           ホームに戻る
         </Link>
       </div>

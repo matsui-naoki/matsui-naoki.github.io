@@ -51,20 +51,20 @@ const CollapsibleCodeBlock = ({ language, code, title }: { language: string; cod
   }
 
   return (
-    <div className="my-4 rounded overflow-hidden border border-[#3d4a68] bg-[#1a2236]">
-      <div className="flex items-center justify-between px-4 py-2 bg-[#202a40] border-b border-[#3d4a68]">
+    <div className="my-4 rounded overflow-hidden border border-[#3a3a3a] bg-[#111111]">
+      <div className="flex items-center justify-between px-4 py-2 bg-[#1a1a1a] border-b border-[#3a3a3a]">
         <div className="flex items-center space-x-2">
-          <span className="text-xs text-[#9a9eae]">Language:</span>
-          <span className="text-xs font-mono text-[#d4ad5a]">{language}</span>
-          {title && <span className="text-xs text-[#9a9eae] ml-4">{title}</span>}
+          <span className="text-xs text-[#9a9a9a]">Language:</span>
+          <span className="text-xs font-mono text-[#76b900]">{language}</span>
+          {title && <span className="text-xs text-[#9a9a9a] ml-4">{title}</span>}
         </div>
         <div className="flex items-center space-x-2">
           <button
             onClick={handleCopy}
             className={`text-xs px-3 py-1 rounded transition-all duration-200 ${
               copied 
-                ? 'bg-[#d4ad5a] text-[#131a2c]' 
-                : 'bg-gray-700 hover:bg-gray-600 text-[#b4b6c0]'
+                ? 'bg-[#76b900] text-[#050505]' 
+                : 'bg-[#1a1a1a] hover:bg-gray-600 text-[#cfcfcf]'
             }`}
           >
             {copied ? '✓ Copied!' : 'Copy'}
@@ -72,7 +72,7 @@ const CollapsibleCodeBlock = ({ language, code, title }: { language: string; cod
           {isLong && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-xs text-[#d4ad5a] hover:text-[#e7c97f] transition-colors flex items-center space-x-1"
+              className="text-xs text-[#76b900] hover:text-[#8fd400] transition-colors flex items-center space-x-1"
             >
               <span>{isExpanded ? '折りたたむ' : '展開する'}</span>
               <svg 
@@ -104,8 +104,8 @@ const CollapsibleCodeBlock = ({ language, code, title }: { language: string; cod
         </SyntaxHighlighter>
       </div>
       {isLong && !isExpanded && (
-        <div className="px-4 py-2 bg-[#202a40] border-t border-[#3d4a68] text-center">
-          <span className="text-xs text-[#9a9eae]">
+        <div className="px-4 py-2 bg-[#1a1a1a] border-t border-[#3a3a3a] text-center">
+          <span className="text-xs text-[#9a9a9a]">
             {lines.length - 10} 行が省略されています
           </span>
         </div>
@@ -212,52 +212,52 @@ export default function ComputationalMaterials() {
     html = html.replace(tableRegex, (match, header, body) => {
       const headers = header.split('|').filter((h: string) => h.trim())
       const headerCells = headers.map((h: string) => 
-        `<th class="border border-[#3d4a68] px-4 py-2 bg-[#202a40] text-[#d4ad5a] font-semibold">${h.trim()}</th>`
+        `<th class="border border-[#3a3a3a] px-4 py-2 bg-[#1a1a1a] text-[#76b900] font-semibold">${h.trim()}</th>`
       ).join('')
       
       const rows = body.trim().split('\n').map((row: string) => {
         const cells = row.split('|').filter((c: string) => c.trim())
         const cellsHtml = cells.map((c: string) => 
-          `<td class="border border-[#3d4a68] px-4 py-2 text-[#b4b6c0]">${c.trim()}</td>`
+          `<td class="border border-[#3a3a3a] px-4 py-2 text-[#cfcfcf]">${c.trim()}</td>`
         ).join('')
-        return `<tr class="hover:bg-[#202a40]">${cellsHtml}</tr>`
+        return `<tr class="hover:bg-[#1a1a1a]">${cellsHtml}</tr>`
       }).join('')
       
-      return `<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-[#3d4a68] rounded overflow-hidden">
+      return `<div class="overflow-x-auto my-6"><table class="min-w-full border-collapse border border-[#3a3a3a] rounded overflow-hidden">
         <thead><tr>${headerCells}</tr></thead>
         <tbody>${rows}</tbody>
       </table></div>`
     })
     
     // Headers
-    html = html.replace(/^##### (.*$)/gim, '<h5 class="text-base font-semibold mt-3 mb-2 text-[#d4ad5a]">$1</h5>')
-    html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-semibold mt-4 mb-2 text-[#d4ad5a]">$1</h4>')
+    html = html.replace(/^##### (.*$)/gim, '<h5 class="text-base font-semibold mt-3 mb-2 text-[#76b900]">$1</h5>')
+    html = html.replace(/^#### (.*$)/gim, '<h4 class="text-lg font-semibold mt-4 mb-2 text-[#76b900]">$1</h4>')
     html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold mt-6 mb-3 text-blue-500">$1</h3>')
-    html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4 text-white">$1</h2>')
-    html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-black mt-8 mb-6 text-[#ece7dc]">$1</h1>')
+    html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4 text-[#ffffff]">$1</h2>')
+    html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-black mt-8 mb-6 text-[#ffffff]">$1</h1>')
     
     // Inline code
-    html = html.replace(/`([^`]+)`/g, '<code class="bg-[#202a40] text-[#d4ad5a] px-1.5 py-0.5 rounded font-mono text-sm">$1</code>')
+    html = html.replace(/`([^`]+)`/g, '<code class="bg-[#1a1a1a] text-[#76b900] px-1.5 py-0.5 rounded font-mono text-sm">$1</code>')
     
     // Bold and italic
-    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="font-bold text-[#e7c97f]"><em>$1</em></strong>')
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#e7c97f]">$1</strong>')
+    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="font-bold text-[#8fd400]"><em>$1</em></strong>')
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#8fd400]">$1</strong>')
     html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
     
     // Lists
-    html = html.replace(/^\* (.*$)/gim, '<li class="ml-6 mb-2 text-[#b4b6c0] list-disc">$1</li>')
-    html = html.replace(/^- (.*$)/gim, '<li class="ml-6 mb-2 text-[#b4b6c0] list-disc">$1</li>')
-    html = html.replace(/^\d+\. (.*$)/gim, '<li class="ml-6 mb-2 text-[#b4b6c0] list-decimal">$1</li>')
+    html = html.replace(/^\* (.*$)/gim, '<li class="ml-6 mb-2 text-[#cfcfcf] list-disc">$1</li>')
+    html = html.replace(/^- (.*$)/gim, '<li class="ml-6 mb-2 text-[#cfcfcf] list-disc">$1</li>')
+    html = html.replace(/^\d+\. (.*$)/gim, '<li class="ml-6 mb-2 text-[#cfcfcf] list-decimal">$1</li>')
     
     // Horizontal rules
-    html = html.replace(/^---$/gim, '<hr class="border-[#3d4a68] my-8">')
+    html = html.replace(/^---$/gim, '<hr class="border-[#3a3a3a] my-8">')
     
     // Blockquotes
-    html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-[#d4ad5a] pl-4 my-4 text-[#9a9eae] italic">$1</blockquote>')
+    html = html.replace(/^> (.*$)/gim, '<blockquote class="border-l-4 border-[#76b900] pl-4 my-4 text-[#9a9a9a] italic">$1</blockquote>')
     
     // Paragraphs
-    html = html.replace(/\n\n/g, '</p><p class="mb-4 text-[#b4b6c0] leading-relaxed">')
-    html = '<p class="mb-4 text-[#b4b6c0] leading-relaxed">' + html + '</p>'
+    html = html.replace(/\n\n/g, '</p><p class="mb-4 text-[#cfcfcf] leading-relaxed">')
+    html = '<p class="mb-4 text-[#cfcfcf] leading-relaxed">' + html + '</p>'
     
     // Fix list wrapping
     html = html.replace(/(<li[^>]*>.*<\/li>\s*)+/g, function(match) {
@@ -272,7 +272,7 @@ export default function ComputationalMaterials() {
     html = html.replace(/<sub>(.*?)<\/sub>/g, '<sub class="text-xs">$1</sub>')
     
     // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[#d4ad5a] hover:text-[#e7c97f] underline">$1</a>')
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[#76b900] hover:text-[#8fd400] underline">$1</a>')
     
     // Images
     html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded my-4 mx-auto">')
@@ -286,11 +286,11 @@ export default function ComputationalMaterials() {
   }
 
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <SimpleNavigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-8 border-b border-[#2a3550]">
+      <section className="pt-24 pb-8 border-b border-[#262626]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -300,16 +300,16 @@ export default function ComputationalMaterials() {
             <div className="flex items-center space-x-4">
               <div>
                 <h1 className="text-3xl lg:text-4xl font-black mb-2">
-                  <span className="text-[#ece7dc]">
+                  <span className="text-[#ffffff]">
                     電池材料の材料計算科学
                   </span>
                 </h1>
-                <p className="text-[#9a9eae] text-sm lg:text-base">第一原理計算と分子動力学による材料設計</p>
+                <p className="text-[#9a9a9a] text-sm lg:text-base">第一原理計算と分子動力学による材料設計</p>
               </div>
               {/* Mobile TOC Toggle */}
               <button
                 onClick={() => setShowTOC(!showTOC)}
-                className="lg:hidden bg-[#202a40] p-2 rounded border border-[#d4ad5a]/30 text-[#d4ad5a] hover:bg-[#d4ad5a]/10 transition-colors"
+                className="lg:hidden bg-[#1a1a1a] p-2 rounded border border-[#76b900]/30 text-[#76b900] hover:bg-[#76b900]/10 transition-colors"
                 aria-label="目次を開く"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,13 +319,13 @@ export default function ComputationalMaterials() {
             </div>
             <Link
               href="/learning"
-              className="hidden sm:flex px-4 py-2 border border-[#d4ad5a]/30 text-[#d4ad5a] rounded hover:bg-[#d4ad5a]/10 transition-colors"
+              className="hidden sm:flex px-4 py-2 border border-[#76b900]/30 text-[#76b900] rounded hover:bg-[#76b900]/10 transition-colors"
             >
               ← 学習ページに戻る
             </Link>
             <Link
               href="/learning"
-              className="sm:hidden p-2 border border-[#d4ad5a]/30 text-[#d4ad5a] rounded hover:bg-[#d4ad5a]/10 transition-colors"
+              className="sm:hidden p-2 border border-[#76b900]/30 text-[#76b900] rounded hover:bg-[#76b900]/10 transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -337,9 +337,9 @@ export default function ComputationalMaterials() {
 
       {/* Mobile TOC */}
       {showTOC && (
-        <div className="lg:hidden bg-[#1a2236]/95 backdrop-blur-sm border-b border-[#2a3550]">
+        <div className="lg:hidden bg-[#111111]/95 backdrop-blur-sm border-b border-[#262626]">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <h2 className="text-lg font-bold mb-3 text-[#d4ad5a]">目次</h2>
+            <h2 className="text-lg font-bold mb-3 text-[#76b900]">目次</h2>
             <nav className="space-y-2">
               {markdownFiles.map((file) => (
                 <button
@@ -349,15 +349,15 @@ export default function ComputationalMaterials() {
                     setShowTOC(false)
                   }}
                   className={`w-full text-left p-3 rounded border transition-all duration-300 ${selectedContent.id === file.id
-                      ? 'bg-[#202a40] border border-[#3d4a68] border-[#d4ad5a]/50'
-                      : 'bg-[#202a40]/70 border-[#3d4a68]/30 hover:border-[#d4ad5a]/30 hover:bg-[#202a40]'
+                      ? 'bg-[#1a1a1a] border border-[#3a3a3a] border-[#76b900]/50'
+                      : 'bg-[#1a1a1a]/70 border-[#3a3a3a]/30 hover:border-[#76b900]/30 hover:bg-[#1a1a1a]'
                     }`}
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-xl">{file.icon}</span>
                     <div>
-                      <div className="font-semibold text-white text-sm">{file.title}</div>
-                      <div className="text-xs text-[#9a9eae]">
+                      <div className="font-semibold text-[#ffffff] text-sm">{file.title}</div>
+                      <div className="text-xs text-[#9a9a9a]">
                         {file.id === 'dft-vasp' && '密度汎関数理論・VASP実践'}
                         {file.id === 'molecular-dynamics' && 'MD計算の基礎と応用'}
                         {file.id === 'tsubame4' && 'スパコン活用ガイド'}
@@ -374,9 +374,9 @@ export default function ComputationalMaterials() {
       {/* Main Content */}
       <div className="flex min-h-screen">
         {/* Desktop Sidebar Navigation */}
-        <aside className="hidden lg:block w-80 bg-[#1a2236]/90 border-r border-[#2a3550]">
+        <aside className="hidden lg:block w-80 bg-[#111111]/90 border-r border-[#262626]">
           <div className="sticky top-20 p-6">
-            <h2 className="text-lg font-bold mb-4 text-[#d4ad5a]">目次</h2>
+            <h2 className="text-lg font-bold mb-4 text-[#76b900]">目次</h2>
             <nav className="space-y-2">
               {markdownFiles.map((file, index) => (
                 <motion.button
@@ -387,15 +387,15 @@ export default function ComputationalMaterials() {
                   onClick={() => setSelectedContent(file)}
                   className={`w-full text-left p-4 rounded border transition-all duration-300 ${
                     selectedContent.id === file.id
-                      ? 'bg-[#202a40] border border-[#3d4a68] border-[#d4ad5a]/50'
-                      : 'bg-[#202a40]/70 border-[#3d4a68]/30 hover:border-[#d4ad5a]/30 hover:bg-[#202a40]'
+                      ? 'bg-[#1a1a1a] border border-[#3a3a3a] border-[#76b900]/50'
+                      : 'bg-[#1a1a1a]/70 border-[#3a3a3a]/30 hover:border-[#76b900]/30 hover:bg-[#1a1a1a]'
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">{file.icon}</span>
                     <div className="flex-1">
-                      <div className="font-semibold text-white">{file.title}</div>
-                      <div className="text-xs text-[#9a9eae] mt-1">
+                      <div className="font-semibold text-[#ffffff]">{file.title}</div>
+                      <div className="text-xs text-[#9a9a9a] mt-1">
                         {file.id === 'dft-vasp' && '密度汎関数理論・VASP実践'}
                         {file.id === 'molecular-dynamics' && 'MD計算の基礎と応用'}
                         {file.id === 'tsubame4' && 'スパコン活用ガイド'}
@@ -403,16 +403,16 @@ export default function ComputationalMaterials() {
                     </div>
                   </div>
                   {selectedContent.id === file.id && (
-                    <div className="mt-2 h-1 bg-[#202a40] border border-[#3d4a68] rounded-full"></div>
+                    <div className="mt-2 h-1 bg-[#1a1a1a] border border-[#3a3a3a] rounded-full"></div>
                   )}
                 </motion.button>
               ))}
             </nav>
 
             {/* Additional Info */}
-            <div className="mt-8 p-4 bg-[#202a40]/70 rounded border border-[#3d4a68]/30">
-              <h3 className="text-sm font-bold text-[#d4ad5a] mb-2">学習のポイント</h3>
-              <ul className="text-xs text-[#9a9eae] space-y-1">
+            <div className="mt-8 p-4 bg-[#1a1a1a]/70 rounded border border-[#3a3a3a]/30">
+              <h3 className="text-sm font-bold text-[#76b900] mb-2">学習のポイント</h3>
+              <ul className="text-xs text-[#9a9a9a] space-y-1">
                 <li>• 理論の理解から始める</li>
                 <li>• 実際にコードを実行</li>
                 <li>• パラメータの意味を理解</li>
@@ -421,13 +421,13 @@ export default function ComputationalMaterials() {
             </div>
 
             {/* Resources */}
-            <div className="mt-4 p-4 bg-[#202a40]/70 rounded border border-[#3d4a68]/30">
-              <h3 className="text-sm font-bold text-[#d4ad5a] mb-2">関連リソース</h3>
-              <ul className="text-xs text-[#9a9eae] space-y-1">
-                <li>• <span className="text-[#e7c97f]">VASP公式マニュアル</span></li>
-                <li>• <span className="text-[#e7c97f]">Materials Project</span></li>
-                <li>• <span className="text-[#e7c97f]">TSUBAME Portal</span></li>
-                <li>• <span className="text-[#e7c97f]">計算化学フォーラム</span></li>
+            <div className="mt-4 p-4 bg-[#1a1a1a]/70 rounded border border-[#3a3a3a]/30">
+              <h3 className="text-sm font-bold text-[#76b900] mb-2">関連リソース</h3>
+              <ul className="text-xs text-[#9a9a9a] space-y-1">
+                <li>• <span className="text-[#8fd400]">VASP公式マニュアル</span></li>
+                <li>• <span className="text-[#8fd400]">Materials Project</span></li>
+                <li>• <span className="text-[#8fd400]">TSUBAME Portal</span></li>
+                <li>• <span className="text-[#8fd400]">計算化学フォーラム</span></li>
               </ul>
             </div>
           </div>
@@ -442,11 +442,11 @@ export default function ComputationalMaterials() {
             transition={{ duration: 0.5 }}
           >
             {/* Content Header */}
-            <div className="mb-8 pb-6 border-b border-[#2a3550]">
+            <div className="mb-8 pb-6 border-b border-[#262626]">
               <div className="flex items-center space-x-3 mb-4">
                 <span className="text-3xl">{selectedContent.icon}</span>
                 <h1 className="text-3xl font-black">
-                  <span className={`text-[#ece7dc]`}>
+                  <span className={`text-[#ffffff]`}>
                     {selectedContent.title}
                   </span>
                 </h1>
@@ -457,12 +457,12 @@ export default function ComputationalMaterials() {
             {isLoading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#d4ad5a] mx-auto mb-4"></div>
-                  <p className="text-[#9a9eae]">コンテンツを読み込んでいます...</p>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#76b900] mx-auto mb-4"></div>
+                  <p className="text-[#9a9a9a]">コンテンツを読み込んでいます...</p>
                 </div>
               </div>
             ) : (
-              <div className="prose prose-invert max-w-none markdown-content">
+              <div className="prose max-w-none markdown-content">
                 {renderMarkdown(markdownContent)}
               </div>
             )}
@@ -474,7 +474,7 @@ export default function ComputationalMaterials() {
       <div className="fixed bottom-8 right-8 space-y-4">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="bg-[#202a40]/90 backdrop-blur-sm text-[#d4ad5a] p-3 rounded-full shadow-lg hover:bg-gray-700/90 transition-colors border border-[#d4ad5a]/30"
+          className="bg-[#1a1a1a]/90 backdrop-blur-sm text-[#76b900] p-3 rounded-full shadow-lg hover:bg-[#1a1a1a]/90 transition-colors border border-[#76b900]/30"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

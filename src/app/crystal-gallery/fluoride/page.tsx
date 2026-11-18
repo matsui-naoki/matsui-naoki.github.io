@@ -8,7 +8,7 @@ import { fluorideCrystals } from '@/lib/crystalFbxData'
 
 export default function FluoridePage() {
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <SimpleNavigation />
 
       {/* Hero Section */}
@@ -20,14 +20,14 @@ export default function FluoridePage() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 フッ化物イオン伝導体
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light mb-4">
+            <p className="text-xl text-[#cfcfcf] font-light mb-4">
               Fluoride Ion Conductors
             </p>
-            <p className="text-[#9a9eae] max-w-3xl mx-auto">
+            <p className="text-[#9a9a9a] max-w-3xl mx-auto">
               フッ化物イオン（F⁻）を伝導する新しいタイプの電池材料。
               従来のリチウムイオン電池を上回るエネルギー密度の実現が期待されています。
             </p>
@@ -51,12 +51,12 @@ export default function FluoridePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-16 bg-[#1a2236] rounded p-8 border border-[#2a3550]"
+            className="mt-16 bg-[#111111] rounded p-8 border border-[#262626]"
           >
-            <h2 className="text-2xl font-bold mb-6 text-[#ece7dc]">
+            <h2 className="text-2xl font-bold mb-6 text-[#ffffff]">
               フッ化物イオン電池の特徴
             </h2>
-            <div className="grid md:grid-cols-2 gap-6 text-[#b4b6c0]">
+            <div className="grid md:grid-cols-2 gap-6 text-[#cfcfcf]">
               <div>
                 <h3 className="text-lg font-semibold text-emerald-400 mb-3">構造的特徴</h3>
                 <ul className="space-y-2 text-sm">
@@ -79,22 +79,22 @@ export default function FluoridePage() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#d4ad5a] mb-3">材料的利点</h3>
+                <h3 className="text-lg font-semibold text-[#76b900] mb-3">材料的利点</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
-                    <span className="text-[#d4ad5a] mr-2">▸</span>
+                    <span className="text-[#76b900] mr-2">▸</span>
                     高エネルギー密度 - 理論的にLi-ionを上回る
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#d4ad5a] mr-2">▸</span>
+                    <span className="text-[#76b900] mr-2">▸</span>
                     広い動作温度範囲 - 室温から高温まで
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#d4ad5a] mr-2">▸</span>
+                    <span className="text-[#76b900] mr-2">▸</span>
                     豊富な材料資源 - フッ素は地殻中に豊富
                   </li>
                   <li className="flex items-start">
-                    <span className="text-[#d4ad5a] mr-2">▸</span>
+                    <span className="text-[#76b900] mr-2">▸</span>
                     新規電池系 - 未開拓の研究分野
                   </li>
                 </ul>
@@ -106,7 +106,7 @@ export default function FluoridePage() {
 
       {/* Back to Gallery Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/crystal-gallery" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/crystal-gallery" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           ギャラリーに戻る
         </Link>
       </div>

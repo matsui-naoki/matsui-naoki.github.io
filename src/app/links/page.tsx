@@ -6,7 +6,7 @@ import SimpleNavigation from '@/components/SimpleNavigation'
 
 export default function Links() {
   return (
-    <div className="min-h-screen bg-[#131a2c] text-[#ece7dc]">
+    <div className="min-h-screen bg-[#050505] text-[#ffffff]">
       <SimpleNavigation />
 
       {/* Hero Section */}
@@ -18,11 +18,11 @@ export default function Links() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-black mb-6">
-              <span className="text-[#ece7dc]">
+              <span className="text-[#ffffff]">
                 USEFUL LINKS
               </span>
             </h1>
-            <p className="text-xl text-[#b4b6c0] font-light">研究・学習に役立つリンク集</p>
+            <p className="text-xl text-[#cfcfcf] font-light">研究・学習に役立つリンク集</p>
           </motion.div>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function Links() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   🏛️ 大学・機関
                 </span>
               </h2>
@@ -72,15 +72,15 @@ export default function Links() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                    className="group bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
                   >
-                    <div className={`w-12 h-12 rounded bg-gradient-to-r ${link.color} flex items-center justify-center text-white text-xl font-bold mb-4 transition-transform`}>
+                    <div className={`w-12 h-12 rounded bg-gradient-to-r ${link.color} flex items-center justify-center text-[#ffffff] text-xl font-bold mb-4 transition-transform`}>
                       {link.name.charAt(0)}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#d4ad5a] transition-colors">
+                    <h3 className="text-lg font-bold text-[#ffffff] mb-2 group-hover:text-[#76b900] transition-colors">
                       {link.name}
                     </h3>
-                    <p className="text-[#b4b6c0] text-sm">{link.desc}</p>
+                    <p className="text-[#cfcfcf] text-sm">{link.desc}</p>
                   </motion.a>
                 ))}
               </div>
@@ -93,7 +93,7 @@ export default function Links() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   研究室・研究グループ
                 </span>
               </h2>
@@ -121,19 +121,19 @@ export default function Links() {
                     name: '東京科学大学 荒井研',
                     url: 'http://www.arai-cap.mac.titech.ac.jp/pages/top/index.html',
                     desc: '電池材料開発',
-                    color: 'from-[#d4ad5a] to-cyan-500'
+                    color: 'from-[#76b900] to-cyan-500'
                   },
                   {
                     name: '理化学研究所 小林固体化学研',
                     url: 'https://www.riken.jp/research/labs/chief/solid_st_chem/index.html',
                     desc: '固体化学・電池材料',
-                    color: 'from-[#d9b83f] to-orange-500'
+                    color: 'from-[#e0c060] to-orange-500'
                   },
                   {
                     name: '九州大学 山崎研',
                     url: 'https://q-pit.kyushu-u.ac.jp/yamazaki/index.html',
                     desc: 'プロトン伝導体・エネルギー材料',
-                    color: 'from-[#d98a8a] to-pink-500'
+                    color: 'from-[#f08a8a] to-pink-500'
                   }
                 ].map((lab, index) => (
                   <motion.a
@@ -144,15 +144,15 @@ export default function Links() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                    className="group bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
                   >
-                    <div className="w-12 h-12 rounded bg-gradient-to-r ${lab.color} flex items-center justify-center text-white text-xl font-bold mb-4 transition-transform">
+                    <div className="w-12 h-12 rounded bg-gradient-to-r ${lab.color} flex items-center justify-center text-[#000000] text-xl font-bold mb-4 transition-transform">
                       LAB
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#d4ad5a] transition-colors">
+                    <h3 className="text-lg font-bold text-[#ffffff] mb-2 group-hover:text-[#76b900] transition-colors">
                       {lab.name}
                     </h3>
-                    <p className="text-[#b4b6c0] text-sm">{lab.desc}</p>
+                    <p className="text-[#cfcfcf] text-sm">{lab.desc}</p>
                   </motion.a>
                 ))}
               </div>
@@ -165,7 +165,7 @@ export default function Links() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   計算ツール・データベース
                 </span>
               </h2>
@@ -204,25 +204,25 @@ export default function Links() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                    className="group bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
+                      <div className="w-12 h-12 rounded bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center text-[#ffffff] text-sm font-bold">
                         TOOL
                       </div>
                       <span className={`px-2 py-1 text-xs font-mono rounded border ${ 
-                        tool.type === 'DATABASE' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
-                        tool.type === 'SOFTWARE' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
-                        tool.type === 'FRAMEWORK' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
-                        'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20'
+                        tool.type === 'DATABASE' ? 'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20' :
+                        tool.type === 'SOFTWARE' ? 'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20' :
+                        tool.type === 'FRAMEWORK' ? 'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20' :
+                        'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20'
                       }`}>
                         {tool.type}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#d4ad5a] transition-colors">
+                    <h3 className="text-lg font-bold text-[#ffffff] mb-2 group-hover:text-[#76b900] transition-colors">
                       {tool.name}
                     </h3>
-                    <p className="text-[#b4b6c0] text-sm">{tool.desc}</p>
+                    <p className="text-[#cfcfcf] text-sm">{tool.desc}</p>
                   </motion.a>
                 ))}
               </div>
@@ -235,7 +235,7 @@ export default function Links() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-3xl font-black mb-8">
-                <span className="text-[#ece7dc]">
+                <span className="text-[#ffffff]">
                   学会・コミュニティ
                 </span>
               </h2>
@@ -310,24 +310,24 @@ export default function Links() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group bg-[#1a2236]/90 backdrop-blur-sm border border-[#2a3550] rounded p-6 hover:border-[#3d4a68] transition-all duration-300"
+                    className="group bg-[#111111]/90 backdrop-blur-sm border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-all duration-300"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded bg-[#202a40] border border-[#3d4a68] flex items-center justify-center text-white text-sm font-bold">
+                      <div className="w-12 h-12 rounded bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center text-[#ffffff] text-sm font-bold">
                         SOC
                       </div>
                       <span className={`px-2 py-1 text-xs font-mono rounded border ${ 
-                        society.region === 'JP' ? 'bg-[#d98a8a]/10 text-[#d98a8a] border-[#d98a8a]/20' :
-                        society.region === 'US' ? 'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20' :
-                        'bg-[#d4ad5a]/10 text-[#d4ad5a] border-[#d4ad5a]/20'
+                        society.region === 'JP' ? 'bg-[#f08a8a]/10 text-[#f08a8a] border-[#f08a8a]/20' :
+                        society.region === 'US' ? 'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20' :
+                        'bg-[#76b900]/10 text-[#76b900] border-[#76b900]/20'
                       }`}>
                         {society.region}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#d4ad5a] transition-colors">
+                    <h3 className="text-lg font-bold text-[#ffffff] mb-2 group-hover:text-[#76b900] transition-colors">
                       {society.name}
                     </h3>
-                    <p className="text-[#b4b6c0] text-sm">{society.desc}</p>
+                    <p className="text-[#cfcfcf] text-sm">{society.desc}</p>
                   </motion.a>
                 ))}
               </div>
@@ -338,7 +338,7 @@ export default function Links() {
 
       {/* Back to Home Button */}
       <div className="fixed bottom-8 right-8">
-        <Link href="/" className="bg-[#ece7dc] text-[#131a2c] px-4 py-2 rounded shadow-lg transition-all duration-300">
+        <Link href="/" className="bg-[#ffffff] text-[#050505] px-4 py-2 rounded shadow-lg transition-all duration-300">
           ホームに戻る
         </Link>
       </div>

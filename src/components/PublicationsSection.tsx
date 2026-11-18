@@ -81,8 +81,8 @@ export default function PublicationsSection() {
                   onClick={() => setActiveTab(tab.id as 'publications' | 'news')}
                   className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                     activeTab === tab.id
-                      ? 'neon-glow bg-white/10 text-white'
-                      : 'text-[#9a9eae] hover:text-white'
+                      ? 'neon-glow bg-white/10 text-[#ffffff]'
+                      : 'text-[#9a9a9a] hover:text-[#ffffff]'
                   }`}
                 >
                   {tab.label}
@@ -110,18 +110,18 @@ export default function PublicationsSection() {
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-sm font-bold text-[#d4ad5a]">{pub.year}</span>
+                        <span className="text-sm font-bold text-[#76b900]">{pub.year}</span>
                         <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                           pub.type === 'journal' 
-                            ? 'bg-green-500/20 text-[#d4ad5a]' 
-                            : 'bg-purple-500/20 text-[#d4ad5a]'
+                            ? 'bg-green-500/20 text-[#76b900]' 
+                            : 'bg-purple-500/20 text-[#76b900]'
                         }`}>
                           {pub.type === 'journal' ? '学術誌' : '学会発表'}
                         </span>
                       </div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{pub.title}</h3>
-                      <p className="text-[#9a9eae] text-sm mb-2">{pub.authors}</p>
-                      <p className="text-[#e7c97f] text-sm">
+                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2">{pub.title}</h3>
+                      <p className="text-[#9a9a9a] text-sm mb-2">{pub.authors}</p>
+                      <p className="text-[#8fd400] text-sm">
                         {pub.type === 'journal' ? pub.journal : `${pub.conference}, ${pub.location}`}
                       </p>
                     </div>
@@ -148,12 +148,12 @@ export default function PublicationsSection() {
                   className="glass-effect p-6 rounded hover:neon-glow transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="text-sm font-mono text-[#d4ad5a] whitespace-nowrap">
+                    <div className="text-sm font-mono text-[#76b900] whitespace-nowrap">
                       {new Date(news.date).toLocaleDateString('ja-JP')}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white mb-2">{news.title}</h3>
-                      <p className="text-[#b4b6c0] leading-relaxed">{news.description}</p>
+                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2">{news.title}</h3>
+                      <p className="text-[#cfcfcf] leading-relaxed">{news.description}</p>
                     </div>
                   </div>
                 </motion.div>
