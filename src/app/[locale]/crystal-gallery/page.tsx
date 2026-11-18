@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation'
 import NextLink from 'next/link'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import { lithiumCrystals, fluorideCrystals, hydrideCrystals, otherCrystals } from '@/lib/crystalFbxData'
 
 export default function CrystalGalleryPage() {
   const t = useTranslations('crystalGallery')
@@ -17,7 +18,7 @@ export default function CrystalGalleryPage() {
       titleKey: 'lithiumIonConductors',
       subtitleKey: 'lithiumIonConductorsEn',
       descKey: 'lithiumIonConductorsDesc',
-      count: 14,
+      count: lithiumCrystals.length,
       gradient: 'from-blue-500 to-cyan-400',
     },
     {
@@ -25,7 +26,7 @@ export default function CrystalGalleryPage() {
       titleKey: 'fluorideIonConductors',
       subtitleKey: 'fluorideIonConductorsEn',
       descKey: 'fluorideIonConductorsDesc',
-      count: 8,
+      count: fluorideCrystals.length,
       gradient: 'from-green-500 to-emerald-400',
     },
     {
@@ -33,7 +34,7 @@ export default function CrystalGalleryPage() {
       titleKey: 'hydrideIonConductors',
       subtitleKey: 'hydrideIonConductorsEn',
       descKey: 'hydrideIonConductorsDesc',
-      count: 4,
+      count: hydrideCrystals.length,
       gradient: 'from-purple-500 to-[#76b900]',
     },
     {
@@ -41,7 +42,7 @@ export default function CrystalGalleryPage() {
       titleKey: 'others',
       subtitleKey: 'othersEn',
       descKey: 'othersDesc',
-      count: 8,
+      count: otherCrystals.length,
       gradient: 'from-orange-500 to-[#f08a8a]',
     }
   ]

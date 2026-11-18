@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
@@ -26,6 +27,35 @@ export default function ProfileDetailPage() {
     { period: 'Apr 2019 - Mar 2020', position: 'JSPS Research Fellow (DC2)' }
   ]
 
+
+  // Grants as principal investigator (amounts: total, thousand JPY)
+  const fundingPI: { ja: string; en: string; title?: { ja: string; en: string }; note?: { ja: string; en: string }; amount: number }[] = [
+    { ja: '科研費 基盤研究(B)（2026–2028年度）', en: 'KAKENHI Grant-in-Aid for Scientific Research (B) (FY2026–2028)',
+      title: { ja: '「実空間と仮想空間が相互連携した固体電解質探索手法の開拓」', en: '"Development of a solid-electrolyte search method linking real and virtual spaces"' }, amount: 14100 },
+    { ja: 'JST さきがけ（2026–2028年度）', en: 'JST PRESTO (FY2026–2028)',
+      title: { ja: '「孤立電子対のゆらぎ制御による超イオン導電体の探索」', en: '"Exploration of superionic conductors through control of lone-pair fluctuations"' },
+      note: { ja: '研究領域「ゆらぎの理解と制御による材料革新」', en: 'Research area: Materials Innovation through Understanding and Control of Fluctuations' }, amount: 40000 },
+    { ja: '科研費 学術変革領域研究(A) 公募研究（2025–2026年度）', en: 'KAKENHI Grant-in-Aid for Transformative Research Areas (A), Publicly Offered Research (FY2025–2026)',
+      title: { ja: '「イオン輸送を阻害/促進する孤立電子対の制御と超イオン導電体の探索」', en: '"Control of lone pairs that inhibit or promote ion transport, and exploration of superionic conductors"' }, amount: 7400 },
+    { ja: '科研費 若手研究（2022–2024年度）', en: 'KAKENHI Grant-in-Aid for Early-Career Scientists (FY2022–2024)',
+      title: { ja: '「構造類似性に基づくヒドリドイオン導電体の創製」', en: '"Creation of hydride ion conductors based on structural similarity"' }, amount: 3600 },
+    { ja: '東京工業大学 挑戦的研究賞（2022年度）', en: 'Tokyo Tech Challenging Research Award (FY2022)', amount: 3000 },
+    { ja: '東京工業大学 基礎研究機構 広域基礎研究塾 新研究挑戦奨励金（2021年度）', en: 'Tokyo Tech IIR Wide-Range Basic Research Academy, New Research Challenge Grant (FY2021)', amount: 400 },
+    { ja: '科研費 特別研究員奨励費（2019–2020年度）', en: 'KAKENHI Grant-in-Aid for JSPS Fellows (FY2019–2020)',
+      title: { ja: '「高酸素欠損を基軸とした酸化物イオン伝導体の開発」', en: '"Development of oxide ion conductors based on high oxygen deficiency"' }, amount: 1700 }
+  ]
+
+
+  // Talks and seminar lectures (newest first)
+  const talks: { date: string; ja: string; en: string }[] = [
+    { date: '2026.01', ja: '講演：二次電池の研究開発における新技術', en: 'Talk: New Technologies in Secondary Battery R&D' },
+    { date: '2025.12', ja: '講演：化学電池材料研究会 第55回講演会', en: 'Talk: 55th Meeting of the Society of Chemical Battery Materials' },
+    { date: '2025.06', ja: 'セミナー講師：電気化学会 電気化学セミナーA', en: 'Seminar lecturer: Electrochemistry Seminar A, The Electrochemical Society of Japan' },
+    { date: '2025.05', ja: 'セミナー講師：電気化学会関東支部 基礎セミナー', en: 'Seminar lecturer: Basic Seminar, Kanto Branch, The Electrochemical Society of Japan' },
+    { date: '2024.10', ja: '講演：新電池構想部会', en: 'Talk: Battery Technology Committee (Shin-Denchi Koso Bukai)' },
+    { date: '', ja: 'セミナー講師：東陽テクニカ 技術セミナー', en: 'Seminar lecturer: Toyo Corporation Technical Seminar' }
+  ]
+
   // Awards data
   const awardsData = locale === 'ja' ? [
     { year: '2024年', award: 'オープンイノベータ功労賞（東京工業大学）' },
@@ -45,12 +75,18 @@ export default function ProfileDetailPage() {
 
   // Peer review journals
   const peerReviewJournals = [
+    'Journal of the American Chemical Society',
+    'Joule',
+    'Advanced Functional Materials',
+    'ACS Applied Energy Materials',
+    'ACS Materials Letters',
     'Journal of Materials Chemistry A',
     'Inorganic Chemistry',
     'Solid State Ionics',
     'Electrochemistry',
     'European Journal of Inorganic Chemistry',
-    'Ceramics International'
+    'Ceramics International',
+    'Materials Science and Engineering: B'
   ]
 
   // Societies
@@ -104,6 +140,8 @@ export default function ProfileDetailPage() {
             <h2 className="text-3xl font-black mb-6 text-[#ffffff]">
               {t('basicInfo')}
             </h2>
+            <div className="grid md:grid-cols-[13rem_1fr] gap-8 items-start">
+            <Image src="/NaokiMatsui2026.jpg" alt={locale === 'ja' ? '松井直喜' : 'Naoki Matsui'} width={520} height={690} className="w-40 md:w-full h-auto rounded-[6px]" />
             <div className="grid md:grid-cols-2 gap-6 text-[#cfcfcf]">
               <div className="space-y-3">
                 <div>
@@ -141,6 +179,7 @@ export default function ProfileDetailPage() {
                   <p className="text-[#ffffff]">045-924-5570</p>
                 </div>
               </div>
+            </div>
             </div>
           </motion.div>
 
@@ -349,83 +388,18 @@ export default function ProfileDetailPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-bold text-[#76b900] mb-4">{t('fundingPI')}</h3>
-                <ul className="space-y-3 text-[#cfcfcf]">
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <div>
-                      <span className="font-semibold text-[#ffffff]">
-                        {locale === 'ja'
-                          ? 'JST さきがけ（2025-2028年度）'
-                          : 'JST PRESTO (2025-2028)'}
-                      </span><br/>
-                      <span className="text-sm">
-                        {locale === 'ja'
-                          ? '「ゆらぎの理解と制御による材料革新」領域'
-                          : 'Research Area: "Materials Innovation through Understanding and Control of Fluctuations"'}
-                      </span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <div>
-                      <span className="font-semibold text-[#ffffff]">
-                        {locale === 'ja'
-                          ? '科研費 学術変革領域研究(A) 公募研究（2025-2026年度）'
-                          : 'KAKENHI Grant-in-Aid for Transformative Research Areas (A), Publicly Offered Research (2025-2026)'}
-                      </span><br/>
-                      <span className="text-sm">
-                        {locale === 'ja'
-                          ? '「イオン輸送を阻害/促進する孤立電子対の制御と超イオン導電体の探索」'
-                          : '"Control of Lone Pairs that Inhibit/Promote Ion Transport and Exploration of Superionic Conductors"'}
-                      </span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <div>
-                      <span className="font-semibold text-[#ffffff]">
-                        {locale === 'ja'
-                          ? '科研費 若手研究（2022-2024年度）'
-                          : 'KAKENHI Grant-in-Aid for Early-Career Scientists (2022-2024)'}
-                      </span><br/>
-                      <span className="text-sm">
-                        {locale === 'ja'
-                          ? '「構造類似性に基づくヒドリドイオン導電体の創製」'
-                          : '"Creation of Hydride Ion Conductors Based on Structural Similarity"'}
-                      </span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <span className="font-semibold text-[#ffffff]">
-                      {locale === 'ja'
-                        ? '東京工業大学 挑戦的研究賞（2022年度）'
-                        : 'Tokyo Tech Challenging Research Award (FY2022)'}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <span className="font-semibold text-[#ffffff]">
-                      {locale === 'ja'
-                        ? '東京工業大学 基礎研究機構 広域基礎研究塾 新研究挑戦奨励金（2023年度）'
-                        : 'Tokyo Tech IIR Wide-Range Basic Research Academy New Research Challenge Grant (2023)'}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">▸</span>
-                    <div>
-                      <span className="font-semibold text-[#ffffff]">
-                        {locale === 'ja'
-                          ? '科研費 特別研究員奨励費（2019-2020年度）'
-                          : 'KAKENHI Grant-in-Aid for JSPS Fellows (2019-2020)'}
-                      </span><br/>
-                      <span className="text-sm">
-                        {locale === 'ja'
-                          ? '「高酸素欠損を基軸とした酸化物イオン伝導体の開発」'
-                          : '"Development of Oxide Ion Conductors Based on High Oxygen Deficiency"'}
-                      </span>
-                    </div>
-                  </li>
+                <ul className="space-y-4 text-[#cfcfcf]">
+                  {fundingPI.map((g) => (
+                    <li key={g.ja} className="flex items-start">
+                      <span className="text-[#76b900] mr-2">▸</span>
+                      <div>
+                        <span className="font-semibold text-[#ffffff]">{locale === 'ja' ? g.ja : g.en}</span>
+                        {g.title && (<><br/><span className="text-sm">{locale === 'ja' ? g.title.ja : g.title.en}</span></>)}
+                        {g.note && (<><br/><span className="text-sm text-[#9a9a9a]">{locale === 'ja' ? g.note.ja : g.note.en}</span></>)}
+                        <br/><span className="text-sm text-[#9a9a9a]">{locale === 'ja' ? `総額 ${g.amount.toLocaleString('ja-JP')}千円` : `Total: JPY ${(g.amount / 1000).toLocaleString('en-US', { maximumFractionDigits: 1 })} million`}</span>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -527,32 +501,14 @@ export default function ProfileDetailPage() {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold text-[#76b900] mb-3">{t('seminars')}</h3>
+                <h3 className="text-lg font-bold text-[#76b900] mb-3">{locale === 'ja' ? '講演・セミナー講師' : 'Talks and seminars'}</h3>
                 <ul className="space-y-2 text-[#cfcfcf]">
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">•</span>
-                    <span>
-                      {locale === 'ja'
-                        ? '電気化学会 電気化学セミナーA'
-                        : 'The Electrochemical Society of Japan, Electrochemistry Seminar A'}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">•</span>
-                    <span>
-                      {locale === 'ja'
-                        ? '電気化学会関東支部 基礎セミナー'
-                        : 'The Electrochemical Society of Japan, Kanto Branch, Basic Seminar'}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#76b900] mr-2">•</span>
-                    <span>
-                      {locale === 'ja'
-                        ? '東陽テクニカ 技術セミナー'
-                        : 'Toyo Corporation Technical Seminar'}
-                    </span>
-                  </li>
+                  {talks.map((x) => (
+                    <li key={x.ja} className="grid grid-cols-[4.5rem_1fr] gap-x-3">
+                      <span className="text-[#76b900] font-mono text-sm pt-0.5">{x.date}</span>
+                      <span>{locale === 'ja' ? x.ja : x.en}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

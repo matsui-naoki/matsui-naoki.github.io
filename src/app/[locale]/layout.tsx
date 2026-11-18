@@ -26,7 +26,7 @@ export async function generateMetadata({
     },
     en: {
       title: "Naoki Matsui | Battery Research Lab at Institute of Science Tokyo | Solid-State Batteries & Solid Ionics",
-      description: "Dr. Naoki Matsui, Associate Professor at Institute of Science Tokyo (Dept. of Chemical Science and Engineering). Research on all-solid-state batteries, lithium-ion batteries, fluoride-ion conductors, fluoride batteries, and hydride-ion conductors.",
+      description: "Dr. Naoki Matsui, Associate Professor at the All-Solid-State Battery Research Center, Institute of Science Tokyo. Research on all-solid-state batteries, lithium-ion batteries, fluoride-ion conductors, fluoride batteries, and hydride-ion conductors.",
       keywords: "Naoki Matsui, battery research lab, battery laboratory, solid-state battery lab, Matsui Lab, Kanno-Suzuki-Matsui Lab, Kanno-Suzuki Lab, Kanno Lab, Suzuki Lab, Institute of Science Tokyo, solid-state battery, lithium battery, lithium-ion battery, fluoride ion conductor, fluoride-ion battery, fluoride battery, all-solid-state fluoride battery, lithium-ion conductor, hydride, hydride ion conductor, solid ionics, battery materials, next-generation battery, materials science, ISCT",
       locale: "en_US"
     }

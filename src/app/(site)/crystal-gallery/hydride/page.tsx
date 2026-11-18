@@ -63,7 +63,7 @@ export default function HydridePage() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">▸</span>
-                    複合カチオン系：Ba-Ca-Na-H - 室温伝導
+                    <span>複合カチオン系：<Chem>Ba₀.₅Ca₀.₃₅Na₀.₁₅H₁.₈₅</Chem> - 室温伝導</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">▸</span>

@@ -144,13 +144,13 @@ export default function Access() {
                           <>
                             東京科学大学（Institute of Science Tokyo）<br/>
                             総合研究院 全固体電池研究センター<br/>
-                            物質理工学院 応用化学系
+                            物質理工学院 応用化学系 化学システム分野（兼務）
                           </>
                         ) : (
                           <>
                             Institute of Science Tokyo<br/>
                             All-Solid-State Battery Research Center<br/>
-                            Department of Chemical Science and Engineering
+                            Department of Chemical Science and Engineering (concurrent)
                           </>
                         )}
                       </p>

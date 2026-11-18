@@ -199,14 +199,6 @@ export const hydrideCrystals: CrystalFbxData[] = [
     category: 'hydride'
   },
   {
-    name: 'Ba-Ca-Na-H系',
-    formula: 'BaCaNaH',
-    description: '三元系ヒドリド',
-    properties: '新規ヒドリドイオン伝導体',
-    fbxFile: '/structure/BaCaNaH.fbx',
-    category: 'hydride'
-  },
-  {
     name: 'SrLiH3',
     formula: 'SrLiH3',
     description: 'ペロブスカイト型ヒドリド',

@@ -66,14 +66,16 @@ export default function Home() {
 
   const profileRows = ja ? [
     ['役職', '准教授'],
-    ['所属', '東京科学大学 物質理工学院 応用化学系 化学システム分野'],
+    ['所属', '東京科学大学 総合研究院 全固体電池研究センター'],
+    ['兼務', '物質理工学院 応用化学系 化学システム分野'],
     ['学位', '博士（理学）2020年'],
     ['専門', '固体イオニクス・材料インフォマティクス'],
     ['連絡先', 'matsui.n.ee49[at]m.isct.ac.jp'],
     ['居室', 'すずかけ台キャンパス G1-1020']
   ] : [
     ['Position', 'Associate Professor'],
-    ['Affiliation', 'Dept. of Chemical Science and Engineering, Institute of Science Tokyo'],
+    ['Affiliation', 'All-Solid-State Battery Research Center, Institute of Science Tokyo'],
+    ['Also', 'Dept. of Chemical Science and Engineering'],
     ['Degree', 'Ph.D. in Science (2020)'],
     ['Field', 'Solid-state ionics and materials informatics'],
     ['Email', 'matsui.n.ee49[at]m.isct.ac.jp'],

@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
 import Chem from '@/components/Chem'
+import { PATENTS } from '@/lib/patents'
 
 export default function PublicationsPage() {
   const t = useTranslations('publications')
@@ -514,6 +515,33 @@ export default function PublicationsPage() {
               </div>
             </>
           )}
+
+          {/* Patents (published only) */}
+          <h2 className="text-3xl font-black mb-3">
+            <span className="text-[#ffffff]">{locale === 'ja' ? '特許' : 'Patents'}</span>
+          </h2>
+          <p className="text-[#9a9a9a] text-sm mb-8">
+            {locale === 'ja' ? '公開済みのもの（公開公報・特許公報の番号）' : 'Published applications and granted patents'}
+          </p>
+          <div className="grid gap-4 mb-16">
+            {PATENTS.map((p) => (
+              <div key={p.jp} className="bg-[#111111]/90 border border-[#262626] rounded p-6 hover:border-[#3a3a3a] transition-colors">
+                <div className="text-sm font-mono text-[#76b900] mb-3">{p.date}</div>
+                <h3 className="text-lg font-bold text-[#ffffff] mb-3 leading-snug">{locale === 'ja' ? p.title.ja : p.title.en}</h3>
+                <p className="text-[#cfcfcf] text-sm mb-1">{locale === 'ja' ? p.inventors.ja : p.inventors.en}</p>
+                <p className="text-[#9a9a9a] text-sm mb-3">{locale === 'ja' ? `出願人：${p.applicants.ja}` : `Applicants: ${p.applicants.en}`}</p>
+                <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
+                  <a href={p.jpUrl} target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline">{p.jp}</a>
+                  {p.granted && (
+                    <a href={p.granted.url} target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline">{locale === 'ja' ? p.granted.ja : p.granted.en}</a>
+                  )}
+                  {p.family?.map((f) => (
+                    <a key={f.label} href={f.url} target="_blank" rel="noopener noreferrer" className="text-[#9a9a9a] hover:text-[#76b900] underline">{f.label}</a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
 
           {/* Summary */}
           <motion.div

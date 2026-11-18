@@ -276,6 +276,44 @@ export default function Learning() {
               </Link>
             </motion.div>
 
+            {/* Crystal structure gallery */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="bg-[#111111] rounded p-6 border border-[#262626] hover:border-[#76b900]/30 transition-all duration-300"
+            >
+              <Link href="/ja/crystal-gallery">
+              <div className="mb-6">
+                <div className="w-16 h-16 rounded bg-[#1a1a1a] border border-[#3a3a3a] flex items-center justify-center text-[#ffffff] text-xl font-bold mb-4">
+                  3D
+                </div>
+                <span className="px-3 py-1 text-xs font-mono bg-[#76b900]/10 text-[#76b900] rounded-full border border-[#76b900]/20">
+                  CRYSTAL STRUCTURES
+                </span>
+              </div>
+
+              <h3 className="text-2xl font-black mb-4">
+                <span className="text-[#ffffff]">
+                  結晶構造ギャラリー
+                </span>
+              </h3>
+
+              <p className="text-[#cfcfcf] text-sm mb-6 leading-relaxed">
+                代表的なイオン伝導体と電池材料の結晶構造を、ブラウザ上で回転・拡大しながら3Dで見られます。
+              </p>
+
+              <div className="space-y-3">
+                {['リチウムイオン伝導体・電極材料', 'フッ化物イオン伝導体', 'ヒドリドイオン伝導体', 'その他のイオン伝導体'].map((x) => (
+                  <div key={x} className="flex items-center space-x-3 p-3 bg-[#1a1a1a]/70 rounded border border-[#3a3a3a]/30">
+                    <div className="w-2 h-2 bg-[#76b900] rounded-full"></div>
+                    <span className="text-sm">{x}</span>
+                  </div>
+                ))}
+              </div>
+              </Link>
+            </motion.div>
+
           </div>
         </div>
       </section>
