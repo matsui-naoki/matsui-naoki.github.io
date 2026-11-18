@@ -5,15 +5,14 @@ The site is a static export (`npm run build` → `out/`). The same build is publ
 | Host | How | URL |
 |---|---|---|
 | GitHub Pages | `.github/workflows/deploy.yml` on every push to `main` | https://matsui-naoki.github.io |
-| Cloudflare Pages | Cloudflare's Git integration, also on every push to `main` | https://naokimatsui.com (planned) |
+| Cloudflare Pages | Cloudflare's Git integration (project `naokimatsui`), also on every push to `main` | https://naokimatsui.com (also https://naokimatsui.pages.dev) |
 
 ## Canonical URL
 
 `NEXT_PUBLIC_SITE_URL` sets the canonical origin used in `<link rel="canonical">`, hreflang, Open Graph,
-`sitemap.xml` and `robots.txt` (see `src/lib/seo.ts`). Unset, it is `https://matsui-naoki.github.io`.
-Once the custom domain works, set it to `https://naokimatsui.com` in **both** builds (the GitHub
-workflow's build step and the Cloudflare project's environment variables), so search engines treat the
-custom domain as the one canonical copy and the github.io copy as a duplicate of it.
+`sitemap.xml` and `robots.txt` (see `src/lib/seo.ts`). Both builds set it to `https://naokimatsui.com` (the GitHub workflow's build step and the Cloudflare
+project's environment variables), so search engines treat the custom domain as the one canonical copy
+and the github.io copy as a duplicate of it. Unset, it falls back to `https://matsui-naoki.github.io`.
 
 ## Cloudflare Pages setup (one time, in the Cloudflare dashboard)
 
