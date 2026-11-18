@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 import FBXCrystalGallery from '@/components/FBXCrystalGallery'
 import { fluorideCrystals } from '@/lib/crystalFbxData'
+import Chem from '@/components/Chem'
 
 export default function FluoridePage() {
   return (
@@ -28,7 +29,7 @@ export default function FluoridePage() {
               Fluoride Ion Conductors
             </p>
             <p className="text-[#9a9a9a] max-w-3xl mx-auto">
-              フッ化物イオン（F⁻）を伝導する新しいタイプの電池材料。
+              フッ化物イオン（<Chem>F⁻</Chem>）を伝導する新しいタイプの電池材料。
               従来のリチウムイオン電池を上回るエネルギー密度の実現が期待されています。
             </p>
           </motion.div>
@@ -62,7 +63,7 @@ export default function FluoridePage() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-emerald-400 mr-2">▸</span>
-                    タイソナイト型：LaF3 - 高温でのF⁻伝導
+                    タイソナイト型：<Chem>LaF₃</Chem> - 高温での<Chem>F⁻</Chem>伝導
                   </li>
                   <li className="flex items-start">
                     <span className="text-emerald-400 mr-2">▸</span>

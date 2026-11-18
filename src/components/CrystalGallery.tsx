@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { CrystalData } from '@/lib/crystalData'
+import Chem from '@/components/Chem'
 
 const CrystalStructure = dynamic(() => import('./CrystalStructure'), {
   ssr: false,
@@ -54,9 +55,9 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold text-[#ffffff] mb-2">
-              {model.name}
+              <Chem>{model.name}</Chem>
             </h3>
-            <p className="text-sm text-[#76b900] font-mono mb-2">{model.formula}</p>
+            <p className="text-sm text-[#76b900] mb-2"><Chem>{model.formula}</Chem></p>
             <p className="text-xs text-[#9a9a9a]">{model.description}</p>
           </div>
         </div>
@@ -76,9 +77,9 @@ export default function CrystalGallery({ crystals, showFBXModel = true }: Crysta
           </div>
           <div className="p-6">
             <h3 className="text-xl font-bold text-[#ffffff] mb-2">
-              {crystal.name}
+              <Chem>{crystal.name}</Chem>
             </h3>
-            <p className="text-sm text-[#76b900] font-mono mb-2">{crystal.formula}</p>
+            <p className="text-sm text-[#76b900] mb-2"><Chem>{crystal.formula}</Chem></p>
             <p className="text-xs text-[#9a9a9a]">{crystal.description}</p>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
+import { chemHtml } from '@/lib/chem'
 
 // Define the markdown file mappings
 const markdownFiles = [
@@ -129,7 +130,7 @@ export default function ExperimentalPage() {
     html = html.replace(/<div\s+class="large-photo-container">/g, '<div class="flex justify-center my-8">')
     html = html.replace(/<div\s+class="large-photo-panel">/g, '<div class="text-center">')
     
-    return html
+    return chemHtml(html)
   }
 
   return (

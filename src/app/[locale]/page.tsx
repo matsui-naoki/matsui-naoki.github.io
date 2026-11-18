@@ -5,12 +5,13 @@ import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import HeroFilm from '@/components/HeroFilm'
 import CampusFilm from '@/components/CampusFilm'
+import Chem from '@/components/Chem'
 import { useTranslations, useLocale } from 'next-intl'
 
 type T2 = { ja: string; en: string }
 // Recent papers as a log (dates are publication months)
 const LOG = [
-  { date: '2026.11', material: 'β-PbSn₁₋ₓInₓF₄₊ₓ', ion: 'F⁻', journal: 'Electrochemistry 94, 117004', doi: '10.5796/electrochemistry.26-00082' },
+  { date: '2026.11', material: 'β‑PbSn₁₋ₓInₓF₄₊ₓ', ion: 'F⁻', journal: 'Electrochemistry 94, 117004', doi: '10.5796/electrochemistry.26-00082' },
   { date: '2026.09', material: { ja: 'Li⁺ 伝導体のトポロジー探索', en: 'Topology screening of Li⁺ conductors' }, ion: 'Li⁺', journal: 'J. Am. Chem. Soc. 148, 47703', doi: '10.1021/jacs.6c00345' },
   { date: '2026.09', material: 'Na₁₁Sn₂PS₁₂ (Cl, Br)', ion: 'Na⁺', journal: 'ACS Appl. Energy Mater. 9, 12343', doi: '10.1021/acsaem.6c01715' },
   { date: '2026.08', material: { ja: 'Bi 置換 PbSnF₄', en: 'Bi-substituted PbSnF₄' }, ion: 'F⁻', journal: 'Small Struct. 7, e70579', doi: '10.1002/sstr.70579' },
@@ -66,14 +67,14 @@ export default function Home() {
     ['学位', '博士（工学）2020年'],
     ['専門', '固体イオニクス・材料インフォマティクス'],
     ['連絡先', 'matsui.n.ee49[at]m.isct.ac.jp'],
-    ['居室', 'すずかけ台キャンパス G1-914']
+    ['居室', 'すずかけ台キャンパス G1-1020']
   ] : [
     ['Position', 'Associate Professor'],
     ['Affiliation', 'Dept. of Chemical Science and Engineering, Institute of Science Tokyo'],
     ['Degree', 'Ph.D. in Engineering (2020)'],
     ['Field', 'Solid-state ionics and materials informatics'],
     ['Email', 'matsui.n.ee49[at]m.isct.ac.jp'],
-    ['Office', 'Suzukakedai Campus G1-914']
+    ['Office', 'Suzukakedai Campus G1-1020']
   ]
 
   // Opening film chapters (seconds into public/video/opening.mp4)
@@ -222,9 +223,9 @@ export default function Home() {
                 <li key={r.doi} className="bg-[#1c1c1c] rounded-[6px] p-5 flex flex-col">
                   <div className="flex items-center gap-3 text-[13px] text-[#9a9a9a] mb-3 tabular-nums">
                     <span>{r.date}</span>
-                    <span className="text-black bg-[#76b900] rounded-full px-2 py-0.5 font-semibold">{r.ion}</span>
+                    <span className="text-black bg-[#76b900] rounded-full px-2 py-0.5 font-semibold"><Chem>{r.ion}</Chem></span>
                   </div>
-                  <div className="text-[1.1rem] font-semibold leading-snug mb-2">{L(r.material)}</div>
+                  <div className="text-[1.1rem] font-semibold leading-snug mb-2"><Chem>{L(r.material)}</Chem></div>
                   <div className="text-[14px] text-[#9a9a9a] mb-5">{r.journal}</div>
                   <a href={`https://doi.org/${r.doi}`} target="_blank" rel="noopener noreferrer" className={`${greenLink} mt-auto self-start text-[14px]`}>{ja ? '論文を読む' : 'Read the paper'}</a>
                 </li>
@@ -262,7 +263,7 @@ export default function Home() {
 
         <footer className="border-t border-[#262626]">
           <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row justify-between gap-3 text-[13px] text-[#9a9a9a]">
-            <div>© 2026 Naoki Matsui　{ja ? '東京科学大学 すずかけ台キャンパス G1-914' : 'Institute of Science Tokyo, Suzukakedai Campus G1-914'}</div>
+            <div>© 2026 Naoki Matsui　{ja ? '東京科学大学 すずかけ台キャンパス G1-1020' : 'Institute of Science Tokyo, Suzukakedai Campus G1-1020'}</div>
             <Link href="/access" className="hover:text-white transition-colors">{ja ? 'アクセス' : 'Access'}</Link>
           </div>
         </footer>

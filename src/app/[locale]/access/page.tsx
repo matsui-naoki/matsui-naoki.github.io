@@ -95,11 +95,11 @@ export default function Access() {
                             〒226-8503<br/>
                             神奈川県横浜市緑区長津田町4259<br/>
                             東京科学大学 すずかけ台キャンパス<br/>
-                            G1棟 9階 914号室
+                            G1棟 10階 1020号室
                           </>
                         ) : (
                           <>
-                            G1-914, 9th floor, Building G1<br/>
+                            G1-1020, 10th floor, Building G1<br/>
                             Suzukakedai Campus, Institute of Science Tokyo<br/>
                             4259 Nagatsuta-cho, Midori-ku, Yokohama<br/>
                             Kanagawa 226-8503, Japan
@@ -128,7 +128,7 @@ export default function Access() {
                     <div>
                       <h3 className="text-lg font-bold text-[#ffffff] mb-2">{t('phoneLabel')}</h3>
                       <p className="text-[#cfcfcf] font-mono">
-                        045-924-5561 {locale === 'ja' ? '(研究室直通)' : '(Direct line)'}
+                        045-924-5570 {locale === 'ja' ? '(研究室直通)' : '(Direct line)'}
                       </p>
                     </div>
                   </div>

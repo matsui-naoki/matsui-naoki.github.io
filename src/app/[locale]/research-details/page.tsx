@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import Chem from '@/components/Chem'
 
 export default function ResearchDetails() {
   const t = useTranslations('researchDetails')
@@ -149,7 +150,7 @@ export default function ResearchDetails() {
                       <h4 className="font-bold text-[#76b900] mb-2">{t('achievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {lithiumAchievements.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>
@@ -182,7 +183,7 @@ export default function ResearchDetails() {
                       <h4 className="font-bold text-[#76b900] mb-2">{t('mainAchievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {fluorideAchievements.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>
@@ -217,12 +218,12 @@ export default function ResearchDetails() {
                     {t('hydrideTitle')}
                   </h2>
                   <div className="space-y-4 text-[#cfcfcf]">
-                    <p>{t('hydrideDesc')}</p>
+                    <p><Chem>{t('hydrideDesc')}</Chem></p>
                     <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
                       <h4 className="font-bold text-[#76b900] mb-2">{t('researchContents')}</h4>
                       <ul className="text-sm space-y-1">
                         {hydrideContents.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>
@@ -260,12 +261,12 @@ export default function ResearchDetails() {
                     {t('anionTitle')}
                   </h2>
                   <div className="space-y-4 text-[#cfcfcf]">
-                    <p>{t('anionDesc')}</p>
+                    <p><Chem>{t('anionDesc')}</Chem></p>
                     <div className="bg-[#1a1a1a] rounded p-4 border border-[#76b900]/20">
                       <h4 className="font-bold text-[#76b900] mb-2">{t('achievements')}</h4>
                       <ul className="text-sm space-y-1">
                         {anionAchievements.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>
@@ -297,7 +298,7 @@ export default function ResearchDetails() {
                       <h4 className="font-bold text-[#76b900] mb-2">{t('approach')}</h4>
                       <ul className="text-sm space-y-1">
                         {mlApproaches.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>
@@ -335,7 +336,7 @@ export default function ResearchDetails() {
                       <h4 className="font-bold text-[#e0c060] mb-2">{t('method')}</h4>
                       <ul className="text-sm space-y-1">
                         {htsMethods.map((item, index) => (
-                          <li key={index}>• {item}</li>
+                          <li key={index}>• <Chem>{item}</Chem></li>
                         ))}
                       </ul>
                     </div>

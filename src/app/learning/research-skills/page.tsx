@@ -6,6 +6,7 @@ import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { chemHtml } from '@/lib/chem'
 
 // Define the markdown file mappings
 const markdownFiles = [
@@ -207,7 +208,7 @@ export default function ResearchSkillsPage() {
     html = html.replace(/<div\s+class="large-photo-container">/g, '<div class="flex justify-center my-8">')
     html = html.replace(/<div\s+class="large-photo-panel">/g, '<div class="text-center">')
     
-    return html
+    return chemHtml(html)
   }
 
   const renderContent = (html: string) => {

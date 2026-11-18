@@ -102,3 +102,9 @@ h1, h2, h3, .display { font-weight: 700; font-variation-settings: "SHRP" 0; lett
 }
 
 :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 { letter-spacing: 0; }
+
+/* chemical formulas (src/components/Chem.tsx): indices and charges without disturbing line height */
+.chem sub, .chem sup { font-size: 0.7em; line-height: 0; position: relative; vertical-align: baseline; }
+.chem sub { bottom: -0.25em; }
+.chem sup { top: -0.55em; margin-left: 0.04em; }
+.chem i { font-style: italic; padding-right: 0.03em; }

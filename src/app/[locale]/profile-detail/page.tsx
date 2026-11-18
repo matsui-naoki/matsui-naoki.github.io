@@ -137,7 +137,7 @@ export default function ProfileDetailPage() {
                 </div>
                 <div>
                   <span className="text-[#76b900] font-semibold">{t('telFax')}</span>
-                  <p className="text-[#ffffff]">045-924-5561</p>
+                  <p className="text-[#ffffff]">045-924-5570</p>
                 </div>
               </div>
             </div>

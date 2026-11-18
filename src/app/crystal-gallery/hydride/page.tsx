@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 import FBXCrystalGallery from '@/components/FBXCrystalGallery'
 import { hydrideCrystals } from '@/lib/crystalFbxData'
+import Chem from '@/components/Chem'
 
 export default function HydridePage() {
   return (
@@ -28,7 +29,7 @@ export default function HydridePage() {
               Hydride Ion Conductors
             </p>
             <p className="text-[#9a9a9a] max-w-3xl mx-auto">
-              ヒドリドイオン（H⁻）を伝導する革新的な電池材料。
+              ヒドリドイオン（<Chem>H⁻</Chem>）を伝導する革新的な電池材料。
               新しい電池化学の可能性を秘めた最先端の研究分野です。
             </p>
           </motion.div>
@@ -79,7 +80,7 @@ export default function HydridePage() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">▸</span>
-                    新電池化学 - H⁻イオンの特異な性質
+                    新電池化学 - <Chem>H⁻</Chem>イオンの特異な性質
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">▸</span>
@@ -100,7 +101,7 @@ export default function HydridePage() {
             <div className="mt-6 p-4 bg-[#111111] rounded border border-[#262626]">
               <h4 className="font-semibold text-[#8fd400] mb-2">最新の研究動向</h4>
               <p className="text-sm text-[#cfcfcf]">
-                ヒドリドイオン伝導体は比較的新しい研究分野です。最近では上記以外にもLaHxで室温でのイオン伝導が相次いで報告されています。複合カチオン系材料では、Ba0.5Ca0.35Na0.15H1.85が室温で10⁻⁵ S/cm程度の伝導率を示し、新しい電池系の実現可能性を示しています。
+                ヒドリドイオン伝導体は比較的新しい研究分野です。最近では上記以外にも<Chem>LaHₓ</Chem>で室温でのイオン伝導が相次いで報告されています。複合カチオン系材料では、<Chem>Ba₀.₅Ca₀.₃₅Na₀.₁₅H₁.₈₅</Chem>が室温で<Chem>10⁻⁵</Chem> S/cm程度の伝導率を示し、新しい電池系の実現可能性を示しています。
               </p>
             </div>
           </motion.div>

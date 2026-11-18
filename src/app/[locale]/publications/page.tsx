@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import Chem from '@/components/Chem'
 
 export default function PublicationsPage() {
   const t = useTranslations('publications')
@@ -444,7 +445,7 @@ export default function PublicationsPage() {
                 </div>
 
                 <h3 className="text-lg font-bold text-[#ffffff] mb-3 leading-tight">
-                  {pub.title}
+                  <Chem>{pub.title}</Chem>
                 </h3>
 
                 <p className="text-[#cfcfcf] text-sm mb-2 leading-relaxed">
@@ -498,7 +499,7 @@ export default function PublicationsPage() {
                     </div>
 
                     <h3 className="text-lg font-bold text-[#ffffff] mb-3 leading-tight">
-                      {review.title}
+                      <Chem>{review.title}</Chem>
                     </h3>
 
                     <p className="text-[#cfcfcf] text-sm mb-2 leading-relaxed">

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import Chem from '@/components/Chem'
 
 const publications = [
   {
@@ -119,7 +120,7 @@ export default function PublicationsSection() {
                           {pub.type === 'journal' ? '学術誌' : '学会発表'}
                         </span>
                       </div>
-                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2">{pub.title}</h3>
+                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2"><Chem>{pub.title}</Chem></h3>
                       <p className="text-[#9a9a9a] text-sm mb-2">{pub.authors}</p>
                       <p className="text-[#8fd400] text-sm">
                         {pub.type === 'journal' ? pub.journal : `${pub.conference}, ${pub.location}`}
@@ -152,7 +153,7 @@ export default function PublicationsSection() {
                       {new Date(news.date).toLocaleDateString('ja-JP')}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2">{news.title}</h3>
+                      <h3 className="text-lg font-semibold text-[#ffffff] mb-2"><Chem>{news.title}</Chem></h3>
                       <p className="text-[#cfcfcf] leading-relaxed">{news.description}</p>
                     </div>
                   </div>
