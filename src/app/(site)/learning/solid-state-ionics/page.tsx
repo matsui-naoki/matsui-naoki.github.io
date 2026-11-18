@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import SimpleNavigation from '@/components/SimpleNavigation'
 import { chemHtml } from '@/lib/chem'
+import { mdFigures } from '@/lib/mdFigure'
 
 // Define the markdown file mappings
 const markdownFiles = [
@@ -125,6 +126,9 @@ export default function SolidStateIonics() {
     html = html.replace(/<sup>(.*?)<\/sup>/g, '<sup class="text-xs">$1</sup>')
     html = html.replace(/<sub>(.*?)<\/sub>/g, '<sub class="text-xs">$1</sub>')
     
+    // Figures (before links, which would swallow "[alt](src)")
+    html = mdFigures(html)
+
     // Links
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-[#76b900] hover:text-[#8fd400] underline">$1</a>')
     
@@ -268,7 +272,7 @@ export default function SolidStateIonics() {
         </aside>
 
         {/* Content Area */}
-        <main className="flex-1 max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+        <main className="flex-1 min-w-0 max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
           <motion.div
             key={selectedContent.id}
             initial={{ opacity: 0, y: 20 }}

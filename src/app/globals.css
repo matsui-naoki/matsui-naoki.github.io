@@ -108,3 +108,6 @@ h1, h2, h3, .display { font-weight: 700; font-variation-settings: "SHRP" 0; lett
 .chem sub { bottom: -0.25em; }
 .chem sup { top: -0.55em; margin-left: 0.04em; }
 .chem i { font-style: italic; padding-right: 0.03em; }
+
+/* Learning pages: let long URLs and identifiers wrap instead of widening the page on phones */
+.markdown-content :is(p, li, a, td, th, figcaption, blockquote) { overflow-wrap: anywhere; }

@@ -17,6 +17,8 @@ VASPは、密度汎関数理論（DFT）に基づく第一原理計算パッケ�
 
 VASPの構造最適化は、電子密度の最適化（Electronic loop）と構造最適化（Ionic loop）の二重のループで進みます。
 
+![VASPの電子ループとイオンループの模式図](/learning/vasp/scf-ionic-loops.webp "電子ループ（左）で電子密度とエネルギーを収束させ、その力を使ってイオンループ（右）で原子を動かします。両者を交互に繰り返し、力がEDIFFG以下になると緩和構造が得られます。")
+
 #### 電子密度の最適化（Electronic loop）
 1. 初期電子密度を設定します：E<sub>n</sub> = …（n=1）
 2. 勾配法（？）で電子密度を変更します：E<sub>n+1</sub> = …、ΔE = E<sub>n+1</sub> - E<sub>n</sub>
@@ -36,6 +38,8 @@ VASPの構造最適化は、電子密度の最適化（Electronic loop）と構�
 
 最適化されたターゲット系Xのエネルギーとして、例えばE<sub>X</sub> = -5 eVといった値が得られます。しかし、このエネルギーの絶対値そのものには意味がありません。意味を持つのは相対エネルギーであり、必ず相対エネルギーを使用します。
 
+![相対エネルギーの考え方](/learning/vasp/relative-energy.webp "状態iと状態jをそれぞれ計算し、その差ΔE = E<sub>X,j</sub> − E<sub>X,i</sub>を議論します。ΔEが負（例：−1 eV）なら発熱的です。")
+
 #### 相対エネルギーの種類
 
 代表的な相対エネルギーには、次の5種類があります。
@@ -50,6 +54,8 @@ VASPの構造最適化は、電子密度の最適化（Electronic loop）と構�
 
 5. **欠陥形成エネルギー**：内在欠陥にはFrenkel型（M<sub>M</sub> + V<sub>i</sub> → V<sub>M</sub> + M<sub>i</sub>）とSchottky型（M<sub>M</sub> + X<sub>X</sub> → V<sub>M</sub> + V<sub>X</sub> + MX）があります。外因性欠陥はMO<sub>2</sub> → x/2O<sub>2</sub> + MO<sub>2-x</sub>のように、ドーピングはMO<sub>2</sub> + 0.1AO → M<sub>0.9</sub>A<sub>0.1</sub>O<sub>1.9</sub> + 0.1MO<sub>2</sub>のように表されます。
 
+![移動エネルギーの模式図](/learning/vasp/migration-energy.webp "移動エネルギーE<sub>mig</sub>は、初期状態とサドルポイント（鞍点）のエネルギー差です。図はF<sup>−</sup>空孔（V<sub>F</sub>）を介したイオンの移動の例です。")
+
 **相対エネルギーは反応によって厳密に定義されます！** 言い換えれば、上記の指標を得るためには、事前に反応を定義しておく必要があります。
 
 ### 生成エネルギーの曖昧さ
@@ -60,6 +66,24 @@ VASPの構造最適化は、電子密度の最適化（Electronic loop）と構�
 
 生成エネルギーとE<sub>hull</sub>は同じものではありません。生成エネルギーは金属（および/またはガス）から化合物への反応エネルギーによって定義されます。一方、例えばLi<sub>2</sub>S + S → 2LiSという反応を考えると、E<sub>hull</sub>(LiS) [eV atom<sup>-1</sup>] = (2E(LiS) - E(Li<sub>2</sub>S) - E(S))/4のように計算されます。
 
+![Li–S系の生成エネルギーとEhullの違い](/learning/vasp/formation-vs-ehull.webp "Li–S二元系の例。縦軸は原子あたりの生成エネルギー、横軸は組成です。生成エネルギーE<sub>F</sub>は単体（Li、S）を結んだ点線からの深さ、E<sub>hull</sub>は安定相を結んだ凸包（赤線）からの高さです。")
+
+#### 凸包（convex hull）とE<sub>hull</sub>の考え方
+
+Li–S二元系で、LiSのE<sub>hull</sub>を求める手順を考えます。まず安定な構造（Li、S、Li<sub>2</sub>S）を特定し、それらを結んだ凸包（convex hull）を作ります。次に、ターゲットであるLiSをこの図の上に置きます。
+
+LiSが凸包より上にある場合、E<sub>hull</sub>は正の値になります。このときLiSの競合相はLi<sub>2</sub>SとSであり、E<sub>hull</sub>は分解反応LiS → 1/2Li<sub>2</sub>S + 1/2Sの反応エネルギーΔE（分解エネルギー）を使って、E<sub>hull</sub> = −ΔEと表されます。
+
+![LiSが凸包より上にある場合](/learning/vasp/ehull-above-hull.webp "LiSが凸包の上にあるとき、凸包までの高さがE<sub>hull</sub>（正の値）です。競合相はLi<sub>2</sub>SとSです。")
+
+一方、LiSが既存の凸包より下にある場合は、LiS自身が新たな安定相となって凸包が更新され、E<sub>hull</sub>はゼロになります。このときの反応は「凸包上のLiS → LiS」であり、ΔE = 0です。
+
+![LiSが凸包より下にある場合](/learning/vasp/ehull-on-new-hull.webp "LiSが既存の凸包（点線）より下にあると、凸包が更新され（実線）、LiSのE<sub>hull</sub>はゼロになります。")
+
+このように、E<sub>hull</sub>の測り方には「更新前の凸包に対して測る」方法と「更新後の凸包に対して測る」方法の2通りがあります。ほとんどの場合は更新後の凸包が使われますが、凸包を更新すると、他の構造のE<sub>hull</sub>まで変わってしまうという問題があります。そのため、GNoMEやMatterverseでは、Materials Projectの更新前（固定）の凸包に対するE<sub>hull</sub>を用いています。pymatgenの相図オブジェクトでは、`allow_negative`の指定でこれを切り替えられます。更新前の凸包に対して測る場合（`allow_negative=True`）は負の値をとりえ、更新後の凸包に対して測る場合（`allow_negative=False`）はゼロになります。
+
+![更新前の凸包と更新後の凸包](/learning/vasp/ehull-previous-vs-renewed.webp "青線が更新前の凸包、赤線がLiSを加えて更新した凸包です。LiS<sub>2</sub>のE<sub>hull</sub>は、どちらの凸包に対して測るかで値が変わります。")
+
 ### Energy above the hullの計算
 
 E<sub>hull</sub>は、次の手順で計算します。
@@ -67,6 +91,8 @@ E<sub>hull</sub>は、次の手順で計算します。
 1. 相図を作成し、化学系内の安定エントリ（●）を特定します
 2. ターゲット化合物の競合相を特定します
 3. 分解反応を定義してΔEを計算します（ΔE = -E<sub>hull</sub>）
+
+![三元系での競合相](/learning/vasp/competing-phases.webp "三元系A–B–Cの相図での競合相の例。ターゲットが安定相どうしを結ぶ線（タイライン）上にある場合は2相、安定相がつくる三角形の内側にある場合は3相が競合相になります（●は熱力学的に安定な化合物）。")
 
 ### E<sub>hull</sub>の実用的な計算
 
@@ -227,6 +253,8 @@ ISPIN = 1 # スピン分極をオフにする
 3. 2 Li → Mg + Vに置き換えて最適化します（ISIF = 2、ENCUT = 400、ISYM = 0）。このとき、Mgを含むPOTCARと、新しいセルに合わせたKPOINTSを準備します
 4. 得られた構造を用いて、相安定性解析やMDなどを行います
 
+![異原子価元素置換の手順](/learning/vasp/aliovalent-substitution.webp "LiFを例にした異原子価置換の手順。プリミティブセルの最適化（1）、スーパーセルの作成と再最適化（2）、2Li → Mg + 空孔の置換と内部座標の最適化（3）の順に進めます。")
+
 ---
 
 ## 背景電荷補償系の実践
@@ -235,9 +263,17 @@ ISPIN = 1 # スピン分極をオフにする
 
 M<sub>S</sub><sup>C</sup>という表記では、Mは元素、ホール（h）、電子（e）、または空孔（V）を表し、Sはホスト格子内のサイトを、Cは電荷（X：中性、●：正、'：負）を表します。
 
+イオン結晶では、LiFからLiを1つ取り除く操作は、Li<sup>+</sup>の空孔V<sub>Li</sub>′を作ることとして扱うべきです。単純に原子ごと取り除くと、電子も一緒に抜けて中性の空孔V<sub>Li</sub><sup>×</sup>になってしまいます。負に帯電したV<sub>Li</sub>′を作るには、系の電子数NELECTを自分で指定し、余った電荷を一様な背景電荷で打ち消します。これを背景電荷補償と呼びます。
+
+![中性空孔と負に帯電した空孔の違い](/learning/vasp/kroger-vink-defects.webp "左：Liを原子ごと除くと中性の空孔V<sub>Li</sub><sup>×</sup>になり、NELECTの指定は不要です（40 → 37）。右：Li<sup>+</sup>として除き負に帯電した空孔V<sub>Li</sub>′を作るには、NELECTを指定する必要があります（40 → 38）。数字は各原子の価電子数（Li_svは3、Li<sup>+</sup>は2、Fは7、F<sup>−</sup>は8）です。")
+
 ### 除去する電子数の数え方
 
 電荷補償を背景電荷で扱う場合は、NELECTで系の電子数を指定します。このとき、除去する電子の数はPOTCARの価電子数に依存します。例として、"Li"ではなく"Li_sv"を使う場合を考えます。"Li_sv"は3電子を持ちます（"Li"ポテンシャルは1電子です）。Li<sup>+</sup>は"Li_sv"では2電子となります（Li<sup>+</sup>を"Li"で表すと0電子です）。したがって、Li<sup>+</sup>としてLiを除去する場合は2電子のみを除去します（3電子ではありません！）。同様に、F<sup>-</sup>としてFを除去する場合は8電子を除去します（7電子ではありません）。
+
+実際の手順では、まずスーパーセルを作って最適化し（ISIF = 3、ENCUT = 520、ISMEAR = 0）、OUTCARから系の電子数を確認します（`grep NELECT OUTCAR`）。例えばNELECT = 300であれば、Li<sup>+</sup>を1つ除く場合はNELECT = 300 − 2 = 298と指定し、ISIF = 2、ENCUT = 400、ISYM = 0で最適化します。
+
+![電荷が釣り合わない系の計算手順](/learning/vasp/charge-unbalanced-nelect.webp "Li_svポテンシャルを使い、LiFのスーパーセルからLi<sup>+</sup>を1つ除く例。OUTCARでNELECT = 300を確認し、2電子少ないNELECT = 298を指定して最適化します。")
 
 ## 欠陥構造最適化のためのINCAR
 
