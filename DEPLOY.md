@@ -22,7 +22,7 @@ custom domain as the one canonical copy and the github.io copy as a duplicate of
    - Framework preset: None (or Next.js (Static HTML Export))
    - Build command: `npm run build`
    - Build output directory: `out`
-   - Environment variables: `NODE_VERSION` = `20`, `NEXT_PUBLIC_SITE_URL` = `https://naokimatsui.com`
+   - Environment variables: `NODE_VERSION` = `22`, `NEXT_PUBLIC_SITE_URL` = `https://naokimatsui.com`
 3. Save and deploy. The site appears at `https://<project>.pages.dev`.
 4. Custom domains → add `naokimatsui.com` (and `www.naokimatsui.com`, redirected to the apex).
 
