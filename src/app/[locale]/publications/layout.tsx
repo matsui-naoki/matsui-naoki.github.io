@@ -1,22 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return locale === 'en'
-    ? {
-        title: "Publications | Matsui Lab, Institute of Science Tokyo",
-        description: "Publication list of Dr. Naoki Matsui: solid-state batteries, lithium-ion and fluoride-ion conductors in Science, JACS, Chem. Mater., and more.",
-      }
-    : {
-        title: "研究業績・論文リスト | 松井研(東京科学大学の電池研究室)",
-        description: "松井直喜准教授の論文リスト。Science、JACS、Chem. Mater.等に掲載された全固体電池・リチウムイオン電池・フッ化物電池・イオン伝導体の研究成果。",
-      };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return pageMetadata(locale, 'publications', {
+    ja: { title: '研究業績・論文リスト', description: '松井直喜(東京科学大学 准教授)の原著論文、総説、学会発表の一覧。固体イオニクス、全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体。' },
+    en: { title: 'Publications', description: 'Papers, reviews and presentations by Naoki Matsui (Associate Professor, Institute of Science Tokyo) on solid-state ionics, all-solid-state batteries, and fluoride- and hydride-ion conductors.' }
+  })
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function PublicationsLayout({ children }: { children: React.ReactNode }) {
+  return children
 }

@@ -13,63 +13,63 @@ export default function ResearchDetails() {
   const locale = useLocale()
 
   const fluorideAchievements = locale === 'ja' ? [
-    'CsPb₀.₉K₀.₁F₂.₉における極小活性化エネルギー（7.9 kJ/mol）の達成',
-    '孤立電子対の動的再配向によるイオン輸送促進の初実証',
-    '室温で10⁻⁴ S/cmを超える新たなSn系タイソナイト材料の開発',
-    'Y₂C↔Y₂CF₂のF⁻可逆インターカレーション負極活物質の開発'
+    'CsPb₀.₉K₀.₁F₂.₉で極めて低い活性化エネルギー（7.9 kJ mol⁻¹）を達成',
+    '孤立電子対の動的な再配向がイオン輸送を促進することを初めて実証',
+    '室温で10⁻⁴ S cm⁻¹を超えるイオン伝導率を示す、Sn系タイソナイト型材料の開発',
+    'F⁻が可逆的にインターカレーションするY₂C↔Y₂CF₂負極活物質の開発'
   ] : [
-    'Achievement of minimal activation energy (7.9 kJ/mol) in CsPb₀.₉K₀.₁F₂.₉',
-    'First demonstration of ion transport promotion by dynamic reorientation of lone pair electrons',
-    'Development of new Sn-based tysonite materials exceeding 10⁻⁴ S/cm at room temperature',
-    'Development of F⁻ reversible intercalation anode material Y₂C↔Y₂CF₂'
+    'Extremely low activation energy (7.9 kJ mol⁻¹) achieved in CsPb₀.₉K₀.₁F₂.₉',
+    'First demonstration that dynamic reorientation of lone pairs promotes ion transport',
+    'New Sn-based tysonite-type materials with ionic conductivity above 10⁻⁴ S cm⁻¹ at room temperature',
+    'Y₂C↔Y₂CF₂ anode active material with reversible F⁻ intercalation'
   ]
 
   const lithiumAchievements = locale === 'ja' ? [
-    '配位多面体モチーフを特徴量とした機械学習モデルによる新規Li導電体の発見（JACS掲載）',
-    '硫化物系、酸化物系など多様な材料系での探索'
+    '配位多面体モチーフを特徴量とした機械学習モデルによる新規Li⁺伝導体の発見（JACS掲載）',
+    '硫化物系・酸化物系など多様な材料系での探索'
   ] : [
-    'Discovery of new Li conductors using machine learning models with coordination polyhedra motifs as features (published in JACS)',
-    'Exploration in diverse material systems including sulfides and oxides'
+    'Discovery of new Li⁺ conductors with machine learning models that use coordination-polyhedron motifs as features (published in JACS)',
+    'Exploration of diverse material systems, including sulfides and oxides'
   ]
 
   const hydrideContents = locale === 'ja' ? [
     'ペロブスカイト型ヒドリド伝導体：SrLiH₃をベースとした新規組成の開発',
-    'Sr₂LiH₂Nのヒドリドイオン導電性の報告',
+    'Sr₂LiH₂Nにおけるヒドリドイオン伝導の報告',
     'K₂NiF₄型酸水素化物：La₂LiHO₃の常圧合成法の確立'
   ] : [
-    'Perovskite-type hydride conductors: Development of new compositions based on SrLiH₃',
-    'Report on hydride ion conductivity of Sr₂LiH₂N',
-    'K₂NiF₄-type oxyhydrides: Establishment of ambient pressure synthesis of La₂LiHO₃'
+    'Perovskite-type hydride conductors: new compositions based on SrLiH₃',
+    'Hydride ion conduction in Sr₂LiH₂N',
+    'K₂NiF₄-type oxyhydrides: an ambient-pressure synthesis route for La₂LiHO₃'
   ]
 
   const anionAchievements = locale === 'ja' ? [
-    'Y₂C↔Y₂CF₂のフッ化物可逆インターカレーション反応の実証',
+    'Y₂C↔Y₂CF₂におけるフッ化物イオンの可逆的なインターカレーション反応の実証',
     '新規負極活物質としてのカーバイド系材料の開発',
     'フッ化物電池への応用展開'
   ] : [
-    'Demonstration of reversible fluoride intercalation reaction of Y₂C↔Y₂CF₂',
-    'Development of carbide-based materials as new anode active materials',
+    'Demonstration of reversible fluoride-ion intercalation in Y₂C↔Y₂CF₂',
+    'Carbide-based materials as new anode active materials',
     'Application to fluoride batteries'
   ]
 
   const mlApproaches = locale === 'ja' ? [
-    '配位多面体モチーフを特徴量とした機械学習モデル構築',
-    '第一原理計算による伝導メカニズム解析',
+    '配位多面体モチーフを特徴量とした機械学習モデルの構築',
+    '第一原理計算による伝導メカニズムの解析',
     'ニューラルネットワークポテンシャルを用いた分子動力学シミュレーション'
   ] : [
-    'Building machine learning models using coordination polyhedra motifs as features',
-    'Conduction mechanism analysis by first-principles calculations',
-    'Molecular dynamics simulation using neural network potentials'
+    'Machine learning models that use coordination-polyhedron motifs as features',
+    'Analysis of conduction mechanisms by first-principles calculations',
+    'Molecular dynamics simulations with neural network potentials'
   ]
 
   const htsMethods = locale === 'ja' ? [
-    '組成傾斜薄膜による迅速な組成最適化',
+    '組成傾斜薄膜による組成の迅速な最適化',
     '自動化された合成・評価システム',
     'インピーダンス測定による高速スクリーニング'
   ] : [
-    'Rapid composition optimization using composition gradient thin films',
+    'Rapid composition optimization with composition-gradient thin films',
     'Automated synthesis and evaluation systems',
-    'High-speed screening by impedance measurement'
+    'High-speed screening by impedance measurements'
   ]
 
   return (
@@ -105,8 +105,8 @@ export default function ResearchDetails() {
           >
             <div className="relative">
               <Image
-                src="/elements.png"
-                alt="Carrier Ions Elements"
+                src="/elements.webp"
+                alt="Carrier ions"
                 width={1200}
                 height={400}
                 className="w-full rounded shadow-2xl border border-[#262626]"

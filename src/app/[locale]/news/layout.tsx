@@ -1,22 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return locale === 'en'
-    ? {
-        title: "News | Matsui Lab, Institute of Science Tokyo",
-        description: "Latest news from the Kanno-Suzuki-Matsui Lab: publications, conferences, beamtime experiments, and lab events.",
-      }
-    : {
-        title: "ニュース | 松井研(東京科学大学の電池研究室)",
-        description: "菅野・鈴木・松井研究室の最新ニュース。論文掲載、学会発表、SPring-8・J-PARCでの実験、研究室イベントなど。",
-      };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return pageMetadata(locale, 'news', {
+    ja: { title: 'ニュース', description: '菅野・鈴木・松井研究室(東京科学大学)のニュース。論文掲載、学会発表、放射光・中性子実験、研究室の行事など。' },
+    en: { title: 'News', description: 'News from the Kanno–Suzuki–Matsui Lab at Institute of Science Tokyo: papers, conferences, synchrotron and neutron experiments, and lab events.' }
+  })
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function NewsLayout({ children }: { children: React.ReactNode }) {
+  return children
 }

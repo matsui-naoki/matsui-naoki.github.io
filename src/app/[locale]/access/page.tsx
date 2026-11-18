@@ -15,7 +15,7 @@ export default function Access() {
     {
       icon: 'FOOD',
       title: locale === 'ja' ? '食堂・カフェ' : 'Cafeteria',
-      desc: locale === 'ja' ? 'MOTOTECHレストラン（モーニング営業あり）' : 'MOTOTECH Restaurant (morning service available)'
+      desc: locale === 'ja' ? 'MOTOTECHレストラン（モーニング営業あり）' : 'MOTOTECH Restaurant (also open for breakfast)'
     },
     {
       icon: 'LIB',
@@ -92,7 +92,7 @@ export default function Access() {
                       <p className="text-[#cfcfcf] leading-relaxed">
                         {locale === 'ja' ? (
                           <>
-                            〒226-8503<br/>
+                            〒226-8501<br/>
                             神奈川県横浜市緑区長津田町4259<br/>
                             東京科学大学 すずかけ台キャンパス<br/>
                             G1棟 10階 1020号室
@@ -102,7 +102,7 @@ export default function Access() {
                             G1-1020, 10th floor, Building G1<br/>
                             Suzukakedai Campus, Institute of Science Tokyo<br/>
                             4259 Nagatsuta-cho, Midori-ku, Yokohama<br/>
-                            Kanagawa 226-8503, Japan
+                            Kanagawa 226-8501, Japan
                           </>
                         )}
                       </p>
@@ -128,7 +128,7 @@ export default function Access() {
                     <div>
                       <h3 className="text-lg font-bold text-[#ffffff] mb-2">{t('phoneLabel')}</h3>
                       <p className="text-[#cfcfcf] font-mono">
-                        045-924-5570 {locale === 'ja' ? '(研究室直通)' : '(Direct line)'}
+                        045-924-5570 {locale === 'ja' ? '（研究室直通）' : '(direct line)'}
                       </p>
                     </div>
                   </div>
@@ -240,8 +240,8 @@ export default function Access() {
               <Image
                 src="/access_route.jpg"
                 alt={locale === 'ja'
-                  ? 'すずかけ台駅からG1棟へのアクセスマップ - 徒歩約8分'
-                  : 'Access map from Suzukakedai Station to Building G1 - approx. 8 min walk'}
+                  ? 'すずかけ台駅からG1棟へのアクセスマップ（徒歩約8分）'
+                  : 'Access map from Suzukakedai Station to Building G1 (approx. 8 min walk)'}
                 width={1200}
                 height={1200}
                 className="w-full h-auto rounded"
@@ -249,8 +249,8 @@ export default function Access() {
             </div>
             <p className="text-center text-[#9a9a9a] text-sm mt-4">
               {locale === 'ja'
-                ? '赤線: 徒歩ルート（すずかけ台駅→G1棟 約8分） / 青線: 自動車ルート'
-                : 'Red line: Walking route (Suzukakedai Sta. → G1 Bldg. ~8 min) / Blue line: Car route'}
+                ? '赤線：徒歩ルート（すずかけ台駅→G1棟 約8分）／青線：車のルート'
+                : 'Red line: walking route (Suzukakedai Sta. → Bldg. G1, ~8 min) / Blue line: driving route'}
             </p>
           </motion.div>
         </div>
@@ -299,16 +299,16 @@ export default function Access() {
                       <div className="w-2 h-2 bg-[#76b900] rounded-full"></div>
                       <span>
                         {locale === 'ja'
-                          ? '東急田園都市線「すずかけ台駅」徒歩5分'
-                          : 'Tokyu Den-en-toshi Line "Suzukakedai Station" 5 min walk'}
+                          ? '東急田園都市線「すずかけ台駅」から徒歩約8分'
+                          : 'Approx. 8 min walk from Suzukakedai Station (Tokyu Den-en-toshi Line)'}
                       </span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-[#76b900] rounded-full"></div>
                       <span>
                         {locale === 'ja'
-                          ? 'JR横浜線「長津田駅」から東急田園都市線乗り換え'
-                          : 'Transfer from JR Yokohama Line "Nagatsuta Station"'}
+                          ? 'JR横浜線「長津田駅」で東急田園都市線に乗り換え'
+                          : 'From the JR Yokohama Line, change to the Tokyu Den-en-toshi Line at Nagatsuta Station'}
                       </span>
                     </li>
                   </ul>
@@ -353,7 +353,7 @@ export default function Access() {
                       <span>
                         {locale === 'ja'
                           ? '東名高速「横浜町田IC」から約15分'
-                          : 'Tomei Expressway "Yokohama-Machida IC" ~15 min'}
+                          : '~15 min from Yokohama-Machida IC (Tomei Expressway)'}
                       </span>
                     </li>
                     <li className="flex items-center space-x-2">
@@ -361,7 +361,7 @@ export default function Access() {
                       <span>
                         {locale === 'ja'
                           ? '東名高速「横浜青葉IC」から約10分'
-                          : 'Tomei Expressway "Yokohama-Aoba IC" ~10 min'}
+                          : '~10 min from Yokohama-Aoba IC (Tomei Expressway)'}
                       </span>
                     </li>
                   </ul>
@@ -538,7 +538,7 @@ export default function Access() {
                     rel="noopener noreferrer"
                     className="text-[#76b900] text-xs hover:text-[#8fd400] transition-colors"
                   >
-                    {locale === 'ja' ? '公式サイト →' : 'Official Website →'}
+                    {locale === 'ja' ? '公式サイト →' : 'Official website →'}
                   </a>
                 </div>
 
@@ -555,7 +555,7 @@ export default function Access() {
                     rel="noopener noreferrer"
                     className="text-[#76b900] text-xs hover:text-[#8fd400] transition-colors"
                   >
-                    {locale === 'ja' ? '公式サイト →' : 'Official Website →'}
+                    {locale === 'ja' ? '公式サイト →' : 'Official website →'}
                   </a>
                 </div>
               </div>
@@ -585,7 +585,7 @@ export default function Access() {
                     {locale === 'ja' ? '朝日屋' : 'Asahiya'}
                   </h4>
                   <p className="text-[#cfcfcf] text-sm">
-                    {locale === 'ja' ? 'そば・うどん専門店' : 'Soba & Udon specialty restaurant'}
+                    {locale === 'ja' ? 'そば・うどん専門店' : 'Soba and udon restaurant'}
                   </p>
                 </div>
 

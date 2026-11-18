@@ -1,28 +1,31 @@
 
 
-#### 1. create_electric_flow_background
+## 1. create_electric_flow_background
 
-発光ストリングとゴースト処理を組み合わせることで、光や波、電気のようなエフェクトを表現できます。Compositingの設定としては、Compositing nodesからエフェクト→グレア→ミックスと辿り、カラーバランスの色を調整します。一度レンダリングしておくと、compositingで結果を見ながらパラメーターをいじれます。その他の調整としては、マテリアルのサーフェス（放射）の強さをあげたり（5とか）、被写体とカメラの距離を変えたりすると、光の広がり方がかわります。
+発光するストリングとゴースト処理を組み合わせることで、光や波、電気のようなエフェクトを表現できます。Compositingの設定では、Compositing nodesでエフェクト→グレア→ミックスとノードをつなぎ、カラーバランスの色を調整します。一度レンダリングしておくと、Compositingで結果を見ながらパラメータを調整できます。そのほか、マテリアルのサーフェス（放射）の強さを上げたり（5程度）、被写体とカメラの距離を変えたりすると、光の広がり方が変わります。
 
-#### 画像ファイルを背景に設定する方法
+### 画像ファイルを背景に設定する方法
 
-1. 適当な平面を追加して選択
-2. Shadingタブを開く
-3. 下中央辺りの新規ボタンをクリック
-4. プリンシプルBSDFが初期で生成されるのでXキーで削除
-5. 追加したい画像をドラッグアンドドロップ
-6. 画像とマテリアル出力を繋いでテクスチャに反映
+画像ファイルを背景に設定するには、次の手順で平面に画像を貼り付けます。
+
+1. 適当な平面を追加して選択します
+2. Shadingタブを開きます
+3. 画面下部の中央あたりにある「新規」ボタンをクリックします
+4. プリンシプルBSDFが自動で生成されるので、Xキーで削除します
+5. 追加したい画像をドラッグアンドドロップします
+6. 画像ノードとマテリアル出力ノードをつなぎ、テクスチャに反映させます
 
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/BCNH_background.jpg" alt="ed">
+    <img src="/BCNH.jpg" alt="ed">
     <p>結晶構造描画 + 背景用平面に画像を反映</p>
   </div>
 </div>
 
 
-## 5. 背景用3Dマインクラフト地形
-正規分布データの生成や、クラスタリングのデータ分布のイメージ図として使えるコードです。Blender 4.5で動作します（4.2は未検証です）。最後にカラーランプの範囲や色、マテリアルの色などを調整すると、なお良い仕上がりになります。
+## 2. 背景用3Dマインクラフト風地形
+
+正規分布データの生成や、クラスタリングにおけるデータ分布のイメージ図として使えるコードです。Blender 4.5で動作します（4.2では未検証です）。最後にカラーランプの範囲や色、マテリアルの色などを調整すると、さらに良い仕上がりになります。
 ```python
 import bpy
 import bmesh
@@ -345,15 +348,16 @@ if __name__ == "__main__":
 ```
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/terrain.jpg" alt="ed">
+    <img src="/blender/terrain.jpg" alt="ed">
     <p>terrain</p>
   </div>
 </div>
 
 ---
 
-## 6. 背景用雷コード
-色々なパターンの雷を作成できます。
+## 3. 背景用の雷
+
+色々なパターンの雷を作成できるコードです。
 ```python
 import bpy
 import math
@@ -884,26 +888,26 @@ setup_scene_for_lightning()
 print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.objects if 'Lightning' in o.name])}")
 ```
 
-**例1**: 一番シンプルな雷です。なんだかんだこれが一番使いやすいかもしれません。intermediate（中間が太い設定）がおすすめです。
+**例1**: 最もシンプルな雷です。結局のところ、これが一番使いやすいかもしれません。intermediate（中間が太くなる設定）がおすすめです。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/light_simple.jpg" alt="ed">
+    <img src="/blender/light_simple.jpg" alt="ed">
     <p>シンプルな雷</p>
   </div>
 </div>
 
-**例2**: 分岐つき雷で、分岐の方向が主軸と平行に近いタイトなものです。
+**例2**: 分岐つきの雷で、分岐の方向が主軸と平行に近い、まとまった形のものです。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/light_branched.jpg" alt="ed">
+    <img src="/blender/light_branched.jpg" alt="ed">
     <p>分岐つき</p>
   </div>
 </div>
 
-**例3**: 同じく分岐つき雷ですが、分岐の方向が主軸と垂直な、広がりのある樹形ライクな雷です。
+**例3**: 同じく分岐つきの雷ですが、分岐の方向が主軸に対して垂直に近く、広がりのある樹形状の雷です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/light_branched_wide.jpg" alt="ed">
+    <img src="/blender/light_branched_wide.jpg" alt="ed">
     <p>樹形ライク雷</p>
   </div>
 </div>
@@ -911,23 +915,23 @@ print(f"雷の生成完了！ オブジェクト数: {len([o for o in bpy.data.o
 **例4**: 中心から放射状に広がる雷です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/light_sphere.jpg" alt="ed">
+    <img src="/blender/light_sphere.jpg" alt="ed">
     <p>放射状雷</p>
   </div>
 </div>
 
 
-**例5**: 放射状に広がる雷の中心にオブジェクトを配置した例です。random_centerを指定してサイズを適当に大きくすると中心に空間ができるので、そこにボールを配置すると、ボールから放射状に広がる放電模様が描けます。厨二病が喜ぶやつです。
+**例5**: 放射状に広がる雷の中心にオブジェクトを配置した例です。random_centerを指定してサイズを適度に大きくすると中心に空間ができるので、そこにボールを配置すると、ボールから放射状に広がる放電模様を描けます。中二病心をくすぐる一枚です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/light_ball.jpg" alt="ed">
+    <img src="/blender/light_ball.jpg" alt="ed">
     <p>ボールから放電</p>
   </div>
 </div>
 
-## 6. 軌跡エフェクト
+## 4. 軌跡エフェクト
 
-作製に時間をかけた割りには、たいしたものは出来ませんでした。とはいえ、スクラッチでつくると意外と大変なので、自動化したメリットは大きいはずです。
+作成に時間をかけた割には、たいしたものはできませんでした。とはいえ、一から手作業で作ると意外と大変なので、自動化したメリットは大きいはずです。
 ```python
 import bpy
 import math
@@ -1906,39 +1910,39 @@ generate_ball_motion_effect(
 )
 ```
 
-**例1**: 複数本のラインで軌跡を描画した例です。alphaグラデーションに加えて、ランダム=Trueとし、length_rangeを(0.2, 1)などに設定すると良い感じになります。
+**例1**: 複数本のラインで軌跡を描画した例です。alphaグラデーションに加えて、ランダム=Trueとし、length_rangeを(0.2, 1)などに設定すると、うまく表現できます。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/trajectory_line.jpg" alt="ed">
+    <img src="/blender/trajectory_line.jpg" alt="ed">
     <p>グラデーション線軌跡</p>
   </div>
 </div>
 
-**例2**: 残像でホッピングを表現した例です。alphaグラデーションとサイズグラデーションを設定し、軌跡をcircularにすると、ホッピングしている感じになります。
+**例2**: 残像でホッピングを表現した例です。alphaグラデーションとサイズグラデーションを設定し、軌跡をcircularにすると、ホッピングしている様子を表現できます。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/trajectory_ghost.jpg" alt="ed">
+    <img src="/blender/trajectory_ghost.jpg" alt="ed">
     <p>残像の軌跡</p>
   </div>
 </div>
 
-**例3**: 円筒の軌跡です。alphaグラデーションとテーパー比率で調整します。下記の上部がテーパー1（ストレート）、下部がテーパー0（点に収束）です。
+**例3**: 円筒の軌跡です。alphaグラデーションとテーパー比率で形を調整します。下の画像の上部がテーパー1（ストレート）、下部がテーパー0（点に収束）です。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/trajectory_taper.jpg" alt="ed">
+    <img src="/blender/trajectory_taper.jpg" alt="ed">
     <p>テーパー円筒軌跡</p>
   </div>
 </div>
 
-**例4**: 円筒と線を組み合わせた軌跡です。このように組み合わせても構いません。
+**例4**: 円筒と線を組み合わせた軌跡です。このように、複数の表現を組み合わせても構いません。
 <div class="center-large-photo-container">
   <div class="center-large-photo-panel">
-    <img src="./photo/blender/trajectory_taper_line.jpg" alt="ed">
+    <img src="/blender/trajectory_taper_line.jpg" alt="ed">
     <p>円筒と線の複合軌跡</p>
   </div>
 </div>
 
-## xx. 複合電極
+## 5. 複合電極
 ```python
 import bpy
 import random
@@ -3317,7 +3321,7 @@ rocks = rock_array_generator(
 )
 """
 ```
-## 6. 結晶構造の原子・多面体の色をグルーピングして一括色変更するためのコード
+## 6. 結晶構造の原子・多面体の色をグループ化して一括変更するコード
 
 
 ```python
@@ -3522,7 +3526,7 @@ if __name__ == "__main__":
 
 ---
 
-## wrlファイルからfbxファイルへ変換
+## 7. wrlファイルからfbxファイルへの変換
 ```python
 import bpy
 import os

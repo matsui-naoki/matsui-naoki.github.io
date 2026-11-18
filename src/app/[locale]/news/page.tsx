@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import Chem from '@/components/Chem'
 
 export default function NewsPage() {
   const t = useTranslations('news')
@@ -34,7 +35,7 @@ export default function NewsPage() {
       title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載',
       desc: (
         <span>
-          「Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x」Editor&apos;s Choiceに選ばれました。おめでとう!!
+          「Enhanced Room-Temperature Fluoride-Ion Conductivity of <Chem>β‑PbSn₁₋ₓInₓF₄₊ₓ</Chem>」がEditor&apos;s Choiceに選ばれました。おめでとう!!
           <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
@@ -75,16 +76,29 @@ export default function NewsPage() {
     },
     {
       date: '2026.09.16',
-      title: 'Poeppelmeier先生(Northwestern大学)が研究室を訪問',
+      title: 'Poeppelmeier先生（Northwestern大学）が研究室を訪問',
       desc: '',
       category: 'VISIT'
+    },
+    {
+      date: '2026.09.15',
+      title: '学術変革領域「イオン渋滞学」の「若手のハイライト」にインタビュー記事が掲載',
+      desc: (
+        <span>
+          電池研究に進んだ経緯や博士進学のきっかけ、学生へのメッセージについてお話ししました。
+          <a href="https://ion-jamology.jp/news/202408096/" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
+            記事を読む
+          </a>
+        </span>
+      ),
+      category: 'MEDIA'
     },
     {
       date: '2026.09.15',
       title: '亀若さんの筆頭論文がACS Appl. Energy Mater.に掲載',
       desc: (
         <span>
-          「Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution」
+          「Halogen-Dependent Ionic Conductivity in <Chem>Na₁₁Sn₂PS₁₂</Chem>: Reduction by Cl and Enhancement by Br Substitution」
           <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
@@ -94,7 +108,7 @@ export default function NewsPage() {
     },
     {
       date: '2026.09.03',
-      title: 'Poeppelmeier先生(Northwestern大学)の講演を聴講',
+      title: 'Poeppelmeier先生（Northwestern大学）の講演を聴講',
       desc: '',
       category: 'SEMINAR'
     },
@@ -107,7 +121,7 @@ export default function NewsPage() {
     {
       date: '2026.08.20',
       title: '京大陰山研の吉田特定准教授・大阪公立大学林研の本橋助教を訪問',
-      desc: '有意義な材料設計の議論をおこないました。',
+      desc: '材料設計について有意義な議論ができました。',
       category: 'VISIT'
     },
     {
@@ -115,7 +129,7 @@ export default function NewsPage() {
       title: 'M2板倉さんの筆頭論文がSmall Structuresに掲載',
       desc: (
         <span>
-          「Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4」おめでとう!!
+          「Unlocking High Fluoride-Ion Conductivity by Regulating the Order–Disorder Transition in Bi-substituted <Chem>PbSnF₄</Chem>」おめでとう!!
           <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
@@ -138,13 +152,13 @@ export default function NewsPage() {
     {
       date: '2026.07.31',
       title: 'Laboratory Automation研究会にオンライン参加',
-      desc: '分野の急成長にいつも驚かされます.',
+      desc: '分野の急成長にはいつも驚かされます。',
       category: 'CONFERENCE'
     },
     {
       date: '2026.07.30-08.04',
       title: 'OBのAyuさんが共同研究のため来校',
-      desc: '現インドネシア大学講師としてご活躍中。お元気そうで良かったです.',
+      desc: '現在はインドネシア大学の講師としてご活躍中です。お元気そうで良かったです。',
       category: 'VISIT'
     },
     {
@@ -156,7 +170,7 @@ export default function NewsPage() {
     {
       date: '2026.07.17-20',
       title: 'SPring-8 BL02B2で回折実験を実施',
-      desc: '大量の高温sweep測定データを獲得しました。',
+      desc: '高温スイープ測定のデータを大量に取得しました。',
       category: 'EXPERIMENT'
     },
     {
@@ -180,18 +194,18 @@ export default function NewsPage() {
     {
       date: '2026.06.20-21',
       title: 'ゼミ旅行@八丈島',
-      desc: '私だけフライトが悪天候で飛ばず不参加… 学生さんは楽しめたようで良かったです.',
+      desc: '私だけ悪天候でフライトが欠航し不参加…。学生さんは楽しめたようで良かったです。',
       category: 'LAB'
     },
     {
       date: '2026.06.14',
       title: '研究室メンバーでBBQを開催',
-      desc: '学生さんはお疲れ様でした!',
+      desc: '学生さん、お疲れ様でした!',
       category: 'LAB'
     },
     {
       date: '2026.06.12-13',
-      title: '渋滞学領域会議@名古屋に参加',
+      title: 'イオン渋滞学 領域会議@名古屋に参加',
       desc: '進捗を報告しました。',
       category: 'CONFERENCE'
     },
@@ -203,7 +217,7 @@ export default function NewsPage() {
     },
     {
       date: '2026.06.01-04',
-      title: '共同研究先@サンフランシスコを訪問',
+      title: 'サンフランシスコの共同研究先を訪問',
       desc: '有意義なディスカッションでした。',
       category: 'COLLABORATION'
     },
@@ -222,12 +236,12 @@ export default function NewsPage() {
     {
       date: '2026.05.18-21',
       title: 'International Forum of Solid State Batteries@仙台に参加',
-      desc: '最近の取り組みを講演しました。',
+      desc: '最近の取り組みについて講演しました。',
       category: 'CONFERENCE'
     },
     {
       date: '2026.05.13',
-      title: 'NIMSにてアニオン導電性材料の開発を講演',
+      title: 'NIMSでアニオン伝導性材料の開発について講演',
       desc: '',
       category: 'CONFERENCE'
     },
@@ -257,7 +271,7 @@ export default function NewsPage() {
     },
     {
       date: '2026.04.18',
-      title: '研究室有志メンバーで高尾山~相模湖までハイキング',
+      title: '研究室の有志メンバーで高尾山〜相模湖をハイキング',
       desc: '良いリフレッシュになりました!',
       category: 'LAB'
     },
@@ -272,7 +286,7 @@ export default function NewsPage() {
       title: 'OBのAyuさんとの共著論文がJ. Mater. Chem. Aに掲載',
       desc: (
         <span>
-          「Fast hydride-ion conduction in complex hydride Ba2MgH6」複合水素化物Ba2MgH6の高速ヒドリドイオン伝導を報告しました。
+          「Fast hydride-ion conduction in complex hydride <Chem>Ba₂MgH₆</Chem>」複合水素化物<Chem>Ba₂MgH₆</Chem>における高速ヒドリドイオン伝導を報告しました。
           <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
@@ -294,26 +308,26 @@ export default function NewsPage() {
     },
     {
       date: '2026.02.09',
-      title: '立命館大学の鐘先生が来研されて交流・議論',
-      desc: '共同研究に向けた活発な議論が行われました。',
+      title: '立命館大学の鐘先生が来研し、交流・議論',
+      desc: '共同研究に向けて活発に議論しました。',
       category: 'VISIT'
     },
     {
       date: '2026.02.04-06',
       title: '日独交流会議@仙台に参加',
-      desc: '海外研究者と交流・ネットワークを形成しました!',
+      desc: '海外の研究者と交流し、ネットワークを広げました!',
       category: 'CONFERENCE'
     },
     {
       date: '2026.01.31',
       title: 'SPring-8 BL02B2にて放射光粉末X線回折実験を実施',
-      desc: 'D2,M1学生が同行し, その場で測定結果について議論しました. 出張お疲れ様です!',
+      desc: 'D2・M1の学生が同行し、その場で測定結果について議論しました。出張お疲れ様です!',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.01.26',
       title: 'J-PARC BL09にて中性子回折実験を実施',
-      desc: 'M1学生さんも同行して中性子回折実験の一連の流れや装置の特徴を学びました.',
+      desc: 'M1の学生さんも同行し、中性子回折実験の一連の流れや装置の特徴を学びました。',
       category: 'EXPERIMENT'
     },
     {
@@ -331,12 +345,12 @@ export default function NewsPage() {
     {
       date: '2026.01.06',
       title: '博士学生の公聴会',
-      desc: 'お疲れ様でした. 残り僅かですが頑張ってください!',
+      desc: 'お疲れ様でした。残りわずかですが、頑張ってください!',
       category: 'SEMINAR'
     },
     {
       date: '2025.12.15',
-      title: 'Pacifichem @ Hawaiiにてフッ化物イオン伝導体について招待講演',
+      title: 'Pacifichem@Hawaiiでフッ化物イオン伝導体について招待講演',
       desc: '国際会議で最新の研究成果を報告しました。',
       category: 'CONFERENCE'
     },
@@ -348,13 +362,13 @@ export default function NewsPage() {
     },
     {
       date: '2025.12.09',
-      title: 'John Irvine教授(St Andrews)らとディスカッション',
+      title: 'John Irvine教授（St Andrews）らとディスカッション',
       desc: '固体イオニクスのトレンドについて議論しました。',
       category: 'VISIT'
     },
     {
       date: '2025.12.08',
-      title: '日本化学会電池部会にてフッ化物伝導体について招待講演',
+      title: '日本化学会電池部会でフッ化物イオン伝導体について招待講演',
       desc: 'フッ化物イオン伝導体の最新研究について発表しました。',
       category: 'CONFERENCE'
     },
@@ -373,7 +387,7 @@ export default function NewsPage() {
     {
       date: '2025.11.14-15',
       title: '学術変革領域会議@筑波山に参加',
-      desc: '泊まり込みで発表・議論しました. 学生さんの実験結果についても報告しました.',
+      desc: '泊まり込みで発表・議論しました。学生さんの実験結果についても報告しました。',
       category: 'CONFERENCE'
     },
     {
@@ -385,19 +399,19 @@ export default function NewsPage() {
     {
       date: '2025.11.07-10',
       title: 'SPring-8 BL28XUにて薄膜X線回折測定を実施',
-      desc: '学生も同行しました.',
+      desc: '学生も同行しました。',
       category: 'EXPERIMENT'
     },
     {
       date: '2025.11.01-03',
       title: 'SPring-8 BL02B2にて粉末X線回折測定を実施',
-      desc: 'M1学生さん2名が同行して、各自のサンプル(なんと計100試料超え！)を測定しました.',
+      desc: 'M1の学生さん2名が同行し、各自のサンプル（なんと計100試料超え!）を測定しました。',
       category: 'EXPERIMENT'
     },
     {
       date: '2025.10.21-22',
-      title: '三重大学今西森研に訪問',
-      desc: '森先生らとフッ化物イオン伝導体について議論しました. M1, M2学生も同行して学生間で活発に議論しました.',
+      title: '三重大学 今西・森研を訪問',
+      desc: '森先生らとフッ化物イオン伝導体について議論しました。M1・M2の学生も同行し、学生同士でも活発に議論しました。',
       category: 'VISIT'
     },
     {
@@ -405,7 +419,7 @@ export default function NewsPage() {
       title: 'ヒドリドイオン伝導体を用いた水素吸蔵デバイスの論文がScienceに掲載!',
       desc: (
         <span>
-          新たな固体電解質と、Mg-H2水素吸蔵デバイスを開発しました. 東京科学大学 平山研博士学生廣瀬さんら(現同大学 荒井研助教)との共同の成果です.
+          新たな固体電解質と、<Chem>Mg-H₂</Chem>水素吸蔵デバイスを開発しました。東京科学大学 平山研の博士学生だった廣瀬さん（現 同大学 荒井研 助教）らとの共同研究の成果です。
           <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             論文ページ
           </a>
@@ -415,8 +429,8 @@ export default function NewsPage() {
     },
     {
       date: '2025.09.18',
-      title: 'ISE/ELLIPSE会議@Germanyで発表, OliverClemensLab@Stuttgart訪問',
-      desc: 'フッ化物イオン伝導体開発を報告・議論しました',
+      title: 'ISE/ELLIPSE会議@Germanyで発表、Oliver Clemens研@Stuttgartを訪問',
+      desc: 'フッ化物イオン伝導体の開発について報告・議論しました。',
       category: 'CONFERENCE'
     },
     {
@@ -454,13 +468,13 @@ export default function NewsPage() {
     {
       date: '2025.06.20',
       title: '新規フッ化物イオン伝導体の論文がChem. Mater.にアクセプト',
-      desc: '珍しい結晶構造で結構高いフッ化物イオン伝導率を示す新たな材料系として期待。多面体の連結性が変わりながら(頂点↔稜共有)過剰フッ素を構造内に取り込む、珍しい物質です。',
+      desc: '珍しい結晶構造をもち、かなり高いフッ化物イオン伝導率を示す新たな材料系として期待されます。多面体の連結様式が変わりながら（頂点共有↔稜共有）過剰なフッ素を構造内に取り込む、珍しい物質です。',
       category: 'RESEARCH'
     },
     {
       date: '2025.06.19',
-      title: 'D3学生 Kongさん (Science Tokyo, 鈴木研) の論文がJACSにアクセプト',
-      desc: '配位多面体モチーフを特徴量としてイオン伝導率を予測し、NNポテンシャルで分子動力学計算を行いイオン伝導率を検証し、最終的に実験的に新たなLiイオン伝導体を創出しました。',
+      title: 'D3学生 Kongさん（Science Tokyo 鈴木研）の論文がJACSにアクセプト',
+      desc: '配位多面体モチーフを特徴量としてイオン伝導率を予測し、ニューラルネットワークポテンシャルを用いた分子動力学計算で検証したうえで、最終的に新たなLiイオン伝導体を実験的に創出しました。',
       category: 'RESEARCH'
     },
     {
@@ -471,62 +485,62 @@ export default function NewsPage() {
     },
     {
       date: '2025.05.26',
-      title: 'John Irvine先生の研究室 (St. Andrews) のMariaanaとMichkelが菅野鈴木研を訪問',
+      title: 'John Irvine先生の研究室（St Andrews）のMariaanaさんとMichkelさんが菅野・鈴木研を訪問',
       desc: '研究室の学生とともに双方の研究トピックについて議論しました。',
       category: 'VISIT'
     },
     {
       date: '2025.05.20',
-      title: 'Kim Sangryun教授 (GIST, Korea) との共著の論文がJACSにアクセプト',
-      desc: 'ペロブスカイト型ヒドリドイオン伝導体に錯イオン(BH4-)を組み込んだ新たな材料系の報告です。',
+      title: 'Kim Sangryun教授（GIST、韓国）との共著論文がJACSにアクセプト',
+      desc: <>ペロブスカイト型ヒドリドイオン伝導体に錯イオン（<Chem>BH₄⁻</Chem>）を組み込んだ新たな材料系の報告です。</>,
       category: 'RESEARCH'
     },
     {
       date: '2025.04.01',
-      title: '学術変革領域(A) イオン渋滞学 に公募メンバーとして参画',
+      title: '学術変革領域研究(A)「イオン渋滞学」に公募研究のメンバーとして参画',
       desc: '横断的な共同研究・材料開発に取り組みます!',
       category: 'COLLABORATION'
     },
     {
       date: '2025.04.01',
-      title: '菅野鈴木研に新M1として3名が加入',
+      title: '菅野・鈴木研に新M1として3名が加入',
       desc: 'おめでとうございます。',
       category: 'MEMBER'
     },
     {
       date: '2025.03.11',
       title: 'M2学生の小貫さんの論文がSolid State Ionicsにアクセプト',
-      desc: '新規フッ化物イオン伝導体としてScheelite構造に着目し、その伝導率最適化と伝導メカニズム解明を報告しました。',
+      desc: '新規フッ化物イオン伝導体としてシーライト型構造に着目し、伝導率の最適化と伝導メカニズムの解明について報告しました。',
       category: 'RESEARCH'
     },
     {
       date: '2025.02.20',
-      title: 'D3学生 廣瀬さん (Science Tokyo, 応化系 平山研)との共著の論文がDalton Transactionsで公開',
+      title: 'D3学生 廣瀬さん（Science Tokyo 応用化学系 平山研）との共著論文がDalton Transactionsで公開',
       desc: 'ペロブスカイト型ヒドリドイオン伝導体の組成最適化に関する報告です。',
       category: 'RESEARCH'
     },
     {
       date: '2024.11.10',
-      title: 'D2学生 Kongさん (Science Tokyo, 鈴木研) が国内学会 第14回CSJ化学フェスタで優秀ポスター賞を受賞',
+      title: 'D2学生 Kongさん（Science Tokyo 鈴木研）が第14回CSJ化学フェスタで優秀ポスター賞を受賞',
       desc: 'Congratulations!',
       category: 'AWARD'
     },
     {
       date: '2024.07.25',
-      title: 'D2学生の廣瀬さん (Science Tokyo, 応化系 平山研)が国際学会 Solid State Ionics 2024@LondonでPoster awardを受賞',
+      title: 'D2学生 廣瀬さん（Science Tokyo 応用化学系 平山研）が国際学会 Solid State Ionics 2024@LondonでPoster Awardを受賞',
       desc: '国際的な場での受賞、おめでとうございます！',
       category: 'AWARD'
     },
     {
       date: '2023.11.20',
-      title: 'M1学生の小貫さんが国内学会 第13回CSJ化学フェスタで優秀ポスター賞を受賞',
+      title: 'M1学生 小貫さんが第13回CSJ化学フェスタで優秀ポスター賞を受賞',
       desc: '素晴らしい成果です！',
       category: 'AWARD'
     }
   ] : [
     {
       date: '2026.11.14-16',
-      title: 'JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo',
+      title: 'Attended JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo',
       desc: '',
       category: 'CONFERENCE'
     },
@@ -538,16 +552,16 @@ export default function NewsPage() {
     },
     {
       date: '2026.11.06-08',
-      title: 'Battery Forum @ Seoul National University',
+      title: 'Attended Battery Forum @ Seoul National University',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.11.06',
-      title: "M2 Student Itakura's First-Author Paper Published in Electrochemistry",
+      title: 'First-author paper by M2 student Itakura published in Electrochemistry',
       desc: (
         <span>
-          &quot;Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn1−xInxF4+x&quot; Selected as Editor&apos;s Choice. Congratulations!!
+          &quot;Enhanced Room-Temperature Fluoride-Ion Conductivity of <Chem>β‑PbSn₁₋ₓInₓF₄₊ₓ</Chem>&quot; was selected as an Editor&apos;s Choice. Congratulations!!
           <a href="https://doi.org/10.5796/electrochemistry.26-00082" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
@@ -557,25 +571,25 @@ export default function NewsPage() {
     },
     {
       date: '2026.11.02-04',
-      title: 'Ion Traffic Jam Area Meeting @ Fukuoka',
+      title: 'Attended Ion Jamology Area Meeting @ Fukuoka',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.10.28-30',
-      title: 'Diffraction Experiments at SPring-8',
+      title: 'Diffraction experiments at SPring-8',
       desc: '',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.10.08',
-      title: 'Welcome Party for New Members',
+      title: 'Welcome party for new members',
       desc: '',
       category: 'LAB'
     },
     {
       date: '2026.09.18',
-      title: "Kong's First-Author Paper Published in J. Am. Chem. Soc.",
+      title: 'First-author paper by Kong published in J. Am. Chem. Soc.',
       desc: (
         <span>
           &quot;Screening Lithium-Ion Conductors Based on Local and Global Topology&quot;
@@ -588,16 +602,29 @@ export default function NewsPage() {
     },
     {
       date: '2026.09.16',
-      title: 'Prof. Poeppelmeier (Northwestern University) Visited Our Lab',
+      title: 'Prof. Poeppelmeier (Northwestern University) visited our lab',
       desc: '',
       category: 'VISIT'
     },
     {
       date: '2026.09.15',
-      title: "Kamewaka's First-Author Paper Published in ACS Appl. Energy Mater.",
+      title: 'Interview Featured in "Young Researcher Highlights" of the Ion Jamology Project',
       desc: (
         <span>
-          &quot;Halogen-Dependent Ionic Conductivity in Na11Sn2PS12: Reduction by Cl and Enhancement by Br Substitution&quot;
+          I talked about how I came to battery research, why I chose to do a PhD, and a message to students (in Japanese).
+          <a href="https://ion-jamology.jp/news/202408096/" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
+            Read the article
+          </a>
+        </span>
+      ),
+      category: 'MEDIA'
+    },
+    {
+      date: '2026.09.15',
+      title: 'First-author paper by Kamewaka published in ACS Appl. Energy Mater.',
+      desc: (
+        <span>
+          &quot;Halogen-Dependent Ionic Conductivity in <Chem>Na₁₁Sn₂PS₁₂</Chem>: Reduction by Cl and Enhancement by Br Substitution&quot;
           <a href="https://doi.org/10.1021/acsaem.6c01715" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
@@ -607,13 +634,13 @@ export default function NewsPage() {
     },
     {
       date: '2026.09.03',
-      title: 'Attended a Lecture by Prof. Poeppelmeier (Northwestern University)',
+      title: 'Attended a lecture by Prof. Poeppelmeier (Northwestern University)',
       desc: '',
       category: 'SEMINAR'
     },
     {
       date: '2026.08.28',
-      title: 'Project Meeting @ Kyoto',
+      title: 'Attended a project meeting @ Kyoto',
       desc: '',
       category: 'CONFERENCE'
     },
@@ -625,10 +652,10 @@ export default function NewsPage() {
     },
     {
       date: '2026.08.12',
-      title: 'M2 Student Itakura\'s First-Author Paper Published in Small Structures',
+      title: 'First-author paper by M2 student Itakura published in Small Structures',
       desc: (
         <span>
-          &quot;Unlocking High Fluoride-Ion Conductivity by Regulating the Order-Disorder Transition in Bi-substituted PbSnF4&quot; Congratulations!!
+          &quot;Unlocking High Fluoride-Ion Conductivity by Regulating the Order–Disorder Transition in Bi-substituted <Chem>PbSnF₄</Chem>&quot; Congratulations!!
           <a href="https://doi.org/10.1002/sstr.70579" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
@@ -638,62 +665,62 @@ export default function NewsPage() {
     },
     {
       date: '2026.08.08-16',
-      title: 'Obon Holiday',
+      title: 'Obon holidays',
       desc: '',
       category: 'LAB'
     },
     {
       date: '2026.08.06',
-      title: 'Visited the Teshima Laboratory at Shinshu University',
+      title: 'Visited the Teshima Lab at Shinshu University',
       desc: '',
       category: 'VISIT'
     },
     {
       date: '2026.07.31',
-      title: 'Joined a Laboratory Automation Workshop Online',
-      desc: 'Always amazed by the rapid growth of this field.',
+      title: 'Joined a Laboratory Automation workshop online',
+      desc: 'The rapid growth of this field never stops amazing me.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.07.30-08.04',
-      title: 'Alumnus Ayu (now Lecturer at Universitas Indonesia) Visited for Collaboration',
-      desc: 'Glad to see they are doing well.',
+      title: 'Former member Ayu visited for joint research',
+      desc: 'Ayu is now a lecturer at Universitas Indonesia. It was great to see Ayu doing well.',
       category: 'VISIT'
     },
     {
       date: '2026.07.24',
-      title: 'Public Symposium on Ion Jamology',
+      title: 'Attended the Ion Jamology public symposium',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.07.17-20',
-      title: 'Diffraction Experiments at SPring-8 BL02B2',
-      desc: 'Acquired a large set of high-temperature sweep measurement data.',
+      title: 'Diffraction experiments at SPring-8 BL02B2',
+      desc: 'Collected a large amount of high-temperature sweep data.',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.07.16',
-      title: 'First-Semester Research Progress Seminars Began',
-      desc: 'Keep up the good work!',
+      title: 'First-semester research progress seminars began',
+      desc: 'Let\'s keep it up through the second half!',
       category: 'SEMINAR'
     },
     {
       date: '2026.07.05-10',
-      title: 'Participated in SSI-25th @ Singapore',
-      desc: 'Presented in the Young Scientist Award competition. A great experience.',
+      title: 'Attended SSI-25th @ Singapore',
+      desc: 'Presented in the Young Scientist Award competition. It was a great experience.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.07.05-10',
-      title: 'M2 Students Presented Posters at SSI-25th',
-      desc: 'Presented research results at the international conference!',
+      title: 'M2 students presented posters at SSI-25th',
+      desc: 'Shared their results at an international conference!',
       category: 'CONFERENCE'
     },
     {
       date: '2026.06.20-21',
-      title: 'Lab Retreat @ Hachijojima',
-      desc: 'My flight was cancelled due to bad weather... glad the students enjoyed it!',
+      title: 'Lab retreat @ Hachijojima',
+      desc: 'My flight alone was cancelled due to bad weather, so I missed it… but I\'m glad the students enjoyed it!',
       category: 'LAB'
     },
     {
@@ -704,19 +731,19 @@ export default function NewsPage() {
     },
     {
       date: '2026.06.12-13',
-      title: 'Jamology Area Meeting @ Nagoya',
+      title: 'Attended Ion Jamology Area Meeting @ Nagoya',
       desc: 'Reported our progress.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.06.11',
-      title: 'Hydrogen Research Meeting @ Sendai',
+      title: 'Attended a hydrogen research meeting @ Sendai',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.06.01-04',
-      title: 'Visited Collaborators in San Francisco',
+      title: 'Visited collaborators in San Francisco',
       desc: 'Fruitful discussions.',
       category: 'COLLABORATION'
     },
@@ -728,64 +755,64 @@ export default function NewsPage() {
     },
     {
       date: '2026.05.23-29',
-      title: 'Participated in ECS Meeting @ Seattle',
+      title: 'Attended the ECS Meeting @ Seattle',
       desc: 'Reported on combinatorial experiments.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.05.18-21',
-      title: 'International Forum of Solid State Batteries @ Sendai',
+      title: 'Attended the International Forum of Solid State Batteries @ Sendai',
       desc: 'Gave a talk on our recent work.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.05.13',
-      title: 'Lecture at NIMS on Anion-Conducting Materials',
+      title: 'Talk at NIMS on the development of anion-conducting materials',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.05.08-09',
-      title: 'PRESTO Area Meeting @ Sendai',
-      desc: '',
+      title: 'Attended PRESTO Area Meeting @ Sendai',
+      desc: 'I\'ll keep pushing myself!',
       category: 'CONFERENCE'
     },
     {
       date: '2026.05.01',
-      title: 'Study Session on Sulfide Solid Electrolytes',
-      desc: 'Casual discussion over dinner.',
+      title: 'Study session on sulfide solid electrolytes',
+      desc: 'A relaxed discussion over dinner.',
       category: 'SEMINAR'
     },
     {
       date: '2026.04.24-27',
-      title: 'Thin-Film XRD Measurements at SPring-8 BL28XU',
+      title: 'Thin-film XRD measurements at SPring-8 BL28XU',
       desc: '',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.04.20',
-      title: 'New Students Introduced Themselves at the Seminar',
+      title: 'New students introduced themselves at the seminar',
       desc: 'Three new M1 students joined the Suzuki Lab!',
       category: 'MEMBER'
     },
     {
       date: '2026.04.18',
-      title: 'Hiking from Mt. Takao to Lake Sagami',
-      desc: 'A great refresh with lab members!',
+      title: 'Lab hike from Mt. Takao to Lake Sagami',
+      desc: 'A refreshing day out!',
       category: 'LAB'
     },
     {
       date: '2026.04.06',
-      title: 'Ion Jamology WG @ Tsukuba International Congress Center',
+      title: 'Attended Ion Jamology WG @ Tsukuba International Congress Center',
       desc: '',
       category: 'CONFERENCE'
     },
     {
       date: '2026.03.25',
-      title: 'Paper with Alumnus Ayu Published in J. Mater. Chem. A',
+      title: 'Co-authored paper with former member Ayu published in J. Mater. Chem. A',
       desc: (
         <span>
-          &quot;Fast hydride-ion conduction in complex hydride Ba2MgH6&quot; — reporting fast hydride-ion conduction in the complex hydride Ba2MgH6.
+          &quot;Fast hydride-ion conduction in complex hydride <Chem>Ba₂MgH₆</Chem>&quot; — reporting fast hydride-ion conduction in the complex hydride <Chem>Ba₂MgH₆</Chem>.
           <a href="https://doi.org/10.1039/d5ta09966h" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
             Article
           </a>
@@ -796,67 +823,67 @@ export default function NewsPage() {
     {
       date: '2026.03.17-19',
       title: 'ECSJ Meeting @ Tokyo Univ. of Science',
-      desc: 'Participated as an organizing committee member.',
+      desc: 'Took part as a member of the organizing committee.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.02.12-13',
-      title: 'Master\'s thesis presentations for 3 students',
+      title: 'Master\'s thesis presentations by three students',
       desc: 'Excellent presentations! Great work!',
       category: 'SEMINAR'
     },
     {
       date: '2026.02.09',
-      title: 'Prof. Zhong from Ritsumeikan University visited for exchange and discussion',
-      desc: 'Active discussions were held toward collaborative research.',
+      title: 'Prof. Zhong (Ritsumeikan University) visited the lab for discussions',
+      desc: 'We had lively discussions toward joint research.',
       category: 'VISIT'
     },
     {
       date: '2026.02.04-06',
-      title: 'Participated in Japan-Germany Exchange Conference @Sendai',
-      desc: 'Exchanged and networked with international researchers!',
+      title: 'Attended a Japan–Germany exchange meeting @ Sendai',
+      desc: 'Met researchers from abroad and expanded our network!',
       category: 'CONFERENCE'
     },
     {
       date: '2026.01.31',
       title: 'Synchrotron powder X-ray diffraction experiment at SPring-8 BL02B2',
-      desc: 'D2 and M1 students accompanied and discussed measurement results on-site. Great work on the trip!',
+      desc: 'D2 and M1 students came along and discussed the results on site. Thanks for your hard work on the trip!',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.01.26',
       title: 'Neutron diffraction experiment at J-PARC BL09',
-      desc: 'M1 student accompanied and learned the workflow and characteristics of neutron diffraction instruments.',
+      desc: 'An M1 student came along and learned the whole workflow of a neutron diffraction experiment and the features of the instrument.',
       category: 'EXPERIMENT'
     },
     {
       date: '2026.01.24',
-      title: 'Celebrated Prof. Kanno\'s 70th birthday',
-      desc: 'Many alumni participated and it was a great success!',
+      title: 'Celebration of Prof. Kanno\'s 70th birthday',
+      desc: 'Many alumni attended, and it was a great success!',
       category: 'SEMINAR'
     },
     {
       date: '2026.01.16',
-      title: 'Invited lecture at Kinki Chemical Society Battery Seminar',
-      desc: 'Gave a lecture on solid electrolyte development.',
+      title: 'Invited talk at the Kinki Chemical Society battery seminar',
+      desc: 'Spoke on solid electrolyte development.',
       category: 'CONFERENCE'
     },
     {
       date: '2026.01.06',
-      title: 'Doctoral student\'s public hearing',
-      desc: 'Great work. Keep up the effort for the remaining time!',
+      title: 'Doctoral student\'s public defense',
+      desc: 'Great work! Only a little time left, so keep it up!',
       category: 'SEMINAR'
     },
     {
       date: '2025.12.15',
-      title: 'Invited lecture on fluoride ion conductors at Pacifichem @ Hawaii',
-      desc: 'Reported latest research results at the international conference.',
+      title: 'Invited talk on fluoride ion conductors at Pacifichem @ Hawaii',
+      desc: 'Presented our latest results at the international conference.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.12.11-12',
-      title: 'Participated and presented at Ion Traffic Jam Symposium @MRM',
-      desc: 'Presented on ion traffic jam science.',
+      title: 'Attended and presented at the Jamology Symposium @ MRM',
+      desc: 'Gave a presentation on Ion Jamology.',
       category: 'CONFERENCE'
     },
     {
@@ -867,60 +894,60 @@ export default function NewsPage() {
     },
     {
       date: '2025.12.08',
-      title: 'Invited lecture on fluoride conductors at CSJ Battery Division',
-      desc: 'Presented on the latest research in fluoride ion conductors.',
+      title: 'Invited talk on fluoride ion conductors at the CSJ Battery Division',
+      desc: 'Presented our latest research on fluoride ion conductors.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.11.25-27',
-      title: 'Participated in Solid State Ionics Symposium @Funabori',
+      title: 'Attended the Solid State Ionics Symposium @ Funabori',
       desc: 'Reported on combinatorial experiments.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.11.18-19',
-      title: 'Participated in Battery Discussion Meeting @Nagoya',
+      title: 'Attended the Battery Symposium in Japan @ Nagoya',
       desc: 'Reported on ion conductor screening using graph neural network potentials.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.11.14-15',
-      title: 'Participated in Transformative Research Area Meeting @Mt. Tsukuba',
-      desc: 'Presented and discussed during overnight stay. Also reported on students\' experimental results.',
+      title: 'Attended the Transformative Research Area meeting @ Mt. Tsukuba',
+      desc: 'Presented and discussed over an overnight stay, and also reported on our students\' experimental results.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.11.10',
-      title: 'Participated and presented at PRESTO kickoff meeting',
-      desc: 'Presented research plan at JST PRESTO kickoff meeting.',
+      title: 'Presented at the PRESTO kickoff meeting',
+      desc: 'Presented my research plan at the JST PRESTO kickoff meeting.',
       category: 'RESEARCH'
     },
     {
       date: '2025.11.07-10',
-      title: 'Thin film X-ray diffraction measurement at SPring-8 BL28XU',
-      desc: 'Students also accompanied.',
+      title: 'Thin-film X-ray diffraction measurements at SPring-8 BL28XU',
+      desc: 'Students came along too.',
       category: 'EXPERIMENT'
     },
     {
       date: '2025.11.01-03',
-      title: 'Powder X-ray diffraction measurement at SPring-8 BL02B2',
-      desc: 'Two M1 students accompanied and measured their samples (over 100 samples in total!).',
+      title: 'Powder X-ray diffraction measurements at SPring-8 BL02B2',
+      desc: 'Two M1 students came along and measured their own samples (over 100 in total!).',
       category: 'EXPERIMENT'
     },
     {
       date: '2025.10.21-22',
-      title: 'Visited Imanishi-Mori Lab at Mie University',
-      desc: 'Discussed fluoride ion conductors with Prof. Mori. M1 and M2 students also accompanied and actively discussed with each other.',
+      title: 'Visited the Imanishi–Mori Lab at Mie University',
+      desc: 'Discussed fluoride ion conductors with Prof. Mori and colleagues. M1 and M2 students also came along and had lively discussions with the students there.',
       category: 'VISIT'
     },
     {
       date: '2025.09.18',
-      title: 'Paper on hydrogen storage device using hydride ion conductors published in Science!',
+      title: 'Paper on a hydrogen storage device using a hydride ion conductor published in Science!',
       desc: (
         <span>
-          Developed a new solid electrolyte and Mg-H2 hydrogen storage device. Joint achievement with Dr. Hirose (now Assistant Professor at Arai Lab), doctoral student at Hirayama Lab, Institute of Science Tokyo.
+          We developed a new solid electrolyte and an <Chem>Mg-H₂</Chem> hydrogen storage device. This is joint work with Hirose (then a doctoral student in the Hirayama Lab, Institute of Science Tokyo; now an assistant professor in the Arai Lab at the same university) and colleagues.
           <a href="https://www.science.org/doi/10.1126/science.adw1996" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
-            Paper link
+            Article
           </a>
         </span>
       ),
@@ -928,13 +955,13 @@ export default function NewsPage() {
     },
     {
       date: '2025.09.18',
-      title: 'Presentation at ISE/ELLIPSE Conference @Germany, Visit to Oliver Clemens Lab @Stuttgart',
-      desc: 'Reported and discussed fluoride ion conductor development',
+      title: 'Presented at the ISE/ELLIPSE conference @ Germany and visited the Oliver Clemens Lab @ Stuttgart',
+      desc: 'Reported on and discussed our fluoride ion conductor development.',
       category: 'CONFERENCE'
     },
     {
       date: '2025.09.17',
-      title: 'Research project selected for JST PRESTO program',
+      title: 'Research project selected for JST PRESTO',
       desc: (
         <span>
           Selected for JST PRESTO!
@@ -947,92 +974,92 @@ export default function NewsPage() {
     },
     {
       date: '2025.08.05',
-      title: 'Two M1 students from Kanno-Suzuki Lab participate in Solid Ionics Seminar @Miyazaki',
-      desc: 'Itakura-san and Kamewaka-san will present on novel solid electrolyte materials exploration. Good luck!',
+      title: 'Two M1 students from the Kanno-Suzuki Lab to attend the Solid State Ionics Seminar @ Miyazaki',
+      desc: 'Itakura and Kamewaka will present their search for new solid electrolyte materials. Good luck!',
       category: 'CONFERENCE'
     },
     {
       date: '2025.07.24',
-      title: 'Kanno-Suzuki Lab first semester research report seminar completed',
-      desc: 'Great work everyone!',
+      title: 'First-semester research report seminars of the Kanno-Suzuki Lab completed',
+      desc: 'Great work, everyone!',
       category: 'SEMINAR',
       hasImage: true
     },
     {
       date: '2025.07.10',
-      title: 'High-energy X-ray scattering experiment conducted at SPring-8',
-      desc: 'High-energy X-ray scattering experiments were performed at SPring-8. Students also participated. Great work.',
+      title: 'High-energy X-ray scattering experiments at SPring-8',
+      desc: 'Carried out high-energy X-ray scattering experiments at SPring-8. Students came along too. Great work!',
       category: 'EXPERIMENT'
     },
     {
       date: '2025.06.20',
-      title: 'Novel fluoride ion conductor paper accepted in Chem. Mater.',
-      desc: 'Expected as a new material system showing quite high fluoride ion conductivity with a rare crystal structure. A rare material that incorporates excess fluorine into the structure while changing polyhedral connectivity (vertex↔edge sharing).',
+      title: 'Paper on a new fluoride ion conductor accepted in Chem. Mater.',
+      desc: 'A promising new material family with a rare crystal structure and fairly high fluoride ion conductivity. It is an unusual compound that takes excess fluorine into its structure while its polyhedral connectivity changes (corner-sharing ↔ edge-sharing).',
       category: 'RESEARCH'
     },
     {
       date: '2025.06.19',
-      title: 'D3 student Kong-san (Science Tokyo, Suzuki Lab) paper accepted in JACS',
-      desc: 'Predicted ionic conductivity using coordination polyhedra motifs as features, verified ionic conductivity through molecular dynamics calculations with NN potential, and finally experimentally created a new Li-ion conductor.',
+      title: 'Paper by D3 student Kong (Science Tokyo, Suzuki Lab) accepted in JACS',
+      desc: 'Predicted ionic conductivity using coordination-polyhedron motifs as features, verified it by molecular dynamics with a neural network potential, and finally created a new Li-ion conductor experimentally.',
       category: 'RESEARCH'
     },
     {
       date: '2025.06.19',
-      title: 'Kanno-Suzuki Lab first semester paper reading seminar completed',
-      desc: 'Great work everyone!',
+      title: 'First-semester paper-reading seminars of the Kanno-Suzuki Lab completed',
+      desc: 'Great work, everyone!',
       category: 'SEMINAR'
     },
     {
       date: '2025.05.26',
-      title: 'Mariaana and Michkel from Prof. John Irvine\'s lab (St. Andrews) visit Kanno-Suzuki Lab',
-      desc: 'Discussed research topics from both sides with lab students.',
+      title: 'Mariaana and Michkel from Prof. John Irvine\'s lab (St Andrews) visited the Kanno-Suzuki Lab',
+      desc: 'Together with our students, we discussed each other\'s research topics.',
       category: 'VISIT'
     },
     {
       date: '2025.05.20',
       title: 'Co-authored paper with Prof. Kim Sangryun (GIST, Korea) accepted in JACS',
-      desc: 'Report on new material system incorporating complex ions (BH4-) into perovskite-type hydride ion conductors.',
+      desc: <>A report on a new material family that incorporates complex ions (<Chem>BH₄⁻</Chem>) into perovskite-type hydride ion conductors.</>,
       category: 'RESEARCH'
     },
     {
       date: '2025.04.01',
-      title: 'Joined Transformative Research Area (A) "Ion Traffic Jam Science" as a public offering member',
-      desc: 'Will engage in cross-disciplinary collaborative research and materials development!',
+      title: 'Joined the Transformative Research Area (A) "Ion Jamology" as a member of the publicly offered research',
+      desc: 'We will work on cross-disciplinary joint research and materials development!',
       category: 'COLLABORATION'
     },
     {
       date: '2025.04.01',
-      title: 'Three new M1 students joined Kanno-Suzuki Lab',
+      title: 'Three new M1 students joined the Kanno-Suzuki Lab',
       desc: 'Congratulations.',
       category: 'MEMBER'
     },
     {
       date: '2025.03.11',
-      title: 'M2 student Onuki-san\'s paper accepted in Solid State Ionics',
-      desc: 'Reported on conductivity optimization and conduction mechanism elucidation focusing on Scheelite structure as a novel fluoride ion conductor.',
+      title: 'Paper by M2 student Onuki accepted in Solid State Ionics',
+      desc: 'Focusing on the scheelite-type structure for new fluoride ion conductors, the paper reports conductivity optimization and clarifies the conduction mechanism.',
       category: 'RESEARCH'
     },
     {
       date: '2025.02.20',
-      title: 'Co-authored paper with D3 student Hirose-san (Science Tokyo, Hirayama Lab) published in Dalton Transactions',
-      desc: 'Report on composition optimization of perovskite-type hydride ion conductors.',
+      title: 'Co-authored paper with D3 student Hirose (Science Tokyo, Hirayama Lab) published in Dalton Transactions',
+      desc: 'A report on composition optimization of perovskite-type hydride ion conductors.',
       category: 'RESEARCH'
     },
     {
       date: '2024.11.10',
-      title: 'D2 student Kong-san (Science Tokyo, Suzuki Lab) received Outstanding Poster Award at 14th CSJ Chemistry Festa',
+      title: 'D2 student Kong (Science Tokyo, Suzuki Lab) received the Outstanding Poster Award at the 14th CSJ Chemistry Festa',
       desc: 'Congratulations!',
       category: 'AWARD'
     },
     {
       date: '2024.07.25',
-      title: 'D2 student Hirose-san (Science Tokyo, Hirayama Lab) received Poster Award at Solid State Ionics 2024 @London',
+      title: 'D2 student Hirose (Science Tokyo, Hirayama Lab) received a Poster Award at Solid State Ionics 2024 @ London',
       desc: 'Congratulations on the international award!',
       category: 'AWARD'
     },
     {
       date: '2023.11.20',
-      title: 'M1 student Onuki-san received Outstanding Poster Award at 13th CSJ Chemistry Festa',
+      title: 'M1 student Onuki received the Outstanding Poster Award at the 13th CSJ Chemistry Festa',
       desc: 'Excellent achievement!',
       category: 'AWARD'
     }
@@ -1069,7 +1096,7 @@ export default function NewsPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+                transition={{ duration: 0.6, delay: Math.min(index, 6) * 0.05 }}
                 className="relative"
               >
                 {/* Timeline Line */}
@@ -1096,6 +1123,7 @@ export default function NewsPage() {
                         news.category === 'AWARD' ? 'bg-yellow-400/10 text-yellow-400 border-yellow-400/20' :
                         news.category === 'COLLABORATION' ? 'bg-indigo-400/10 text-indigo-400 border-indigo-400/20' :
                         news.category === 'MEMBER' ? 'bg-pink-400/10 text-pink-400 border-pink-400/20' :
+                        news.category === 'MEDIA' ? 'bg-cyan-400/10 text-cyan-300 border-cyan-400/20' :
                         'bg-gray-400/10 text-[#9a9a9a] border-gray-400/20'
                       }`}>
                         {news.category}
@@ -1109,14 +1137,6 @@ export default function NewsPage() {
                     <p className="text-[#cfcfcf] leading-relaxed">
                       {news.desc}
                     </p>
-
-                    {news.hasImage && (
-                      <div className="mt-4 p-4 bg-[#1a1a1a]/70 rounded border border-[#3a3a3a]/30">
-                        <p className="text-[#9a9a9a] text-sm italic">
-                          {locale === 'ja' ? '[Photo] 写真付きニュース' : '[Photo] News with image'}
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </motion.div>
@@ -1142,10 +1162,10 @@ export default function NewsPage() {
 
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '8', label: t('publications'), color: 'cyan', desc: t('publicationsDesc') },
-              { number: '3', label: t('awards'), color: 'yellow', desc: t('awardsDesc') },
-              { number: '2', label: t('collaborations'), color: 'purple', desc: t('collaborationsDesc') },
-              { number: '15+', label: t('totalNews'), color: 'blue', desc: t('totalNewsDesc') }
+              { number: String(allNews.filter((n) => /論文|paper/i.test(n.title)).length), label: t('publications'), color: 'cyan', desc: t('publicationsDesc') },
+              { number: String(allNews.filter((n) => n.category === 'AWARD').length), label: t('awards'), color: 'yellow', desc: t('awardsDesc') },
+              { number: String(allNews.filter((n) => n.category === 'COLLABORATION').length), label: t('collaborations'), color: 'purple', desc: t('collaborationsDesc') },
+              { number: String(allNews.length), label: t('totalNews'), color: 'blue', desc: t('totalNewsDesc') }
             ].map((stat, index) => (
               <motion.div
                 key={index}

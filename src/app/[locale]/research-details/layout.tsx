@@ -1,22 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return locale === 'en'
-    ? {
-        title: "Research | All-Solid-State, Lithium-Ion & Fluoride Batteries | Matsui Lab",
-        description: "Research on lithium-ion conductors, fluoride-ion conductors, hydride-ion conductors, and machine learning for next-generation battery materials at Institute of Science Tokyo.",
-      }
-    : {
-        title: "研究内容 | 全固体電池・リチウムイオン電池・フッ化物電池 | 松井研(東京科学大学)",
-        description: "リチウムイオン伝導体、フッ化物イオン伝導体、ヒドリドイオン伝導体、機械学習・ハイスループット合成による次世代電池材料の研究内容。全固体リチウムイオン電池・フッ化物イオン電池(フッ化物電池)の実現に向けた材料開発を行う研究室です。",
-      };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return pageMetadata(locale, 'research-details', {
+    ja: { title: '研究内容', description: 'フッ化物イオン伝導体、リチウムイオン伝導体、ヒドリドイオン伝導体、アニオンインターカレーション電極、機械学習とハイスループット実験による材料探索。松井直喜の研究テーマと主な成果。' },
+    en: { title: 'Research', description: 'Fluoride-, lithium- and hydride-ion conductors, anion-intercalation electrodes, and materials discovery with machine learning and high-throughput experiments: research topics and key results of Naoki Matsui.' }
+  })
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function ResearchDetailsLayout({ children }: { children: React.ReactNode }) {
+  return children
 }

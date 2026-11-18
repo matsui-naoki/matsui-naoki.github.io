@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import { useTranslations, useLocale } from 'next-intl'
+import { MEDIA } from '@/lib/media'
 
 export default function ProfileDetailPage() {
   const t = useTranslations('profile')
@@ -39,7 +40,7 @@ export default function ProfileDetailPage() {
     { year: '2019', award: 'WILEY TOP DOWNLOADED PAPER 2018-2019' },
     { year: '2017', award: 'Poster Award, The 6th Toyota RIKEN International Workshop' },
     { year: '2017', award: 'Student Award (Separation Technology Association Annual Meeting)' },
-    { year: '2016', award: 'Masumoto Award (Priority Area "Nanostructure Information")' }
+    { year: '2016', award: 'Masumoto Award (Innovative Area "Nanostructure Information")' }
   ]
 
   // Peer review journals
@@ -230,8 +231,8 @@ export default function ProfileDetailPage() {
                     <span className="text-[#e0c060] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>新たな結晶構造系(KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub>の擬似二成分系)で優れたイオン伝導性と電気化学的安定性を両立した固体電解質候補物質を開発しました（<span className="text-[#76b900] italic">Chem. Mater.</span>, 2025）</>
-                        : <>Developed solid electrolyte candidate materials with excellent ionic conductivity and electrochemical stability in a new crystal structure system (KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub> pseudo-binary system) (<span className="text-[#76b900] italic">Chem. Mater.</span>, 2025)</>
+                        ? <>新たな結晶構造系（KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub>の擬似二成分系）で、優れたイオン伝導性と電気化学的安定性を両立した固体電解質の候補物質を開発しました（<span className="text-[#76b900] italic">Chem. Mater.</span>, 2025）</>
+                        : <>Developed candidate solid electrolytes that combine excellent ionic conductivity with electrochemical stability in a new crystal-structure family (the KYb<sub>2</sub>F<sub>7</sub>–BaYb<sub>2</sub>F<sub>8</sub> pseudo-binary system) (<span className="text-[#76b900] italic">Chem. Mater.</span>, 2025)</>
                       }
                     </span>
                   </li>
@@ -239,8 +240,8 @@ export default function ProfileDetailPage() {
                     <span className="text-[#e0c060] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>において、Pb 6s<sup>2</sup>孤立電子対の動的再配向がイオン輸送を促進することを実験・計算双方のアプローチから世界で初めて実証しました（<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2024）</>
-                        : <>First demonstration that dynamic reorientation of Pb 6s<sup>2</sup> lone pair electrons promotes ion transport in CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>, using both experimental and computational approaches (<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2024)</>
+                        ? <>CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub>において、Pb 6s<sup>2</sup>孤立電子対の動的な再配向がイオン輸送を促進することを、実験と計算の両面から世界で初めて実証しました（<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2024）</>
+                        : <>Demonstrated for the first time, by both experiment and computation, that dynamic reorientation of the Pb 6s<sup>2</sup> lone pair promotes ion transport in CsPb<sub>0.9</sub>K<sub>0.1</sub>F<sub>2.9</sub> (<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2024)</>
                       }
                     </span>
                   </li>
@@ -251,7 +252,7 @@ export default function ProfileDetailPage() {
                 <h3 className="text-xl font-bold text-[#76b900] mb-4">
                   {locale === 'ja'
                     ? '2. 機械学習による高効率な材料探索'
-                    : '2. High-Efficiency Materials Discovery Using Machine Learning'}
+                    : '2. Efficient Materials Discovery with Machine Learning'}
                 </h3>
                 <ul className="space-y-3 text-[#cfcfcf]">
                   <li className="flex items-start">
@@ -259,7 +260,7 @@ export default function ProfileDetailPage() {
                     <span>
                       {locale === 'ja'
                         ? <>配位多面体に基づくリチウムイオン伝導体の局所配置とイオン伝導率の相関を解析し、分子動力学計算と実験的検証により新たなリチウムイオン伝導体を開発しました（<span className="text-[#76b900] italic">JACS</span>, 2025）</>
-                        : <>Analyzed correlation between local configurations and ionic conductivity of lithium ion conductors based on coordination polyhedra, and developed new lithium ion conductors through molecular dynamics calculations and experimental validation (<span className="text-[#76b900] italic">JACS</span>, 2025)</>
+                        : <>Analyzed the correlation between local configurations, described by coordination polyhedra, and the ionic conductivity of lithium ion conductors, and developed new lithium ion conductors through molecular dynamics calculations and experimental validation (<span className="text-[#76b900] italic">JACS</span>, 2025)</>
                       }
                     </span>
                   </li>
@@ -267,8 +268,8 @@ export default function ProfileDetailPage() {
                     <span className="text-[#76b900] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>組成記述子に基づくイオン伝導率予測の機械学習モデルを開発し、フッ化物イオン伝導体の効率的な探索手法を提案し、実際にSn系として初のタイソナイト型フッ化物イオン伝導体Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) を発見しました（<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2023）</>
-                        : <>Developed machine learning model for ionic conductivity prediction based on compositional descriptors, proposed efficient search method for fluoride ion conductors, and discovered first tysonite-type fluoride ion conductor in Sn system: Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ=10<sup>–4</sup> S cm<sup>–1</sup>) (<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2023)</>
+                        ? <>組成記述子からイオン伝導率を予測する機械学習モデルを開発してフッ化物イオン伝導体の効率的な探索手法を提案し、Sn系として初のタイソナイト型フッ化物イオン伝導体Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub>（σ = 10<sup>−4</sup> S cm<sup>−1</sup>）を実際に発見しました（<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2023）</>
+                        : <>Developed a machine learning model that predicts ionic conductivity from compositional descriptors, proposed an efficient search strategy for fluoride ion conductors, and discovered Ba<sub>0.2</sub>Sn<sub>0.8</sub>F<sub>2</sub> (σ = 10<sup>−4</sup> S cm<sup>−1</sup>), the first Sn-based tysonite-type fluoride ion conductor (<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2023)</>
                       }
                     </span>
                   </li>
@@ -279,14 +280,14 @@ export default function ProfileDetailPage() {
                 <h3 className="text-xl font-bold text-[#76b900] mb-4">
                   {locale === 'ja'
                     ? '3. ヒドリドイオン伝導体の開発と水素吸蔵デバイスの創出'
-                    : '3. Development of Hydride Ion Conductors and Creation of Hydrogen Storage Devices'}
+                    : '3. Hydride Ion Conductors and New Hydrogen Storage Devices'}
                 </h3>
                 <ul className="space-y-3 text-[#cfcfcf]">
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>電気化学的安定性とイオン伝導率を兼ね備えた新たな固体電解質の開発と、それを用いた新規水素吸蔵デバイスを創出しました（<span className="text-[#76b900] italic">Science</span>, 2025）</>
+                        ? <>電気化学的安定性とイオン伝導率を兼ね備えた新たな固体電解質を開発し、それを用いた新しい水素吸蔵デバイスを創出しました（<span className="text-[#76b900] italic">Science</span>, 2025）</>
                         : <>Developed a novel solid electrolyte combining electrochemical stability and ionic conductivity, and created a new hydrogen storage device using it (<span className="text-[#76b900] italic">Science</span>, 2025)</>
                       }
                     </span>
@@ -295,8 +296,8 @@ export default function ProfileDetailPage() {
                     <span className="text-[#76b900] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>ペロブスカイト型SrLiH<sub>3</sub>系において、カチオンサイズとイオン移動障壁を系統的に解明し、低温で比較的高い特性を示す固体電解質を開発（<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2021）</>
-                        : <>Systematically elucidated relationship between cation size and ion migration barriers in perovskite-type SrLiH<sub>3</sub> system, developing solid electrolyte with relatively high performance at low temperature (<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2021)</>
+                        ? <>ペロブスカイト型SrLiH<sub>3</sub>系において、カチオンサイズとイオン移動障壁の関係を系統的に解明し、低温で比較的高い特性を示す固体電解質を開発しました（<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2021）</>
+                        : <>Systematically clarified the relationship between cation size and ion migration barriers in the perovskite-type SrLiH<sub>3</sub> system, and developed a solid electrolyte with relatively high performance at low temperatures (<span className="text-[#76b900] italic">ACS Appl. Energy Mater.</span>, 2021)</>
                       }
                     </span>
                   </li>
@@ -304,8 +305,8 @@ export default function ProfileDetailPage() {
                     <span className="text-[#76b900] mr-2">•</span>
                     <span>
                       {locale === 'ja'
-                        ? <>K<sub>2</sub>NiF<sub>4</sub>型LnSrLiH<sub>2</sub>O<sub>2</sub>系において、中性子回折・第一原理計算を駆使して、カチオンサイズがヒドリドイオン伝導に与える影響を系統的に解明しました（<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2020）</>
-                        : <>Systematically elucidated the effect of cation size on hydride ion conduction in K<sub>2</sub>NiF<sub>4</sub>-type LnSrLiH<sub>2</sub>O<sub>2</sub> system using neutron diffraction and first-principles calculations (<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2020)</>
+                        ? <>K<sub>2</sub>NiF<sub>4</sub>型LnSrLiH<sub>2</sub>O<sub>2</sub>系において、中性子回折と第一原理計算を駆使し、カチオンサイズがヒドリドイオン伝導に与える影響を系統的に解明しました（<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2020）</>
+                        : <>Systematically clarified the effect of cation size on hydride ion conduction in the K<sub>2</sub>NiF<sub>4</sub>-type LnSrLiH<sub>2</sub>O<sub>2</sub> system using neutron diffraction and first-principles calculations (<span className="text-[#76b900] italic">J. Mater. Chem. A</span>, 2020)</>
                       }
                     </span>
                   </li>
@@ -359,8 +360,8 @@ export default function ProfileDetailPage() {
                       </span><br/>
                       <span className="text-sm">
                         {locale === 'ja'
-                          ? '「革新的なエネルギー変換を可能とする量子・電子制御」領域'
-                          : 'Research Area: "Quantum and Electronic Control for Innovative Energy Conversion"'}
+                          ? '「ゆらぎの理解と制御による材料革新」領域'
+                          : 'Research Area: "Materials Innovation through Understanding and Control of Fluctuations"'}
                       </span>
                     </div>
                   </li>
@@ -369,8 +370,8 @@ export default function ProfileDetailPage() {
                     <div>
                       <span className="font-semibold text-[#ffffff]">
                         {locale === 'ja'
-                          ? '科研費 学術変革領域研究(A) 公募（2025-2026年度）'
-                          : 'KAKENHI Grant-in-Aid for Transformative Research Areas (A), Public Offering (2025-2026)'}
+                          ? '科研費 学術変革領域研究(A) 公募研究（2025-2026年度）'
+                          : 'KAKENHI Grant-in-Aid for Transformative Research Areas (A), Publicly Offered Research (2025-2026)'}
                       </span><br/>
                       <span className="text-sm">
                         {locale === 'ja'
@@ -398,15 +399,15 @@ export default function ProfileDetailPage() {
                     <span className="text-[#76b900] mr-2">▸</span>
                     <span className="font-semibold text-[#ffffff]">
                       {locale === 'ja'
-                        ? '東京工業大学 挑戦的研究賞（2023年度）'
-                        : 'Tokyo Tech Challenging Research Award (2023)'}
+                        ? '東京工業大学 挑戦的研究賞（2022年度）'
+                        : 'Tokyo Tech Challenging Research Award (FY2022)'}
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#76b900] mr-2">▸</span>
                     <span className="font-semibold text-[#ffffff]">
                       {locale === 'ja'
-                        ? '東京工業大学 基礎研究機構 広域基礎研究塾 新研究挑戦奨励金 (2023年度)'
+                        ? '東京工業大学 基礎研究機構 広域基礎研究塾 新研究挑戦奨励金（2023年度）'
                         : 'Tokyo Tech IIR Wide-Range Basic Research Academy New Research Challenge Grant (2023)'}
                     </span>
                   </li>
@@ -436,7 +437,7 @@ export default function ProfileDetailPage() {
                     <span className="font-semibold text-[#ffffff]">
                       {locale === 'ja'
                         ? 'NEDO 電気自動車用革新型蓄電池開発（2021-2025年度）'
-                        : 'NEDO Development of Innovative Battery for Electric Vehicles (2021-2025)'}
+                        : 'NEDO Development of Innovative Batteries for Electric Vehicles (2021-2025)'}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -444,7 +445,7 @@ export default function ProfileDetailPage() {
                     <div>
                       <span className="font-semibold text-[#ffffff]">
                         {locale === 'ja'
-                          ? '科学研究費助成事業 基盤研究(B)（2022-2024年度）'
+                          ? '科研費 基盤研究(B)（2022-2024年度）'
                           : 'KAKENHI Grant-in-Aid for Scientific Research (B) (2022-2024)'}
                       </span><br/>
                       <span className="text-[#9a9a9a] text-sm ml-4">
@@ -485,8 +486,8 @@ export default function ProfileDetailPage() {
               </h3>
               <p className="text-[#cfcfcf]">
                 {locale === 'ja'
-                  ? '電気化学の基礎理論から燃料電池の実践的な応用まで、実験を通じて学生に指導しています。'
-                  : 'Guiding students from basic electrochemistry theory to practical applications of fuel cells through experiments.'}
+                  ? '電気化学の基礎理論から燃料電池の実践的な応用まで、実験を通して指導しています。'
+                  : 'Students learn electrochemistry through hands-on experiments, from basic theory to practical fuel-cell applications.'}
               </p>
             </div>
           </motion.div>
@@ -533,7 +534,7 @@ export default function ProfileDetailPage() {
                     <span>
                       {locale === 'ja'
                         ? '電気化学会 電気化学セミナーA'
-                        : 'Electrochemical Society of Japan - Electrochemistry Seminar A'}
+                        : 'The Electrochemical Society of Japan, Electrochemistry Seminar A'}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -541,7 +542,7 @@ export default function ProfileDetailPage() {
                     <span>
                       {locale === 'ja'
                         ? '電気化学会関東支部 基礎セミナー'
-                        : 'Electrochemical Society of Japan, Kanto Branch - Basic Seminar'}
+                        : 'The Electrochemical Society of Japan, Kanto Branch, Basic Seminar'}
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -555,6 +556,30 @@ export default function ProfileDetailPage() {
                 </ul>
               </div>
             </div>
+          </motion.div>
+
+          {/* Interviews */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.75 }}
+            className="bg-[#111111] rounded p-8 border border-[#262626]"
+          >
+            <h2 className="text-3xl font-black mb-6 text-[#ffffff]">
+              {locale === 'ja' ? 'インタビュー記事' : 'Interviews'}
+            </h2>
+            <ul className="space-y-6">
+              {MEDIA.map((m) => (
+                <li key={m.url} className="bg-[#1a1a1a]/70 rounded p-5">
+                  <p className="text-sm text-[#9a9a9a] mb-1">{m.date.replace(/\./g, '/')}　{locale === 'ja' ? m.source.ja : m.source.en}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{locale === 'ja' ? m.title.ja : m.title.en}</h3>
+                  <p className="text-[#cfcfcf] leading-relaxed mb-3">{locale === 'ja' ? m.summary.ja : m.summary.en}</p>
+                  <a href={m.url} target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline">
+                    {locale === 'ja' ? '記事を読む' : 'Read the article'}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           {/* Research Philosophy */}

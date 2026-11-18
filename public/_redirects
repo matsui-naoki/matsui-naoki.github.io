@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects (GitHub Pages ignores this file). Japanese is the default language.
+/                       /ja                       301
+/access                 /ja/access                301
+/news                   /ja/news                  301
+/profile-detail         /ja/profile-detail        301
+/prospective-students   /ja/prospective-students  301
+/publications           /ja/publications          301
+/research-details       /ja/research-details      301
+/crystal-gallery        /ja/crystal-gallery       301

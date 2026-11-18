@@ -1,31 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Geologica, IBM_Plex_Sans_JP } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/lib/seo';
 import "../globals.css";
-
-// Geologica (with its sharpened-corner axis) for Latin, IBM Plex Sans JP for Japanese
-const geologica = Geologica({
-  variable: "--font-geologica",
-  weight: "variable",
-  axes: ["SHRP"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const plexJP = IBM_Plex_Sans_JP({
-  variable: "--font-plex-jp",
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { fontClasses } from "../fonts";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -57,7 +36,7 @@ export async function generateMetadata({
   const meta = metadata[currentLocale] || metadata.ja;
 
   return {
-    metadataBase: new URL("https://matsui-naoki.github.io"),
+    metadataBase: new URL(SITE_URL),
     verification: {
       google: "F13fLSJPsCYbAcZoj3x3dm7O4aHFnPpERcEihhrUqoQ",
     },
@@ -68,7 +47,7 @@ export async function generateMetadata({
     openGraph: {
       title: meta.title,
       description: meta.description,
-      url: "https://matsui-naoki.github.io",
+      url: `${SITE_URL}/${locale === 'en' ? 'en' : 'ja'}`,
       siteName: locale === 'ja' ? "松井直喜 | 東京科学大学" : "Naoki Matsui | Institute of Science Tokyo",
       locale: meta.locale,
       type: "website",
@@ -123,7 +102,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geologica.variable} ${plexJP.variable} ${geistMono.variable} antialiased`}
+        className={`${fontClasses} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

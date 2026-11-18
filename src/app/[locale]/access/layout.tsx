@@ -1,22 +1,13 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return locale === 'en'
-    ? {
-        title: "Access & Contact | Matsui Lab, Suzukakedai Campus",
-        description: "Directions to Building G1, Suzukakedai Campus, Institute of Science Tokyo, and contact information for the Matsui Lab.",
-      }
-    : {
-        title: "アクセス・連絡先 | 松井研(東京科学大学すずかけ台キャンパス)",
-        description: "東京科学大学すずかけ台キャンパス G1棟への交通アクセス、研究室見学のご案内、連絡先。",
-      };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return pageMetadata(locale, 'access', {
+    ja: { title: 'アクセス', description: '東京科学大学 すずかけ台キャンパス G1棟(神奈川県横浜市緑区長津田町4259)への行き方と連絡先。' },
+    en: { title: 'Access', description: 'How to reach Building G1, Suzukakedai Campus, Institute of Science Tokyo (4259 Nagatsuta-cho, Midori-ku, Yokohama), and how to contact us.' }
+  })
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function AccessLayout({ children }: { children: React.ReactNode }) {
+  return children
 }

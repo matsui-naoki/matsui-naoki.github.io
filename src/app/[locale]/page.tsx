@@ -6,6 +6,8 @@ import LocaleNavigation from '@/components/LocaleNavigation'
 import HeroFilm from '@/components/HeroFilm'
 import CampusFilm from '@/components/CampusFilm'
 import Chem from '@/components/Chem'
+import { MEDIA } from '@/lib/media'
+import { SITE_URL } from '@/lib/seo'
 import { useTranslations, useLocale } from 'next-intl'
 
 type T2 = { ja: string; en: string }
@@ -28,24 +30,25 @@ export default function Home() {
   // SEO structured data
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ResearchOrganization",
-    "name": ja ? "松井直喜" : "Naoki Matsui",
-    "alternateName": "Matsui Laboratory",
-    "url": "https://matsui-naoki.github.io",
-    "description": ja
-      ? "東京科学大学の電池研究室(菅野・鈴木・松井研)。松井直喜准教授。全固体電池、フッ化物イオン伝導体、ヒドリドイオン伝導体など次世代電池の研究開発"
-      : "Battery research laboratory at Institute of Science Tokyo led by Dr. Naoki Matsui. Research on all-solid-state batteries, fluoride-ion conductors, and hydride-ion conductors",
-    "member": {
+    "@type": "ProfilePage",
+    "url": `${SITE_URL}/${ja ? 'ja' : 'en'}`,
+    "inLanguage": ja ? "ja" : "en",
+    "mainEntity": {
       "@type": "Person",
       "name": ja ? "松井直喜" : "Naoki Matsui",
+      "alternateName": ja ? "Naoki Matsui" : "松井直喜",
       "jobTitle": ja ? "准教授" : "Associate Professor",
+      "image": `${SITE_URL}/NaokiMatsui2026.jpg`,
+      "url": `${SITE_URL}/${ja ? 'ja' : 'en'}`,
       "sameAs": ["https://www.linkedin.com/in/naoki-matsui-ssi", "https://github.com/matsui-naoki", "https://x.com/naoki_matsui_ex"],
-      "affiliation": { "@type": "EducationalOrganization", "name": ja ? "東京科学大学" : "Institute of Science Tokyo", "alternateName": "Institute of Science Tokyo" }
-    },
-    "researchAreas": ja
-      ? ["全固体電池", "リチウムイオン電池", "フッ化物イオン伝導体", "フッ化物電池", "ヒドリドイオン伝導体", "固体イオニクス", "材料インフォマティクス"]
-      : ["All-solid-state batteries", "Lithium-ion batteries", "Fluoride ion conductors", "Fluoride batteries", "Hydride ion conductors", "Solid ionics", "Materials informatics"]
+      "worksFor": { "@type": "CollegeOrUniversity", "name": ja ? "東京科学大学" : "Institute of Science Tokyo", "url": "https://www.isct.ac.jp/" },
+      "memberOf": { "@type": "ResearchOrganization", "name": ja ? "菅野・鈴木・松井研究室" : "Kanno–Suzuki–Matsui Lab" },
+      "knowsAbout": ja
+        ? ["全固体電池", "リチウムイオン電池", "フッ化物イオン伝導体", "フッ化物電池", "ヒドリドイオン伝導体", "固体イオニクス", "材料インフォマティクス"]
+        : ["All-solid-state batteries", "Lithium-ion batteries", "Fluoride-ion conductors", "Fluoride batteries", "Hydride-ion conductors", "Solid-state ionics", "Materials informatics"]
+    }
   }
+
 
   const newsData = ja ? [
     { date: '2026.11.14-16', title: 'さきがけ「ゆらぎの理解と制御による材料革新」領域会議@東京に参加' },
@@ -54,24 +57,24 @@ export default function Home() {
     { date: '2026.11.06', title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載（Editor\'s Choice）' },
     { date: '2026.11.02-04', title: 'イオン渋滞学 領域会議@福岡に参加' }
   ] : [
-    { date: '2026.11.14-16', title: 'JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo' },
+    { date: '2026.11.14-16', title: 'Attended JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo' },
     { date: '2026.11.10', title: 'Attended NIMS Awards' },
-    { date: '2026.11.06-08', title: 'Battery Forum @ Seoul National University' },
-    { date: '2026.11.06', title: 'M2 student Itakura\'s first-author paper in Electrochemistry (Editor\'s Choice)' },
-    { date: '2026.11.02-04', title: 'Ion Traffic Jam Area Meeting @ Fukuoka' }
+    { date: '2026.11.06-08', title: 'Attended Battery Forum @ Seoul National University' },
+    { date: '2026.11.06', title: 'First-author paper by M2 student Itakura published in Electrochemistry (Editor\'s Choice)' },
+    { date: '2026.11.02-04', title: 'Attended Ion Jamology Area Meeting @ Fukuoka' }
   ]
 
   const profileRows = ja ? [
     ['役職', '准教授'],
     ['所属', '東京科学大学 物質理工学院 応用化学系 化学システム分野'],
-    ['学位', '博士（工学）2020年'],
+    ['学位', '博士（理学）2020年'],
     ['専門', '固体イオニクス・材料インフォマティクス'],
     ['連絡先', 'matsui.n.ee49[at]m.isct.ac.jp'],
     ['居室', 'すずかけ台キャンパス G1-1020']
   ] : [
     ['Position', 'Associate Professor'],
     ['Affiliation', 'Dept. of Chemical Science and Engineering, Institute of Science Tokyo'],
-    ['Degree', 'Ph.D. in Engineering (2020)'],
+    ['Degree', 'Ph.D. in Science (2020)'],
     ['Field', 'Solid-state ionics and materials informatics'],
     ['Email', 'matsui.n.ee49[at]m.isct.ac.jp'],
     ['Office', 'Suzukakedai Campus G1-1020']
@@ -251,6 +254,21 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
+              {MEDIA.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-[#9a9a9a] text-[0.9375rem] mb-3">{ja ? 'インタビュー' : 'Interviews'}</h3>
+                  <ul className="space-y-3">
+                    {MEDIA.map((m) => (
+                      <li key={m.url}>
+                        <a href={m.url} target="_blank" rel="noopener noreferrer" className="group block">
+                          <span className="block text-white group-hover:text-[#76b900] transition-colors">{L(m.title)}</span>
+                          <span className="block text-[14px] text-[#9a9a9a]">{L(m.source)}　{m.date.slice(0, 7).replace('.', '/')}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div className="flex flex-wrap gap-x-7 gap-y-3">
                 <Link href="/profile-detail" className={greenLink}>{ja ? '経歴・受賞' : 'CV and awards'}</Link>
                 <a href="https://www.linkedin.com/in/naoki-matsui-ssi" target="_blank" rel="noopener noreferrer" className={greenLink}>LinkedIn</a>

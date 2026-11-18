@@ -72,7 +72,7 @@ export default function PublicationsPage() {
     },
     {
       year: '2025',
-      title: 'Tailoring Polyhedral Linkage in K1–xBaxM2F7+x (M = Yb, Lu) for Enhanced Fluoride-Ion Conductivity',
+      title: 'Tailoring Polyhedral Linkage in K₁₋ₓBaₓM₂F₇₊ₓ (M = Yb, Lu) for Enhanced Fluoride-Ion Conductivity',
       authors: 'N. Matsui (corresponding author), K. Mori, T. Saito, K. Noi, S. Fujinami, Y. Park, T. Tojigamori, K. Suzuki, T. Abe, R. Kanno',
       journal: 'Chem. Mater., 37(13) (2025) 4798-4806',
       doi: '10.1021/acs.chemmater.5c00772'
@@ -100,7 +100,7 @@ export default function PublicationsPage() {
     },
     {
       year: '2025',
-      title: 'A trade-off between migration and association energies for hydride-ion conductivity in the SrLiH3–CaLiH3–NaLiH2 system',
+      title: 'A trade-off between migration and association energies for hydride-ion conductivity in the SrLiH₃–CaLiH₃–NaLiH₂ system',
       authors: 'T. Hirose, N. Matsui (corresponding author), K. Watanabe, T. Saito, K. Mori, K. Suzuki, M. Hirayama, R. Kanno',
       journal: 'Dalton Transactions, 45 (2025) 4180-4186',
       doi: '10.1039/D4DT03384A'
@@ -135,7 +135,7 @@ export default function PublicationsPage() {
     },
     {
       year: '2025',
-      title: 'Oxygen-Substitution Effects on the Properties of Argyrodite-Type Sulfide Solid Electrolytes (Li5.5PS4.5−xBr1.5Ox, 0 ≦ x ≦ 0.5)',
+      title: 'Oxygen-Substitution Effects on the Properties of Argyrodite-Type Sulfide Solid Electrolytes (Li₅.₅PS₄.₅₋ₓBr₁.₅Oₓ, 0 ≦ x ≦ 0.5)',
       authors: 'R. Tsukazaki, N. Matsui, S. Hori, K. Suzuki, R. Kanno',
       journal: 'Electrochemistry, 93(6) (2025) 0630012',
       doi: '10.5796/electrochemistry.25-71033'
@@ -143,14 +143,14 @@ export default function PublicationsPage() {
     // 2024年
     {
       year: '2024',
-      title: 'Mechanical Properties of Li10.35Ge1.35P1.65S12 with Different Particle Sizes',
+      title: 'Mechanical Properties of Li₁₀.₃₅Ge₁.₃₅P₁.₆₅S₁₂ with Different Particle Sizes',
       authors: 'H. Kim, K. Hikima, K. Watanabe, N. Matsui, K. Suzuki, S. Obokata, H. Muto, A. Matsuda, R. Kanno, M. Hirayama',
       journal: 'MATERIALS TRANSACTIONS, 65(8), (2024) 861-866',
       doi: ''
     },
     {
       year: '2024',
-      title: 'Synthesis and Structural Characterization of Lithium Ionic Conductors Li2MS3 (M = Si, Si0.5Ge0.5, Ge) and Li16Ge5S18',
+      title: 'Synthesis and Structural Characterization of Lithium Ionic Conductors Li₂MS₃ (M = Si, Si₀.₅Ge₀.₅, Ge) and Li₁₆Ge₅S₁₈',
       authors: 'Y. Sasaki, S. Song, S. Hori, N. Matsui, K. Nomoto, K. Suzuki, M. Hirayama, I. Song, Y. Jang, R. Kanno',
       journal: 'Chemistry of Materials, 36(15), (2024) 7176–7185',
       doi: ''
@@ -164,14 +164,14 @@ export default function PublicationsPage() {
     },
     {
       year: '2024',
-      title: '硫化物固体電解質Li10.35Ge1.35P1.65S12の微細化による機械的強度の向上',
+      title: '硫化物固体電解質Li₁₀.₃₅Ge₁.₃₅P₁.₆₅S₁₂の微細化による機械的強度の向上',
       authors: 'Hanseul KIM, 引間 和浩, 渡邊 健太, 松井 直喜, 鈴木 耕太, 小保方 聡, 武藤 浩行, 松田 厚範, 菅野 了次, 平山 雅章',
       journal: '粉体および粉末冶金, 71(3) (2024) 92-97',
       doi: ''
     },
     {
       year: '2024',
-      title: 'Fabrication and High-temperature Electrochemical Stability of LiFePO4 Cathode/Li3PO4 Electrolyte Interface',
+      title: 'Fabrication and High-temperature Electrochemical Stability of LiFePO₄ Cathode/Li₃PO₄ Electrolyte Interface',
       authors: 'D. Kang, K. Ito, K. Shimizu, K. Watanabe, N. Matsui, K. Suzuki, R. Kanno, M. Hirayama',
       journal: 'Electrochemistry, 92(3) (2024) 037008',
       doi: ''
@@ -192,14 +192,14 @@ export default function PublicationsPage() {
     },
     {
       year: '2024',
-      title: 'Fluorination/Defluorination Behavior of Y2C in Fluoride-Ion Battery Anodes',
+      title: 'Fluorination/Defluorination Behavior of Y₂C in Fluoride-Ion Battery Anodes',
       authors: 'T. Tojigamori, N. Matsui (共同第一著者), K. Suzuki, M. Hirayama, T. Abe, R. Kanno',
       journal: 'ACS Appl. Energy Mater., 7(3) (2024) 1100–1108',
       doi: ''
     },
     {
       year: '2024',
-      title: 'Effect of Pb 6s2 lone pair on the potential flattening of fluoride-ion conduction in perovskite-type fluoride',
+      title: 'Effect of Pb 6s² lone pair on the potential flattening of fluoride-ion conduction in perovskite-type fluoride',
       authors: 'N. Matsui (corresponding author), M. Murakami, K. Mori, T. Saito, K. Shimizu, K. Suzuki, R. Kanno',
       journal: 'J. Mater. Chem. A, 12 (2024) 3989-3996',
       doi: '10.1039/D3TA06367D'
@@ -221,14 +221,14 @@ export default function PublicationsPage() {
     },
     {
       year: '2023',
-      title: 'Electrochemical and mechanical properties and chemical stability of Li10GeP2S12/Al2O3 composite electrolytes',
+      title: 'Electrochemical and mechanical properties and chemical stability of Li₁₀GeP₂S₁₂/Al₂O₃ composite electrolytes',
       authors: 'T. Yabuzaki, M. Sato, H. Kim, K. Watanabe, N. Matsui, K. Suzuki, S. Hori, K. Hikima, S. Obokata, H. Muto, A. Matsuda, R. Kanno, M. Hirayama',
       journal: 'Journal of the Ceramic Society of Japan, 131(10) (2023) 675-684',
       doi: ''
     },
     {
       year: '2023',
-      title: 'High H– Conductivities along the ab-Planes of La2LiHO3 Epitaxial Thin Films',
+      title: 'High H⁻ Conductivities along the ab-Planes of La₂LiHO₃ Epitaxial Thin Films',
       authors: 'Y. Sasahara, T. Hirose, M. Yoshimoto, N. Matsui, S. Kobayashi, H. Ubukata, T. Fumitaka, K. Suzuki, M. Hirayama, K. Nishio, R. Shimizu, R. Kanno, G. Kobayashi, T. Hitosugi',
       journal: 'Crystal Growth & Design, 23(10) (2023) 7103–7108',
       doi: ''
@@ -256,7 +256,7 @@ export default function PublicationsPage() {
     },
     {
       year: '2023',
-      title: 'Synthesis and Electrochemical Properties of Quaternary and Quinary γ-Li3PO4-Type Materials: Effects of Compositional Complexity in Lithium Superionic Conductors',
+      title: 'Synthesis and Electrochemical Properties of Quaternary and Quinary γ-Li₃PO₄-Type Materials: Effects of Compositional Complexity in Lithium Superionic Conductors',
       authors: 'K. Suzuki, M. Kamiya, N. Matsui, S. Hori, M. Hirayama, R. Kanno',
       journal: 'J. Phys. Chem. C, 127, 10947-10952 (2023)',
       doi: ''
@@ -271,42 +271,42 @@ export default function PublicationsPage() {
     // 2022年
     {
       year: '2022',
-      title: 'Material Search for a Li10GeP2S12-Type Solid Electrolyte in the Li–P–S–X (X = Br, I) System via Clarification of the Composition–Structure–Property Relationships',
+      title: 'Material Search for a Li₁₀GeP₂S₁₂-Type Solid Electrolyte in the Li–P–S–X (X = Br, I) System via Clarification of the Composition–Structure–Property Relationships',
       authors: 'S. Song, S. Hori, Y. Li, K. Suzuki, N. Matsui, M. Hirayama, T. Saito, T. Kamiyama, R. Kanno',
       journal: 'Chemistry of Materials, 34(18), (2022) 8237–8247',
       doi: ''
     },
     {
       year: '2022',
-      title: 'Fast Hydride-Ion Conduction in Perovskite Hydrides AELiH3',
+      title: 'Fast Hydride-Ion Conduction in Perovskite Hydrides AELiH₃',
       authors: 'T. Hirose, T. Mishina, N. Matsui, K. Suzuki, T. Saito, T. Kamiyama, M. Hirayama, R. Kanno',
       journal: 'ACS Appl. Energy Mater., 5(3), (2022) 2968-2974',
       doi: ''
     },
     {
       year: '2022',
-      title: 'Reversible Charge/Discharge Reaction of a Ternary Metal Fluoride, Pb2CuF6: A Highly Conductive Cathode Material for Fluoride-Ion Batteries',
+      title: 'Reversible Charge/Discharge Reaction of a Ternary Metal Fluoride, Pb₂CuF₆: A Highly Conductive Cathode Material for Fluoride-Ion Batteries',
       authors: 'T. Tojigamori, H. Nakajima, H. Miki, N. Matsui, T. Nakatani, S. Fujinami, K. Noi, H. Tsukasaki, K. Suzuki, M. Hirayama, S. Mori, T. Abe, R. Kanno',
       journal: 'ACS Appl. Energy Mater, 5(1), (2022) 1002-1009',
       doi: ''
     },
     {
       year: '2022',
-      title: 'Synthesis, structure, and electrical conductivity of Sr2LiH2N nitride hydride',
+      title: 'Synthesis, structure, and electrical conductivity of Sr₂LiH₂N nitride hydride',
       authors: 'G. Jiang, N. Matsui, T. Mezaki, Y. Tota, K. Suzuki, M. Hirayama, T. Saito, T. Kamiyama, R. Kanno',
       journal: 'Journal of Solid State Chem., 310, (2022) 123051',
       doi: ''
     },
     {
       year: '2022',
-      title: 'Anomalously High Ionic Conductivity of Li2SiS3-Type Conductors',
+      title: 'Anomalously High Ionic Conductivity of Li₂SiS₃-Type Conductors',
       authors: 'W. Huang, N. Matsui, S. Hori, K. Suzuki, M. Hirayama, M. Yonemura, T. Saito, T. Kamiyama, Y. Sasaki, Y. Yoon, S. Kim, R. Kanno',
       journal: 'J. Am. Chem. Soc., 144(11), (2022) 4989-4994',
       doi: ''
     },
     {
       year: '2022',
-      title: 'Li10GeP2S12-Type Structured Solid Solution Phases in the Li9+δP3+δ′S12–kOk System: Controlling Crystallinity by Synthesis to Improve the Air Stability',
+      title: 'Li₁₀GeP₂S₁₂-Type Structured Solid Solution Phases in the Li9+δP3+δ′S12–kOk System: Controlling Crystallinity by Synthesis to Improve the Air Stability',
       authors: 'M. Xu, S. Song, S. Daikuhara, N. Matsui, S. Hori, K. Suzuki, M. Hirayama, S. Shiotani, S. Nakanishi, M. Yonemura, T. Saito, T. Kamiyama, R. Kanno',
       journal: 'Inorg. Chem., 61(1), (2022) 52-61',
       doi: ''
@@ -321,7 +321,7 @@ export default function PublicationsPage() {
     // 2021年
     {
       year: '2021',
-      title: 'High-Pressure Synthesis and Lithium-Ion Conduction of Li4OBr2 Derivatives with a Layered Inverse-Perovskite Structure',
+      title: 'High-Pressure Synthesis and Lithium-Ion Conduction of Li₄OBr₂ Derivatives with a Layered Inverse-Perovskite Structure',
       authors: 'S. Wakazaki, Q. Liu, R. Jalem, T. Nishikubo, Y. Sakai, N. Matsui, G. Zhao, K. Suzuki, K. Shigematsu, T. Yamamoto, R. Kanno, H. Das, Y. Tateyama, M. Azuma',
       journal: 'Chem. Mater., 33(23), (2021) 9194-9201',
       doi: ''
@@ -329,7 +329,7 @@ export default function PublicationsPage() {
     // 2020年
     {
       year: '2020',
-      title: 'The effect of cation size on hydride-ion conduction in LnSrLiH2O2 (Ln = La, Pr, Nd, Sm, Gd) oxyhydrides',
+      title: 'The effect of cation size on hydride-ion conduction in LnSrLiH₂O₂ (Ln = La, Pr, Nd, Sm, Gd) oxyhydrides',
       authors: 'N. Matsui, Y. Hinuma, Y. Iwasaki, K. Suzuki, J. Guangzhong, H. Nawaz, Y. Imai, M. Yonemura, N. Hirayama, G. Kobayashi, R. Kanno',
       journal: 'Journal of Materials Chemistry A, 8(46), (2020) 24685-24694',
       doi: ''
@@ -337,14 +337,14 @@ export default function PublicationsPage() {
     // 2019年
     {
       year: '2019',
-      title: 'Conduction mechanism of Li10GeP2S12-type Lithium superionic Conductors in a Li–Sn–Si–P–S System',
+      title: 'Conduction mechanism of Li₁₀GeP₂S₁₂-type Lithium superionic Conductors in a Li–Sn–Si–P–S System',
       authors: 'M. Inagaki, K. Suzuki, S. Hori, K. Yoshino, N. Matsui, M. Yonemura, M. Hirayama, R. Kanno',
       journal: 'Chemistry of Materials, 31(9), (2019) 3485-3490',
       doi: ''
     },
     {
       year: '2019',
-      title: 'Ambient pressure synthesis of La2LiHO3 as a solid electrolyte for a hydrogen electrochemical cell',
+      title: 'Ambient pressure synthesis of La₂LiHO₃ as a solid electrolyte for a hydrogen electrochemical cell',
       authors: 'N. Matsui, G. Kobayashi, K. Suzuki, A. Watanabe, A. Kubota, Y. Iwasaki, M. Yonemura, M. Hirayama, R. Kanno',
       journal: 'Journal of the American Ceramic Society, 102(6), (2019) 3228-3235',
       doi: ''
@@ -352,14 +352,14 @@ export default function PublicationsPage() {
     // 2018年
     {
       year: '2018',
-      title: 'Synthesis, crystal structure, and ionic conductivity of hydride ion-conducting Ln2LiHO3 (Ln= La, Pr, Nd) oxyhydrides',
+      title: 'Synthesis, crystal structure, and ionic conductivity of hydride ion-conducting Ln₂LiHO₃ (Ln= La, Pr, Nd) oxyhydrides',
       authors: 'Y. Iwasaki, N. Matsui, K. Suzuki, Y. Hinuma, M. Yonemura, G. Kobayashi, M. Hirayama, I. Tanaka, R. Kanno',
       journal: 'Journal of Materials Chemistry A, 6(46), (2018) 23457-23463',
       doi: ''
     },
     {
       year: '2018',
-      title: 'Stability of charged phase and cell properties of LiMn2–xAlxO4',
+      title: 'Stability of charged phase and cell properties of LiMn₂₋ₓAlₓO₄',
       authors: 'M. Nishijima, N. Matsui, J. Hata, T. Saito, Y. Nitta, K. Suzuki, M. Hirayama, R. Kanno',
       journal: 'Journal of The Electrochemical Society, 165(7), (2018) A1440-1446',
       doi: ''
@@ -367,14 +367,14 @@ export default function PublicationsPage() {
     // 2017年
     {
       year: '2017',
-      title: 'Ambient pressure synthesis and H– conductivity of LaSrLiH2O2',
+      title: 'Ambient pressure synthesis and H⁻ conductivity of LaSrLiH₂O₂',
       authors: 'A. Watanabe, G. Kobayashi, N. Matsui, M. Yonemura, A. Kubota, K. Suzuki, M. Hirayama, R. Kanno',
       journal: 'Electrochemistry, 85(2), (2017) 88-92',
       doi: ''
     },
     {
       year: '2017',
-      title: 'Synthesis and structure of novel lithium-ion conductor Li7Ge3PS12',
+      title: 'Synthesis and structure of novel lithium-ion conductor Li₇Ge₃PS₁₂',
       authors: 'Y. Inoue, K. Suzuki, N. Matsui, M. Hirayama, R. Kanno',
       journal: 'Journal of Solid State Chemistry, 246, (2017) 334-340',
       doi: ''
