@@ -126,10 +126,11 @@ export default function ResearchDetails() {
 
             {/* Lithium Ion Conductors */}
             <motion.div
+              id="lithium"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">
@@ -161,10 +162,11 @@ export default function ResearchDetails() {
 
             {/* Fluoride Ion Conductors */}
             <motion.div
+              id="fluoride"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -202,10 +204,11 @@ export default function ResearchDetails() {
 
             {/* Hydride Ion Conductors */}
             <motion.div
+              id="hydride"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -242,10 +245,11 @@ export default function ResearchDetails() {
 
             {/* Anion Intercalation */}
             <motion.div
+              id="anion-intercalation"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">
@@ -277,10 +281,11 @@ export default function ResearchDetails() {
 
             {/* Machine Learning */}
             <motion.div
+              id="machine-learning"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -312,10 +317,11 @@ export default function ResearchDetails() {
 
             {/* High-Throughput Synthesis */}
             <motion.div
+              id="high-throughput"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
-              className="bg-[#111111] rounded p-8 border border-[#262626]"
+              className="bg-[#111111] rounded p-8 border border-[#262626] scroll-mt-24"
             >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1 relative">

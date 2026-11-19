@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/seo'
+import { SECTIONS } from '@/lib/learning'
 
 export const dynamic = 'force-static'
 
@@ -9,8 +10,8 @@ const LOCALE_PAGES: [string, number][] = [
   ['prospective-students', 0.8], ['access', 0.5], ['crystal-gallery', 0.5]
 ]
 const JA_ONLY: [string, number][] = [
-  ['learning', 0.6], ['learning/solid-state-ionics', 0.5], ['learning/experimental', 0.5],
-  ['learning/materials-informatics', 0.5], ['learning/computational-materials', 0.5], ['learning/research-skills', 0.5],
+  ['learning', 0.6],
+  ...SECTIONS.flatMap((sec) => sec.docs.map((d): [string, number] => [`learning/${sec.slug}/${d.slug}`, 0.5])),
   ['crystal-gallery/lithium', 0.4], ['crystal-gallery/fluoride', 0.4], ['crystal-gallery/hydride', 0.4],
   ['crystal-gallery/others', 0.4], ['tools', 0.4], ['links', 0.3]
 ]

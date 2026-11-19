@@ -110,4 +110,50 @@ h1, h2, h3, .display { font-weight: 700; font-variation-settings: "SHRP" 0; lett
 .chem i { font-style: italic; padding-right: 0.03em; }
 
 /* Learning pages: let long URLs and identifiers wrap instead of widening the page on phones */
-.markdown-content :is(p, li, a, td, th, figcaption, blockquote) { overflow-wrap: anywhere; }
+.markdown-content :is(p, li, a, td, th, figcaption, blockquote, h1, h2, h3, h4, h5) { overflow-wrap: anywhere; }
+
+/* ---- Learning pages: Markdown rendered at build time (src/lib/markdown.ts) ---- */
+.markdown-content { color: #cfcfcf; line-height: 1.75; }
+.markdown-content h1 { font-size: 1.875rem; font-weight: 900; color: #fff; margin: 2rem 0 1.5rem; }
+.markdown-content h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 2.25rem 0 1rem; }
+.markdown-content h3 { font-size: 1.25rem; font-weight: 700; color: #76b900; margin: 1.75rem 0 .75rem; }
+.markdown-content h4, .markdown-content h5 { font-size: 1.0625rem; font-weight: 600; color: #76b900; margin: 1.25rem 0 .5rem; }
+.markdown-content :is(h1, h2, h3, h4, h5) { scroll-margin-top: 6rem; line-height: 1.4; }
+.markdown-content p { margin: 0 0 1rem; }
+.markdown-content strong { font-weight: 700; color: #8fd400; }
+.markdown-content em { font-style: italic; }
+.markdown-content ul, .markdown-content ol { margin: 1rem 0; padding-left: 1.5rem; }
+.markdown-content ul { list-style: disc; }
+.markdown-content ol { list-style: decimal; }
+.markdown-content li { margin-bottom: .5rem; }
+.markdown-content li > p { margin: 0; }
+.markdown-content a { color: #76b900; text-decoration: underline; text-underline-offset: 3px; }
+.markdown-content a:hover { color: #8fd400; }
+.markdown-content :not(pre) > code { background: #1a1a1a; color: #76b900; padding: .1rem .35rem; border-radius: .25rem; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: .875em; }
+.markdown-content hr { border: none; border-top: 1px solid #3a3a3a; margin: 2rem 0; }
+.markdown-content blockquote { border-left: 4px solid #76b900; padding-left: 1rem; margin: 1rem 0; color: #9a9a9a; }
+.markdown-content table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.5rem 0; max-width: 100%; }
+.markdown-content th { border: 1px solid #3a3a3a; padding: .5rem 1rem; background: #1a1a1a; color: #76b900; font-weight: 600; text-align: left; }
+.markdown-content td { border: 1px solid #3a3a3a; padding: .5rem 1rem; }
+.markdown-content img { max-width: 100%; height: auto; border-radius: .375rem; margin: 1rem auto; }
+.markdown-content sub, .markdown-content sup { font-size: .7em; line-height: 0; position: relative; vertical-align: baseline; }
+.markdown-content sub { bottom: -.25em; }
+.markdown-content sup { top: -.55em; }
+.markdown-content .large-photo-container { display: flex; justify-content: center; margin: 2rem 0; }
+/* figures: ![alt](src "caption") */
+.markdown-content figure { margin: 2rem 0; max-width: 48rem; }
+.markdown-content .figure-link { display: block; background: #fff; border-radius: .375rem; padding: .5rem; box-shadow: 0 0 0 1px #262626; text-decoration: none; }
+.markdown-content .figure-link:hover { box-shadow: 0 0 0 1px rgb(118 185 0 / .6); }
+.markdown-content figure img { margin: 0; width: 100%; border-radius: 0; }
+.markdown-content figcaption { margin-top: .5rem; font-size: .875rem; color: #9a9a9a; line-height: 1.65; }
+/* code blocks (Shiki) */
+.markdown-content .code-block { margin: 1rem 0; border: 1px solid #3a3a3a; border-radius: .375rem; overflow: hidden; background: #111; }
+.markdown-content .code-head { display: flex; align-items: center; justify-content: space-between; padding: .4rem .9rem; background: #1a1a1a; border-bottom: 1px solid #3a3a3a; }
+.markdown-content .code-lang { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: .75rem; color: #76b900; }
+.markdown-content .code-copy { font-size: .75rem; color: #9a9a9a; padding: .15rem .5rem; border: 1px solid #3a3a3a; border-radius: .25rem; }
+.markdown-content .code-copy:hover { color: #76b900; border-color: #76b900; }
+.markdown-content pre { margin: 0; padding: 1rem; overflow-x: auto; font-size: .8125rem; line-height: 1.6; font-family: var(--font-geist-mono), ui-monospace, monospace; }
+.markdown-content details.code-fold { margin: 1rem 0; }
+.markdown-content details.code-fold > summary { cursor: pointer; color: #76b900; font-size: .875rem; padding: .4rem .9rem; border: 1px solid #3a3a3a; border-radius: .375rem; background: #1a1a1a; width: fit-content; }
+.markdown-content details.code-fold[open] > summary { margin-bottom: -.5rem; }
+.markdown-content pre.plain { color: #d4d4d4; background: #1e1e1e; }

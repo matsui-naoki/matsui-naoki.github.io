@@ -5,7 +5,7 @@
 // All hrefs are absolute paths that already include the locale where needed.
 
 import NextLink from 'next/link'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 
 export type NavLink = { label: string; href: string }
 export type NavItem = NavLink | { label: string; children: NavLink[] }
@@ -35,24 +35,7 @@ export default function SiteNav({
           <div className="hidden lg:flex items-center gap-x-0.5 text-sm xl:text-[15px]">
             {items.map((it) =>
               'children' in it ? (
-                <div key={it.label} className="relative group">
-                  <button type="button" aria-haspopup="true" className={`${top} flex items-center`}>
-                    {it.label}
-                    <svg className="ml-0.5 w-3 h-3 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {/* pt-1 bridges the gap so the menu stays open while the pointer moves down */}
-                  <div className="absolute left-0 top-full pt-1 hidden group-hover:block group-focus-within:block z-50">
-                    <div className="bg-[#111111]/95 backdrop-blur-sm border border-[#262626] rounded shadow-lg overflow-hidden min-w-[9rem] py-1">
-                      {it.children.map((c) => (
-                        <NextLink key={c.href} href={c.href} className="block px-4 py-2 text-[#cfcfcf] hover:text-[#76b900] hover:bg-[#1a1a1a] focus:bg-[#1a1a1a] focus:text-[#76b900] outline-none transition-colors text-sm whitespace-nowrap">
-                          {c.label}
-                        </NextLink>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <Dropdown key={it.label} label={it.label} items={it.children} />
               ) : (
                 <NextLink key={it.href} href={it.href} className={top}>{it.label}</NextLink>
               )
@@ -96,5 +79,55 @@ export default function SiteNav({
         )}
       </div>
     </nav>
+  )
+}
+
+// One desktop menu: opens on hover (closes shortly after the pointer leaves), toggles on click/tap,
+// and closes on Escape, an outside click, or when keyboard focus leaves it.
+function Dropdown({ label, items }: { label: string; items: NavLink[] }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const cancel = () => { if (timer.current) { clearTimeout(timer.current); timer.current = null } }
+  const show = () => { cancel(); setOpen(true) }
+  const hideSoon = () => { cancel(); timer.current = setTimeout(() => setOpen(false), 150) }
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false) }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => { document.removeEventListener('mousedown', onDown); document.removeEventListener('keydown', onKey) }
+  }, [open])
+  useEffect(() => cancel, [])
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={show}
+      onMouseLeave={hideSoon}
+      onBlur={(e) => { if (!ref.current?.contains(e.relatedTarget as Node)) setOpen(false) }}
+    >
+      <button type="button" aria-haspopup="true" aria-expanded={open} onClick={() => setOpen((o) => !o)} className={`${top} flex items-center`}>
+        {label}
+        <svg className={`ml-0.5 w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {open && (
+        /* pt-1 bridges the gap so the menu stays open while the pointer moves down */
+        <div className="absolute left-0 top-full pt-1 z-50">
+          <div className="bg-[#111111]/95 backdrop-blur-sm border border-[#262626] rounded shadow-lg overflow-hidden min-w-[9rem] py-1">
+            {items.map((c) => (
+              <NextLink key={c.href} href={c.href} onClick={() => setOpen(false)} className="block px-4 py-2 text-[#cfcfcf] hover:text-[#76b900] hover:bg-[#1a1a1a] focus:bg-[#1a1a1a] focus:text-[#76b900] outline-none transition-colors text-sm whitespace-nowrap">
+                {c.label}
+              </NextLink>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   )
 }

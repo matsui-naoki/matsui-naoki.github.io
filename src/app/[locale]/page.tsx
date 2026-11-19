@@ -2,9 +2,11 @@
 
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import NextLink from 'next/link'
 import LocaleNavigation from '@/components/LocaleNavigation'
 import HeroFilm from '@/components/HeroFilm'
 import CampusFilm from '@/components/CampusFilm'
+import LazyVideo from '@/components/LazyVideo'
 import Chem from '@/components/Chem'
 import { MEDIA } from '@/lib/media'
 import { SITE_URL } from '@/lib/seo'
@@ -13,12 +15,12 @@ import { useTranslations, useLocale } from 'next-intl'
 type T2 = { ja: string; en: string }
 // Recent papers as a log (dates are publication months)
 const LOG = [
+  { date: '2026.11', material: { ja: 'LiBS₂ の新規多形', en: 'New polymorph of LiBS₂' }, ion: 'Li⁺', journal: 'Electrochemistry (accepted)', doi: '10.5796/electrochemistry.26-74098' },
   { date: '2026.11', material: 'β‑PbSn₁₋ₓInₓF₄₊ₓ', ion: 'F⁻', journal: 'Electrochemistry 94, 117004', doi: '10.5796/electrochemistry.26-00082' },
   { date: '2026.09', material: { ja: 'Li⁺ 伝導体のトポロジー探索', en: 'Topology screening of Li⁺ conductors' }, ion: 'Li⁺', journal: 'J. Am. Chem. Soc. 148, 47703', doi: '10.1021/jacs.6c00345' },
   { date: '2026.09', material: 'Na₁₁Sn₂PS₁₂ (Cl, Br)', ion: 'Na⁺', journal: 'ACS Appl. Energy Mater. 9, 12343', doi: '10.1021/acsaem.6c01715' },
   { date: '2026.08', material: { ja: 'Bi 置換 PbSnF₄', en: 'Bi-substituted PbSnF₄' }, ion: 'F⁻', journal: 'Small Struct. 7, e70579', doi: '10.1002/sstr.70579' },
-  { date: '2026.03', material: 'Ba₂MgH₆', ion: 'H⁻', journal: 'J. Mater. Chem. A 14, 23180', doi: '10.1039/d5ta09966h' },
-  { date: '2025.09', material: { ja: 'H⁻ 伝導固体電解質による水素貯蔵', en: 'Hydrogen storage with an H⁻ conductor' }, ion: 'H⁻', journal: 'Science 389, 1252', doi: '10.1126/science.adw1996' }
+  { date: '2026.03', material: 'Ba₂MgH₆', ion: 'H⁻', journal: 'J. Mater. Chem. A 14, 23180', doi: '10.1039/d5ta09966h' }
 ]
 
 export default function Home() {
@@ -51,17 +53,17 @@ export default function Home() {
 
 
   const newsData = ja ? [
+    { date: '2026.11.19', title: 'D3 Zhuさんの筆頭論文がElectrochemistryにアクセプト' },
     { date: '2026.11.14-16', title: 'さきがけ「ゆらぎの理解と制御による材料革新」領域会議@東京に参加' },
     { date: '2026.11.10', title: 'NIMS Awardsに参加' },
     { date: '2026.11.06-08', title: 'Battery Forum@ソウル国立大学に参加' },
-    { date: '2026.11.06', title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載（Editor\'s Choice）' },
-    { date: '2026.11.02-04', title: 'イオン渋滞学 領域会議@福岡に参加' }
+    { date: '2026.11.06', title: 'M2板倉さんの筆頭論文がElectrochemistryに掲載（Editor\'s Choice）' }
   ] : [
+    { date: '2026.11.19', title: 'D3 student Zhu\'s first-author paper accepted in Electrochemistry' },
     { date: '2026.11.14-16', title: 'Attended JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo' },
     { date: '2026.11.10', title: 'Attended NIMS Awards' },
     { date: '2026.11.06-08', title: 'Attended Battery Forum @ Seoul National University' },
-    { date: '2026.11.06', title: 'First-author paper by M2 student Itakura published in Electrochemistry (Editor\'s Choice)' },
-    { date: '2026.11.02-04', title: 'Attended Ion Jamology Area Meeting @ Fukuoka' }
+    { date: '2026.11.06', title: 'First-author paper by M2 student Itakura published in Electrochemistry (Editor\'s Choice)' }
   ]
 
   const profileRows = ja ? [
@@ -108,12 +110,12 @@ export default function Home() {
   ]
 
   const tiles = [
-    { img: '/Li1.jpg', label: t('lithiumIonConductor') },
-    { img: '/F1.jpg', label: t('fluorideIonConductor') },
-    { img: '/H1.jpg', label: t('hydrideIonConductor') },
-    { img: '/mi.jpg', label: t('machineLearning') },
-    { img: '/combinatorial.jpg', label: t('highThroughput') },
-    { img: '/SPring8_260131.jpg', label: ja ? '放射光・中性子回折' : 'Synchrotron and neutron diffraction' }
+    { img: '/Li1.jpg', label: t('lithiumIonConductor'), href: '/research-details#lithium' },
+    { img: '/F1.jpg', label: t('fluorideIonConductor'), href: '/research-details#fluoride' },
+    { img: '/H1.jpg', label: t('hydrideIonConductor'), href: '/research-details#hydride' },
+    { img: '/mi.jpg', label: t('machineLearning'), href: '/research-details#machine-learning' },
+    { img: '/combinatorial.jpg', label: t('highThroughput'), href: '/research-details#high-throughput' },
+    { img: '/SPring8_260131.jpg', label: ja ? '放射光・中性子回折' : 'Synchrotron and neutron diffraction', href: '/learning/experimental' }
   ]
 
   // Controls (Shure-like: green pill with black text, ghost pill, green underline links)
@@ -136,8 +138,8 @@ export default function Home() {
           poster="/video/campus.jpg"
           title={ja ? '新物質を探す、その道のり' : 'The road to a new material'}
           lines={ja
-            ? ['新しい物質を探す。', '機能性材料から、デバイス応用へ。', 'そして、世界を変えていく。']
-            : ['We search for new materials.', 'From functional materials to devices.', 'And so, we change the world.']}
+            ? ['新しい物質を探す。', '機能性材料から、デバイス応用へ。', '持続可能な社会へ。']
+            : ['We search for new materials.', 'From functional materials to devices.', 'Toward a sustainable society.']}
           labels={{ pause: ja ? '動画を一時停止' : 'Pause video', play: ja ? '動画を再生' : 'Play video' }}
         />
 
@@ -170,12 +172,21 @@ export default function Home() {
             <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
               {tiles.map((x) => (
                 <li key={x.label}>
-                  <Link href="/research-details" className="group block bg-[#1a1a1a] hover:bg-[#262626] rounded-[6px] overflow-hidden transition-colors h-full">
+                  {x.href.startsWith('/learning') ? (
+                  <NextLink href={x.href} className="group block bg-[#1a1a1a] hover:bg-[#262626] rounded-[6px] overflow-hidden transition-colors h-full">
+                    <div className="relative aspect-square">
+                      <Image src={x.img} alt="" fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw" className="object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <div className="px-3 py-3 text-[14px] font-semibold leading-snug">{x.label}</div>
+                  </NextLink>
+                  ) : (
+                  <Link href={x.href} className="group block bg-[#1a1a1a] hover:bg-[#262626] rounded-[6px] overflow-hidden transition-colors h-full">
                     <div className="relative aspect-square">
                       <Image src={x.img} alt="" fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw" className="object-cover opacity-85 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <div className="px-3 py-3 text-[14px] font-semibold leading-snug">{x.label}</div>
                   </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -185,7 +196,7 @@ export default function Home() {
         {/* Graduate students: video beside text */}
         <section id="recruit" className="py-10 sm:py-14 bg-[#111111]">
           <div className="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-0 bg-[#1a1a1a] rounded-[6px] overflow-hidden">
-            <video className="w-full h-full min-h-[260px] object-cover" src="/video/crystal-loop.mp4" poster="/video/crystal-loop.jpg" autoPlay muted loop playsInline aria-hidden="true" />
+            <LazyVideo className="w-full h-full min-h-[260px] object-cover" src="/video/crystal-loop.mp4" poster="/video/crystal-loop.jpg" />
             <div className="p-7 sm:p-10 flex flex-col justify-center">
               <h2 className={`${h2} mb-4`}>{ja ? '大学院生の募集' : 'Graduate students'}</h2>
               <p className={`${lead} mb-7`}>

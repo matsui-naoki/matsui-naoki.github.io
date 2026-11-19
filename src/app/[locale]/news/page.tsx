@@ -13,6 +13,19 @@ export default function NewsPage() {
 
   const allNews = locale === 'ja' ? [
     {
+      date: '2026.11.19',
+      title: 'D3 Zhuさんの筆頭論文がElectrochemistryにアクセプト',
+      desc: (
+        <span>
+          「Synthesis and Ionic Conductivity of a New Polymorph of <Chem>LiBS₂</Chem>」おめでとう!!
+          <a href="https://doi.org/10.5796/electrochemistry.26-74098" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
+            論文ページ
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
+    {
       date: '2026.11.14-16',
       title: 'さきがけ「ゆらぎの理解と制御による材料革新」領域会議@東京に参加',
       desc: '',
@@ -538,6 +551,19 @@ export default function NewsPage() {
       category: 'AWARD'
     }
   ] : [
+    {
+      date: '2026.11.19',
+      title: "Zhu's First-Author Paper Accepted in Electrochemistry",
+      desc: (
+        <span>
+          &quot;Synthesis and Ionic Conductivity of a New Polymorph of <Chem>LiBS₂</Chem>&quot; Congratulations!
+          <a href="https://doi.org/10.5796/electrochemistry.26-74098" target="_blank" rel="noopener noreferrer" className="text-[#76b900] hover:text-[#8fd400] underline ml-1">
+            Article
+          </a>
+        </span>
+      ),
+      category: 'RESEARCH'
+    },
     {
       date: '2026.11.14-16',
       title: 'Attended JST PRESTO "Materials Innovation through Understanding and Control of Fluctuations" Area Meeting @ Tokyo',

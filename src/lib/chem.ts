@@ -1,6 +1,6 @@
 // Splits text written with Unicode sub/superscript characters ('PbSn₁₋ₓInₓF₄₊ₓ', 'F⁻', '10⁻⁴')
 // into runs, so they can be set as real <sub>/<sup> in the body font instead of the Unicode glyphs.
-// Used by components/Chem.tsx (React) and chemHtml() (HTML strings, e.g. the learning pages).
+// Used by components/Chem.tsx (React) and the build-time Markdown renderer (lib/markdown.ts).
 
 const SUB: Record<string, string> = {
   '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9',
@@ -32,16 +32,3 @@ export function chemRuns(s: string): ChemRun[] {
 }
 
 export const hasChem = (s: string) => /[₀-₉₊₋ₓₙ₍₎⁰¹²³⁴-⁹⁺⁻ⁿ⁽⁾]/.test(s)
-
-/** HTML-string version for content that is already HTML (text outside tags only). */
-export function chemHtml(html: string): string {
-  if (!hasChem(html)) return html
-  return html.split(/(<[^>]+>)/).map((part) => {
-    if (part.startsWith('<') || !hasChem(part)) return part
-    return chemRuns(part).map((r) => {
-      if (r.kind === 'text') return r.text
-      const body = r.kind === 'sub' ? r.text.replace(/[xynδ]/g, (v) => `<i>${v}</i>`) : r.text
-      return `<${r.kind}>${body}</${r.kind}>`
-    }).join('')
-  }).join('')
-}

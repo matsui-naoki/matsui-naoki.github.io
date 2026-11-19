@@ -16,6 +16,13 @@ export default function PublicationsPage() {
     // 2026年
     {
       year: '2026',
+      title: 'Synthesis and Ionic Conductivity of a New Polymorph of LiBS₂',
+      authors: 'Z. Zhu, N. Matsui, S. Kong, S. Hori, K. Nomoto, R. Kanno, K. Suzuki',
+      journal: 'Electrochemistry (2026), accepted / advance publication',
+      doi: '10.5796/electrochemistry.26-74098'
+    },
+    {
+      year: '2026',
       title: 'Enhanced Room-Temperature Fluoride-Ion Conductivity of β-PbSn₁₋ₓInₓF₄₊ₓ',
       authors: 'S. Itakura, N. Matsui, K. Shimizu, K. Suzuki, R. Kanno',
       journal: 'Electrochemistry, 94(11) (2026) 117004 (Editor\'s Choice)',
